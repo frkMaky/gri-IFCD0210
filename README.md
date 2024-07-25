@@ -1,0 +1,3 @@
+Material de la certificacion en gri-IFCD0210
+
+Apuntes, ejercicios, pruebas de código ...
