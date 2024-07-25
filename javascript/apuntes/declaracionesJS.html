@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declaraciones de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Declaraciones de JavaScript</h1>
+    <pre class="tabular">
+        let x, y, z; // Statement 1
+        x = 5; // Statement 2
+        y = 6; // Statement 3
+        z = x + y; // Statement 4
+    </pre>
+
+    <section>
+        <h2>Programas JavaScript</h2>
+        <p>Un <strong>programa de computadora</strong>  es una lista de "instrucciones" que una computadora debe "ejecutar".</p>
+        <p>En un lenguaje de programación, estas instrucciones de programación se denominan <strong>declaraciones .</strong></p>
+        <p>Un <strong>programa JavaScript </strong> es una <strong>lista de declaraciones de programación .</strong></p>
+        <p>En HTML, los programas JavaScript los ejecuta el navegador web.</p>
+    </section>
+
+    <section>
+        <h2>Declaraciones de JavaScript</h2>
+        <p>Las declaraciones de JavaScript se componen de:</p>
+        <p><em>Valores, operadores, expresiones, palabras clave y comentarios.</em></p>
+        <p>Esta declaración le dice al navegador que escriba "Hola Dolly". dentro de un elemento HTML con id="demo":</p>
+        <pre>
+            document.getElementById("demo").innerHTML = "Hello Dolly.";
+        </pre>
+        <p>La mayoría de los programas JavaScript contienen muchas declaraciones de JavaScript.</p>
+        <p>Las declaraciones se ejecutan, una por una, en el mismo orden en que están escritas.</p>
+        <p>Los programas JavaScript (y las declaraciones JavaScript) a menudo se denominan código JavaScript.</p>
+    </section>
+
+    <section>
+        <h2>Punto y coma;</h2>
+        <p>El punto y coma separa las declaraciones de JavaScript.</p>
+        <p>Agregue un punto y coma al final de cada declaración ejecutable:</p>
+        <pre>
+            let a, b, c; // Declare 3 variables
+            a = 5; // Assign the value 5 to a
+            b = 6; // Assign the value 6 to b
+            c = a + b; // Assign the sum of a and b to c
+        </pre>
+        <p>Cuando están separados por punto y coma, se permiten varias declaraciones en una línea:</p>
+        <pre>
+            a = 5; b = 6; c = a + b;
+        </pre>
+        <p>En la web, es posible que vea ejemplos sin punto y coma.</p>
+        <p>No es obligatorio terminar las declaraciones con punto y coma, pero es muy recomendable.</p>
+    </section>
+
+    <section>
+        <h2>Espacio en blanco de JavaScript</h2>
+        <p>JavaScript ignora múltiples espacios. Puede agregar espacios en blanco a su script para hacerlo más legible.</p>
+        <p>Las siguientes líneas son equivalentes:</p>
+        <pre>
+            let person = "Hege";
+            let person="Hege";
+        </pre>
+        <p>Una buena práctica es poner espacios alrededor de los operadores ( = + - * / ):</p>
+        <pre>
+            let x = y + z;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Longitud de línea de JavaScript y saltos de línea</h2>
+        <p>Para una mejor legibilidad, los programadores suelen evitar líneas de código de más de 80 caracteres.</p>
+        <p>Si una declaración de JavaScript no cabe en una línea, el mejor lugar para dividirla es después de un operador:</p>
+        <pre>
+            document.getElementById("demo").innerHTML = "Hello Dolly!";
+        </pre>
+    </section>
+
+    <section>
+        <h2>Bloques de código JavaScript</h2>
+        <p>Las declaraciones de JavaScript se pueden agrupar en bloques de código, dentro de llaves {...}.</p>
+        <p>El propósito de los bloques de código es definir declaraciones que se ejecutarán juntas.</p>
+        <p>Un lugar donde encontrará declaraciones agrupadas en bloques es en las funciones de JavaScript:</p>
+        <pre>
+            function myFunction() {
+                document.getElementById("demo1").innerHTML = "Hello Dolly!";
+                document.getElementById("demo2").innerHTML = "How are you?";
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Palabras clave de JavaScript</h2>
+        <p>Las declaraciones de JavaScript suelen comenzar con una <strong>palabra clave</strong>  para identificar la acción de JavaScript que se realizará.</p>
+        <p>Aquí hay una lista de algunas de las palabras clave:</p>
+        <table>
+            <tr> <th>Palabra clave</th> <th>Descripción</th> </tr>
+            <tr> <td>var</td> <td>Declara una variable</td></tr>
+            <tr> <td>let</td> <td>Declara una variable</td></tr>
+            <tr> <td>const</td> <td>Declara un bloque constante</td></tr>
+            <tr> <td>if</td> <td>Marca un bloque de declaraciones que se ejecutarán bajo una condición.</td></tr>
+            <tr> <td>switch</td> <td>Marca un bloque de sentencias para ser ejecutadas en diferentes casos.</td></tr>
+            <tr> <td>for</td> <td>Marca un bloque de declaraciones para ejecutarse en un bucle.</td></tr>
+            <tr> <td>function</td> <td>Declara una función</td></tr>
+            <tr> <td>return</td> <td>Sale de una función</td></tr>
+            <tr> <td>try</td> <td>Implementa el manejo de errores en un bloque de declaraciones.</td></tr>
+        </table>
+        <p>Las palabras clave de JavaScript son palabras reservadas. Las palabras reservadas no se pueden utilizar como nombres de variables.</p>
+    </section>
+</body>
+</html>

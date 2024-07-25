@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de obtención de fecha de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Métodos de obtención de fecha de JavaScript</h1>
+    <section>
+        <h2>El nuevo constructor Date()</h2>
+        <p>En JavaScript, los objetos de tipo fecha se crean con new Date().</p>
+        <p>new Date() devuelve un objeto de tipo fecha con la fecha y hora actuales.</p>
+        <pre>
+            // Obtener la hora actual
+            
+            const date = new Date();
+        </pre>
+    </section>
+    <section>
+        <h2>Métodos de obtención de fecha</h2>
+        <table>
+            <tr> <th>Método</th> <th>Descripción</th> </tr>
+            <tr> <td>getFullYear()</td> <td>Obtiene el año como un número de 4 dígitos (yyyy)</td> </tr>
+            <tr> <td>getMonth()</td> <td>Obtiene el mes como un número (0-11)</td> </tr>
+            <tr> <td>getDate()</td> <td>Obtiene el día como un número (1-31)</td> </tr>
+            <tr> <td>getDay()</td> <td>Obtiene el día de la semana como un número (0-6)</td> </tr>
+            <tr> <td>getHours()</td> <td>Obtiene la hora (0-23)</td> </tr>
+            <tr> <td>getMinutes()</td> <td>Obtiene el minuto (0-59)</td> </tr>
+            <tr> <td>getSeconds()</td> <td>Obtiene los segundos(0-59)</td> </tr>
+            <tr> <td>getMilliseconds()</td> <td>Obtiene los milisegundos (0-999)</td> </tr>
+            <tr> <td>getTime()</td> <td>Obtiene el tiempo (milisegundos desde el 1 de enero 1970)</td> </tr>
+        </table>
+        <p><strong>Nota 1</strong>Los métodos get anteriores devuelven la hora local .</p>
+    </section>
+    <section>
+        <h2>El método getFullYear()</h2>
+        <p>El método getFullYear() devuelve el año de una fecha como un número de cuatro dígitos:</p>
+        <pre>
+            const d = new Date("2021-03-25");
+            d.getFullYear();
+
+            const d = new Date();
+            d.getFullYear();
+        </pre>
+        <h3>Advertencia !</h3>
+        <p>El código JavaScript antiguo podría utilizar el método no estándar getYear().</p>
+        <p>Se supone que getYear() devuelve un año de 2 dígitos.</p>
+        <p>getYear() está en desuso. ¡No lo uses!</p>
+    </section>
+    <section>
+        <h2>El método getMonth()</h2>
+        <p>El método getMonth() devuelve el mes de una fecha como un número (0-11).</p>
+        <p><strong>Nota</strong>En JavaScript, enero es el mes número 0, febrero es el número 1, ...</p>
+        <p>Finalmente, diciembre es el mes número 11.</p>
+        <pre>
+            const d = new Date("2021-03-25");
+            d.getMonth();
+
+            const d = new Date();
+            d.getMonth();
+        </pre>
+        <p><strong>Nota</strong> Puede utilizar una serie de nombres para devolver el mes como nombre:</p>
+        <pre>
+            const months =
+            ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const d = new Date("2021-03-25");
+            let month = months[d.getMonth()];
+
+            const months =
+            ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const d = new Date();
+            let month = months[d.getMonth()];
+        </pre>
+    </section>
+    <section>
+        <h2>El método getDate()</h2>
+        <p>El método getDate() devuelve el día de una fecha como un número (1-31):</p>
+        <pre>
+            const d = new Date("2021-03-25");
+            d.getDate();
+
+            const d = new Date();
+            d.getDate();
+        </pre>
+    </section>
+    <section>
+        <h2>El método getHours()</h2>
+        <p>El método getHours() devuelve las horas de una fecha como un número (0-23):</p>
+        <pre>
+            const d = new Date("2021-03-25");
+            d.getHours();
+
+            const d = new Date();
+            d.getHours();
+        </pre>
+    </section>
+    <section>
+        <h2>El método getMinutes()</h2>
+        <p>El método getMinutes() devuelve los minutos de una fecha como un número (0-59):</p>
+        <pre>
+            const d = new Date("2021-03-25");
+            d.getMinutes();
+
+            const d = new Date();
+            d.getMinutes();
+        </pre>
+    </section>
+    <section>
+        <h2>El método getSeconds()</h2>
+        <p>El método getSeconds() devuelve los segundos de una fecha como un número (0-59):</p>
+        <pre>
+            const d = new Date("2021-03-25");
+            d.getSeconds();
+
+            const d = new Date();
+            d.getSeconds();
+        </pre>
+    </section>
+    <section>
+        <h2>El método getMilliseconds()</h2>
+        <p>El método getMilliseconds() devuelve los milisegundos de una fecha como un número (0-999):</p>
+        <pre>
+            const d = new Date("2021-03-25");
+            d.getMilliseconds();
+
+            const d = new Date();
+            d.getMilliseconds();
+        </pre>
+    </section>
+    <section>
+        <h2>El método getDay()</h2>
+        <p>El método getDay() devuelve el día de la semana de una fecha como un número (0-6).</p>
+        <p><strong>Nota</strong> En JavaScript, el primer día de la semana (día 0) es el domingo.</p>
+        <p>Algunos países del mundo consideran que el primer día de la semana es el lunes.</p>
+        <pre>
+            const d = new Date("2021-03-25");
+            d.getDay();
+
+            const d = new Date();
+            d.getDay();
+        </pre>
+        <p><strong>Nota</strong> Puede usar una variedad de nombres y getDay() para devolver el día de la semana como nombre:</p>
+        <pre>
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const d = new Date("2021-03-25");
+            let day = days[d.getDay()];
+
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const d = new Date();
+            let day = days[d.getDay()];
+        </pre>
+    </section>
+    <section>
+        <h2>El método getTime()</h2>
+        <p>El método getTime() devuelve el número de milisegundos desde el 1 de enero de 1970:</p>
+        <pre>
+            const d = new Date("1970-01-01");
+            d.getTime();
+
+            const d = new Date("2021-03-25");
+            d.getTime();
+            
+            const d = new Date();
+            d.getTime();
+        </pre>
+    </section>
+    <section>
+        <h2>El método Date.now()</h2>
+        <p>Date.now() devuelve el número de milisegundos desde el 1 de enero de 1970.</p>
+        <pre>
+            let ms = Date.now();
+        </pre>
+        <p>Calcule el número de años desde el 01/01/1970:</p>
+        <pre>
+            const minute = 1000 * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+            const year = day * 365;
+
+            let years = Math.round(Date.now() / year);
+        </pre>
+    </section>
+    <section>
+        <h2>Métodos de obtención de fecha UTC</h2>
+        <table>
+            <tr> <th>Método</th> <th>Mismo que</th> <th>Descripción</th> </tr>
+            <tr> <td>getUTCDate()</td> <td>getDate()</td> <td>Devuelve la fecha UTC</td> </tr>
+            <tr> <td>getUTCFullYear()</td> <td>getFullYear()</td> <td>Devuelve el año UTC</td> </tr>
+            <tr> <td>getUTCMonth()</td> <td>getMonth()</td> <td>Devuelve el mes UTC</td> </tr>
+            <tr> <td>getUTCDay()</td> <td>getDay()</td> <td>Devuelve el día UTC</td> </tr>
+            <tr> <td>getUTCHours()</td> <td>getHours()</td> <td>Devuelve la hora UTC</td> </tr>
+            <tr> <td>getUTCMinutes()</td> <td>getMinutes()</td> <td>Devuelve los minutos UTC</td> </tr>
+            <tr> <td>getUTCSeconds()</td> <td>getSeconds()</td> <td>Devuelve los segundos UTC</td> </tr>
+            <tr> <td>getUTCMilliseconds()</td> <td>getMilliseconds()</td> <td>Devuelve los milisegundos UTC</td> </tr>
+        </table>
+        <p>Los métodos UTC utilizan la hora UTC (Tiempo Universal Coordinado).</p>
+        <p>La hora UTC es la misma que GMT (hora media de Greenwich).</p>
+        <p>La diferencia entre la hora local y la hora UTC puede ser de hasta 24 horas.</p>
+    </section>
+    <section>
+        <h2>El método getTimezoneOffset()</h2>
+        <p>El método getTimezoneOffset() devuelve la diferencia (en minutos) entre la hora local y la hora UTC:</p>
+        <pre>
+            let diff = d.getTimezoneOffset();
+        </pre>
+        <a href="../ejercicios/ejemploTimezone.html" target="_blank">Ejemplo</a>
+    </section>
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice el método de Date correcto para obtener el mes (0-11) de un objeto de tipo fecha.</p>
+        <pre>
+            const d = new Date();
+            mes =;
+        </pre>
+    </section>
+</body>
+</html>

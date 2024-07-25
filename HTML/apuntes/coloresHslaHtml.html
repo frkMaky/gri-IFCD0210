@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores HTML HSL y HSLA</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Colores HTML HSL y HSLA</h1>
+    <p class="tabular"><q>HSL significa tono, saturación y luminosidad.<br>
+        Los valores de color HSLA son una extensión de HSL con un canal Alfa (opacidad).</q></p>
+    <section>
+        <h2>Valores de color HSL</h2>
+        <p>En HTML, se puede especificar un color usando tono, saturación y luminosidad (HSL) en la forma:<span class="negrita">
+            hsl (tono,saturación,luminosidad)</span></p>
+        <p>El tono es un grado en la rueda de colores de 0 a 360. 0 es rojo, 120 es verde y 240 es azul.</p>
+        <p>La saturación es un valor porcentual. 0% significa un tono de gris y 100% es el color completo.</p>
+        <p>La luminosidad también es un valor porcentual. 0% es negro y 100% es blanco.</p>
+        <p>Experimente mezclando los valores de HSL a continuación:</p>
+        <table>
+            <tr>
+                <td style="background-color: hsl(0,100%,50%);">hsl(0,100%,50%)</td>
+                <td style="background-color: hsl(240,100%,50%);">hsl(240,100%,50%)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsl(147,50%,47%);">hsl(147,50%,47%)</td>
+                <td style="background-color: hsl(300,76%,72%);">hsl(300,76%,72%)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsl(39,100%,50%);">hsl(39,100%,50%)</td>
+                <td style="background-color: hsl(248,100%,50%);">hsl(248,100%,50%)</td>
+            </tr>
+        </table>
+        <h3>Saturación</h3>
+        <p>La saturación se puede describir como la intensidad de un color.</p>
+        <p>100% es color puro, sin matices de grises.</p>
+        <p>El 50% es 50% gris, pero aún puedes ver el color.</p>
+        <p>0% es completamente gris; ya no puedes ver el color.</p>
+        <table>
+            <tr>
+                <td style="background-color: hsl(0,100%,50%);">hsl(0,100%,50%)</td>
+                <td style="background-color: hsl(0,80%,50%);">hsl(0,80%,50%)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsl(0,60%,50%);">hsl(0,60%,50%)</td>
+                <td style="background-color: hsl(0,40%,50%);">hsl(0,40%,50%)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsl(0,20%,50%);">hsl(0,20%,50%)</td>
+                <td style="background-color: hsl(0,0%,50%);">hsl(0,0%,50%)</td>
+            </tr>
+        </table>
+        <h3>Luminosidad</h3>
+        <p>La luminosidad de un color se puede describir como cuánta luz quieres darle al color, donde 0% significa
+            sin luz (negro), 50% significa 50% de luz (ni oscuro ni claro) y 100% significa luminosidad total (blanco).</p>
+        <table>
+            <tr>
+                <td style="background-color: hsl(0,100%,0%);">hsl(0,100%,0%)</td>
+                <td style="background-color: hsl(0,100%,25%);">hsl(0,100%,25%)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsl(0,100%,50%);">hsl(0,100%,50%)</td>
+                <td style="background-color: hsl(0,100%,75%);">hsl(0,100%,75%)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsl(0,100%,90%);">hsl(0,100%,90%)</td>
+                <td style="background-color: hsl(0,100%,100%);">hsl(0,100%,100%)</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <section>
+        <h2>Tonos de gris</h2>
+        <p>Los tonos de gris a menudo se definen estableciendo el tono y la saturación en 0, y ajustando la
+            luminosidad del 0% al 100% para obtener tonos más oscuros/claros:</p>
+        <table>
+            <tr>
+                <td style="background-color: hsl(0,0%,20%);">hsl(0,0%,20%)</td>
+                <td style="background-color: hsl(0,0%,30%);">hsl(0,0%,30%)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsl(0,0%,40%);">hsl(0,0%,40%)</td>
+                <td style="background-color: hsl(0,0%,60%);">hsl(0,0%,60%)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsl(0,0%,70%);">hsl(0,0%,70%)</td>
+                <td style="background-color: hsl(0,0%,90%);">hsl(0,0%,90%)</td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Valores de color HSLA</h2>
+        <p>Los valores de color HSLA son una extensión de los valores de color HSL, con un canal Alfa, que
+            especifica la opacidad de un color.</p>
+        <p>Un valor de color HSLA se especifica con:<span class="negrita">hsla (tono, saturación, luminosidad, alfa)</span></p>
+        <p>El parámetro alfa es un número entre 0,0 (completamente transparente) y 1,0 (nada transparente):</p>
+        <table>
+            <tr>
+                <td style="background-color: hsla(9,100%,64%,0);">hsla(9,100%,64%,0)</td>
+                <td style="background-color: hsla(9,100%,64%,0.2);">hsla(9,100%,64%,0.2)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsla(9,100%,64%,0.4);">hsla(9,100%,64%,0.4)</td>
+                <td style="background-color: hsla(9,100%,64%,0.6);">hsla(9,100%,64%,0.6)</td>
+            </tr>
+            <tr>
+                <td style="background-color: hsla(9,100%,64%,0.8);">hsla(9,100%,64%,0.8)</td>
+                <td style="background-color: hsla(9,100%,64%,1);">hsla(9,100%,64%,1)</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Inserte el valor HSLA para crear un color sin tono, 100% de saturación, 50% de luminosidad y 50% de
+            transparencia.</p>
+        <pre>
+            &lt;p style="color:()"&gt;Este es un párrafo.&lt;/p&gt;
+        </pre>
+    </section>
+</body>
+</html>

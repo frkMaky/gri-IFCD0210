@@ -1,0 +1,72 @@
+/*
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+*/
+
+    /* Etiquetas Generales */ 
+    body {
+        font-family: "Noto Sans", sans-serif;
+        line-height: 30px;
+        margin: 50px 100px;
+        background-color: ghostwhite;
+    }
+    h1{
+        color:crimson;
+        text-align: center;
+        margin-bottom: 20px;
+    }  
+    h2, h3{
+        color:crimson;
+        margin-left: 100px;
+        margin-bottom: 10px;
+    }
+    p{
+        text-align: justify;
+        margin-left: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    ul{
+        text-align: left;
+        margin-left: 50px;
+    }
+    table, td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    pre {
+        border: 1px solid black;
+        font-weight: bold;
+        border-collapse: collapse;
+    }
+    footer{
+        margin-top: 100px;
+    }
+    q{
+        font-weight: bold;
+        font-style: italic;
+    }
+    /* CLASES */
+
+    .centrar {
+        display: flex;
+        text-align: center; 
+        justify-content: center;
+        align-items: center;
+    }
+    .tabular{
+        margin-left: 150px;
+        margin-top: 30px;
+    }
+    .verde{
+        color: green;
+        font-weight: bold;
+    }
+    .negrita { font-weight: bold;}
+
+    .ejercicio, .ejercicio h1, .ejercicio h2, .ejercicio h3, .ejercicio p, .ejercicio pre {
+        color: black;
+    }
+    .sinbordes { border: none;}
+

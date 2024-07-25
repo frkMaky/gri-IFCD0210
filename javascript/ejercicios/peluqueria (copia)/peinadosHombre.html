@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluqueria Accesible</title>
+    <link rel="icon" type="image/x-icon" href="img/logoPeluqueria.jpg">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css"> 
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__info">
+            <a class="header__enlace-logo" href="index.html">
+                <picture>
+                    <img src="img/logoPeluqueria.png" alt="Logo Peluqueria">
+                </picture>
+            </a>
+            
+            <h1 class="header__texto">Peluqueria Accesible</h1>
+            <p class="header__texto">Todo sobre el cuidado y el estilo en el cabello</p>
+        </div>
+        <div class="header__navegacion">
+            <nav>
+                <a href="index.html">Peluqueria</a>
+                <a href="peinadosHombre.html">Peinados Hombre</a>
+                <a href="peinadosMujer.html">Peinados Mujer</a>
+                <a href="tienda.html">Nuestra Tienda</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="idiomas">
+                <a href="peinadosHombre.html"><img src="img/espana.png" alt="Español">Español</a>
+                <a href="mensCuts.html"><img src="img/reino-unido.png" alt="Inglés">Inglés</a>
+            </div>
+        </div>
+        
+    </header>
+
+    <main>
+        <section class="multimedia">
+            <audio controls autoplay muted>
+                <label for="betterDay">Ehereal Vistas (música ambiente)</label>
+                <source id="betterDay" src="multimedia/ethereal-vistas-191254.mp3" alt="Ethereal" >
+           </audio>
+        </section>
+        <section class="slider">
+            <h2>Peinados de Hombres</h2>
+            <!-- slider con fotos -->
+            <div class="container">
+                <ul class="slides">
+                    <li id="slide1"><img src="img/peinadoHombre1.jpg" alt="Hombre con copete y afeitado lateral" /></li>
+                    <li id="slide2"><img src="img/peinadoHombre2.jpg" alt="Hombre peinándose hacia atrás" /></li>
+                    <li id="slide3"><img src="img/peinadoHombre3.jpg" alt="Hombre con peinado de cola de caballo alta" /></li>
+                    <li id="slide4"><img src="img/peinadoHombre4.jpg" alt="Dos hombres con peinados modernos." /></li>
+                    <li id="slide5"><img src="img/peinadoHombre5.jpg" alt="Hombre con peinado actual." /></li>
+                    <li id="slide6"><img src="img/peinadoHombre6.jpg" alt="Hombre con peinado corto" /></li>
+                </ul>
+            
+                <ul class="thumbnails">
+                    <li> <a href="#slide1"><img src="img/peinadoHombre1.jpg" alt="Hombre con copete y afeitado lateral" /></a> </li>
+                    <li> <a href="#slide2"><img src="img/peinadoHombre2.jpg" alt="Hombre peinándose hacia atrás"/></a> </li>
+                    <li> <a href="#slide3"><img src="img/peinadoHombre3.jpg" alt="Hombre con peinado de cola de caballo alta"/></a> </li>
+                    <li> <a href="#slide4"><img src="img/peinadoHombre4.jpg" alt="Dos hombres con peinados modernos."/></a> </li>
+                    <li> <a href="#slide5"><img src="img/peinadoHombre5.jpg" alt="Hombre con peinado actual."/></a> </li>
+                    <li> <a href="#slide6"><img src="img/peinadoHombre6.jpg" alt="Hombre con peinado corto"/></a> </li>    
+                </ul>
+            </div><!-- .container -->
+        </section>
+
+        <section class="informacion">
+            <h2>Especialistas en cuidado masculino</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, eveniet quaerat deleniti esse enim omnis, consequatur doloribus provident consectetur distinctio fugit voluptatem quo nam modi illo sed dolor saepe ratione?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum veniam quos fuga quibusdam itaque temporibus accusamus earum quas deleniti labore.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsam dolor architecto autem, corporis, culpa reprehenderit earum dolore porro rerum rem quisquam laudantium natus saepe nisi voluptas id repudiandae blanditiis possimus dicta eaque, expedita neque consectetur veritatis? Quam, optio pariatur.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <h1 class="footer__texto">
+            <a href="index.html">Peluqueria Accesible</a>
+        </h1>
+        <p class="footer__contacto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+              </svg>
+            555-123456789
+        </p>
+        <p class="footer__texto">Todo sobre el cuidado y el estilo en el cabello</p>
+        <p class="footer__texto footer__texto--firma">=^.^= Rousi 2024 &copy;</p>
+    
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

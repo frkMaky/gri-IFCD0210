@@ -1,0 +1,54 @@
+<!DOCTYPE biblioteca [
+    <!ELEMENT biblioteca (libro*, revista*)>
+    <!ELEMENT libro (titulo, autor, editorial, anio, precio, descripcion?, imagen?)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT autor (#PCDATA)>
+    <!ELEMENT editorial (#PCDATA)>
+    <!ELEMENT anio (#PCDATA)>
+    <!ELEMENT precio (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT imagen (#PCDATA)>
+    <!ELEMENT revista (titulo, editorial, anio, precio, articulo*)>
+    <!ELEMENT articulo (titulo, autor, contenido)>
+    <!ELEMENT contenido (#PCDATA)>
+    <!ATTLIST libro id CDATA #REQUIRED>
+    <!ATTLIST libro formato (impreso|digital) "impreso">
+    <!ATTLIST libro idioma CDATA #IMPLIED>
+    <!ENTITY % desc "Un libro interesante sobre programación">
+    <!ENTITY % imagen "portada.jpg">
+    <!ENTITY euro "&#8364;">
+]>
+
+<biblioteca>
+    <libro id="askdhak" formato="impreso" idioma="es">
+        <titulo>Sapiens</titulo>
+        <autor> Yuval Noah</autor>
+        <editorial>DEBATE</editorial>
+        <anio>2000</anio>
+        <precio> euro <precio>
+        <descripcion> %desc </descripcion>
+        <imagen> %imagen </imagen>
+    </libro>
+
+    <libro id="askdhak2" formato="digital" idioma="es">
+        <titulo>Sapiens</titulo>
+        <autor> Yuval Noah</autor>
+        <editorial>DEBATE</editorial>
+        <anio>2000</anio>
+        <precio> euro <precio>
+        <descripcion> %desc </descripcion>
+        <imagen> %imagen </imagen>
+    </libro>
+
+    <revista>
+        <titulo>HobbyConsolas</titulo>
+        <editorial>Hobby Press</editorial>
+        <anio>2024</anio>
+        <precio>4 &euro</precio>
+        <articulo> 
+            <titulo>10 juegos indies de locuta</titulo>
+            <autor>Cesareo</autor>
+            <contenido>Los mejores indies del momento para echar la tarde</contenido>
+        </articulo>
+    </revista>
+</biblioteca>

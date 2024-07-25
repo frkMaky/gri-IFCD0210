@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constante en arrays</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Constante en arrays</h1>
+    <section>
+        <h2>ECMAScript 2015 (ES6)</h2>
+        <p>En 2015, JavaScript introdujo una nueva palabra clave importante: const.</p>
+        <p>Se ha convertido en una práctica común declarar arrays usando const:</p>
+        <pre>
+            const cars = ["Saab", "Volvo", "BMW"];
+        </pre>
+    </section>
+    <section>
+        <h2>No se puede reasignar</h2>
+        <p>Un array declarado con const no se puede reasignar:</p>
+        <pre>
+            const cars = ["Saab", "Volvo", "BMW"];
+            cars = ["Toyota", "Volvo", "Audi"]; // ERROR
+        </pre>
+    </section>
+    <section>
+        <h2>Los arrays no son constantes</h2>
+        <p>La palabra clave const es un poco engañosa.</p>
+        <p>NO define un array constante. Define una referencia constante a un array.</p>
+        <p>Debido a esto, aún podemos cambiar los elementos de un array constante.</p>
+    </section>
+    <section>
+        <h2>Los elementos se pueden reasignar</h2>
+        <p>Puedes cambiar los elementos de un array constante:</p>
+        <pre>
+            // You can create a constant array:
+            const cars = ["Saab", "Volvo", "BMW"];
+            
+            // You can change an element:
+            cars[0] = "Toyota";
+            
+            // You can add an element:
+            cars.push("Audi");
+        </pre>
+        <h3>Soporte del navegador</h3>
+        <p>La palabra clave const no es compatible con Internet Explorer 10 o versiones anteriores. </p>
+        <p>La siguiente tabla define las primeras versiones del navegador con soporte completo para la palabra clave const:</p>
+        <table>
+            <tr> <td>Chrome 49</td> <td> IE 11 / Edge </td> <td> Firefox 36</td> <td> Safari 10</td> <td>Opera 36</td> </tr>
+            <tr> <td>Mar, 2016</td> <td>Oct, 2013</td> <td>Feb, 2015</td> <td>Sep, 2016</td> <td>Mar, 2016</td> </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Asignado cuando se declara</h2>
+        <p>A las variables de JavaScript definidas con const se les debe asignar un valor cuando se declaran:</p>
+        <p>Significado: un array declarado con const debe inicializarse cuando se declara.</p>
+        <p>Usar const sin inicializar el array es un error de sintaxis:</p>
+        <pre>
+            // Esto no funcionará:
+            
+            const cars;
+            cars = ["Saab", "Volvo", "BMW"];
+        </pre>
+        <p>Los arrays declarados con var se pueden inicializar en cualquier momento.</p>
+        <p>Incluso puedes usar el array antes de declararlo:</p>
+        <pre>
+            // Esto está bien:
+
+            cars = ["Saab", "Volvo", "BMW"];
+            var cars;
+        </pre>
+    </section>
+    <section>
+        <h2>Alcance del bloque const</h2>
+        <p>Un array declarado con const tiene Block Scope .</p>
+        <p>No es lo mismo un array declarado en un bloque que un array declarado fuera del bloque:</p>
+        <pre>
+            const cars = ["Saab", "Volvo", "BMW"];
+            // Here cars[0] is "Saab"
+            {
+                const cars = ["Toyota", "Volvo", "BMW"];
+                // Here cars[0] is "Toyota"
+            }
+            // Here cars[0] is "Saab"
+        </pre>
+        <p>Un array declarado con var no tiene alcance de bloque:</p>
+        <pre>
+            var cars = ["Saab", "Volvo", "BMW"];
+            // Here cars[0] is "Saab"
+            {
+                var cars = ["Toyota", "Volvo", "BMW"];
+                // Here cars[0] is "Toyota"
+            }
+            // Here cars[0] is "Toyota"
+        </pre>
+    </section>
+    <section>
+        <h2>Redeclaración de arrays</h2>
+        <p>Se permite redeclarar un array declarado con var en cualquier parte de un programa:</p>
+        <pre>
+            var cars = ["Volvo", "BMW"]; // Allowed
+            var cars = ["Toyota", "BMW"]; // Allowed
+            cars = ["Volvo", "Saab"]; // Allowed
+        </pre>
+        <p>No se permite redeclarar o reasignar un array a const, en el mismo alcance o en el mismo bloque:</p>
+        <pre>
+            var cars = ["Volvo", "BMW"]; // Allowed
+            const cars = ["Volvo", "BMW"]; // Not allowed
+            {
+                var cars = ["Volvo", "BMW"]; // Allowed
+                const cars = ["Volvo", "BMW"]; // Not allowed
+            }
+        </pre>
+        <p>No se permite redeclarar o reasignar un array existente a const, en el mismo alcance o en el mismo bloque:</p>
+        <pre>
+            const cars = ["Volvo", "BMW"]; // Allowed
+            const cars = ["Volvo", "BMW"]; // Not allowed
+            var cars = ["Volvo", "BMW"]; // Not allowed
+            cars = ["Volvo", "BMW"]; // Not allowed
+            {
+                const cars = ["Volvo", "BMW"]; // Allowed
+                const cars = ["Volvo", "BMW"]; // Not allowed
+                var cars = ["Volvo", "BMW"]; // Not allowed
+                cars = ["Volvo", "BMW"]; // Not allowed
+            }
+        </pre>
+        <p>Se permite redeclarar un array con const, en otro alcance o en otro bloque:</p>
+        <pre>
+            const cars = ["Volvo", "BMW"]; // Allowed
+            {
+                const cars = ["Volvo", "BMW"]; // Allowed
+            }
+            {
+                const cars = ["Volvo", "BMW"]; // Allowed
+            }
+        </pre>
+    </section>
+</body>
+</html>

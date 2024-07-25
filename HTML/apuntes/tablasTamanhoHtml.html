@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamaños de las tablas en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Tamaños de las tablas en HTML</h1>
+    <p class="tabular"><q>Las tablas HTML pueden tener diferentes tamaños para cada columna, fila o la tabla completa.</q></p>
+    <p class="tabular"><q>Utilice el atributo style con las propiedades width o height para especificar el tamaño de una tabla, fila o columna.</q></p>
+    <section>
+        <h2>Ancho de la tabla HTML</h2>
+        <p>Para establecer el ancho de una tabla, agregue el atributo style al elemento &lt;table&gt;</p>
+        <p><em>Establezca el ancho de la tabla al 100%:</em></p>
+        <pre>
+            &lt;table style="width:100%"&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Firstname&lt;/th&gt;
+                    &lt;th&gt;Lastname&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;50&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Eve&lt;/td&gt;
+                    &lt;td&gt;Jackson&lt;/td&gt;
+                    &lt;td&gt;94&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+        <p><span class="negrita">Nota:</span>  Usar un porcentaje como unidad de tamaño para un ancho significa qué ancho será este elemento
+            en comparación con su elemento principal, que en este caso es el &lt;body&gt; elemento.</p>
+    </section>
+    
+    <section>
+        <h2>Ancho de la tabla HTML</h2>
+        <p>Para establecer el ancho de una tabla, agregue el atributo style al elemento &lt;table&gt;</p>
+        <p><em>Establezca el ancho de la primera columna al 70%:</em></p>
+        <pre>
+            &lt;table style="width:100%"&gt;
+                &lt;tr&gt;
+                    &lt;th style="width:70%"&gt;Firstname&lt;/th&gt;
+                    &lt;th&gt;Lastname&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;50&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Eve&lt;/td&gt;
+                    &lt;td&gt;Jackson&lt;/td&gt;
+                    &lt;td&gt;94&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Altura de fila de tabla HTML</h2>
+        <p>Para establecer la altura de una fila específica, agregue el atributo style en un elemento fila de la tabla:</p>
+        <p><em>Establezca la altura de la segunda fila en 200 píxeles:</em></p>
+        <pre>
+            &lt;table style="width:100%"&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Firstname&lt;/th&gt;
+                    &lt;th&gt;Lastname&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr style="height:200px"&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;50&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Eve&lt;/td&gt;
+                    &lt;td&gt;Jackson&lt;/td&gt;
+                    &lt;td&gt;94&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice estilos CSS para hacer que la tabla tenga 300 píxeles de ancho.</p>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Firstname&lt;/th&gt;
+                    &lt;th&gt;Lastname&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr style="height:200px"&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;50&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+    </section>
+
+</body>
+</html>

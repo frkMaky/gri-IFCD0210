@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades de números de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Propiedades de números de JavaScript</h1>
+    <table>
+        <tr><th>Propiedad</th><th>Descripción</th></tr>
+        <tr><td>EPSILON</td><td>La diferencia entre 1 y el número más pequeño &gt; 1.</td></tr>
+        <tr><td>MAX_VALUE</td><td>El número más grande posible en JavaScript</td></tr>
+        <tr><td>MIN_VALUE</td><td>El número más pequeño posible en JavaScript</td></tr>
+        <tr><td>MAX_SAFE_INTEGER</td><td>El máximo entero seguro (2<sup>53</sup> - 1)</td></tr>
+        <tr><td>MIN_SAFE_INTEGER</td><td>El mínimo entero seguro -(2<sup>53</sup>  - 1)</td></tr>
+        <tr><td>POSITIVE_INFINITY</td><td>Infinito</td></tr>
+        <tr><td>NEGATIVE_INFINITY</td><td>Menos infinito</td></tr>
+        <tr><td>NaN</td><td>Un valor "Not-a-Number"</td></tr>
+    </table>
+    <section>
+        <h2>JavaScript EPSILON</h2>
+        <p>Number.EPSILON es la diferencia entre el número de punto flotante más pequeño mayor que 1 y 1.</p>
+        <pre>
+            let x = Number.EPSILON;
+        </pre>
+        <p><strong>Nota </strong> Number.EPSILON es una característica de ES6 .</p>
+        <p>No funciona en Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>JavaScript MAX_VALUE</h2>
+        <p>Number.MAX_VALUE es una constante que representa el mayor número posible en JavaScript.</p>
+        <pre>
+            let x = Number.MAX_VALUE;
+        </pre>
+    </section>
+    <section>
+        <h2>Las propiedades numéricas no se pueden utilizar en variables</h2>
+        <p>Las propiedades numéricas pertenecen al objeto Number de JavaScript .</p>
+        <p>Sólo se puede acceder a estas propiedades como Number.MAX_VALUE.</p>
+        <p>Usando x.MAX_VALUE, donde x es una variable o un valor, devolverá undefined:</p>
+        <pre>
+            let x = 6;
+            x.MAX_VALUE
+        </pre>
+    </section>
+    <section>
+        <h2>JavaScript MIN_VALUE</h2>
+        <p>Number.MIN_VALUE es una constante que representa el número más bajo posible en JavaScript.</p>
+        <pre>
+            let x = Number.MIN_VALUE;
+        </pre>
+    </section>
+    <section>
+        <h2>JavaScript MAX_SAFE_INTEGER</h2>
+        <p>Number.MAX_SAFE_INTEGER representa el entero seguro máximo en JavaScript.</p>
+        <p>Number.MAX_SAFE_INTEGER es (2 <sup>53</sup> - 1).</p>
+        <pre>
+            let x = Number.MAX_SAFE_INTEGER;
+        </pre>
+    </section>
+    <section>
+        <h2>JavaScript MIN_SAFE_INTEGER</h2>
+        <p>Number.MIN_SAFE_INTEGER representa el entero mínimo seguro en JavaScript.</p>
+        <p>Number.MIN_SAFE_INTEGER es -(2 <sup>53</sup>  - 1).</p>
+        <pre>
+            let x = Number.MIN_SAFE_INTEGER;
+        </pre>
+        <p><strong>Nota </strong> MAX_SAFE_INTEGER y MIN_SAFE_INTEGER son características de ES6 .</p>
+        <p>No funcionan en Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>JavaScript POSITIVE_INFINITY</h2>
+        <pre>
+            let x = Number.POSITIVE_INFINITY;
+        </pre>
+        <p>POSITIVE_INFINITY se devuelve en caso de desbordamiento:</p>
+        <pre>
+            let x = 1 / 0;
+        </pre>
+    </section>
+    <section>
+        <h2>JavaScript NEGATIVE_INFINITY</h2>
+        <pre>
+            let x = Number.NEGATIVE_INFINITY;
+        </pre>
+        <p>NEGATIVE_INFINITY se devuelve en caso de desbordamiento:</p>
+        <pre>
+            let x = -1 / 0;
+        </pre>
+    </section>
+    <section>
+        <h2>JavaScript NaN: no es un número</h2>
+        <p>NaN es una palabra reservada de JavaScript para un número que no es un número legal.</p>
+        <pre>
+            let x = Number.NaN;
+        </pre>
+        <p>Intentar hacer aritmética con una cadena no numérica dará como resultado NaN (No es un número):</p>
+        <pre>
+            let x = 100 / "Apple";
+        </pre>
+    </section>
+</body>
+</html>

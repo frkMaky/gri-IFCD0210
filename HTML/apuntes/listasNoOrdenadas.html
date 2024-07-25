@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas no ordenadas en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Listas no ordenadas en HTML</h1>
+    <p class="tabular"><q>La etiqueta &lt;ul&gt; de HTML define una lista desordenada (con viñetas).</q></p>
+    <section>
+        <h2>Lista HTML no ordenada</h2>
+        <p>Una lista no ordenada comienza con la etiqueta &lt;ul&gt;. Cada elemento de la lista comienza con la etiqueta &lt;li&gt;.</p>
+        <p>Los elementos de la lista estarán marcados con viñetas (pequeños círculos negros) de forma predeterminada:</p>
+        <pre>
+            &lt;ul&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+    </section>
+
+    <section
+        <h2>Lista no ordenada en html: elija el marcador de elemento de lista</h2>
+        <p>La propiedad de CSS list-style-type se utiliza para definir el estilo del marcador de elementos de la lista. Puede tener uno de los siguientes valores</p>
+        <table>
+            <tr> <th>Valor</th> <th>Descripción</th> </tr>
+            <tr> <td>disc</td> <td>Establece de marcador un disco (por defecto)</td> </tr>
+            <tr> <td>circle</td> <td>Establece de marcador un círculo</td> </tr>
+            <tr> <td>square</td> <td>Establece de marcador un cuadrado</td> </tr>
+            <tr> <td>none</td> <td>No establece ningún marcador</td> </tr>
+        </table>
+        <h3>Ejemplo: disco</h3>
+        <pre>
+            &lt;ul style="list-style-type:disc;"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+        <h3>Ejemplo: círculo</h3>
+        <pre>
+            &lt;ul style="list-style-type:circle;"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+        <h3>Ejemplo: cuadrado</h3>
+        <pre>
+            &lt;ul style="list-style-type:square;"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+        <h3>Ejemplo: Ninguno</h3>
+        <pre>
+            &lt;ul style="list-style-type:none;"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Listas anidadas en HTML</h2>
+        <p>Las listas se pueden anidar (una lista dentro de otra lista)</p>
+        <pre>
+            &lt;ul&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea
+                &lt;ul&gt;
+                    &lt;li&gt;Black tea&lt;/li&gt;
+                    &lt;li&gt;Green tea&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+        <p>Nota: Un elemento de la lista ( &lt;li&gt;) puede contener una nueva lista y otros elementos HTML, como imágenes y enlaces, etc.</p>
+    </section>
+    
+    <section>
+        <h2>Lista horizontal con CSS</h2>
+        <p>Las listas HTML se pueden diseñar de muchas maneras diferentes con CSS.</p>
+        <p>Una forma popular es diseñar una lista horizontalmente para crear un menú de navegación</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;style&gt;
+                        ul {
+                            list-style-type: none;
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden;
+                            background-color: #333333;
+                        }
+                        li {
+                            float: left;
+                        }
+                        li a {
+                            display: block;
+                            color: white;
+                            text-align: center;
+                            padding: 16px;
+                            text-decoration: none;
+                        }
+                        li a:hover {
+                            background-color: #111111;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#news"&gt;News&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Cómo poner imágenes como viñetas en las listas de HTML</h2>
+        <p>Poner imágenes como viñetas de listas HTML es tan sencillo como emplear la propiedad list-style-image y especificar cuál es la imagen , 
+            ya sea indicando la dirección URL de la imagen o indicando su nombre en caso se encuentre almacenada en la misma carpeta que el documento HTML.</p>
+        <pre>
+            &lt;ul style="list-style-image:url(‘corazon.png’);"&gt;
+                &lt;li&gt; Primer elemento&lt;/li&gt;
+                &lt;li&gt; Segundo elemento&lt;/li&gt;
+                &lt;li&gt; Tercer elemento&lt;/li&gt;
+                &lt;li&gt; Cuarto elemento&lt;/li&gt;
+                &lt;li&gt; Quinto elemento&lt;/li&gt;
+                &lt;li&gt; Sexto elemento&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Cómo crear una lista horizontal con HTML y CSS</h2>
+        <p>CSS te permite distribuir elementos de manera horizontal de manera mucho más efectiva y responsiva que
+            como lo haría una tabla. En el ejemplo anterior de los productos online sólo tienes que poner cada
+            producto dentro de una etiqueta <span class="negrita">&lt;div&gt;</span> y asignarle el estilo <span class="negrita">float: left;</span> en el CSS para que queden
+            alineados horizontalmente, además el número de artículos en cada fila se ajustará automáticamente al
+            ancho de la pantalla.</p>
+
+        <p>Cuando los elementos que queremos distribuir horizontalmente son más sencillos no deberíamos
+            usar <span class="negrita">&lt;div&gt;</span> sino las etiquetas para listas de HTML: <span class="negrita">&lt;ul&gt; &lt;li&gt;</span> Es el caso típico de un menú 
+            de navegación, una lista de iconos de redes sociales o cualquier caso parecido. Vamos a ver un ejemplo con texto y luego
+            otro con imágenes o iconos.</p>
+        <p>Para hacer un menú de opciones deberíamos entonces hacer algo así:</p>
+        <pre>
+            &lt;style&gt;
+                ul.navega li {
+                display: inline;
+                }
+            &lt;/style&gt;
+            &lt;ul class="navega"&gt;
+                &lt;li&gt;Inicio&lt;/li&gt;
+                &lt;li&gt;Blog&lt;/li&gt;
+                &lt;li&gt;Tienda&lt;/li&gt;
+                &lt;li&gt;Contactar&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+        <p>Como ves lo único que necesitas es definir una clase para la lista e indicar mediante CSS que muestre los elementos de esa lista en formato 'inline'.</p>
+        <p>PERO EN GENERAL, para realizar un menú horizontal se realiza con etiquetas &lt;a&gt;</p>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>Utilice el elemento &lt;ul&gt; HTML para definir una lista no ordenada</li>
+            <li>Utilice la propiedad list-style-type de CSS para definir el marcador del elemento de la lista</li>
+            <li>Utilice el elemento &lt;li&gt; de HTML para definir un elemento de lista</li>
+            <li>Las listas se pueden anidar</li>
+            <li>Los elementos de la lista pueden contener otros elementos HTML</li>
+            <li>Utilice la propiedad float:left de CSS para mostrar una lista horizontalmente</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Termine el código HTML para hacer una lista no ordenada.</p>
+        <pre>
+            &lt;li&gt;Café&lt;/li&gt;
+            &lt;li&gt;Té&lt;/li&gt;
+            &lt;li&gt;Leche&lt;/li&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de lista en HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;ul&gt;</td> <td>Define una lista no ordenada</td> </tr>
+            <tr> <td>&lt;li&gt;</td> <td>Define un item de la lista</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

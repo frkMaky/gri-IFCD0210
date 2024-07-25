@@ -1,0 +1,31 @@
+<!-- Tenemos nodo raiz niveles.
+Que está compuesta por uno o carios nivel 
+Dentro de nivel esta la etiqueta tipo_nivel
+DEntro de nivel estan las opciones bajo, medio o alto (una de las tres)
+Su contenido son caracteres-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE niveles [
+    <!ELEMENT niveles (nivel+)>
+    <!ELEMENT nivel (tipo_nivel+)>
+    <!ELEMENT tipo_nivel (bajo | medio | alto)>
+    <!ELEMENT bajo (#PCDATA)>
+    <!ELEMENT medio (#PCDATA)>
+    <!ELEMENT alto (#PCDATA)>
+]>
+<niveles>
+    <nivel>
+        <tipo_nivel>
+            <bajo> A </bajo>
+        </tipo_nivel>
+    </nivel>
+    <nivel>
+        <tipo_nivel>
+            <medio> B </medio>
+        </tipo_nivel>
+    </nivel>
+    <nivel>
+        <tipo_nivel>
+            <alto> C </alto>
+        </tipo_nivel>
+    </nivel>
+</niveles>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetición de la imagen de fondo en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Repetición de la imagen de fondo en CSS</h1>
+    <section>
+        <h2>Repetición del fondo CSS</h2>
+        <p>De forma predeterminada, la propiedad background-image repite una imagen tanto horizontal como verticalmente.</p>
+        <p>Si se repite solo horizontalmente ( background-repeat: repeat-x;):</p>
+        <h3>Ejemplo</h3>
+        <pre>
+            body {
+                background-image: url("gradient_bg.png");
+                background-repeat: repeat-x;
+            }
+        </pre>
+        <p>Consejo: Para repetir una imagen verticalmente, establezca background-repeat: repeat-y;</p>
+    </section>
+    
+    <section>
+        <h2>Fondo sin repetición</h2>
+        <p>La propiedad background-repeat:no-repeat también especifica mostrar la imagen de fondo solo una vez :</p>
+        <h3>Ejemplo</h3>
+        <p>Muestra la imagen de fondo solo una vez:</p>
+        <pre>
+            body {
+                background-image: url("img_tree.png");
+                background-repeat: no-repeat;
+            }
+        </pre>
+        <p>En el ejemplo anterior, la imagen de fondo se coloca en el mismo lugar que el texto. Queremos cambiar la posición de la imagen, para que no perturbe demasiado el texto.</p>
+    </section>
+
+    <section>
+        <h2>Background-position de CSS</h2>
+        <p>La propiedad background-position se utiliza para especificar la posición de la imagen de fondo.</p>
+        <h3>Ejemplo</h3>
+        <p>Coloque la imagen de fondo en la esquina superior derecha:</p>
+        <pre>
+            body {
+                background-image: url("img_tree.png");
+                background-repeat: no-repeat;
+                background-position: right top;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Las propiedades de posición y repetición de fondo de CSS</h2>
+        <table>
+            <tr> <th>Propiedad</th> <th>Descripción</th> </tr>
+            <tr> <td>background-position</td> <td>Establece la posición de inicio de una imagen de fondo</td> </tr>
+            <tr> <td>background-repeat</td> <td>Establece cómo se establece una imagen de fondo</td> </tr>
+            
+        </table>
+    </section>
+</body>
+</html>

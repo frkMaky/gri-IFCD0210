@@ -1,0 +1,26 @@
+equipo{
+    display: flex;
+    flex-wrap: wrap;
+}
+equipo nombre {
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+}
+equipo ciudad {
+    font-weight: normal;
+    font-size: 20px;
+    color: blue;
+}
+
+jugador nombre {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: brown;
+}
+jugador nacionalidad {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    color: green;
+    font-style: italic;
+}

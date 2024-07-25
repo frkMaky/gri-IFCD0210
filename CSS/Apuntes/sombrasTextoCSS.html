@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombra en el texto en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Sombra en el texto en CSS</h1>
+    <section>
+        <h2>Sombra de texto</h2>
+        <p>La propiedad text-shadow agrega sombra al texto.</p>
+        <h3>Ejemplo</h3>
+        <pre>
+            h1 {
+                text-shadow: 2px 2px;
+            }
+        </pre>
+        <h3>Ejemplo</h3>
+        <pre>
+            h1 {
+                text-shadow: 2px 2px red;
+            }
+        </pre>
+        <p>Luego, agrega un efecto de desenfoque (5px) a la sombra:</p>
+        <h3>Ejemplo</h3>
+        <pre>
+            h1 {
+                text-shadow: 2px 2px 5px red;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Más ejemplos de sombras de texto</h2>
+        <h3>Ejemplo 1</h3>
+        <p>Sombra de texto sobre un texto blanco:</p>
+        <pre>
+            h1 {
+                color: white;
+                text-shadow: 2px 2px 4px #000000;
+            }
+        </pre>
+        <h3>Ejemplo 2</h3>
+        <p>Sombra de texto con brillo de neón rojo:</p>
+        <pre>
+            h1 {
+                text-shadow: 0 0 3px #ff0000;
+            }
+        </pre>
+        <h3>Ejemplo 3</h3>
+        <p>Sombra de texto con brillo de neón rojo y azul:</p>
+        <pre>
+            h1 {
+                text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+            }
+        </pre>
+        <h3>Ejemplo 4</h3>
+        <pre>
+            h1 {
+                color: white;
+                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            }
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h3>Ejercicio:</h3>
+        <p>Cambie el color del texto de todos los elementos &lt;p&gt; a "rojo".</p>
+        <pre>
+            &lt;style&gt;
+                p {
+                    : red;
+                }
+            &lt;/style&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Este es un encabezado&lt;/h1&gt;
+                &lt;p&gt;Este es un párrafo&lt;/p&gt;
+                &lt;p&gt;Este es un párrafo&lt;/p&gt;
+            &lt;/body&gt;
+        </pre>
+    </section>
+</body>
+</html>
+

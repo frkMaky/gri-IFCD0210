@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas Métodos Cadenas</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubbler+One&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica+SC&family=Monoton&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+            margin-top: 50px;
+            color: #141010;
+            
+        }
+        div{
+            border: 1px solid black;
+            padding: 10px 50px;
+            margin: 30px;
+            border-radius: 10px;
+            background-color: #fff6f6; 
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 40px;
+        }
+        p {
+            text-align: left;
+            margin-top: 5px;
+            padding-top: 3px;
+            margin-left: 100px;
+            font-size: 24px;
+        }
+        q {
+            font-style: italic;
+            font-weight: bold;
+        }
+        /** Google fonts */
+        .bubbler-one-regular {
+            font-family: "Bubbler One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <script>
+        // Crea una frase guardala en una variable y halla el primer caracter de esa frase
+        // crea para ello una funcion que devuelva el caracter y muestralo por consola
+
+        let cadena = "Si vis pacem, para bellum"; // Frase de pruebas
+
+        function primeraLetra(cadena) {
+            return cadena.charAt(0);
+        }
+
+       
+
+    </script>
+</head>
+<body>
+    <h1 class="bubbler-one-regular">Pruebas Métodos Cadenas</h1>
+    
+    <div id="resultado">
+        <p class="bubbler-one-regular">La frase es <q><script>document.write(cadena)</script></q></p>
+        <p class="bubbler-one-regular"><small><em>Se muestra la primera letra en la consola</em></small></p>
+        <script>
+            // Resultado 
+            console.log('La primera letra es: ' + primeraLetra(cadena));
+        </script>
+    </div>
+
+    <div id="resultado2">
+        <p  class="bubbler-one-regular">Crea una cadena ZAPATO y halla por consola el valor de la posicion -2 con at</p>
+        <script>
+            // Crea una cadena ZAPATO y halla por consola el valor de la posicion -2 con at
+            let cadenaZapato = "ZAPATO";
+            console.log("Valor de la posicion -2:" + cadenaZapato.at(-2));
+        </script>
+    </div>
+    <div id="resultado3">
+         <script>
+            // Cadena LA CASA DE PABLO y extraer en otra cadena el valor de casa  y mostrarlo en pantalla
+            let cadenaCasaPablo = "LA CASA DE PABLO";
+            let cadenaCasa = cadenaCasaPablo.slice(3,7);
+            document.write("Cadena inicial: " + cadenaCasaPablo + "<br>");
+            document.write("Cadena final slice:<strong> " + cadenaCasa + " </strong>");
+        </script>
+    </div>
+    <div id="resultado4">
+        <script>
+           // Cadena de 50 palabras y extrae desde la 2da palabra hasta la ultima pero quitando las ultimas 2 letras
+           let cadena50 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ut. Maxime eos nam nihil eligendi, fugit ab omnis corporis sed rem a distinctio! Nesciunt ea dicta nam dolor ducimus voluptatem exercitationem, voluptate animi illo nostrum dignissimos. Asperiores, minus. Esse odit optio consequuntur illum? Reiciendis aut voluptate beatae sed ratione quaerat.";
+           let cadenaCortada = cadena50.slice(5,cadena50.length-2);
+           document.write("Cadena inicial: " + cadena50 + "<br>");
+           document.write("Cadena final slice:<strong> " + cadenaCortada + " </strong>");
+       </script>
+   </div>
+   <div id="resultado5">
+        <script>
+            // Cadena "El perro de Juan" y muestra por consola la subcadena "DE"
+            let cadenaJuan = "El perro de Juan";
+            let cadenaDe = cadenaJuan.substring(9,11);
+            document.write("Cadena inicial: " + cadenaJuan + "<br>");
+            document.write("Cadena final substring:<strong> " + cadenaDe.toUpperCase() + " </strong>");
+            console.log(cadenaDe.toUpperCase());
+        </script>
+    </div>
+    <div id="resultado6">
+        <script>
+            // Cadena 5 PALABRAS  y muestra la segunda en mayusculas con una subcadene
+            let cadena5random = "El perro de Juan Garcia";
+            let cadenaSegunda = cadenaJuan.substr(3,5);
+            document.write("Cadena inicial: " + cadena5random + "<br>");
+            document.write("Cadena final substring:<strong> " + cadenaSegunda.toUpperCase() + " </strong>");
+            console.log(cadenaDe.toUpperCase());
+        </script>
+    </div>
+    <div id="resultado7">
+        <script>
+            // Cadena DNI con 2 espacios izq y 3 drcha y luego elimina los espacios de la izquierda y muestra el resultado";
+            let cadenaDNI = "  53186184H   ";
+            document.write("Cadena DNI: " + cadenaDNI.trimStart() + "<br>");
+        </script>
+    </div>
+    <div id="resultado8">
+        <script>
+            // Nº de 3 cifras y rellena con AB hasta que llegue a 7 cifras y muestralo por pantalla
+            let cadenaCifras = "123";
+            document.write("Cadena cifras: " + cadenaCifras.padStart(7,"AB") + "<br>");
+        </script>
+    </div>
+    <div id="resultado9">
+        <script>
+            // pon HOLA 6 veces partiendo de la cadena hola y muestra por pantalla
+            let cadenaHola = "hola";
+            document.write(cadenaHola.toUpperCase().repeat(6));
+        </script>
+    </div>
+    <div id="resultado10">
+        <script>
+            // Remplaza las SA de LA CASA DE Samuel sin importar mayusculas o minuculas
+            let cadenaCasaSamuel = "LA CASA DE Samuel";
+            let casaSamuel = cadenaCasaSamuel.replace(/SA/ig,"ra");
+            document.write( casaSamuel );
+        </script>
+    </div>
+    <div id="resultado11">
+        <script>
+            // Escribe una frase de 5 palabras y separa las palabras por el espacio " "
+            let cadena5palabras = "LA CASA DE Samuel Perez";
+            let cadenaSplit = cadenaCasaSamuel.split(" ");
+            for (let i=0;i<cadenaSplit.length;i++) {
+                document.write( cadenaSplit[i] + "<br>" );
+            }
+        </script>
+    </div>
+    <div id="resultado12">
+        <script>
+            // indexOf
+            let cadenaPepe = "La casa de Pepe es";
+            document.write( cadenaPepe.indexOf("se") );
+            
+        </script>
+    </div>
+    <div id="resultado12">
+        <script>
+            // Cadena de 5 palabras, a myusculas y busca el 2do "pe"
+            let cadenaPepe2 = "El peso de Pepe es";
+            document.write( cadenaPepe2.toUpperCase().indexOf("PE", 5) );
+            document.write("<br>");
+            let cadenaPepe3 = "El peso de Pepe es";
+            document.write( cadenaPepe3.toUpperCase().lastIndexOf("PE", 12) );
+            
+        </script>
+    </div>
+    <div id="resultado13">
+        <script>
+            // Realice una búsqueda de "ain":
+            let text = "The rain in SPAIN stays mainly in the plain";
+            document.write( text.match("ain") );
+            
+        </script>
+    </div>
+</body>
+</html>
+
+
+

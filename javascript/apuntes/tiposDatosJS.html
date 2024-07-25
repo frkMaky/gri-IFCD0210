@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de datos en JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Tipos de datos en JavaScript</h1>
+    <section>
+
+        <p>JavaScript tiene 8 tipos de datos</p>
+        <ul>
+            <li>String</li>
+            <li>Number</li>
+            <li>Bigint</li>
+            <li>Boolean</li>
+            <li>Undefined</li>
+            <li>Null</li>
+            <li>Symbol</li>
+            <li>Object</li>
+        </ul>
+        <h2>El tipo de datos del objeto</h2>
+        <p>El tipo de datos del objeto puede contener:</p>
+        <ul>
+            <li>Un objeto</li>
+            <li>Un array</li>
+            <li>Una fecha</li>
+        </ul>
+        <pre>
+            // Numbers:
+            let length = 16;
+            let weight = 7.5;
+            // Strings:
+            let color = "Yellow";
+            let lastName = "Johnson";
+            // Booleans
+            let x = true;
+            let y = false;
+            // Object:
+            const person = {firstName:"John", lastName:"Doe"};
+            // Array object:
+            const cars = ["Saab", "Volvo", "BMW"];
+            // Date object:
+            const date = new Date("2022-03-25");
+        </pre>
+
+        <p><strong>Nota </strong> Una variable de JavaScript puede contener cualquier tipo de datos.</p>
+    </section>
+
+    <section>
+        <h2>El concepto de tipos de datos</h2>
+        <p>Para poder operar con variables, es importante saber algo sobre el tipo.</p>
+        <p>Sin tipos de datos, un ordenador no puede resolver esto de manera segura:</p>
+        <pre>
+            let x = 16 + "Volvo";
+        </pre>
+        <p>¿Tiene algún sentido añadir "Volvo" a los dieciséis? ¿Producirá un error o producirá un resultado?</p>
+        <p>JavaScript tratará el ejemplo anterior como:</p>
+        <pre>
+            let x = "16" + "Volvo";
+        </pre>
+        <p><strong>Nota </strong> Al agregar un número y una cadena, JavaScript tratará el número como una cadena.</p>
+        <pre>
+            let x = 16 + "Volvo";
+            let x = "Volvo" + 16;
+        </pre>
+        <p>JavaScript evalúa expresiones de izquierda a derecha. Diferentes secuencias pueden producir diferentes
+            resultados:</p>
+        <pre>
+            let x = 16 + 4 + "Volvo";
+            Resultado:
+            20Volvo
+        </pre>
+        <pre>
+            let x = "Volvo" + 16 + 4;
+            Resultado:
+            Volvo164
+        </pre>
+        <p>En el primer ejemplo, JavaScript trata 16 y 4 como números, hasta llegar a "Volvo".</p>
+        <p>En el segundo ejemplo, dado que el primer operando es una cadena, todos los operandos se tratan como cadenas.</p>
+    </section>
+
+    <section>
+        <h2>Los tipos de JavaScript son dinámicos</h2>
+        <p>JavaScript tiene tipos dinámicos. Esto significa que se puede utilizar la misma variable para contener
+            diferentes tipos de datos:</p>
+        <pre>
+            let x; // Now x is undefined
+            x = 5; // Now x is a Number
+            x = "John"; // Now x is a String
+        </pre>
+    </section>
+
+    <section>
+        <h2>Cadenas de JavaScript</h2>
+        <p>Una cadena (o una cadena de texto) es una serie de caracteres como "John Doe".</p>
+        <p>Las cadenas se escriben entre comillas. Puede utilizar comillas simples o dobles:</p>
+        <pre>
+            // Using double quotes:
+            let carName1 = "Volvo XC60";
+            // Using single quotes:
+            let carName2 = 'Volvo XC60';
+        </pre>
+        <p>Puedes usar comillas dentro de una cadena, siempre y cuando no coincidan con las comillas que rodean la
+            cadena:</p>
+        <pre>
+            // Single quote inside double quotes:
+            let answer1 = "It's alright";
+            // Single quotes inside double quotes:
+            let answer2 = "He is called 'Johnny'";
+            // Double quotes inside single quotes:
+            let answer3 = 'He is called "Johnny"';
+        </pre>
+        <p>Aprenderá más sobre las cadenas más adelante</p>
+    </section>
+
+    <section>
+        <h2>Números de JavaScript</h2>
+        <p>Todos los números de JavaScript se almacenan como números decimales (punto flotante).</p>
+        <p>Los números se pueden escribir con o sin decimales:</p>
+        <pre>
+            // With decimals:
+            let x1 = 34.00;
+            // Without decimals:
+            let x2 = 34;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Notación exponencial</h2>
+        <p>Los números extra grandes o extra pequeños se pueden escribir con notación científica (exponencial):</p>
+        <pre>
+            let y = 123e5; // 12300000
+            let z = 123e-5; // 0.00123
+        </pre>
+    </section>
+
+    <section>
+        <h2>Nota</h2>
+        <p>La mayoría de los lenguajes de programación tienen muchos tipos de números:</p>
+        <p>Números enteros (enteros):
+            byte (8 bits), short (16 bits), int (32 bits), long (64 bits)</p>
+        <p>Números reales (punto flotante):
+            float (32 bits), double (64 bits).</p>
+        <p>Los números de Javascript son siempre de un tipo:
+            double (coma flotante de 64 bits).</p>
+        <p>Aprenderá más sobre los números más adelante .</p>
+    </section>
+
+    <section>
+        <h2>JavaScript BigInt</h2>
+        <p>Todos los números de JavaScript se almacenan en un formato de punto flotante de 64 bits.</p>
+        <p>JavaScript BigInt es un nuevo tipo de datos ( ES2020 ) que se puede utilizar para almacenar valores
+            enteros que son demasiado grandes para ser representados por un número de JavaScript normal.</p>
+        <pre>
+            let x = BigInt("123456789012345678901234567890");
+        </pre>
+        <p>Aprenderá más sobre BigInt más adelante</p>
+    </section>
+
+    <section>
+        <h2>Booleanos de JavaScript</h2>
+        <p>Los booleanos sólo pueden tener dos valores: true o false.</p>
+        <pre>
+            let x = 5;
+            let y = 5;
+            let z = 6;
+            (x == y) // Returns true
+            (x == z) // Returns false
+        </pre>
+        <p>Los booleanos se utilizan a menudo en pruebas condicionales.</p>
+        <p>Aprenderá más sobre los valores booleanos más adelante</p>
+    </section>
+
+    <section>
+        <h2>Arrays de JavaScript</h2>
+        <p>Los arrays de JavaScript se escriben entre corchetes.</p>
+        <p>Los elementos del array están separados por comas.</p>
+        <p>El siguiente código declara (crea) una matriz llamada cars, que contiene tres elementos (nombres de
+            automóviles):</p>
+        <pre>
+            const cars = ["Saab", "Volvo", "BMW"];
+        </pre>
+        <p>Los índices del array empiezan en cero, lo que significa que el primer elemento es [0], el segundo es [1], y
+            así sucesivamente.</p>
+        <p>Aprenderá más sobre los arrays más adelante</p>
+    </section>
+
+    <section>
+        <h2>Objetos JavaScript</h2>
+        <p>Los objetos JavaScript se escriben con llaves {}.</p>
+        <p>Las propiedades del objeto se escriben como pares nombre:valor, separados por comas.</p>
+        <pre>
+            const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+        </pre>
+        <p>El objeto (persona) en el ejemplo anterior tiene 4 propiedades: nombre, apellido, edad y color de ojos.</p>
+        <p>Aprenderá más sobre los objetos más adelante</p>
+    </section>
+
+    <section>
+        <h2>El operador typeof</h2>
+        <p>Puede utilizar el operador typeof de JavaScript para encontrar el tipo de una variable de JavaScript.</p>
+        <p>El operador typeof devuelve el tipo de variable o expresión:</p>
+        <pre>
+            typeof "" // Returns "string"
+            typeof "John" // Returns "string"
+            typeof "John Doe" // Returns "string"
+        </pre>
+        <pre>
+            typeof 0 // Returns "number"
+            typeof 314 // Returns "number"
+            typeof 3.14 // Returns "number"
+            typeof (3) // Returns "number"
+            typeof (3 + 4) // Returns "number"
+        </pre>
+        <p>Aprenderá más sobre typeof más adelante</p>
+    </section>
+
+    <section>
+        <h2>Undefined</h2>
+        <p>En JavaScript, una variable sin valor tiene el valor undefined. El tipo también lo es undefined.</p>
+        <pre>
+            let car; // Value is undefined, type is undefined
+        </pre>
+        <p>Cualquier variable puede estar vacía estableciendo el valor a undefined. El tipo también será
+            undefined.</p>
+        <pre>
+            car = undefined; // Value is undefined, type is undefined
+        </pre>
+    </section>
+
+    <section>
+        <h2>Valores vacíos</h2>
+        <p>Un valor vacío no tiene nada que ver con undefined.</p>
+        <p>Una cadena vacía tiene tanto un valor legal como un tipo.</p>
+        <pre>
+            let car = ""; // The value is "", the typeof is "string"
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice comentarios para describir el tipo de datos correcto de las siguientes variables:</p>
+        <pre>
+            let length = 16; //
+            let apellido = "Johnson"; //
+            const x = {
+                nombre: "Juan",
+                apellido: "Doe"
+            }; //
+        </pre>
+    </section>
+</body>
+</html>

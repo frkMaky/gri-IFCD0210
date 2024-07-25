@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El atributo id de HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>El atributo id de HTML </h1>
+    <p class="tabular"><q>El atributo id de HTML se utiliza para especificar una identificación única para un elemento HTML.<br>
+        No puedes tener más de un elemento con el mismo id en un documento HTML.</q></p>
+    <section>
+        <h2>Usando el atributo de identificación</h2>
+        <p>El atributo id especifica una identificación única para un elemento HTML. El valor del atributo id
+            debe ser único dentro del documento HTML.</p>
+        <p>El atributo id se utiliza para señalar una declaración de estilo específica en una hoja de estilo. JavaScript
+            también lo utiliza para acceder y manipular el elemento con la identificación específica.</p>
+        <p>La sintaxis de id es: escriba un carácter almohadilla (#), seguido de un nombre de id. Luego, defina las
+            propiedades CSS entre llaves {}.</p>
+        <p>En el siguiente ejemplo tenemos un elemento &lt;h1&gt; que apunta al nombre de identificación "myHeader".
+            Este elemento &lt;h1&gt; tendrá estilo de acuerdo con la definición de estilo #myHeader en head:</p>
+        <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;style&gt;
+            #myHeader {
+                background-color: lightblue;
+                color: black;
+                padding: 40px;
+                text-align: center;
+            }
+        &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+           &lt;h1 id="myHeader">My Header&lt;/h1&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </pre>
+        <p> <span class="negrita">Nota:</span> ¡El nombre de id distingue entre mayúsculas y minúsculas!</p>
+        <p> <span class="negrita">Nota:</span> El nombre de id debe contener al menos un carácter, no puede comenzar con un número y no debe
+            contener espacios en blanco (espacios, tabulaciones, etc.).</p>
+    </section>
+
+    <section>
+        <h2>Diferencia entre class e id</h2>
+        <p>Un nombre de class puede ser usado por múltiples elementos HTML, mientras que un nombre de id solo
+            debe ser usado por un elemento HTML dentro de la página:</p>
+        <pre>
+
+            &lt;style&gt;
+                /* Style the element with the id "myHeader" */
+                #myHeader {
+                    background-color: lightblue;
+                    color: black;
+                    padding: 40px;
+                    text-align: center;
+                }
+                /* Style all elements with the class name "city" */
+                .city {
+                    background-color: tomato;
+                    color: white;
+                    padding: 10px;
+                }
+            &lt;/style&gt;
+            &lt;!-- An element with a unique id -->
+            &lt;h1 id="myHeader"&gt;My Cities&lt;/h1&gt;
+
+            &lt;!-- Multiple elements with same class -->
+            &lt;h2 class="city"&gt;London&lt;/h2&gt;
+            &lt;p&gt;London is the capital of England.&lt;/p&gt;
+            &lt;h2 class="city"&gt;Paris&lt;/h2&gt;
+            &lt;p&gt;Paris is the capital of France.&lt;/p&gt;
+            &lt;h2 class="city"&gt;Tokyo&lt;/h2&gt;
+            &lt;p&gt;Tokyo is the capital of Japan.&lt;/p&gt;
+
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Marcadores HTML con id y enlaces</h2>
+        <p>Los marcadores HTML se utilizan para permitir a los lectores saltar a partes específicas de una página web.</p>
+        <p>Los marcadores pueden resultar útiles si su página es muy larga.</p>
+        <p>Para utilizar un marcador, primero debe crearlo y luego agregarle un enlace.</p>
+        <p>Luego, cuando se hace clic en el enlace, la página se desplazará hasta la ubicación con el marcador.</p>
+        <p><em>Primero, crea un marcador con el atributo id:</em></p>
+        <pre>
+            &lt;h2 id="C4"&gt;Chapter 4&lt;/h2&gt;
+        </pre>
+        <p><em>Luego, agregue un enlace al marcador ("Saltar al Capítulo 4"), desde la misma página:</em></p>
+        <pre>
+            &lt;a href="#C4"&gt;Jump to Chapter 4&gt;/a&gt;
+        </pre>
+        <p><em>O agregue un enlace al marcador ("Jump to Chapter 4"), desde otra página:</em></p>
+        <pre>
+            &lt;a href="html_demo.html#C4"&gt;Jump to Chapter 4&lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Usando el atributo id en JavaScript</h2>
+        <p>JavaScripttambién puede utilizar el atributo id para realizar algunas tareas para ese elemento específico.</p>
+        <p>JavaScript puede acceder a un elemento con una identificación específica con el método getElementById():</p>
+        <p><em>Utilice el atributo id para manipular texto con JavaScript:</em></p>
+        <pre>
+            &lt;script&gt;
+                function displayResult() {
+                    document.getElementById("myHeader").innerHTML = "Have a nice day!";
+                }
+            &lt;/script&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>El atributoid se utiliza para especificar una identificación única para un elemento HTML.</li>
+            <li>El valor del atributo id debe ser único dentro del documento HTML.</li>
+            <li>CSS y JavaScript utilizan el atributo id para diseñar/seleccionar un elemento específico</li>
+            <li>El valor del atributo id distingue entre mayúsculas y minúsculas.</li>
+            <li>El atributo id también se utiliza para crear marcadores HTML.</li>
+            <li>JavaScript puede acceder a un elemento con una identificación específica con el método getElementById()</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Agregue el atributo HTML correcto para que el elemento H1 sea rojo.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;style&gt;
+                #myheader {color:rojo;}
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Mi página de inicio&lt;/h1&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+</body>
+</html>

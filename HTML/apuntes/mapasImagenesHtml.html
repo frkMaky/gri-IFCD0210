@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas de imágenes en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Mapas de imágenes en HTML</h1>
+    <p class="tabular"><q>Con los mapas de imágenes HTML, puede crear áreas en las que se puede hacer clic en una imagen.</q></p>
+    <section>
+        <h2>Mapas de imágenes</h2>
+        <p>La etiqueta &lt;map&gt; de HTML define un mapa de imágenes. Un mapa de imágenes es una imagen con áreas en las que se puede hacer clic. Las
+            áreas se definen con una o más etiquetas &lt;area&gt;.</p>
+        <p>Intente hacer clic en la computadora, el teléfono o la taza de café en la imagen a continuación:</p>
+        <p>Aquí está el código fuente HTML para el mapa de imagen de arriba:</p>
+        <pre>
+            &lt;img src="workplace.jpg" alt="Workplace" usemap="#workmap"&gt;
+            &lt;map name="workmap"&gt;
+            &lt;area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm"&gt;
+            &lt;area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm"&gt;
+            &lt;area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm"&gt;
+            &lt;/map&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>¿Como funciona?</h2>
+        <p>La idea detrás de un mapa de imágenes es que debería poder realizar diferentes acciones dependiendo de en qué parte de la imagen haga clic.</p>
+        <p>Para crear un mapa de imágenes necesita una imagen y algún código HTML que describa las áreas en las que se puede hacer clic.</p>
+    </section>
+
+    <section>
+        <h2>La imagen</h2>
+        <p>La imagen se inserta mediante la etiqueta &lt;img&gt;. La única diferencia con otras imágenes es que debes agregar un atributo usemap:</p>
+        <pre>
+            &lt;img src="workplace.jpg" alt="Workplace" usemap="#workmap"&gt;
+        </pre>
+        <p>El valor de usemap comienza con una etiqueta # seguida del nombre del mapa de imagen y se utiliza para crear una relación entre la imagen y el
+            mapa de imagen.</p>
+        <p><span class="negrita">Consejo:</span> ¡Puedes utilizar cualquier imagen como mapa de imágenes!</p>
+    </section>
+
+    <section>
+        <h2>Crear mapa de imagen</h2>
+        <p>Luego, agrega un elemento &lt;map&gt;. El elemento &lt;map&gt; se utiliza para crear un mapa de imagen y está vinculado a la imagen 
+            mediante el atributo name requerido:</p>
+        <pre>
+            &lt;map name="workmap"&gt;
+        </pre>
+        <p>El atributo name debe tener el mismo valor que el atributo usemap de &lt;img&gt;.</p>
+    </section>
+
+    <section>
+        <h2>Las áreas</h2>
+        <p>Luego, agregue las áreas en las que se puede hacer clic.</p>
+        <p>Un área en la que se puede hacer clic se define mediante un elemento &lt;area&gt;.</p>
+    </section>
+
+    <section>
+        <h2>Forma</h2>
+        <p>Debe definir la forma del área en la que se puede hacer clic y puede elegir uno de estos valores:</p>
+        <ul>
+            <li>rect- define una región rectangular</li>
+            <li>circle- define una región circular</li>
+            <li>poly- define una región poligonal</li>
+            <li>default- define toda la región</li>
+        </ul>
+        <p>También debe definir algunas coordenadas para poder colocar el área en la que se puede hacer clic en la imagen.</p>
+    </section>
+    
+    <section>
+        <h2>shape="rect"</h2>
+        <p>Las coordenadas de shape="rect" vienen en pares, una para el eje x y otra para el eje y.</p>
+        <p>Entonces, las coordenadas 34,44 se ubican a 34 píxeles del margen izquierdo y a 44 píxeles de la parte superior:</p>
+        <p>Las coordenadas 270,350 se encuentran a 270 píxeles del margen izquierdo y a 350 píxeles de la parte superior:</p>
+        <p>Ahora tenemos suficientes datos para crear un área rectangular en el que se puede hacer clic:</p>
+        <pre>
+            &lt;area shape="rect" coords="34, 44, 270, 350" href="computer.htm"&gt;
+        </pre>
+        <p>Esto es el área en el que se puede hacer clic y enviará al usuario a la página "computer.htm":</p>
+    </section>
+
+    <section>
+        <h2>shape="circle"</h2>
+        <p>Para agregar un área circular, primero ubique las coordenadas del centro del círculo: 337,300</p>
+        <p>Luego especifique el radio del círculo:</p>
+        <p>Ahora tienes suficientes datos para crear un área circular en la que se puede hacer clic:</p>
+        <pre>
+            &lt;area shape="circle" coords="337, 300, 44" href="coffee.htm"&gt;
+
+            &lt;img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379"&gt;
+            &lt;map name="workmap"&gt;
+            &lt;area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm"&gt;
+
+            &lt;/map&gt;
+        </pre>
+        <p>Esta es el área en la que se puede hacer clic y enviará al usuario a la página "coffee.htm":</p>
+    </section>
+
+    <section>
+        <h2>shape="poly"</h2>
+        <p>shape="poly" contiene varios puntos de coordenadas, lo que crea una forma formada con líneas rectas (un polígono).</p>
+        <p>Esto se puede utilizar para crear cualquier forma.</p>
+        <p>¡Quizás en forma de croissant!</p>
+        <p>¿Cómo podemos hacer que el croissant de la imagen siguiente se convierta en un enlace en el que se puede hacer clic?</p>
+        <p>Tenemos que encontrar las coordenadas x e y para todos los bordes del croissant:</p>
+        <p>Las coordenadas vienen en pares, una para el eje x y otra para el eje y:</p>
+        <pre>
+            &lt;area shape="poly" coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147" href="croissant.htm"6gt;
+        </pre>
+        <p>Esta es el área en la que se puede hacer clic y enviará al usuario a la página "croissant.htm":</p>
+    </section>
+
+    <section>
+        <h2>Mapa de imágenes y JavaScript</h2>
+        <p>Un área en la que se puede hacer clic también puede activar una función de JavaScript.</p>
+        <p>Agregue un evento click al elemento <area> para ejecutar una función de JavaScript:</p>
+        <p>Aquí, usamos el atributo onclick para ejecutar una función de JavaScript cuando se hace clic en el área:</p>
+        <pre>
+            &lt;map name="workmap"&gt;
+            &lt;area shape="circle" coords="337,300,44" href="coffee.htm" onclick="myFunction()"&gt;
+            &lt;/map&gt;
+            &lt;script&gt;
+                function myFunction() {
+                    alert("You clicked the coffee cup!");
+                }
+            &lt;/script&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>Utilice el elemento &lt;map&gt; de HTML para definir un mapa de imagen</li>
+            <li>Utilice el elemento &lt;area&gt; de HTML para definir las áreas en las que se puede hacer clic en el mapa de imagen</li>
+            <li>Utilice el atributo usemap de HTML del elemento &lt;img&gt; para apuntar a un mapa de imagen.</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Para mapas de imágenes, especifique un valor legal para el atributo de forma de la etiqueta de área.</p>
+        <p>(Cualquier valor legal dará una respuesta correcta)</p>
+        <pre>
+            &lt;area shape=" " href="default.html"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de img de HTML</h2>
+        <table>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Descripción</th>
+            </tr>
+            <tr> <td>&lt;img&gt;</td> <td>Define una imagen</td> </tr>
+            <tr> <td>&lt;map&gt;</td> <td>Defines un mapa de imágenes</td> </tr>
+            <tr> <td>&lt;area&gt;</td> <td>Define un área que se puede pulsar dentro dee
+                un mapa de imágenes</td> </tr>
+        </table>
+    </section>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Sistema de gestión de productos XML
+Imagina que estás desarrollando un sistema de gestión de productos para una tienda en línea. 
+Se te ha proporcionado una lista de productos con su información correspondiente, y se te solicita 
+crear un archivo XML que represente esta información de manera estructurada. Asegúrate de incluir los 
+siguientes detalles para cada producto:
+Código único del producto.Nombre del producto.Descripción del producto.Precio del producto.Categoría del producto.
+Disponibilidad del producto (en stock o agotado).Imagen del producto (URL de la imagen).
+Crea un archivo XML que represente al menos 5 productos de la tienda en línea, 
+asegurándote de seguir las mejores prácticas de estructura XML y de utilizar etiquetas y atributos apropiados.
+-->
+<productos>
+    <producto codigo="1">
+        <nombre>Producto 1</nombre>
+        <descripcion>Descripcion del producto 1</descripcion>
+        <precio>123€</precio>
+        <categoria>varios</categoria>
+        <disponibilidad>agotado</disponibilidad>
+        <URL_imagen>localhost/imagen1.jpg</URL_imagen>
+    </producto>
+    
+    <producto codigo="2">
+        <nombre>Producto 2</nombre>
+        <descripcion>Descripcion del producto 2</descripcion>
+        <precio>123€</precio>
+        <categoria>varios</categoria>
+        <disponibilidad>agotado</disponibilidad>
+        <URL_imagen>localhost/imagen2.jpg</URL_imagen>
+    </producto>
+
+    <producto codigo="3">
+        <nombre>Producto 3</nombre>
+        <descripcion>Descripcion del producto 3</descripcion>
+        <precio>123€</precio>
+        <categoria>varios</categoria>
+        <disponibilidad>agotado</disponibilidad>
+        <URL_imagen>localhost/imagen3.jpg</URL_imagen>
+    </producto>
+
+    <producto codigo="4">
+        <nombre>Producto 4</nombre>
+        <descripcion>Descripcion del producto 4</descripcion>
+        <precio>123€</precio>
+        <categoria>varios</categoria>
+        <disponibilidad>agotado</disponibilidad>
+        <URL_imagen>localhost/imagen4.jpg</URL_imagen>
+    </producto>
+
+    <producto codigo="5">
+        <nombre>Producto 5</nombre>
+        <descripcion>Descripcion del producto 5</descripcion>
+        <precio>123€</precio>
+        <categoria>varios</categoria>
+        <disponibilidad>agotado</disponibilidad>
+        <URL_imagen>localhost/imagen5.jpg</URL_imagen>
+    </producto>
+    
+</productos>

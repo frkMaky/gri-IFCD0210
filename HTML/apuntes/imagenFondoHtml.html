@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes de fondo HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Imágenes de fondo HTML</h1>
+    <p class="tabular"><q>Se puede especificar una imagen de fondo para casi cualquier elemento HTML.</q></p>
+    <section>
+        <h2>Imagen de fondo en un elemento HTML</h2>
+        <p>Para agregar una imagen de fondo en un elemento HTML, use el atributo style HTML y la propiedad
+            background-imageCSS:</p>
+        <p>Agregue una imagen de fondo en un elemento HTML:</p>
+        <pre>
+            &lt;p style="background-image: url('img_girl.jpg');"&gt;
+        </pre>
+        <p>También puedes especificar la imagen de fondo en el elemento &lt;style&gt;, en la sección 6lt;head&gt;:</p>
+        <p>Especifique la imagen de fondo en el elemento &lt;style6gt;</p>
+        <pre>
+            &lt;style&gt;
+                p {
+                    background-image: url('img_girl.jpg');
+                }
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Imagen de fondo en una página</h2>
+        <p>Si desea que toda la página tenga una imagen de fondo, debe especificar la imagen de fondo en el
+            elemento &lt;body&gt;</p>
+        <p>Agregue una imagen de fondo para toda la página:</p>
+        <pre>
+            &lt;style&gt;
+                body {
+                background-image: url('img_girl.jpg');
+                }
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Repetición de fondo</h2>
+        <p>Si la imagen de fondo es más pequeña que el elemento, la imagen se repetirá, horizontal y verticalmente,
+            hasta llegar al final del elemento:</p>
+        <pre>
+            &lt;style&gt;
+                body {
+                background-image: url('example_img_girl.jpg');
+                }
+            &lt;/style&gt;
+        </pre>
+        <p>Para evitar que la imagen de fondo se repita, establezca la propiedad background-repeat en no-repeat.</p>
+        <pre>
+            &lt;style&gt;
+                body {
+                    background-image: url('example_img_girl.jpg');
+                    background-repeat: no-repeat;
+                }
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Imagen que cubra todo</h2>
+        <p>Si desea que la imagen de fondo cubra todo el elemento, puede establecer la propiedad background-
+            size en cover.</p>
+        <p>Además, para asegurarse de que todo el elemento esté siempre cubierto, establezca la propiedad
+            background-attachment en fixed</p>
+        <p>De esta forma, la imagen de fondo cubrirá todo el elemento, sin estirarse (la imagen mantendrá sus
+            proporciones originales)</p>
+        <pre>
+            &lt;style&gt;
+                body {
+                    background-image: url('img_girl.jpg');
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
+                }
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Estiramiento de fondo</h2>
+        <p>Si desea que la imagen de fondo se estire para ajustarse a todo el elemento, puede establecer la propiedad
+            background-size en 100% 100%</p>
+        <p>Intente cambiar el tamaño de la ventana del navegador y verá que la imagen se estirará, pero siempre
+            cubrirá todo el elemento.</p>
+        <pre>
+            &lt;style&gt;
+                body {
+                    background-image: url('img_girl.jpg');
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: 100% 100%;
+                }
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Agregue una imagen de fondo llamada "myimage.png" en un elemento HTML.</p>
+        <pre>
+            &lt;p style="background-image:"&gt;
+        </pre>
+    </section>
+</body>
+</html>

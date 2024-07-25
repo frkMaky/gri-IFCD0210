@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salida de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Salida de JavaScript</h1>
+    <h3 class="tabular">Posibilidades de visualización de JavaScript</h3>
+    <p class="tabular">JavaScript puede "mostrar" datos de diferentes maneras:</p>
+    <ul class="tabular">
+        <li>Escribir en un elemento HTML, usando innerHTML.</li>
+        <li>Escribir en la salida HTML usando document.write().</li>
+        <li>Escribiendo en un cuadro de alerta, usando window.alert().</li>
+        <li>Escribiendo en la consola del navegador, usando console.log().</li>
+    </ul>
+
+    <section>
+        <h2>Usando innerHTML</h2>
+        <p>Para acceder a un elemento HTML, JavaScript puede utilizar el método document.getElementById(id).</p>
+        <p>El atributo id define el elemento HTML. La propiedad innerHTML define el contenido HTML:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;h1&gt;My First Web Page&lt;/h1&gt;
+                &lt;p&gt;My First Paragraph&lt;/p&gt;
+                &lt;p id="demo"&gt;&lt;/p&gt;
+                &lt;script&gt;
+                    document.getElementById("demo").innerHTML = 5 + 6;
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <a href="../ejercicios/ejemploInnerHtml.html" target="_blank">Ejemplo innerHTML</a>
+        <p>Cambiar la propiedad internalHTML de un elemento HTML es una forma común de mostrar datos en HTML.</p>
+    </section>
+
+    <section>
+        <h2>Usando document.write()</h2>
+        <p>Para fines de prueba, es conveniente utilizar document.write():</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;h1&gt;My First Web Page&lt;/h1&gt;
+                &lt;p&gt;My First Paragraph&lt;/p&gt;
+                &lt;p id="demo"&gt;&lt;/p&gt;
+                &lt;script&gt;
+                    document.write(5 + 6);
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <a href="../ejercicios/ejemploDocumentWrite.html" target="_blank">Ejemplo document.write</a>
+       <p>El uso de document.write() después de cargar un documento HTML eliminará todo el HTML existente :</p>
+       <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;h1&gt;My First Web Page&lt;/h1&gt;
+                &lt;p&gt;My First Paragraph&lt;/p&gt;
+
+                &lt;button type="button" onclick="document.write(5 + 6)"&gt;Try it&lt;/button&gt;
+
+            &lt;/body&gt;
+        &lt;/html&gt;
+        </pre>
+        <a href="../ejercicios/ejemploDocWrite.html" target="_blank">Ejemplo document.write II</a>
+        <p>El método document.write() solo debe usarse para pruebas.</p>
+    </section>
+
+    <section>
+        <h2>Usando window.alert()</h2>
+        <p>Puede utilizar un cuadro de alerta para mostrar datos:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;h1&gt;My First Web Page&lt;/h1&gt;
+                &lt;p&gt;My First Paragraph&lt;/p&gt;
+                &lt;script&gt;
+                    window.alert(5 + 6);
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <p>Puede omitir la palabra clave window.</p>
+        <p>En JavaScript, el objeto de ventana es el objeto de alcance global. Esto significa que las variables,
+            propiedades y métodos pertenecen por defecto al objeto de ventana. Esto también significa que especificar
+            la palabra clav ewindow es opcional:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;h1&gt;My First Web Page&lt;/h1&gt;
+                &lt;p&gt;My First Paragraph&lt;/p&gt;
+                &lt;script&gt;
+                    alert(5 + 6);
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Usando console.log()</h2>
+        <p>Para fines de depuración, puede llamar al método console.log()en el navegador para mostrar datos.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;script&gt;
+                    console.log(5 + 6);
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <a href="../ejercicios/ejemploCosoleLog.html" target="_blank">Ejemplo console.log</a>
+    </section>
+
+    <section>
+        <h2>JavaScript print</h2>
+        <p>JavaScript no tiene ningún objeto de impresión ni métodos de impresión.</p>
+        <p>No puede acceder a los dispositivos de salida desde JavaScript.</p>
+        <p>La única excepción es que puede llamar al método window.print()en el navegador para imprimir el contenido de la ventana actual.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;button onclick="window.print()"&gt;Print this page&lt;/button&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <a href="../ejercicios/ejemploPrint.html" target="_blank">Ejemplo window.print</a>
+    </section>
+</body>
+</html>

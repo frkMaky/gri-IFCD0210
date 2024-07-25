@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST pseudoclases y pseudoelementos:</title>
+    <style>
+        body {
+            margin:100px;
+        }
+        h1 {
+            text-align: center;
+        }
+        pre {
+            text-align: justify;
+        }
+        .correcta {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>TEST selectores de atributos:</h1>
+    <ol>
+        <li>Selecciona aquellas imágenes con extensión png:
+            <pre>
+                img[src$=".png"]
+            </pre>
+
+        </li>
+        <li>Se muestran de color azul todos los enlaces que tengan un atributo «class», independientemente de su valor:
+            <pre>
+                a[class] {
+                    color:blue;
+                }
+            </pre>
+        </li>
+        <li>Se muestran de color azul todos los enlaces que tengan un atributo «class» con el valor «externo»:
+            <pre>
+                a[class="externo"]{
+                    color:blue;
+                }
+            </pre>
+        </li>
+        <li>Se muestran de color azul todos los enlaces que apunten al sitio «http://www.ejemplo.com».
+            <pre>
+                a[href="http://www.ejemplo.com"] {
+                    color:blue;
+                }
+            </pre>
+        </li>
+        <li>Selecciona todos los elementos de la página cuyo atributo «lang» sea igual a «en», es decir, todos los elementos en inglés
+            <pre>
+                *[lang="en"]
+            </pre>
+        </li>
+        <li>Selecciona todos los elementos de la página cuyo atributo «lang» empiece por «es», es decir, «es», «es-ES», «es-AR», etc.
+            <pre>
+                *[lang|="es"]
+            </pre>
+        </li>
+        <li>Selecciona todos los enlaces que no tengan el atributo href.
+            <pre>
+                a:not(a[href])
+            </pre>
+        </li>
+        <li>Utilizando selectores de atributos realiza los siguientes ejercicios: 
+            <ul>
+                <li>Selecciona aquellas imágenes con extensión png y añade un borde de 5 píxeles de color rojo.
+                    <pre>
+                        img[src$=".png"]{
+                            border: 5px solid red;
+                        }
+                    </pre>
+                </li>
+                <li>Muestra de color verde todos los enlaces que tengan un atributo “class”, independientemente de su valor.
+                    <pre>
+                        a[class] {
+                            color:green;
+                        }
+                    </pre>
+                </li>
+                <li>Muestra de color rosa todos los enlaces que apunten al sitio “https://www.eniun.com”.
+                    <pre>
+                        a[href="https://www.eniun.com"]{
+                            color:pink;
+                        }
+                    </pre>
+                </li>
+                <li>Muestra de color lila todos los enlaces que tengan un atributo “class” con el valor “externo”.
+                    <pre>
+                        a[class="externo"] {
+                            color:violet;
+                        }
+                    </pre>
+                </li>
+            </ul>    
+        </li>
+        <li>Oculta todos los elementos de la página cuyo atributo "lang" sea igual a "en", es decir, todos los elementos en inglés:
+            <ul>
+                <li class="correcta">*[lang="en"] { display:none; }</li>
+                <li>^[lang=en] { display:none; }</li>
+                <li>^[lang=en]$ { display:none; }</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

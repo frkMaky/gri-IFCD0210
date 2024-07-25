@@ -1,0 +1,47 @@
+
+1. ¿Cuáles de los siguientes protocolos son ejemplos de protocolos de la capa de transporte TCP/IP? 
+Seleccione dos respuestas.
+
+a) Ethernet 
+b) HTTP
+c) IP
+d) UDP <---
+e) SMTP
+f) TCP <---
+
+2. ¿Cuáles de los siguientes protocolos son ejemplos de protocolos de la capa de enlace de datos TCP/IP? 
+Seleccione dos
+respuestas
+
+a) Ethernet <---
+b) HTTP
+c) IP 
+d) UDP
+e) SMTP
+f) TCP 
+g) PPP <---
+
+5. ¿De qué es un ejemplo el proceso consistente en que un servidor web añada una cabecera TCP al contenido de la página web, añadiendo después una
+cabecera IP y luego añadiendo una cabecera y una cola de enlace de datos?
+
+a) Encapsulación de datos <---
+b) Interacción entre capas equivalentes
+c) Modelo OSI
+d) Todas son correctas
+
+8¿Qué nivel OSI define los estándares de cableado y conectores?
+
+a) capa 1 <---
+b) capa 2 
+c) capa 3
+d) capa 4
+e) capas 5, 6, 7
+
+9. ¿Cuáles de los siguientes términos no son válidos para los nombres de las siete capas OSI? Seleccione 2 respuestas.
+
+a) Aplicación
+b) Enlace de datos
+c) Transmisión <---
+d) Presentación
+e) Internet <---
+f) Sesión

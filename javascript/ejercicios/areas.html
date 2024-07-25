@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <script>
+        function calculaAreaTriangulo() { // Muestra el area y perimetro de un triangulo dado 
+            let base = 6;
+            let lado2 = 5;
+            let lado3 = 4;
+            let altura = 3;
+
+            document.write(`El area del triangulo es <strong>${base*altura/2}</strong> y la suma de sus lados es <strong>${base+lado2+lado3}</strong>`);
+
+        }
+        function areaCirculo(radio) { // Muestra el área de un círculo de radio pasado por parámetro
+            document.write(`El área del círculo de radio <strong>${radio}</strong> es <strong>${radio * Math.pow(Math.PI,2)}</strong>`);
+        }
+        function perimetroCirculo(radio){ // Muestra el perímetro de un círculo de radio pasado por parámetro
+            document.write(`El perímetro del círculo de radio <strong>${radio}</strong> es <strong>${2 *Math.PI * radio}</strong>`);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Areas</h1>
+    
+    <div id="ejercicio1">
+        <p class="enunciado">
+                Realiza una funcion que calcule dos cosas:  * El area de un triangulo (b * a /2) y la suma de sus lados<br/>
+        La funcion no tendrá parametros ni salida. Muestra por pantalla el resustado<br/>
+        Lados 6 (base), 5 y 4 y la altura es 3<br/>
+        Salida: "El area del triangulo es x y las suma de sus lados es y"<br/>
+        </p>
+        <script>
+            calculaAreaTriangulo();
+        </script>
+    </div>
+
+    <div id="ejercicio2">
+        <p class="enunciado">
+            REALIZA UNA FUNCIÓN QUE CALCULE EL ÁREA DE UN CÍRCULO (pi*r^2) Math.PI<br/>
+            LA FUNCIÓN TIENE UN PARÁMETRO DE ENTRADA QUE SERÁ EL RADIO Y NO TIENE PARÁMETRO DE SALIDA, <br/>
+            SIMPLEMENTE MUESTRA POR PANTALLA EL VALOR DEL ÁREA (radio ejemplo 5)
+        </p>
+        <script>
+            areaCirculo(5);
+        </script>
+    </div>
+    <div id="ejercicio2">
+        <p class="enunciado">
+            REALIZA UNA FUNCIÓN QUE CALCULE LA LONGITUD DE LA CIRCUNFERENCIA (2*pi*r).<br/>
+            LA FUNCIÓN TIENE UN PARÁMETRO DE ENTRADA QUE ES EL RADIO Y UN PARÄMETRO DE SALIDA QUE SERÄ LA LONGITUD PEDIDA.<br/>
+            LUEGO MUESTRA EL RESULTADO.El diámetro vale 5
+        </p>
+        <script>
+            perimetroCirculo(5/2);
+        </script>
+    </div>
+</body>
+</html>

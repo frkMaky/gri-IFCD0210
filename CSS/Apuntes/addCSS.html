@@ -1,0 +1,177 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo agregar CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Cómo agregar CSS</h1>
+    <p class="tabular"><q>Cuando un navegador lee una hoja de estilo, formateará el documento HTML de acuerdo con la información de la hoja de estilo.</q></p>
+    <section>
+        <h2>Tres formas de insertar CSS</h2>
+        <p>Hay tres formas de insertar una hoja de estilo:</p>
+        <ul>
+            <li>CSS externo</li>
+            <li>CSS interno</li>
+            <li>CSS en línea</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>CSS externo</h2>
+        <p>Con una hoja de estilo externa, puedes cambiar el aspecto de un sitio web completo cambiando solo un archivo.</p>
+        <p>Cada página HTML debe incluir una referencia al archivo de hoja de estilo externo dentro del elemento &lt;link&gt;, dentro de la sección head.</p>
+        <pre>
+            Los estilos externos se definen dentro del elemento &lt;link&gt;, dentro de la sección &lt;head&gt; de una página HTML:
+
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;link rel="stylesheet" href="mystyle.css"&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;This is a heading&lt;/h1&gt;
+                    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+        </pre>
+        <p>Una hoja de estilo externa se puede escribir en cualquier editor de texto y debe guardarse con una extensión .css.</p>
+        <p>El archivo .css externo no debe contener etiquetas HTML.</p>
+        <p>Así es como se ve el archivo "mystyle.css":</p>
+        <pre>
+            "mystyle .css"
+
+            body {
+                background-color: lightblue;
+            }
+
+            h1 {
+                color: navy;
+                margin-left: 20px;
+            }
+        </pre>
+        <p><span class="negrita">Nota: </span>No agregue un espacio entre el valor de la propiedad (20) y la unidad (px):
+            Incorrecto (espacio): margin-left: 20 px;
+            Correcto (sin espacio):margin-left: 20px;</p>
+    </section>
+
+    <section>
+        <h2>CSS interno</h2>
+        <p>Se puede utilizar una hoja de estilo interna si una sola página HTML tiene un estilo único.</p>
+        <p>El estilo interno se define dentro del elemento &lt;style&gt;, dentro de la sección principal.</p>
+        <pre>
+            Los estilos internos se definen dentro del elemento &lt;style&gt;, dentro de la sección &lt;head&gt; de una página HTML:
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;style&gt;
+                body {
+                    background-color:blue;
+                }
+                h1 {
+                    color: maroon;
+                    margin-left: 40px;
+                }
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;This is a heading&lt;/h1&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>CSS en línea</h2>
+        <p>Se puede utilizar un estilo en línea para aplicar un estilo único a un solo elemento.</p>
+        <p>Para usar estilos en línea, agregue el atributo de estilo al elemento relevante. El atributo de estilo puede contener cualquier propiedad CSS.</p>
+        <pre>
+            Los estilos en línea se definen dentro del atributo "estilo" del elemento relevante:
+
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;h1 style="color:blue;text-align:center;"&gt;This is a heading&lt;/h1&gt;
+                &lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <p> <span class="negrita">Consejo: </span>un estilo en línea pierde muchas de las ventajas de una hoja de estilo (al mezclar contenido con
+            presentación). Utilice este método con moderación.</p>
+    </section>
+
+    <section>
+        <h2>Múltiples hojas de estilo</h2>
+        <p>Si se han definido algunas propiedades para el mismo selector (elemento) en diferentes hojas de estilo, se utilizará el valor de la
+             última hoja de estilo leída.</p>
+        <p>Supongamos que una <span class="negrita">hoja de estilo externa</span>  tiene el siguiente estilo para el elemento &lt;h1&gt;:</p>
+        <pre>
+            h1 {
+                color: navy;
+            }
+        </pre>
+        <p>Luego, supongamos que una <span class="negrita">hoja de estilo interna</span>  también tiene el siguiente estilo para el elemento &lt;h1&gt;:</p>
+        <pre>
+            h1 {
+                color: orange;
+            }
+        </pre>
+        <p>Si el estilo interno se define después del enlace a la <span class="negrita">hoja de estilo externa</span> , los elementos &lt;h1&gt; serán "naranja": </p>
+        <pre>
+                &lt;head&gt;
+                    &lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;
+                &lt;style&gt;
+                    h1 {
+                        color: orange;
+                    }
+                &lt;/style&gt;
+                &lt;/head&gt;
+        </pre>
+        <p>Sin embargo, si el estilo interno se define antes del enlace a la hoja de estilo externa, los elementos &lt;h1&gt; serán "azul marino":</p>
+        <pre>
+            &lt;head&gt;
+            &lt;style&lt;
+                h1 {
+                    color: orange;
+                }
+            &lt;/style&lt;
+            
+            &lt;link rel="stylesheet" type="text/css" href="mystyle.css"&lt;
+            &lt;/head&lt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Orden en cascada</h2>
+        <p>¿Qué estilo se utilizará cuando se especifique más de un estilo para un elemento HTML?</p>
+        <p>Reglas de estilo, donde el número uno tiene la máxima prioridad:</p>
+        <ol>
+            <li>Estilo en línea (dentro de un elemento HTML)</li>
+            <li>Hojas de estilo externas e internas (en la sección principal)</li>
+            <li>Navegador predeterminado</li>
+        </ol>
+        <p>Por lo tanto, un estilo en línea tiene la máxima prioridad y anulará los estilos externos e internos y los valores predeterminados del navegador.</p>
+    </section>
+    
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Agregue una hoja de estilo externa con la URL: "mystyle.css".</p>
+        <pre>
+            &lt;head&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Este es un encabezado&lt;/h1&gt;
+                &lt;p&gt;Este es un párrafo&lt;/p&gt;
+                &lt;p&gt;Este es un párrafo&lt;/p&gt;
+            &lt;/body&gt;
+        </pre>
+    </section>
+</body>
+</html>

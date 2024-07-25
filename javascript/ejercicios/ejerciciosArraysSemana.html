@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Arrays</h1>
+    <div id="ejercicio1">
+        <p class="enunciado">Array de los dias de la semaana . Cambiar a formato ingles siendo el domingo el primer dia</p>
+        <script>
+            const dias = ["Lunes","Martes","Miércoles","Jueves","Vierner", "Sabado","Domingo"];
+            document.write("Dias de la semana<br>");
+            console.log("Dias de la semana");
+            
+            for(let i=0;i<dias.length;i++){
+                document.write(dias[i] + "<br>");
+                console.log(dias[i]);
+            }
+
+            // Cambiando el formato
+            dias[0] = "Domingo";
+            dias[1] = "Lunes";
+            dias[2] = "Martes";
+            dias[3] = "Miércoles";
+            dias[4] = "Jueves";
+            dias[5] = "Viernes";
+            dias[6] = "Sabado";
+
+            document.write("Dias de la semana en formato ingles:<br/>");
+            console.log("Dias de la semana en formato ingles:");
+            for(let i=0;i<dias.length;i++){
+                document.write(dias[i] +"<br>");
+                console.log(dias[i]);
+            }
+        </script>
+    </div>
+    <div id="ejercicio1">
+        <p class="enunciado">Numero entre 1 y 5 y con un while muestra ese numero 3 veces</p>
+        <script>
+            let aleatorio = 0;
+            while( aleatorio<1 || aleatorio>5 ) {
+                aleatorio = Number(prompt("Escoge un numero entre 1 y 5"));
+            }
+
+            let i=0;
+            while(i<3) {
+                document.write(aleatorio + "<br>");
+                i++;
+            }
+        </script>
+    </div>
+</body>
+</html>

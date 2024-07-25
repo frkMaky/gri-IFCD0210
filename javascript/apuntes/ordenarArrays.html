@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar arrays</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Ordenar arrays</h1>
+    
+    <section>
+        <h2>Ordenar un array</h2>
+        <p>El método sort() ordena un array alfabéticamente:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.sort();
+        </pre>
+    </section>
+
+    <section>
+        <h2>Invertir un array</h2>
+        <p>El método reverse() invierte los elementos de un array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.reverse();
+        </pre>
+        <p>Combinando sort() y reverse(), puedes ordenar un array en orden descendente:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.sort();
+            fruits.reverse();
+        </pre>
+    </section>
+
+    <section>
+        <h2>toSorted()</h2>
+        <p>ES2023 agregó el método toSorted() como una forma segura de ordenar un array sin alterar el array
+            original.</p>
+        <p>La diferencia entre toSorted() y sort() es que el primer método crea un nuevo array, manteniendo
+            el array original sin cambios, mientras que el último método altera el array original.</p>
+        <pre>
+            const months = ["Jan", "Feb", "Mar", "Apr"];
+            const sorted = months.toSorted();
+        </pre>
+    </section>
+
+    <section>
+        <h2>Método JavaScript Array toReversed()</h2>
+        <p>ES2023 agregó el método toReversed() como una forma segura de invertir un array sin alterar el
+            array original.</p>
+        <p>La diferencia entre toReversed() y reverse() es que el primer método crea un nuevo array,
+            manteniendo el array original sin cambios, mientras que el último método altera el array original.</p>
+        <pre>
+            const months = ["Jan", "Feb", "Mar", "Apr"];
+            const reversed = months.toReversed();
+        </pre>
+    </section>
+
+    <section>
+        <h2>Orden numérico</h2>
+        <p>De forma predeterminada, la función sort() ordena los valores como cadenas .</p>
+        <p>Esto funciona bien para cadenas ("Apple" viene antes de "Banana").</p>
+        <p>Si los números se ordenan como cadenas, "25" es mayor que "100", porque "2" es mayor que "1".</p>
+        <p>Debido a esto, el método sort() producirá resultados incorrectos al ordenar números.</p>
+        <p>Puedes solucionar este problema proporcionando una función de comparación :</p>
+        <pre>
+            const points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return a - b});
+        </pre>
+        <p>Utilice el mismo truco para ordenar un array de forma descendente:</p>
+        <pre>
+            const points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return b - a});
+        </pre>
+    </section>
+
+    <section>
+        <h2>La función de comparación </h2>
+        <p>El propósito de la función de comparación es definir un orden de clasificación alternativo.</p>
+        <p>La función de comparación debe devolver un valor negativo, cero o positivo, según los argumentos:</p>
+        <pre>
+            function(a, b){return a - b}
+        </pre>
+        <p>Cuando la función sort() compara dos valores, envía los valores a la función de comparación y
+            ordena los valores según el valor devuelto (negativo, cero, positivo).</p>
+        <p>Si el resultado es negativo, a se ordena antes de b.</p>
+        <p>Si el resultado es positivo, b se ordena antes de a.</p>
+        <p>Si el resultado es 0, no se realizan cambios en el orden de clasificación de los dos valores.</p>
+        <h3>Ejemplo</h3>
+        <p>La función de comparación compara todos los valores del array, dos valores a la vez (a, b).</p>
+        <p>Al comparar 40 y 100, el método sort() llama a la función de comparación (40, 100).</p>
+        <p>La función calcula 40 - 100 (a – b) y, dado que el resultado es negativo (-60), la función de
+            clasificación clasificará 40 como un valor inferior a 100.</p>
+        <p>Puede utilizar este fragmento de código para experimentar con la clasificación numérica y alfabética:</p>
+        <pre>
+
+            &lt;button onclick="myFunction1()"&gt;Sort Alphabetically&lt;/button&gt;
+            &lt;button onclick="myFunction2()"&gt;Sort Numerically&lt;/button&gt;
+            &lt;p id="demo"&gt;&lt;/p&gt;
+            &lt;script&gt;
+                const points = [40, 100, 1, 5, 25, 10];
+                document.getElementById("demo").innerHTML = points;
+                function myFunction1() {
+                    points.sort();
+                    document.getElementById("demo").innerHTML = points;
+                }
+                function myFunction2() {
+                    points.sort(function(a, b){return a - b});
+                    document.getElementById("demo").innerHTML = points;
+                }
+            &lt;/script&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Ordenar un array en orden aleatorio</h2>
+        <p>Usando una función de clasificación, como se explicó anteriormente, puede ordenar un array numérica en orden aleatorio</p>
+        <pre>
+            const points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(){return 0.5 - Math.random()});
+        </pre>
+    </section>
+
+    <section>
+        <h2>El método Fisher Yates</h2>
+        <p>El método points.sort() del ejemplo anterior no es exacto. Favorecerá a algunos números sobre otros.</p>
+        <p>El método correcto más popular se llama barajado de Fisher Yates y se introdujo en la ciencia de datos ya en 1938.</p>
+        <p>En JavaScript el método se puede traducir a esto:</p>
+        <pre>
+            const points = [40, 100, 1, 5, 25, 10];
+            for (let i = points.length -1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i+1));
+                let k = points[i];
+
+                points[i] = points[j];
+                points[j] = k;
+            }
+        </pre>
+        <p>Ejemplo completo: <a href="../ejercicios/fisherYates.html" target="_blank">Metodo Fisher Yates</a></p>
+    </section>
+
+    <section>
+        <h2>Encuentre el valor de array más bajo (o más alto)</h2>
+        <p>No hay funciones integradas para encontrar el valor máximo o mínimo en un array.</p>
+        <p>Para encontrar el valor más bajo o más alto tienes 3 opciones:</p>
+        <ul>
+            <li>Ordena el array y lee el primer o último elemento.</li>
+            <li>Utilice Math.min() o Math.max()</li>
+            <li>Escribe una función casera.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Encuentra el mínimo o el máximo con sort()</h2>
+        <p>Después de haber ordenado un array, puede usar el índice para obtener los valores más altos y más bajos.</p>
+        <h3>Orden ascendente:</h3>
+        <pre>
+            const points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return a - b});
+            // now points[0] contains the lowest value
+            // and points[points.length-1] contains the highest value
+        </pre>
+        <h3>Orden descendente:</h3>
+        <pre>
+            const points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return b - a});
+            // now points[0] contains the highest value
+            // and points[points.length-1] contains the lowest value
+        </pre>
+        <p><strong>Nota </strong>Ordenar un array completo es un método muy ineficiente si solo desea encontrar el valor más alto (o más bajo).</p>
+    </section>
+
+    <section>
+        <h2>Usando Math.min() en un array</h2>
+        <p>Puedes usar Math.min.apply para encontrar el número más bajo en un array:</p>
+        <pre>
+            function myArrayMin(arr) {
+                return Math.min.apply(null, arr);
+            }
+        </pre>
+        <p>Math.min.apply(null, [1, 2, 3]) es equivalente a Math.min(1, 2, 3).</p>
+    </section>
+
+    <section>
+        <h2>Usando Math.max() en un array</h2>
+        <p>Puedes usar Math.max.apply para encontrar el número más alto en un array:</p>
+        <pre>
+            function myArrayMax(arr) {
+                return Math.max.apply(null, arr);
+            }
+        </pre>
+        <p>Math.max.apply(null, [1, 2, 3]) es equivalente a Math.max(1, 2, 3).</p>
+    </section>
+
+    <section>
+        <h2>Método para buscar el mínimo de array</h2>
+        <p>No existe una función incorporada para encontrar el valor más bajo en un array de JavaScript.</p>
+        <p>El código más rápido para encontrar el número más bajo es utilizar un método casero .</p>
+        <p>Esta función recorre un array comparando cada valor con el valor más bajo encontrado:</p>
+        <h3>Ejemplo (buscar mínimo)</h3>
+        <pre>
+            function myArrayMin(arr) {
+                let len = arr.length;
+                let min = Infinity;
+                while (len--) {
+                    if (arr[len] < min) {
+                        min = arr[len];
+                    }
+                }
+                return min;
+            }
+        </pre>
+        <p>Ejemplo <a href="../ejercicios/ejemploBuscarMinimo.html" target="_blank">Ejemplo Buscar Minimo</a></p>
+    </section>
+
+    <section>
+        <h2>Método máximo de array de JavaScript</h2>
+        <p>No existe una función incorporada para encontrar el valor más alto en un array de JavaScript.</p>
+        <p>El código más rápido para encontrar el número más alto es utilizar un método casero .</p>
+        <p>Esta función recorre un array comparando cada valor con el valor más alto encontrado:</p>
+        <h3>Ejemplo (buscar máx.)</h3>
+        <pre>
+            function myArrayMax(arr) {
+                let len = arr.length;
+                let max = -Infinity;
+                while (len--) {
+                    if (arr[len] > max) {
+                        max = arr[len];
+                    }
+                }
+                return max;
+            }
+        </pre>
+        <p>Ejemplo <a href="../ejercicios/ejemploBuscarMaximo.html" target="_blank">Ejemplo Buscar Maximo</a></p>
+  
+    </section>
+
+    <section>
+        <h2>Ordenar arrays de objetos</h2>
+        <p>Los arrays de JavaScript suelen contener objetos:</p>
+        <pre>
+            const cars = [
+                {type:"Volvo", year:2016},
+                {type:"Saab", year:2001},
+                {type:"BMW", year:2010}
+            ];
+        </pre>
+        <p>Incluso si los objetos tienen propiedades de diferentes tipos de datos, el método sort() se puede utilizar para ordenar el array.</p>
+        <p>La solución es escribir una función de comparación para comparar los valores de las propiedades:</p>
+        <pre>
+            cars.sort(function(a, b){return a.year - b.year});
+        </pre>
+        <p>Ejemplo  <a href="../ejercicios/ejemploOrdenarArray.html" target="_blank">Ejemplo Ordenar array</a></p>
+        <p>Comparar propiedades de cadenas es un poco más complejo:</p>
+        <pre>
+            cars.sort(function(a, b){
+                let x = a.type.toLowerCase();
+                let y = b.type.toLowerCase();
+                if (x < y) {return -1;}
+                if (x > y) {return 1;}
+                return 0;
+            });
+        </pre>
+        <p>Ejemplo  <a href="../ejercicios/ejemploOrdenarArrayPropObjetos.html" target="_blank">Ejemplo Ordenar propiedades objetos array</a></p>
+      
+    </section>
+
+    <section>
+        <h2>sort()</h2>
+        <p>ES2019 revisó el método Array sort().</p>
+        <p>Antes de 2019, la especificación permitía algoritmos de clasificación inestables como QuickSort.</p>
+        <p>Después de ES2019, los navegadores deben utilizar un algoritmo de clasificación estable:</p>
+        <p>Al ordenar elementos según un valor, los elementos deben mantener su posición relativa con respecto a otros elementos con el mismo valor.</p>
+        <pre>
+            const myArr = [
+                {name:"X00",price:100 },
+                {name:"X01",price:100 },
+                {name:"X02",price:100 },
+                {name:"X03",price:100 },
+                {name:"X04",price:110 },
+                {name:"X05",price:110 },
+                {name:"X06",price:110 },
+                {name:"X07",price:110 }
+            ];
+        </pre>
+        <p>Ejemplo  <a href="../ejercicios/ejemploSortArray.html" target="_blank">Ejemplo Sort() array</a></p>
+        <p>En el ejemplo anterior, al ordenar por precio, no se permite que el resultado salga con los nombres en otra
+            posición relativa como esta:</p>
+        <pre>
+            X01 100
+            X03 100
+            X00 100
+            X03 100
+            X05 110
+            X04 110
+            X06 110
+            X07 110
+        </pre>
+    </section>
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Utilice el método de Array correcto para ordenar la array fruits alfabéticamente.</p>
+        <pre>
+            const fruits = ["Plátano", "Naranja", "Manzana", "Kiwi"];
+
+                    ;
+        </pre>
+    </section>
+</body>
+</html>

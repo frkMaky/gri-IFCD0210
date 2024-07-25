@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos HTML - CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Estilos HTML - CSS</h1>
+    <p class="tabular"><q>CSS significa hojas de estilo en cascada.<br>
+        CSS ahorra mucho trabajo. Puede controlar el diseño de varias páginas web a la vez.</q></p>
+    <section>
+        <h2>¿Qué es CSS?</h2>
+        <p>Las hojas de estilo en cascada (CSS) se utilizan para dar formato al diseño de una página web.</p>
+        <p>Con CSS, puede controlar el color, la fuente, el tamaño del texto, el espacio entre elementos, cómo se
+            colocan y distribuyen los elementos, qué imágenes de fondo o colores de fondo se utilizarán, diferentes
+            visualizaciones para diferentes dispositivos y tamaños de pantalla, y ¡mucho más!</p>
+        <p> <span class="negrita">Consejo:</span>La palabra <span class="negrita">cascada</span> significa que un estilo aplicado a un elemento principal
+             también se aplicará a todos los elementos secundarios dentro del elemento principal. Por lo tanto, si establece en body el color
+            del texto en "azul", todos los títulos, párrafos y otros elementos de texto dentro de body también
+            obtendrán el mismo color (a menos que especifique algo más).</p>
+    </section>
+
+    <section>
+        <h2>Usando CSS</h2>
+        <p>CSS se puede agregar a documentos HTML de 3 maneras:</p>
+        <ol>
+            <li><span class="negrita">En línea: </span>utilizando el atributo style dentro de los elementos HTML</li>
+            <li><span class="negrita">Interno: </span>mediante el uso de un elemento &lt;style&gt; en la sección &lt;head&gt;.</li>
+            <li><span class="negrita">Externo: </span>mediante el uso de un elemento &lt;link&gt; para vincular a un archivo CSS externo</li>
+        </ol>
+        <p>La forma más común de agregar CSS es mantener los estilos en archivos CSS externos.</p>
+    </section>
+
+    <section>
+        <h2>CSS en línea</h2>
+        <p>Se utiliza un CSS en línea para aplicar un estilo único a un único elemento HTML.</p>
+        <p>Un CSS en línea utiliza el atributo <em>style</em> de un elemento HTML.</p>
+        <p>El siguiente ejemplo establece el color del texto del elemento &lt;h1&gt; en azul y el color del texto del
+            elemento 6lt;p&gt; en rojo:</p>
+        <pre>
+            &lt;h1 style="color:blue;"&gt;A Blue Heading&lt;/h1&gt;
+            &lt;p style="color:red;"&gt;A red paragraph.&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>CSS interno</h2>
+        <p>Se utiliza un CSS interno para definir un estilo para una sola página HTML.</p>
+        <p>Un CSS interno se define en la sección <head> de una página HTML, dentro de un elemento
+            &lt;style&gt;.</p>
+        <p>El siguiente ejemplo establece el color del texto de TODOS los elementos &lt;h1&gt; (en esa página) en azul y
+            el color del texto de TODOS los elementos &lt;p&gt; en rojo. Además, la página se mostrará con un color de
+            fondo "azul celeste":</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;style&gt;
+                body {background-color: powderblue;}
+                h1 {color: blue;}
+                p {color: red;}
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;This is a heading&lt;/h1&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>CSS externo</h2>
+        <p>Se utiliza una hoja de estilo externa para definir el estilo de muchas páginas HTML.</p>
+        <p>Para utilizar una hoja de estilo externa, agregue un enlace en la sección <head> de cada página HTML:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;link rel="stylesheet" href="styles.css"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;This is a heading&lt;/h1&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <p>La hoja de estilo externa se puede escribir en cualquier editor de texto. El archivo no debe contener
+            ningún código HTML y debe guardarse con una extensión .css.</p>
+        <p>Así es como se ve el archivo "estilos.css":</p>
+        <pre>
+            body {
+                background-color: powderblue;
+            }
+            h1 {
+                color: blue;
+            }
+            p {
+                color: red;
+            }
+        </pre>
+        <p><span class="negrita">Consejo:</span> Con una hoja de estilo externa, puedes cambiar el aspecto de un sitio web completo,
+            ¡cambiando un archivo!</p>
+    </section>
+
+    <section>
+        <h2>Colores, fuentes y tamaños CSS</h2>
+        <p>Aquí, demostraremos algunas propiedades CSS de uso común.</p>
+        <p>La propiedad de CSS colordefine el color del texto que se utilizará.</p>
+        <p>La propiedad de CSS font-family define la fuente que se utilizará.</p>
+        <p>La propiedad de CSS font-size define el tamaño del texto que se utilizará.</p>
+        <p><em>Uso de propiedades CSS de color, familia de fuentes y tamaño de fuente:</em></p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;style&gt;
+                h1 {
+                    color: blue;
+                    font-family: verdana;
+                    font-size: 300%;
+                }
+                p {
+                    color: red;
+                    font-family: courier;
+                    font-size: 160%;
+                }
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;This is a heading&lt;/h1&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Borde CSS</h2>
+        <p>La propiedad de CSS border define un borde alrededor de un elemento HTML.</p>
+        <p><span class="negrita">Consejo:</span>  Puede definir un borde para casi todos los elementos HTML.</p>
+        <p><em>Uso de la propiedad border de CSS:</em></p>
+        <pre>
+            p {
+                border: 2px solid powderblue;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Espaciado CSS</h2>
+        <p>La padding propiedad CSS define un espacio entre el texto y el borde.</p>
+        <p><em>Uso de propiedades de relleno y borde CSS:</em></p>
+        <pre>
+            p {
+                border: 2px solid powderblue;
+                padding: 30px;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Margen CSS</h2>
+        <p>La propiedad margin de CSS define un margen (espacio) fuera del borde.</p>
+        <p><em>Uso de propiedades de borde y margen CSS:</em></p>
+        <pre>
+            p {
+                border: 2px solid powderblue;
+                margin: 50px;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Enlace a CSS externo</h2>
+        <p>Se puede hacer referencia a las hojas de estilo externas con una URL completa o con una ruta relativa a la
+            página web actual.</p>
+        <p><em>Este ejemplo utiliza una URL completa para vincular a una hoja de estilo:</em></p>
+        <pre>
+            &lt;link rel="stylesheet" href="https://www.w3schools.com/html/styles.css"&gt;
+        </pre>
+        <p><em>Este ejemplo enlaza a una hoja de estilo ubicada en la carpeta html del sitio web actual:</em></p>
+        <pre>
+            &lt;link rel="stylesheet" href="/html/styles.css"&gt;
+        </pre>
+        <p><em>Este ejemplo enlaza a una hoja de estilo ubicada en la misma carpeta que la página actual:</em></p>
+        <pre>
+            &lt;link rel="stylesheet" href="styles.css"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>Utilice el atributo style de HTML para aplicar estilos en línea</li>
+            <li>Utilice el elemento de HTML &lt;style&gt; para definir CSS interno</li>
+            <li>Utilice el elemento &lt;link&gt; HTML para hacer referencia a un archivo CSS externo</li>
+            <li>Utilice el elemento &lt;head&gt; HTML para almacenar elementos &lt;style&gt; y &lt;link&gt;</li>
+            <li>Utilice la propiedad color de CSS para los colores del texto</li>
+            <li>Utilice la propiedad font-family de CSS para fuentes de texto</li>
+            <li>Utilice la propiedad font-size de CSS para tamaños de texto</li>
+            <li>Utilice la propiedad border de CSS para los bordes</li>
+            <li>Utilice la propiedad padding de CSS para el espacio dentro del borde</li>
+            <li>Utilice la propiedad margin de CSS para el espacio fuera del borde</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicios HTML</h2>
+        <p>Utilice CSS para establecer el color de fondo del documento (cuerpo) en amarillo.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;style&gt;
+                :amarillo;
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Mi página de inicio&lt;/h1&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de estilo HTML</h2>
+        <table>
+            <tr>
+                <th>Tag</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>&lt;style&gt;</td>
+                <td>Define información de estilo para un documento de html</td>
+            </tr>
+            <tr>
+                <td>&lt;link&gt;</td>
+                <td>Define un enlace entre un documento y un recurso externo</td>
+            </tr>
+        </table>
+    </section>    
+</body>
+</html>

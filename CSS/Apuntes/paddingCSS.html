@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relleno o padding en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Relleno o padding en CSS</h1>
+    <p class="tabular"><q>El relleno se utiliza para crear espacio alrededor del contenido de un elemento, dentro de los bordes definidos.</q></p>
+    <section>
+        <h2>Relleno CSS</h2>
+        <p>Las propiedades padding de CSS se utilizan para generar espacio alrededor 
+            del contenido de un elemento, dentro de los bordes definidos.</p>    
+        <p>Con CSS, tienes control total sobre el relleno. Hay propiedades para configurar el relleno para cada lado de un elemento (superior, 
+            derecho, inferior e izquierdo).</p>
+    </section>
+    
+    <section>
+        <h2>Relleno - Lados individuales</h2>
+        <p>CSS tiene propiedades para especificar el relleno de cada lado de un elemento:</p>
+        <ul>
+            <li>padding-top</li>
+            <li>padding-right</li>
+            <li>padding-bottom</li>
+            <li>padding-left</li>
+        </ul>
+        <p>odas las propiedades de padding pueden tener los siguientes valores:</p>
+        <ul>
+            <li><em>longitud :</em> especifica un relleno en px, pt, cm, etc.</li>
+            <li><em>% :</em> especifica un relleno en % del ancho del elemento contenedor</li>
+            <li><em>heredar: </em>especifica que el relleno debe heredarse del elemento principal</li>
+        </ul>
+        <p>Nota: No se permiten valores negativos.</p>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejemplo</h2>
+        <p>Establezca un relleno diferente para los cuatro lados de un elemento &lt;div&gt;:</p>
+        <pre>
+            div{
+                padding-top: 50px;
+                padding-right: 30px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Relleno: propiedad abreviada</h2>
+        <p>Para acortar el código, es posible especificar todas las propiedades de relleno en una sola propiedad.</p>
+        <p>La propiedad <em>padding</em> es una propiedad abreviada para las siguientes propiedades de relleno individuales:</p>
+        <ul>
+            <li>padding-top</li>
+            <li>padding-right</li>
+            <li>padding-bottom</li>
+            <li>padding-left</li>
+        </ul>
+        <p>Pues así es como funciona:</p>
+        <p>Si la propiedad padding tiene cuatro valores:</p>
+        <ul>
+            <li>relleno: 25 px 50 px 75 px 100 px;</li>
+            <li>el relleno superior es de 25px</li>
+            <li>el relleno derecho es 50px</li>
+            <li>el relleno inferior es de 75px</li>
+            <li>el relleno izquierdo es 100px</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejemplo</h2>
+        <p>Utilice la propiedad abreviada de relleno con cuatro valores:</p>
+        <pre>
+            div {
+                padding: 25px 50px 75px 100px;
+            }
+        </pre>
+        <p>Si la propiedad padding tiene tres valores:</p>
+        <ul>
+            <li>relleno: 25 px 50 px 75 px;</li>
+            <li>el relleno superior es de 25px</li>
+            <li>los rellenos derecho e izquierdo son 50px</li>
+            <li>el relleno inferior es de 75px</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejemplo</h2>
+        <p>Utilice la propiedad abreviada de relleno con tres valores:</p>
+        <pre>
+            div {
+                padding: 25px 50px 75px;
+            }
+        </pre>
+        <p>Si la propiedad padding tiene dos valores:</p>
+        <ul>
+            <li>relleno: 25px 50px;</li>
+            <li>los rellenos superior e inferior son de 25 px</li>
+            <li>los rellenos derecho e izquierdo son 50px</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejemplo</h2>
+        <p>Utilice la propiedad abreviada de relleno con dos valores:</p>
+        <pre>
+            div {
+                padding: 25px 50px;
+            }
+        </pre>
+        <p>Si la propiedad padding tiene un valor:</p>
+        <ul>
+            <li>relleno: 25px;</li>
+            <li>los cuatro rellenos son de 25px</li>
+        </ul>
+    </section>
+    
+    <section class="ejercicio">
+        <h2>Ejemplo</h2>
+        <p>Utilice la propiedad abreviada de relleno con un valor:</p>
+        <pre>
+            div {
+                padding: 25px;
+            }
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Relleno y ancho del elemento</h2>
+        <p>La propiedad <em>width</em> de CSS especifica el ancho del área de contenido del elemento. El área de
+            contenido es la parte dentro del relleno, borde y margen de un elemento ( el modelo de caja ).</p>
+        <p>Entonces, si un elemento tiene un ancho específico, el relleno agregado a ese elemento se agregará al
+            ancho total del elemento. Este es a menudo un resultado indeseable.</p>
+        <h3 class="ejercicio">Ejemplo</h3>
+        <p>Aquí, al elemento <div> se le asigna un ancho de 300px. Sin embargo, el ancho real del elemento <div>
+            será 350 px (300 px + 25 px de relleno izquierdo + 25 px de relleno derecho):</p>
+        <pre>
+            div {
+                width: 300px;
+                padding: 25px;
+            }
+        </pre>
+        <p>Para mantener el ancho en 300 px, sin importar la cantidad de relleno, puedes usar la propiedad box-
+            sizing. Esto hace que el elemento mantenga su ancho real; Si aumenta el relleno, el espacio de
+            
+            contenido disponible disminuirá.</p>
+        <h3 class="ejercicio">Ejemplo</h3>
+        <p>Utilice la propiedad box-sizing para mantener el ancho en 300 px, sin importar la cantidad de relleno:</p>
+        <pre>
+            div {
+                width: 300px;
+                padding: 25px;
+                box-sizing: border-box;
+            }
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Establezca el relleno superior del elemento &gt;h1&lt; en 30 píxeles.</p>
+        <pre>
+            &lt;style&gt;
+                h1 {
+                    : 30px;
+                }
+            &lt;/style&gt;
+            &lt;body&gt;
+            &lt;h1&gt;Este es un título&lt;/h1&gt;
+            &lt;p&gt;Este es un párrafo&lt;/p&gt;
+            &lt;p&gt;Este es un párrafo&lt;/p&gt;
+            &lt;/body&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Todas las propiedades de relleno CSS</h2>
+        <table>
+            <tr> <th>Propiedad</th> <th>Descripción</th> </tr>
+            <tr> <td>padding</td> <td>Propiedad abreviada para establecer todas las propiedades padding en una declaración</td></tr>
+            <tr> <td>padding-bottom</td> <td>Establece el padding de abajo de un elemento</td></tr>
+            <tr> <td>padding-left</td> <td>Establece el padding de la izquierda de un elemento</td></tr>
+            <tr> <td>padding-right</td> <td>Establece el padding de la derecha de un elemento</td></tr>
+            <tr> <td>padding-top</td> <td>Establece el padding de arriba de un elemento</td></tr>
+        </table>
+    </section>
+</body>
+</html>

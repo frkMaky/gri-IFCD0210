@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsquedas en arrays</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Búsquedas en arrays</h1>
+    <section>
+        <h2>indexOf()</h2>
+        <p>El método indexOf() busca en un array el valor de un elemento y devuelve su posición.</p>
+        <p><strong>Nota: </strong>El primer elemento tiene la posición 0, el segundo elemento tiene la posición 1, y así
+            sucesivamente.</p>
+        <pre>
+            Busque en un array el elemento "Apple":
+
+            const fruits = ["Apple", "Orange", "Apple", "Mango"];
+            let position = fruits.indexOf("Apple") + 1;
+        </pre>
+        <h3>Sintaxis</h3>
+        <table>
+            <caption>array.indexOf(item,comienzo)</caption>
+            <tr> <td>item</td> <td>Requerido. El item a buscar</td></tr>
+            <tr> <td>comienzo</td> <td>Opcional. En donde comienza la búsqueda. Valores negativos comenzarán en la posición dada contando desde en final, y buscando al final</td></tr>
+        </table>
+        <p><em>Array.indexOf()devuelve -1 si no se encuentra el item.</em></p>
+        <p>Si el elemento está presente más de una vez, devuelve la posición de la primera aparición.</p>
+    </section>
+    <section>
+        <h2>lastIndexOf()</h2>
+        <p>Array.lastIndexOf() es igual que Array.indexOf(), pero devuelve la posición de la última
+            aparición del elemento especificado.</p>
+        <pre>
+            Busque en un array el elemento "Apple":
+
+            const fruits = ["Apple", "Orange", "Apple", "Mango"];
+            let position = fruits.lastIndexOf("Apple") + 1;
+        </pre>
+        <h3>Sintaxis</h3>
+        <table>
+            <caption>array.indexOf(item,comienzo)</caption>
+            <tr> <td>item</td> <td>Requerido. El item a buscar</td></tr>
+            <tr> <td>comienzo</td> <td>Opcional. Donde comienza la búsqueda. Valores negativos comenzarán en la posición dada de conteo desde el final, y buscarán al principio</td></tr>
+        </table>
+    </section>
+    <section>
+        <h2>includes()</h2>
+        <p>ECMAScript 2016 introdujo Array.includes()a los arrays. Esto nos permite verificar si un
+            elemento está presente en un array (incluido NaN, a diferencia de indexOf).</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.includes("Mango"); // is true
+        </pre>
+        <h3>Sintaxis</h3>
+        <p>array.includes(item-de-búsqueda)</p>
+        <p>Array.includes() permite comprobar los valores de NaN. A diferencia de Array.indexOf().</p>
+        <h3>Soporte del navegador</h3>
+        <p>includes() es una característica de ECMAScript 2016 .</p>
+        <p>ES 2016 es totalmente compatible con todos los navegadores modernos desde marzo de 2017:</p>
+        <table>
+            <tr> <td>Chrome 52</td> <td>Edge 15</td> <td>Firefox 52</td> <td>Safari 10.1</td> <td>Opera 39</td> </tr>
+            <tr> <td>Jul 2016</td> <td>Apr 2017</td> <td>Mar 2017</td> <td>May 2017</td> <td>Aug 2016</td> </tr>
+        </table>
+        <p>includes()no es compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>find()</h2>
+        <p>El método find() devuelve el valor del primer elemento del array que pasa una función de prueba.</p>
+        <p>Este ejemplo encuentra (devuelve el valor de) el primer elemento mayor que 18:</p>
+        <pre>
+            const numbers = [4, 9, 16, 25, 29];
+            let first = numbers.find(myFunction);
+            
+            function myFunction(value, index, array) {
+                return value > 18;
+            }
+        </pre>
+        <p>Tenga en cuenta que la función toma 3 argumentos:</p>
+        <ul>
+            <li>El valor del item</li>
+            <li>El índice del item</li>
+            <li>el array en sí</li>
+        </ul>
+        <h3>Soporte del navegador</h3>
+        <table>
+            <tr> <td>Chrome 51</td> <td>Edge 15</td> <td>Firefox 54</td> <td>Safari 10</td> <td>Opera 38</td> </tr>
+            <tr> <td>May 2016</td> <td>Apr 2017</td> <td>Jun 2017</td> <td>Sep 2016</td> <td>Jun 2016</td> </tr>
+        </table>
+        <p>find() no es compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>findIndex()</h2>
+        <p>El método findIndex() devuelve el índice del primer elemento del array que pasa una función de prueba.</p>
+        <p>Este ejemplo encuentra el índice del primer elemento mayor que 18:</p>
+        <pre>
+            const numbers = [4, 9, 16, 25, 29];
+            let first = numbers.findIndex(myFunction);
+            
+            function myFunction(value, index, array) {
+                return value > 18;
+            }
+        </pre>
+        <p>Tenga en cuenta que la función toma 3 argumentos:</p>
+        <ul>
+            <li>El valor del item</li>
+            <li>El índice del item</li>
+            <li>el array en sí</li>
+        </ul>
+        <h3>Soporte del navegador</h3>
+        <p>FindIndex() es una característica de ES6 (JavaScript 2015).</p>
+        <p>ES6 es totalmente compatible con todos los navegadores modernos desde junio de 2017:</p>
+        <table>
+            <tr> <td>Chrome 51</td><td>Edge 15</td><td>Firefox 54</td><td>Safari 10</td><td>Opera 38</td> </tr>
+            <tr> <td>May 2016</td><td>Apr 2017</td><td>Jun 2017</td><td>Sep 2016</td><td>Jun 2016</td> </tr>
+        </table>
+        <p>findIndex() no es compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>findLast()</h2>
+        <p>ES2023 agregó el método findLast() que comenzará desde el final de un array y devolverá el valor del
+            primer elemento que satisface una condición.</p>
+        <pre>
+            const temp = [27, 28, 30, 40, 42, 35, 30];
+            let high = temp.findLast(x => x > 40);
+        </pre>
+        <h3>Soporte del navegador</h3>
+        <p>findLast() es una característica de ES2023.</p>
+        <p>Es compatible con todos los navegadores modernos desde julio de 2023:</p>
+        <table>
+            <tr> <td>Chrome 110</td><td>Edge 110</td><td>Firefox 115</td><td>Safari 16.4</td><td>Opera 96</td></tr>
+            <tr> <td>Feb 2023</td><td>Feb 2023</td><td>Jul 2023</td><td>Mar 2023</td><td>May 2023</td></tr>
+        </table>
+    </section>
+    <section>
+        <h2>findLastIndex()</h2>
+        <p>El método findLastIndex() encuentra el índice del último elemento que satisface una condición.</p>
+        <pre>
+            const temp = [27, 28, 30, 40, 42, 35, 30];
+            let pos = temp.findLastIndex(x => x > 40);
+        </pre>
+        <h3>Soporte del navegador</h3>
+        <p>findLastIndex() es una característica de ES2023.</p>
+        <p>Es compatible con todos los navegadores modernos desde julio de 2023:</p>
+        <table>
+            <tr> <td>Chrome 110</td><td>Edge 110</td><td>Firefox 115</td><td>Safari 16.4</td><td>Opera 96</td></tr>
+            <tr> <td>Feb 2023</td><td>Feb 2023</td><td>Jul 2023</td><td>Mar 2023</td><td>May 2023</td></tr>
+        </table>
+    </section>
+</body>
+</html>

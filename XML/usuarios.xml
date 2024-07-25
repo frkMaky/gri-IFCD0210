@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<usuarios>
+
+    <usuario>
+        <nombre_completo>
+            <nombre>Pablo</nombre>
+            <apellido>Maquieira</apellido>
+        </nombre_completo>
+        <dni>45678911L</dni>
+    </usuario>
+
+    <usuario>
+        <nombre_completo>
+            <nombre>Marcos</nombre>
+            <apellido>Garcia</apellido>
+        </nombre_completo>
+        <dni>58457812J</dni>
+    </usuario>
+
+    <usuario>
+        <nombre_completo>
+            <nombre>María</nombre>
+            <apellido>Perez</apellido>
+        </nombre_completo>
+        <dni>78945631M</dni>
+    </usuario>
+
+</usuarios>

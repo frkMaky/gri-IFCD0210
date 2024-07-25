@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números en JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Números en JavaScript</h1>
+    <p class="tabular">JavaScript tiene solo un tipo de número. Los números se pueden escribir con o sin decimales.</p>
+    <pre class="tabular">
+        let x = 3.14; // A number with decimals
+        let y = 3; // A number without decimals
+    </pre>
+    <p class="tabular">Los números muy grandes o muy pequeños se pueden escribir con notación científica (exponente):</p>
+    <pre class="tabular">
+        let x = 123e5; // 12300000
+        let y = 123e-5; // 0.00123
+    </pre>
+    <section>
+        <h2>Los números de JavaScript son siempre de coma flotante de 64 bits</h2>
+        <p>A diferencia de muchos otros lenguajes de programación, JavaScript no define diferentes tipos de
+            números, como enteros, cortos, largos, de punto flotante, etc.</p>
+        <p>Los números de JavaScript siempre se almacenan como números de coma flotante de doble precisión,
+            siguiendo el estándar internacional IEEE 754.</p>
+        <p>Este formato almacena números de 64 bits, donde el número (la fracción) se almacena en los bits 0 al 51,
+            el exponente en los bits 52 al 62 y el signo en el bit 63:</p>
+        <table>
+            <tr> <th>Valor (también conocido como fracción/mantisa)</th> <th>Exponente</th> <th>Firmar</th> </tr>
+            <tr> <td>52 bits (0 - 51)</td> <td>11 bits (52 - 62)</td> <td>1 bit (63) </td></tr>
+        </table>
+    </section>
+    <section>
+        <h2>Precisión entera</h2>
+        <p>Los números enteros (números sin punto ni notación de exponente) tienen una precisión de hasta 15 dígitos.</p>
+        <pre>
+            let x = 999999999999999; // x will be 999999999999999
+            let y = 9999999999999999; // y will be 10000000000000000
+        </pre>
+        <p>El número máximo de decimales es 17.</p>
+    </section>
+    <section>
+        <h2>Precisión flotante</h2>
+        <p>La aritmética de coma flotante no siempre es 100% precisa:</p>
+        <pre>
+            let x = 0.2 + 0.1;
+            
+            La salida sería: 0.30000000000000004
+        </pre>
+        <p>Para resolver el problema anterior, es útil multiplicar y dividir:</p>
+        <pre>
+            let x = (0.2 * 10 + 0.1 * 10) / 10;
+        </pre>
+    </section>
+    <section>
+        <h2>Agregar números y cadenas</h2>
+        <p>ADVERTENCIA !!</p>
+        <p>JavaScript utiliza el operador + tanto para la suma como para la concatenación.</p>
+        <p>Si sumas dos números, el resultado será un número:</p>
+        <pre>
+            let x = 10;
+            let y = 20;
+            let z = x + y;
+        </pre>
+        <p>Si agrega dos cadenas, el resultado será una concatenación de cadenas:</p>
+        <pre>
+            let x = "10";
+            let y = "20";
+            let z = x + y;
+        </pre>
+        <p>Si agrega un número y una cadena, el resultado será una concatenación de cadenas:</p>
+        <pre>
+            let x = 10;
+            let y = "20";
+            let z = x + y;
+        </pre>
+        <p>Si agrega una cadena y un número, el resultado será una concatenación de cadenas:</p>
+        <pre>
+            let x = "10";
+            let y = 20;
+            let z = x + y;
+        </pre>
+        <p>Un error común es esperar que este resultado sea 30:</p>
+        <pre>
+            let x = 10;
+            let y = 20;
+            let z = "The result is: " + x + y;
+        </pre>
+        <p>Un error común es esperar que este resultado sea 102030:</p>
+        <pre>
+            let x = 10;
+            let y = 20;
+            let z = "30";
+            let result = x + y + z;
+        </pre>
+        <p>El intérprete de JavaScript funciona de izquierda a derecha.</p>
+        <p>Los primeros 10 + 20 se suman porque x e y son ambos números.</p>
+        <p>Entonces se concatena 30 + "30" porque z es una cadena.</p>
+    </section>
+    <section>
+        <h2>Cadenas numéricas</h2>
+        <p>Las cadenas de JavaScript pueden tener contenido numérico:</p>
+        <pre>
+            let x = 100; // x is a number
+            let y = "100"; // y is a string
+        </pre>
+        <p>JavaScript intentará convertir cadenas en números en todas las operaciones numéricas:</p>
+        <pre>
+            Esto funcionará:
+
+            let x = "100";
+            let y = "10";
+            let z = x / y;
+        </pre>
+        <pre>
+            Esto también funcionará:
+
+            let x = "100";
+            let y = "10";
+            let z = x * y;
+        </pre>
+        <pre>
+            Y esto funcionará:
+
+            let x = "100";
+            let y = "10";
+            let z = x - y;
+        </pre>
+        <pre>
+            Pero esto no funcionará:
+
+            let x = "100";
+            let y = "10";
+            let z = x + y;
+
+            Dará 10010
+            En el último ejemplo, JavaScript usa el operador + para concatenar las cadenas.
+        </pre>
+    </section>
+    <section>
+        <h2>NaN - No es un número</h2>
+        <p>NaN es una palabra reservada de JavaScript que indica que un número no es un número legal.</p>
+        <p>Intentar hacer aritmética con una cadena no numérica dará como resultado NaN (No es un número):</p>
+        <pre>
+            let x = 100 / "Apple";
+        </pre>
+        <p>Sin embargo, si la cadena es numérica, el resultado será un número:</p>
+        <pre>
+            let x = 100 / "10";
+        </pre>
+        <p>Puede utilizar la función global de JavaScript isNaN() para averiguar si un valor no es un número:</p>
+        <pre>
+            let x = 100 / "Apple";
+            isNaN(x);
+        </pre>
+        <p>Cuidado con NaN. Si usa NaN en una operación matemática, el resultado también será NaN:</p>
+        <pre>
+            let x = NaN;
+            let y = 5;
+            let z = x + y;
+        </pre>
+        <p>O el resultado podría ser una concatenación como NaN5:</p>
+        <pre>
+            let x = NaN;
+            let y = "5";
+            let z = x + y;
+        </pre>
+        <p>NaN es un número: typeof NaN devuelve number:</p>
+        <pre>
+            typeof NaN;
+        </pre>
+    </section>
+    <section>
+        <h2>Infinito</h2>
+        <p>Infinity (o -Infinity) es el valor que JavaScript devolverá si calcula un número fuera del mayor número posible.</p>
+        <pre>
+            let myNumber = 2;
+            // Execute until Infinity
+            while (myNumber != Infinity) {
+                myNumber = myNumber * myNumber;
+            }
+        </pre>
+        <p>La división por 0 (cero) también genera Infinity:</p>
+        <pre>
+            let x = 2 / 0;
+            let y = -2 / 0;
+        </pre>
+        <p>Infinity es un número: typeof Infinity devuelve number.</p>
+        <pre>
+            typeof Infinity;
+        </pre>
+    </section>
+    <section>
+        <h2>hexadecimal</h2>
+        <p>JavaScript interpreta las constantes numéricas como hexadecimales si están precedidas por 0x.</p>
+        <pre>
+            let x = 0xFF;
+        </pre>
+        <p>Nunca escriba un número con un cero a la izquierda (como 07).</p>
+        <p>Algunas versiones de JavaScript interpretan los números como octales si se escriben con un cero a la izquierda.</p>
+        <p>De forma predeterminada, JavaScript muestra los números como decimales <strong>de base 10 .</strong></p>
+        <p>Pero puedes usar el método toString() para generar números desde <strong>la base 2</strong> hasta <strong>la base 36 .</strong></p>
+        <p>El hexadecimal es <strong>base 16</strong> . El decimal es <strong>base 10</strong> . Octal es <strong>base 8</strong> . El binario es <strong>base 2 .</strong></p>
+        <pre>
+            let myNumber = 32;
+            myNumber.toString(32);
+            myNumber.toString(16);
+            myNumber.toString(12);
+            myNumber.toString(10);
+            myNumber.toString(8);
+            myNumber.toString(2);
+        </pre>
+    </section>
+    <section>
+        <h2>Números de JavaScript como objetos</h2>
+        <p>Normalmente los números de JavaScript son valores primitivos creados a partir de literales:</p>
+        <pre>
+            let x = 123;
+        </pre>
+        <p>Pero los números también se pueden definir como objetos con la palabra clave new:</p>
+        <pre>
+            let y = new Number(123);
+        </pre>
+        <pre>
+            let x = 123;
+            let y = new Number(123);
+        </pre>
+        <p>No cree objetos numéricos.</p>
+        <p>La palabra clave new complica el código y ralentiza la velocidad de ejecución.</p>
+        <p>Los objetos numéricos pueden producir resultados inesperados:</p>
+        <p>Cuando se utiliza el operador ==, x e y son iguales :</p>
+        <pre>
+            let x = 500;
+            let y = new Number(500);
+        </pre>
+        <p>Cuando se utiliza el operador ===, x e y no son iguales .</p>
+        <pre>
+            let x = 500;
+            let y = new Number(500);
+        </pre>
+        <p>Note la diferencia entre (x==y)y (x===y).</p>
+        <pre>
+            (x == y)¿verdadero o falso?
+            
+            let x = new Number(500);
+            let y = new Number(500);
+        </pre>
+        <pre>
+            (x === y)¿verdadero o falso?
+            
+            let x = new Number(500);
+            let y = new Number(500);
+        </pre>
+        <p>La comparación de dos objetos JavaScript siempre devuelve false .</p>
+    </section>
+</body>
+</html>

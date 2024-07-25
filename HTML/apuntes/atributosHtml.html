@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Atributos HTML</h1>
+    <p class="tabular"><q>Los atributos HTML proporcionan información adicional sobre los elementos HTML.</q></p>
+    <section>
+        <h2>Atributos HTML</h2>
+        <ul>
+            <li>Todos los elementos HTML pueden tener atributos.</li>
+            <li>Los atributos proporcionan información adicional sobre los elementos.</li>
+            <li>Los atributos siempre se especifican en la etiqueta de inicio.</li>
+            <li>Los atributos normalmente vienen en pares nombre/valor como: nombre="valor"</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>El atributo href</h2>
+        <p>La etiqueta &lt;a&gt; define un hipervínculo. El atributo href especifica la URL de la página a la que va el enlace:</p>
+        <pre>
+            &lt;a href="https://www.w3schools.com"&gt;Visit W3Schools&lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El atributo src</h2>
+        <p>La etiqueta &lt;img&gt; se utiliza para incrustar una imagen en una página HTML. El atributo src especifica la ruta a la imagen que se mostrará:</p>
+        <pre>
+            &lt;img src="img_girl.jpg"&gt;
+        </pre>
+        <p>Hay dos formas de especificar la URL en el atributo src:</p>
+        <ol>
+            <li><span class="negrita">URL absoluta </span>: enlace a una imagen externa alojada en otro sitio web.<br>
+                Ejemplo: <span class="negrita"> src="https://www.w3schools.com/images/img_girl.jpg"</span> .<br>
+                <span class="negrita">Nota:</span> Las imágenes externas pueden tener derechos de autor. Si no obtiene permiso para usarlo, es posible que esté infringiendo 
+                las leyes de derechos de autor. Además, no puedes controlar las imágenes
+                externas; puede ser eliminado o cambiado repentinamente.</li>
+            <li>
+                <span class="negrita">URL relativa </span>: enlaces a una imagen alojada en el sitio web. Aquí, la URL no incluye el nombre de dominio. <br> 
+                Si la URL comienza sin barra, será relativa a la página actual. Ejemplo: src="img_girl.jpg". <br>Si la URL comienza con una barra diagonal, 
+                será relativa al dominio. Ejemplo: <span class="negrita"> src="/images/img_girl.jpg". </span><br/>
+                <span class="negrita">Consejo:</span> casi siempre es mejor utilizar URL relativas. No se romperán si cambias de dominio.
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Los atributos de ancho y alto.</h2>
+        <p>La etiqueta &lt;img&gt; también debe contener los atributos width y height, que especifican el ancho y el
+            alto de la imagen (en píxeles):</p>
+        <pre>
+            &lt;img src="img_girl.jpg" width="500" height="600"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El atributo alt</h2>
+        <p>El atributo alt requerido para la etiqueta &lt;img&gt; especifica un texto alternativo para una imagen, si por
+            algún motivo la imagen no se puede mostrar. Esto puede deberse a una conexión lenta, a un error en el
+            atributo src o si el usuario utiliza un lector de pantalla.</p>
+        <pre>
+            &lt;img src="img_girl.jpg" alt="Girl with a jacket"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El atributo de estilo</h2>
+        <p>El atributo style se utiliza para agregar estilos a un elemento, como color, fuente, tamaño y más.</p>
+        <pre>
+            &lt;p style="color:red;"&gt;This is a red paragraph.&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El atributo de idioma</h2>
+        <p>Siempre debes incluir el atributo lang dentro de la etiqueta &lt;html&gt;, para declarar el idioma de la
+            página Web. Esto está destinado a ayudar a los motores de búsqueda y navegadores.</p>
+        <p>El siguiente ejemplo especifica el inglés como idioma:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;body&gt;
+            ...
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <p>Los códigos de país también se pueden agregar al código de idioma en el atributo lang. Entonces, los
+            dos primeros caracteres definen el idioma de la página HTML y los dos últimos definen el país.</p>
+        <p>El siguiente ejemplo especifica el inglés como idioma y Estados Unidos como país:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en-US"&gt;
+            &lt;body&gt;
+            ...
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El atributo título</h2>
+        <p>El atributo title define información adicional sobre un elemento.</p>
+        <p>El valor del atributo de título se mostrará como información cuando pase el mouse sobre el elemento:</p>
+        <pre>
+            &lt;p title="I'm a tooltip"&gt;This is a paragraph.&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Sugerimos: utilice siempre atributos en minúsculas</h2>
+        <p>El estándar HTML no requiere nombres de atributos en minúsculas.</p>
+        <p>El atributo de título (y todos los demás atributos) se puede escribir en mayúsculas o minúsculas como
+            <span class="negrita">título o TÍTULO </span>.</p>
+    </section>
+
+    <section>
+        <h2>Sugerimos: citar siempre los valores de los atributos</h2>
+        <p>El estándar HTML no requiere comillas alrededor de los valores de los atributos.</p>
+        <p>Sin embargo, el W3C recomienda comillas en HTML y <span class="negrita"> exige </span>comillas para tipos de documentos más
+            estrictos como XHTML.</p>
+        <p><span class="negrita">Bien</span></p>
+        <pre>
+            &lt;a href="https://www.w3schools.com/html/"&gt;Visit our HTML tutorial&lt;/a&gt;
+        </pre>
+        <p><span class="negrita">Mal</span></p>
+        <pre>
+            &lt;a href=https://www.w3schools.com/html/&gt;Visit our HTML tutorial&lt;/a&gt;
+        </pre>
+        <p>A veces hay que utilizar comillas. Este ejemplo no mostrará el atributo de título correctamente porque
+            contiene un espacio:</p>
+        <pre>
+            &lt;p title=About W3Schools&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>¿Comillas simples o dobles?</h2>
+        <p>Las comillas dobles alrededor de los valores de los atributos son las más comunes en HTML, pero
+            también se pueden utilizar comillas simples.</p>
+        <p>En algunas situaciones, cuando el valor del atributo contiene comillas dobles, es necesario utilizar
+            comillas simples:</p>
+        <pre>
+            &lt;p title='John "ShotGun" Nelson'&gt;
+        </pre>
+        <p>O viceversa:</p>
+        <pre>
+            &lt;p title="John 'ShotGun' Nelson"&gt;
+        </pre>
+    </section>
+</body>
+</html>

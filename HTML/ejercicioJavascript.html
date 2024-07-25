@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Javascript</title>
+</head>
+<body>
+
+<h1>Mi Primera Pagina Javascript</h1>
+
+<p>JavaScript cambiará el color del texto de demostración:</p>
+
+<button type="button" onclick="cambiarRojo()">ROJO</button>
+<button type="button" onclick="cambiarVerde()">VERDE</button>
+<button type="button" onclick="cambiarAzul()">AZUL</button>
+<button type="button" onclick="cambiarNegro()">NEGRO</button>
+
+<h2 id="demo">Texto de demostración</h2>
+
+<script>
+    function cambiarRojo() {
+        document.getElementById("demo").style = "color:red;";
+    }
+    function cambiarVerde() {
+        document.getElementById("demo").style = "color:green;";
+    }
+    function cambiarAzul() {
+        document.getElementById("demo").style = "color:blue;";
+    }
+    function cambiarNegro() {
+        document.getElementById("demo").style = "color:black;";
+    }
+</script>
+    
+</body>
+</html>
+
+Freak-gh0st

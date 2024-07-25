@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamaño de fuente en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Tamaño de fuente en CSS</h1>
+    
+    <section>
+        <h2>Tamaño de fuente</h2>
+        <p>La propiedad font-size establece el tamaño del texto.</p>
+        <p>Poder gestionar el tamaño del texto es importante en el diseño web. Sin embargo, no debe utilizar ajustes
+            de tamaño de fuente para hacer que los párrafos parezcan títulos o que los títulos parezcan párrafos.</p>
+        <p>Utilice siempre las etiquetas HTML adecuadas, como &lt;h1&gt; - &lt;h6&gt; para los títulos y &lt;p&gt; para los párrafos.</p>
+        <p>El valor del tamaño de fuente puede ser absoluto o relativo.</p>
+        <p>Tamaño absoluto:</p>
+        <ul>
+            <li>Establece el texto a un tamaño específico</li>
+            <li>No permite que un usuario cambie el tamaño del texto en todos los navegadores (malo por razones de
+                accesibilidad)</li>
+            <li>El tamaño absoluto es útil cuando se conoce el tamaño físico de la salida.</li>
+        </ul>
+        <p>Tamano relativo:</p>
+        <ul>
+            <li>Establece el tamaño relativo a los elementos circundantes.</li>
+            <li>Permite al usuario cambiar el tamaño del texto en los navegadores.</li>
+        </ul>
+        <p><strong>Nota: </strong>Si no especifica un tamaño de fuente, el tamaño predeterminado para el texto normal, como los
+            párrafos, es 16px (16px=1em).</p>
+    </section>
+
+    <section>
+        <h2>Establecer tamaño de fuente con píxeles</h2>
+        <p>Ajustar el tamaño del texto con píxeles le da un control total sobre el tamaño del texto:</p>
+        <h3>Ejemplo</h3>
+        <pre>
+            h1 {
+                font-size: 40px;
+            }
+            h2 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 14px;
+            }
+        </pre>
+        <p><strong>Consejo: </strong> si usa píxeles, aún puede usar la herramienta de zoom para cambiar el tamaño de toda la página.</p>
+    </section>
+
+    <section>
+        <h2>Establecer tamaño de fuente con Em</h2>
+        <p>Para permitir a los usuarios cambiar el tamaño del texto (en el menú del navegador), muchos
+            desarrolladores utilizan em en lugar de píxeles.</p>
+        <p>1em es igual al tamaño de fuente actual. El tamaño de texto predeterminado en los navegadores es 16px.
+            Entonces, el tamaño predeterminado de 1em es 16px.</p>
+        <p>El tamaño se puede calcular de píxeles a em usando esta fórmula: píxeles/16=em</p>
+        <h3>Ejemplo</h3>
+        <pre>
+            h1 {
+                font-size: 2.5em; /* 40px/16=2.5em */
+            }
+            h2 {
+                font-size: 1.875em; /* 30px/16=1.875em */
+            }
+            p {
+                font-size: 0.875em; /* 14px/16=0.875em */
+            }
+        </pre>
+        <p>En el ejemplo anterior, el tamaño del texto en em es el mismo que el del ejemplo anterior en píxeles. Sin
+            embargo, con el tamaño em, es posible ajustar el tamaño del texto en todos los navegadores.</p>
+    </section>
+
+    <section>
+        <h2>Utilice una combinación de porcentaje y em</h2>
+        <p>La solución que funciona en todos los navegadores es establecer un tamaño de fuente predeterminado en porcentaje para el elemento &lt;body&gt;:</p>
+        <h3>Ejemplo</h3>
+        <pre>
+            body {
+                font-size: 100%;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.875em;
+            }
+            p {
+                font-size: 0.875em;
+            }
+        </pre>
+        <p>¡Nuestro código ahora funciona muy bien! Muestra el mismo tamaño de texto en todos los navegadores y
+            permite que todos los navegadores hagan zoom o cambien el tamaño del texto.</p>
+        <h2>Tamaño de fuente responsive</h2>
+        <p>El tamaño del texto se puede configurar con una unidad vw, lo que significa "ancho de la ventana gráfica".</p>
+        <p>De esa forma, el tamaño del texto seguirá el tamaño de la ventana del navegador:</p>
+        <pre>
+            &lt;h1 style="font-size:10vw"&gt;Hello World&lt;/h1&gt;
+        </pre>
+        <p>La ventana gráfica es el tamaño de la ventana del navegador. 1vw = 1% del ancho de la ventana gráfica.Si la ventana gráfica tiene 50 cm de ancho, 1vw es de 0,5 cm.</p>
+    </section>
+</body>
+</html>

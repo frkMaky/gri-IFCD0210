@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejerccicio Estilo Tablas</title>
+    <style>
+        table {
+            border: 1px solid white;
+            
+        }
+        th {
+            color: white;
+            background-color: #97d171;
+            padding: 3px;
+            font-weight: normal;
+        }
+        th.titulo {height: 50px;border-bottom: 3px solid white;}
+        th.derecha {
+            border-right: 3px solid white;
+        }
+        td {font-weight: normal; padding-right: 15px;padding-left: 5px; padding-bottom: 10px; text-align: left;}
+        tr:nth-child(even) {background-color: #beeba0;}
+        tr:nth-child(odd) {background-color: #d4fabb;}
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr> 
+            <th class="titulo">Nombre de la institución</th>
+            <th class="titulo">Estudios Realizados</th>
+            <th class="titulo">Títulos Obtenidos</th>
+            <th class="titulo">Años</th>
+        </tr>
+        <tr>
+            <th class="derecha">Gimnasio Moderno</th>
+            <td>Primario y Secundario</td>
+            <td>Bachiller</td>
+            <td><em>1950-1960</em></td>
+        </tr>
+        <tr>
+            <th class="derecha">Universidad Nacional</th>
+            <td>Filosofía</td>
+            <td>Filósofo</td>
+            <td><em>1961-1967</em></td>
+        </tr>
+        <tr>
+            <th class="derecha">Universidad Externado</th>
+            <td>Curso: Gerencia de Recursos Humanos</td>
+            <td>Gerente</td>
+            <td><em>1967-1698</em></td>
+        </tr>
+        <tr>
+            <th class="derecha">Universidad de Poitiers</th>
+            <td>Esp. en teoría ética</td>
+            <td>Especialista</td>
+            <td><em>1968-1972</em></td>
+        </tr>
+        <tr>
+            <th class="derecha">Kaplan Covent Garden</th>
+            <td>Inglés avanzado</td>
+            <td>Bilingüe</td>
+            <td><em>1973-1976</em></td>
+        </tr>
+        <tr>
+            <th class="derecha">Universidad de Lima</th>
+            <td>Maestría en educación</td>
+            <td>Docente</td>
+            <td><em>1977-1981</em></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordes en una tabla en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Bordes en una tabla en HTML</h1>
+    <p class="tabular"><q>Las tablas en HTML pueden tener bordes de diferentes estilos y formas.</q></p>
+    <section>
+        <h2>Cómo agregar un borde</h2>
+        <p>Para agregar un borde, use la propiedad border de CSS en los elementos table, th y td</p>
+        <pre>
+            table, th, td {
+                border: 1px solid black;
+                
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Bordes de tabla colapsados</h2>
+        <p>Para evitar tener bordes dobles como en el ejemplo anterior, establezca la propiedad border-collapse de CSS a collapse.</p>
+        <p>Esto hará que las fronteras colapsen en una sola frontera</p>
+        <pre>
+            table, th, td {
+                border: 1px solid black;    
+                border-collapse: collapse;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Estilo de bordes de una tabla</h2>
+        <p>Si establece un color de fondo para cada celda y le da al borde un color blanco (el mismo que el fondo del documento), obtendrá la
+             impresión de un borde invisible</p>
+        <pre>
+            table, th, td {
+                border: 1px solid white;
+                border-collapse: collapse;
+            }
+            th, td {
+                background-color: #96D4D4;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Bordes de la tabla redondeados</h2>
+        <p>Con la propiedad border-radius, los bordes adquieren esquinas redondeadas</p>
+        <pre>
+            table, th, td {
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+        </pre>
+        <p>Salta el borde alrededor de la tabla omitiendo el selector de CSS table:</p>
+        <pre>
+            th, td {
+                border: 1px solid black;
+                border-radius: 10px;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Bordes de la tabla punteados</h2>
+        <p>Con la propiedad border-style, puedes establecer la apariencia del borde.</p>
+        <ul>
+            <li>dotted</li>
+            <li>dashed</li>
+            <li>solid</li>
+            <li>double</li>
+            <li>groove</li>
+            <li>ridge</li>
+            <li>inset</li>
+            <li>outset</li>
+            <li>none</li>
+            <li>hidden</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Color del borde</h2>
+        <p>Con la propiedad border-color, puedes establecer el color del borde.</p>
+        <pre>
+            th, td {
+                border-color: #96D4D4;
+            }
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice los valores de border en CSS correctos para crear un borde negro sólido de 3 píxeles en un
+            elemento de la tabla.</p>
+        <pre>
+            table, th, td {
+                border:;
+            }
+        </pre>
+    </section>
+
+</body>
+</html>

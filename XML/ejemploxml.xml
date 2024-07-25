@@ -1,0 +1,29 @@
+<?xmll version="1.0" encoding="utf-8">
+<selva>
+
+    <animal>
+        <nombre>Weathers</nombre>
+        <tipo>Pantera</tipo>    
+        <color>Negro</color>
+        <edad>12</edad>
+    </animal>
+
+    <animal>
+        <nombre>Bum</nombre>
+        <tipo>León</tipo>    
+        <color>Marrón</color>
+        <edad>15</edad>
+    </animal>
+
+</selva>
+
+<persona profesion="cantante">
+    <nombre>Elsa</nombre>
+    <mujer />
+    <fecha_de_nacimiento>
+        <dia>18</dia>
+        <mes>6</mes>
+        <año>1996</año>
+    </fecha_de_nacimiento>
+    <ciudad>Pamplona</ciudad>
+</persona>

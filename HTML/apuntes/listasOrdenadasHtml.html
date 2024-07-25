@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas ordenadas en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Listas ordenadas en HTML</h1>
+    <p class="tabular"><q>La etiqueta de HTML &lt;ol&gt; define una lista ordenada. Una lista ordenada puede ser numérica o alfabética.</q></p>
+    <section>
+        <h2>Lista HTML ordenada</h2>
+        <p>Una lista ordenada comienza con la etiqueta &lt;ol&gt;. Cada elemento de la lista comienza con la etiqueta &lt;li&gt;.</p>
+        <p>Los elementos de la lista estarán marcados con números de forma predeterminada:</p>
+        <pre>
+            &lt;ol&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Lista HTML ordenada: el atributo de tipo</h2>
+        <p>El atributo type de la etiqueta &lt;ol&gt; define el tipo de marcador de elemento de la lista:</p>
+        <table>
+            <tr> <th>tipo</th> <th>Descripción</th> </tr>
+            <tr> <td>type="1"</td> <td>Los items de la lista serán enumerados con números (por defecto)</td> </tr>
+            <tr> <td>type="A"</td> <td>Los items de la lista serán enumerados con letras mayúsculas</td> </tr>
+            <tr> <td>type="a"</td> <td>Los items de la lista serán enumerados con letras minúsculas</td> </tr>
+            <tr> <td>type="I"</td> <td>Los items de la lista serán enumerados con números romanos en mayúscula</td> </tr>
+            <tr> <td>type="i"</td> <td>Los items de la lista serán enumerados con números romanos en minúscula</td> </tr>
+        </table>
+        <p>Números:</p>
+        <pre>
+            &lt;ol type="1"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>
+        <p>Letras mayúsculas:</p>
+        <pre>
+            &lt;ol type="A"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>
+        <p>Letras minúsculas:</p>
+        <pre>
+            &lt;ol type="a"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>
+        <p>Números romanos en mayúsculas:</p>
+        <pre>
+            &lt;ol type="I"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>
+        <p>Números romanos en minúsculas:</p>
+        <pre>
+            &lt;ol type="i"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Inicio del conteo</h2>
+        <p>De forma predeterminada, una lista ordenada comenzará a contar desde 1. Si desea comenzar a contar desde un número específico, 
+            puede usar el atributo start</p>
+        <pre>
+            &lt;ol start="50"&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>  
+    </section>
+
+    <section>
+        <h2>Listas HTML anidadas</h2>
+        <p>Las listas se pueden anidar (una lista dentro de otra lista):</p>
+        <pre>
+            &lt;ol&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea
+                &lt;ol&gt;
+                    &lt;li&gt;Black Tea&lt;/li&gt;
+                    &lt;li&gt;Green Tea&lt;/li&gt;
+                &lt;/ol&gt;
+                &lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>  
+        <p><span class="negrita">Nota:</span>  Un elemento de lista (&lt;li&gt;) puede contener una nueva lista y otros elementos HTML, 
+            como imágenes y enlaces, etc.</p>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>Utilice el elemento &lt;ol&gt; de HTML para definir una lista ordenada</li>
+            <li>Utilice el atributo type de HTML para definir el tipo de numeración</li>
+            <li>Utilice el elemento &lt;li&gt; de HTML para definir un elemento de lista</li>
+            <li>Las listas se pueden anidar</li>
+            <li>Los elementos de la lista pueden contener otros elementos HTML</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Termine el código HTML para hacer una lista ordenada.</p>
+        <pre>
+            &lt;li&gt;Coffee&lt;/li&gt;
+            &lt;li&gt;Tea&lt;/li&gt;
+            &lt;li&gt;Milk&lt;/li&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de lista en HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;ol&gt;</td> <td>Define una lista ordenada</td> </tr>
+            <tr> <td>&lt;li&gt;</td> <td>Define un item de la lista</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

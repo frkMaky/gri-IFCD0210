@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuentes en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Fuentes en CSS</h1>
+    <p class="tabular"><q>¡Es importante elegir la fuente adecuada para su sitio web!</q></p>
+    <section>
+        <h2>La selección de fuentes es importante</h2>
+        <p>Elegir la fuente correcta tiene un gran impacto en cómo los lectores experimentan un sitio web.</p>
+        <p>La fuente adecuada puede crear una identidad sólida para su marca.</p>
+        <p>Es importante utilizar una fuente que sea fácil de leer. La fuente agrega valor a su texto. También es importante elegir el color y el tamaño de texto correctos para la fuente.</p>
+    </section>
+
+    <section>
+        <h2>Familias de fuentes genéricas</h2>
+        <p>En CSS hay cinco familias de fuentes genéricas:</p>
+        <ol>
+            <li><strong>Las fuentes serif </strong> tienen un pequeño trazo en los bordes de cada letra. Crean una sensación deformalidad y elegancia.</li>
+            <li><strong>Las fuentes sans-serif </strong> tienen líneas limpias (sin pequeños trazos). Crean un aspecto moderno y minimalista.</li>
+            <li><strong>Fuentes monospace: </strong> aquí todas las letras tienen el mismo ancho fijo. Crean una apariencia mecánica.</li>
+            <li><strong>Las fuentes cursive </strong> imitan la escritura humana.</li>
+            <li><strong>Las fuentes de fantasy </strong> fuentes decorativas y divertidas.</li>
+        </ol>
+        <p>Todos los diferentes nombres de fuentes pertenecen a una de las familias de fuentes genéricas.</p>
+    </section>
+    
+    <section>
+        <h2>Diferencia entre fuentes Serif y Sans-serif</h2>
+        <p><strong>Nota: </strong> En las pantallas del ordenador, las fuentes sans-serif se consideran más fáciles de leer que las fuentes serif.</p>
+        <h3>SERIF</h3>
+        <p style="font-family: serif;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem ducimus distinctio provident fugiat eaque magnam unde numquam odit. Consequatur, aliquid maxime? Rerum pariatur ex corporis deleniti maxime dolorum porro voluptas.</p>
+        <h3>SANS-SERIF</h3>
+        <p style="font-family: sans-serif;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem ducimus distinctio provident fugiat eaque magnam unde numquam odit. Consequatur, aliquid maxime? Rerum pariatur ex corporis deleniti maxime dolorum porro voluptas.</p>
+    </section>
+
+    <section>
+        <h2>Algunos ejemplos de fuentes</h2>
+        <table>
+            <tr> <th>Generic Font Family</th> <th>Examples of Font Names</th> </tr>
+            <tr> <td>Serif</td> <td>Times New Roman, Georgia, Garamond</td> </tr>
+            <tr> <td>Sans-serf</td> <td>Arial, Verdana, Helvetica</td> </tr>
+            <tr> <td>Monospace</td> <td>Courier New, Lucida Consola, Monaco</td> </tr>
+            <tr> <td>Cursive</td> <td>Brush Script MT, Lucida Handwrit  ing</td> </tr>
+            <tr> <td>Fantasy</td> <td>Copperplate, Papyrus</td> </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>La propiedad font-family en CSS</h2>
+        <p>En CSS, usamos la propiedad font-family para especificar la fuente de un texto.</p>
+        <p>Nota: Si el nombre de la fuente tiene más de una palabra, debe estar entre comillas, como: "Times New Roman".</p>
+        <p><strong>Consejo: </strong> La propiedad font-family debe contener varios nombres de fuentes como sistema
+            "alternativo" para garantizar la máxima compatibilidad entre navegadores y sistemas operativos.
+            Comience con la fuente que desee y termine con una familia genérica (para permitir que el navegador elija
+            una fuente similar en la familia genérica, si no hay otras fuentes disponibles). Los nombres de las fuentes
+            deben estar separados por comas.</p>
+        <h3>Ejemplo</h3>
+        <p>Especifique algunas fuentes diferentes para tres párrafos:</p>
+        <pre>
+            .p1 {
+                font-family: "Times New Roman", Times, serif;
+            }
+            .p2 {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .p3 {
+                font-family: "Lucida Console", "Courier New", monospace;
+            }
+        </pre>
+    </section>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas Varias 2</title>
+    <style>
+        dt {
+            font-style: italic;
+        }
+        .negrita {font-weight: bold;}
+        .normal {font-weight: normal;}
+    </style>
+</head>
+<body>
+    <h1>Menú</h1>
+    <ul>
+        <li>Inicio</li>
+        <li class="negrita">Noticias
+            <ul class="normal" style="list-style-type:disc;">
+                <li><a href="#">Recientes</a></li>
+                <li class="negrita"><a href="#">Más leidas</a></li>
+                <li><a href="#">Más valoradas</a></li>
+            </ul>
+        </li>
+        <li>Artículos
+            <ol>
+                <li><strong>XHTML</strong></li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>Otros</li>
+            </ol>
+        </li>
+        <li>
+            Contacto
+            <dl>
+                <dt>Email</dt>
+                <dd class="negrita">nombre@direccion.com</dd>
+            
+                <dt>Teléfono</dt>
+                <dd>900 900 900</dd>
+            
+                <dt>Fax</dt>
+                <dd>900 900 900</dd>
+
+            </dl>
+        </li>
+    </ul>
+    
+</body>
+</html>

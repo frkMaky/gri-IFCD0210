@@ -1,0 +1,82 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lados del borde en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Lados del borde en CSS</h1>
+
+    <section>
+        <h2>Borde CSS: lados individuales</h2>
+        <p>Es posible especificar un borde diferente para cada lado.</p>
+        <p>En CSS, también hay propiedades para especificar cada uno de los bordes (superior, derecho, inferior e izquierdo):</p>
+        <pre>
+            p {
+                border-top-style: dotted;
+                border-right-style: solid;
+                border-bottom-style: dotted;
+                border-left-style: solid;
+            }
+        </pre>
+        <p>El ejemplo anterior da el mismo resultado que este:</p>
+        <pre>
+            p {
+                border-style: dotted solid;
+            }
+        </pre>
+        <p>Pues así es como funciona:</p>
+        <p>Si la propiedad border-style tiene <strong>cuatro</strong> valores:</p>
+        <ul>
+            <li>estilo de borde: punteado sólido con doble guión;</li>
+            <li>el borde superior está punteado</li>
+            <li>el borde derecho es sólido</li>
+            <li>el borde inferior es doble</li>
+            <li>el borde izquierdo está discontinuo</li>
+        </ul>
+        <p>Si la propiedad border-style tiene <strong>tres</strong> valores:</p>
+        <ul>
+            <li>estilo de borde: doble sólido punteado;</li>
+            <li>el borde superior está punteado</li>
+            <li>Los bordes derecho e izquierdo son sólidos.</li>
+            <li>el borde inferior es doble</li>
+        </ul>
+        <p>Si la propiedad border-style tiene dos valores:</p>
+        <ul>
+            <li>estilo de borde: sólido punteado;</li>
+            <li>los bordes superior e inferior están punteados</li>
+            <li>Los bordes derecho e izquierdo son sólidos.</li>
+        </ul>
+        <p>Si la propiedad border-style tiene un valor:</p>
+        <ul>
+            <li>estilo de borde: punteado;</li>
+            <li>los cuatro bordes están punteados</li>
+        </ul>
+        <pre>
+            /* Four values */
+            p {
+                border-style: dotted solid double dashed;
+            }
+            /* Three values */
+            p {
+                border-style: dotted solid double;
+            }
+            /* Two values */
+            p {
+                border-style: dotted solid;
+            }
+            /* One value */
+            p {
+                border-style: dotted;
+            }
+        </pre>
+        <p>La propiedad border-style se utiliza en el ejemplo anterior. Sin embargo, también funciona con border-width y border-color.</p>
+    </section>
+</body>
+</html>

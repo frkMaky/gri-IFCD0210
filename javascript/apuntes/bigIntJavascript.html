@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript BigInt</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>JavaScript BigInt</h1>
+    <p class="tabular">Las variables de JavaScript BigInt se utilizan para almacenar valores enteros grandes que son
+        demasiado grandes para ser representados por un JavaScript normal Number.</p>
+    <section>
+        <h2>Precisión de enteros de JavaScript</h2>
+        <p>Los enteros de JavaScript solo tienen una precisión de hasta 15 dígitos:</p>
+        <pre>
+            Precisión entera
+            let x = 999999999999999;
+            let y = 9999999999999999;
+        </pre>
+        <p>En JavaScript, todos los números se almacenan en un formato de punto flotante de 64 bits (estándar IEEE 754).</p>
+        <p>Con este estándar, los números enteros grandes no se pueden representar exactamente y se redondearán.</p>
+    </section>
+    <section>
+        <h2>Cómo crear un BigInt</h2>
+        <p>Para crear un BigInt, agregue n al final de un número entero o llame a BigInt():</p>
+        <pre>
+            let x = 9999999999999999;
+            let y = 9999999999999999n;
+
+            let x = 1234567890123456789012345n;
+            let y = BigInt(1234567890123456789012345)
+        </pre>
+    </section>
+    <section>
+        <h2>BigInt: un nuevo tipo de datos JavaScript</h2>
+        <p>El typeof de BigInt es "bigint":</p>
+        <pre>
+            let x = BigInt(999999999999999);
+            let type = typeof x;
+        </pre>
+        <p>BigInt es el segundo tipo de datos numéricos en JavaScript (después de Number).</p>
+        <p>Con BigInt el número total de tipos de datos admitidos en JavaScript es 8:</p>
+        <ul>
+            <li>String</li>
+            <li>Number</li>
+            <li>Bigint</li>
+            <li>Boolean</li>
+            <li>Undefined</li>
+            <li>Null</li>
+            <li>Symbol</li>
+            <li>Object</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Operadores BigInt</h2>
+        <p>Los operadores que se pueden usar en JavaScript Number también se pueden usar en BigInt.</p>
+        <pre>
+            Ejemplo de multiplicación BigInt
+            let x = 9007199254740995n;
+            let y = 9007199254740995n;
+            let z = x * y;
+        </pre>
+        <p><strong>Notas</strong> No se permite la aritmética entre Number y BigInt (la conversión de tipos pierde información).</p>
+        <p>El desplazamiento a la derecha sin signo (&gt;&gt;&gt;) no se puede realizar a BigInt (no tiene un ancho fijo).</p>
+    </section>
+    <section>
+        <h2>Decimales BigInt</h2>
+        <p>Un BigInt no puede tener decimales.</p>
+        <pre>
+            Ejemplo de división BigInt
+            let x = 5n;
+            let y = x / 2;
+            // Error: Cannot mix BigInt and other types, use explicit conversion.
+            let x = 5n;
+            let y = Number(x) / 2;
+        </pre>
+    </section>
+    <section>
+        <h2>BigInt Hexadecimal, Octal y Binario</h2>
+        <p>BigInt también se puede escribir en notación hexadecimal, octal o binaria:</p>
+        <pre>
+            Ejemplo de BigInt hexadecimal
+            let hex = 0x20000000000003n;
+            let oct = 0o400000000000000003n;
+            let bin = 0b100000000000000000000000000000000000000000000000000011n;
+        </pre>
+    </section>
+    <section>
+        <h2>Curiosidad de precisión</h2>
+        <p>El redondeo puede comprometer la seguridad del programa:</p>
+        <h3>Ejemplo MAX_SAFE_INTEGER</h3>
+        <pre>
+            9007199254740992 === 9007199254740993; // is true !!!
+        </pre>
+    </section>
+    <section>
+        <h2>Soporte del navegador</h2>
+        <p>BigInt es compatible con todos los navegadores desde septiembre de 2020:</p>
+        <table>
+            <tr><td>Chrome 67</td><td>Edge 79</td> <td>Firefox 68</td> <td>Safari 14</td> <td>Opera 54</td></tr>
+            <tr><td>May 2018</td><td>Jan 2020</td> <td>Jul 2019</td> <td>Sep 2020</td> <td>Jun 2018</td></tr>
+        </table>
+    </section>
+    <section>
+        <h2>Enteros seguros mínimos y máximos</h2>
+        <p>ES6 agregó propiedades máximas y mínimas al objeto Número:</p>
+        <ul>
+            <li>MAX_SAFE_INTEGER</li>
+            <li>MIN_SAFE_INTEGER</li>
+        </ul>
+        <h3>Ejemplo MAX_SAFE_INTEGER</h3>
+        <pre>
+            let x = Number.MAX_SAFE_INTEGER;
+        </pre>
+        <h3>Ejemplo MIN_SAFE_INTEGER</h3>
+        <pre>
+            let x = Number.MIN_SAFE_INTEGER;
+        </pre>
+    </section>
+    <section>
+        <h2>Nuevos métodos numéricos</h2>
+        <p>ES6 también agregó 2 nuevos métodos al objeto Número:</p>
+        <ul>
+            <li>Number.isInteger()</li>
+            <li>Number.isSafeInteger()</li>
+        </ul>
+    </section>
+    <section>
+        <h2>El método Number.isInteger()</h2>
+        <p>El método Number.isInteger() devuelve true si el argumento es un número entero.</p>
+        <pre>
+            Number.isInteger(10);
+            Number.isInteger(10.5);
+        </pre>
+    </section>
+    <section>
+        <h2>El método Number.isSafeInteger()</h2>
+        <p>Un número entero seguro es un número entero que se puede representar exactamente como un número de doble precisión.</p>
+        <p>El método Number.isSafeInteger() devuelve true si el argumento es un número entero seguro.</p>
+        <pre>
+            Number.isSafeInteger(10);
+            Number.isSafeInteger(12345678901234567890);
+        </pre>
+    </section>
+</body>
+</html>

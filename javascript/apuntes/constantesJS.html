@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constante de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Constante de JavaScript</h1>
+    <p>La palabra clave const se introdujo en ES6 (2015)</p>
+    <p>Las variables definidas con const no se pueden redeclarar</p>
+    <p>Las variables definidas con const no se pueden reasignar</p>
+    <p>Las variables definidas con const tienen alcance de bloque</p>
+    <section>
+        <h2>No se puede reasignar</h2>
+        <p>Una variable definida con la palabra clave const no se puede reasignar:</p>
+        <pre>
+            const PI = 3.141592653589793;
+            PI = 3.14; // This will give an error
+            PI = PI + 10; // This will also give an error
+        </pre>
+    </section>
+    <section>
+        <h2>Debe ser asignado</h2>
+        <p>A las variables de JavaScript const se les debe asignar un valor cuando se declaran:</p>
+        <pre>
+        
+            Correcto
+            const PI = 3.14159265359;
+
+            Incorrecto
+            const PI;
+            PI = 3.14159265359;
+        
+        </pre>
+    </section>
+    <section>
+        <h2>¿Cuándo utilizar const en JavaScript?</h2>
+        <p>Declare siempre una variable const cuando sepa que el valor no debe cambiarse.</p>
+        <p>Use const cuando declare:</p>
+        <ul>
+            <li>Un nuevo array</li>
+            <li>Un nuevo objeto</li>
+            <li>Una nueva función</li>
+            <li>Una nueva expresión regular</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Objetos constantes y matrices</h2>
+        <p>La palabra clave const es un poco engañosa.</p>
+        <p>No define un valor constante. Define una referencia constante a un valor.</p>
+        <p>Por esto NO puedes:</p>
+        <ul>
+            <li>Reasignar un valor constante</li>
+            <li>Reasignar una array constante</li>
+            <li>Reasignar un objeto constante</li>
+        </ul>
+        <p>Pero puedes:</p>
+        <ul>
+            <li>Cambiar los elementos del array constante.</li>
+            <li>Cambiar las propiedades del objeto constante.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Matrices constantes</h2>
+        <p>Puedes cambiar los elementos de un array constante:</p>
+        <pre>
+            // You can create a constant array:
+            const cars = ["Saab", "Volvo", "BMW"];
+            // You can change an element:
+            cars[0] = "Toyota";
+            // You can add an element:
+            cars.push("Audi");
+        </pre>
+        <p>Pero NO puedes reasignar el array:</p>
+        <pre>
+            const cars = ["Saab", "Volvo", "BMW"];
+            cars = ["Toyota", "Volvo", "Audi"]; // ERROR
+        </pre>
+    </section>
+    <section>
+        <h2>Objetos constantes</h2>
+        <p>Puedes cambiar las propiedades de un objeto constante:</p>
+        <pre>
+            // You can create a const object:
+            const car = {type:"Fiat", model:"500", color:"white"};
+            // You can change a property:
+            car.color = "red";
+            // You can add a property:
+            car.owner = "Johnson";
+        </pre>
+        <p>Pero NO puedes reasignar el objeto:</p>
+        <pre>
+            const car = {type:"Fiat", model:"500", color:"white"};
+            car = {type:"Volvo", model:"EX60", color:"red"}; // ERROR
+        </pre>
+    </section>
+    <section>
+        <h2>Alcance del bloque</h2>
+        <p>Declarar una variable con const es similar a let cuando se trata de Block Scope .</p>
+        <p>La x declarada en el bloque, en este ejemplo, no es la misma que la x declarada fuera del bloque:</p>
+        <pre>
+            const x = 10;
+            // Here x is 10
+            {
+            const x = 2;
+            // Here x is 2
+            }
+            // Here x is 10
+        </pre>
+    </section>
+    <section>
+        <h2>Redeclaración</h2>
+        <p>Se permite redeclarar una variable var de JavaScript en cualquier parte de un programa:</p>
+        <pre>
+            var x = 2; // Allowed
+            var x = 3; // Allowed
+            x = 4; // Allowed
+        </pre>
+        <p>No se permite redeclarar una variable varo let o const existente en el mismo alcance:</p>
+        <pre>
+            var x = 2; // Allowed
+            const x = 2; // Not allowed
+            {
+            let x = 2; // Allowed
+            const x = 2; // Not allowed
+            }
+            {
+            const x = 2; // Allowed
+            const x = 2; // Not allowed
+            }
+        </pre>
+        <p>No se permite reasignar una variable existente const, en el mismo alcance:</p>
+        <pre>
+            const x = 2; // Allowed
+            x = 2; // Not allowed
+            var x = 2; // Not allowed
+            let x = 2; // Not allowed
+            const x = 2; // Not allowed
+            {
+            const x = 2; // Allowed
+            x = 2; // Not allowed
+            var x = 2; // Not allowed
+            let x = 2; // Not allowed
+            const x = 2; // Not allowed
+            }
+        </pre>
+        <p>Se permite redeclarar una variable con const, en otro ámbito o en otro bloque:</p>
+        <pre>
+            const x = 2; // Allowed
+            {
+            const x = 3; // Allowed
+            }
+            {
+            const x = 4; // Allowed
+            }
+        </pre>
+        <p>El uso de una variable const antes de declararla dará como resultado ReferenceError:</p>
+        <pre>
+            alert (carName);
+            const carName = "Volvo";
+        </pre>
+    </section>
+</body>
+</html>

@@ -1,0 +1,10 @@
+nombre {
+    color:green;
+    font-size: 25px;
+    font-weight: bold;
+}
+dni {
+    background-color: yellow;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}

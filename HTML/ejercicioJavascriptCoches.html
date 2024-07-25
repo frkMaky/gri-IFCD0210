@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - COCHES </title>
+    <style>
+        h1, p {
+            text-align: center;
+        }
+        table{
+            margin: auto;
+        }
+        td {
+            text-align: center;
+            padding: 20px 20px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        caption {
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+      
+    <h1>Coches</h1>
+    <p>Mira, aqui hay unas imagenes de coches</p>
+
+    <table>
+        <caption id="modelo"></caption>
+        <tr>
+            <td colspan="3"><img id="imagenCoche" src="images/cocheDefault.jpg" alt="Coche 1" width="100" height="180"></td>
+        </tr>
+
+        <tr>
+            <td><button type="button" onclick="cocheModelo(1)">Porsche</button></td>
+            <td><button type="button" onclick="cocheModelo(2)">Lamborghini</button></td>
+            <td><button type="button" onclick="cocheModelo(3)">Ferrari</button></td>   
+        </tr>
+        <tr>
+            <td colspan="3"><button type="button" onclick="cocheModelo(0)">Default</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function cocheModelo(modelo) {
+            if (modelo == 1) {
+                document.getElementById('modelo').innerHTML = "Porsche";
+                document.getElementById('imagenCoche').src = "images/coche1.jpg";
+
+            } else if (modelo == 2) {
+                document.getElementById('modelo').innerHTML = "Lamborghini";
+                document.getElementById('imagenCoche').src = "images/coche2.jpg";
+            } else if (modelo == 3) {
+                document.getElementById('modelo').innerHTML = "Ferrari";
+                document.getElementById('imagenCoche').src = "images/coche3.jpg";
+            } else {
+                document.getElementById('modelo').innerHTML = "";
+                document.getElementById('imagenCoche').src = "images/cocheDefault.jpg";
+            }
+        }
+    </script>
+</body>
+</html>

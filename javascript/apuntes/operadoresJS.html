@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Operadores de JavaScript</h1>
+    <p class="tabular"><q>Los operadores de Javascript se utilizan para realizar diferentes tipos de cálculos matemáticos y lógicos.</q></p>
+    <section>
+        <h2>Asignación de JavaScript</h2>
+        <p>El Operador de Asignación ( =) asigna un valor a una variable:</p>
+        <pre>
+            let x = 10;
+            // Assign the value 5 to x
+            let x = 5;
+            // Assign the value 2 to y
+            let y = 2;
+            // Assign the value x + y to z:
+            let z = x + y;
+        </pre>
+    </section>
+    <section>
+        <h2>Suma de JavaScript</h2>
+        <p>El operador de suma ( +) suma números:</p>
+        <h3>Añadiendo</h3>
+        <pre>
+            let x = 5;
+            let y = 2;
+            let z = x + y;
+        </pre>
+    </section>
+    <section>
+        <h2>Multiplicación de JavaScript</h2>
+        <p>El operador de multiplicación ( *) multiplica números:</p>
+        <h3>multiplicando</h3>
+        <pre>
+            let x = 5;
+            let y = 2;
+            let z = x * y;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Tipos de operadores de JavaScript</h2>
+        <p>Existen diferentes tipos de operadores de JavaScript:</p>
+        <ul>
+            <li>Operadores aritméticos</li>
+            <li>Operadores de Asignación</li>
+            <li>Operadores de comparación</li>
+            <li>Operadores de cadena</li>
+            <li>Operadores lógicos</li>
+            <li>Operadores bit a bit</li>
+            <li>Operadores ternarios</li>
+            <li>Operadores de tipo</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Operadores aritméticos de JavaScript</h2>
+        <p>Los operadores aritméticos se utilizan para realizar operaciones aritméticas con números:</p>
+        <h3>Ejemplo de operadores aritméticos</h3>
+        <pre>
+            let a = 3;
+            let x = (100 + 50) * a;
+        </pre>
+        <table>
+            <tr> <th>Operador</th> <th>Descripción</th></tr>
+            <tr> <td>+</td> <td>Suma</td> </tr>
+            <tr> <td>-</td> <td>Resta</td> </tr>
+            <tr> <td>*</td> <td>Multiplicación</td> </tr>
+            <tr> <td>**</td> <td>Exponenciación (ES2016)</td> </tr>
+            <tr> <td>/</td> <td>División</td> </tr>
+            <tr> <td>%</td> <td>Módulo (Resto de la división)</td> </tr>
+            <tr> <td>++</td> <td>Incremento</td> </tr>
+            <tr> <td>--</td> <td>Decremento</td> </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Operadores de asignación de JavaScript</h2>
+        <p>Los operadores de asignación asignan valores a variables de JavaScript.</p>
+        <p>El operador de asignación de suma ( +=) agrega un valor a una variable.</p>
+        <h3>Asignación</h3>
+        <pre>
+            let x = 10;
+            x += 5;
+        </pre>
+        <table>
+            <tr> <th>Operador</th> <th>Ejemplo</th> <th>Mismo que</th></tr>
+            <tr> <td>=</td> <td>x = y</td> <td>x = y</td></tr>
+            <tr> <td>+=</td> <td>x += y</td> <td>x = x + y</td></tr>
+            <tr> <td>-=</td> <td>x -= y</td> <td>x = x - y</td></tr>
+            <tr> <td>*=</td> <td>x *= y</td> <td>x = x * y</td></tr>
+            <tr> <td>/=</td> <td>x /= y</td> <td>x = x / y</td></tr>
+            <tr> <td>%=</td> <td>x %= y</td> <td>x = x % y</td></tr>
+            <tr> <td>**=</td> <td>x **= y</td> <td>x = x ** y</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Operadores de comparación de JavaScript</h2>
+        <table>
+            <tr> <th>Operador</th> <th>Descripción</th></tr>
+            <tr> <td>==</td> <td>Igual a</td> </tr>
+            <tr> <td>===</td> <td>Igual valor e igual tipo</td> </tr>
+            <tr> <td>!=</td> <td>Distinto</td> </tr>
+            <tr> <td>!==</td> <td>Distinto valor o distinto tipo</td> </tr>
+            <tr> <td>&gt;</td> <td>Más grande que</td> </tr>
+            <tr> <td>&lt;</td> <td>Menor que</td> </tr>
+            <tr> <td>&gt;=</td> <td>Más grande que o igual a</td> </tr>
+            <tr> <td>&lt;=</td> <td>Menor que o igual a</td> </tr>
+            <tr> <td>?</td> <td>Operador ternario</td> </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Comparación de cadenas de JavaScript</h2>
+        <p>Todos los operadores de comparación anteriores también se pueden utilizar en cadenas:</p>
+        <pre>
+            let text1 = "A";
+            let text2 = "B";
+            let result = text1 < text2;
+        </pre>
+        <p>Tenga en cuenta que las cadenas se comparan alfabéticamente:</p>
+        <pre>
+            let text1 = "20";
+            let text2 = "5";
+            let result = text1 < text2;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Adición de cadenas de JavaScript</h2>
+        <p>También sepuede utilizar + para agregar (concatenar) cadenas:</p>
+        <pre>
+            let text1 = "John";
+            let text2 = "Doe";
+            let text3 = text1 + " " + text2;
+        </pre>
+        <p>El operador de asignación += también se puede utilizar para agregar (concatenar) cadenas:</p>
+        <pre>
+            let text1 = "What a very ";
+            text1 += "nice day";
+        </pre>
+        <p>El resultado de text1 será:<em> What a very nice day</em></p>
+        <p><strong>Nota</strong> Cuando se usa en cadenas, el operador + se llama operador de concatenación.</p>
+    </section>
+
+    <section>
+        <h2>Agregar cadenas y números</h2>
+        <p>Sumar dos números devolverá la suma, pero agregar un número y una cadena devolverá una cadena:</p>
+        <pre>
+            let x = 5 + 5;
+            let y = "5" + 5;
+            let z = "Hello" + 5;
+        </pre>
+        <p>El resultado de x , y y z será:<br/>
+            10<br/>
+            55<br/>
+            Hello5
+        </p>
+        <p><strong>Nota</strong> Si sumas un número y una cadena, ¡el resultado será una cadena!</p>
+    </section>
+
+    <section>
+        <h2>Operadores lógicos de JavaScript</h2>
+        <table>
+            <tr> <th>Operador</th> <th>Descripción</th></tr>
+            <tr> <td>&&</td> <td>Y lógico</td> </tr>
+            <tr> <td>||</td> <td>Or lógico</td> </tr>
+            <tr> <td>!</td> <td>Not lógico</td> </tr>
+        </table>
+        <p><strong>Nota</strong> Los veremos más adelante</p>
+    </section>
+
+    <section>
+        <h2>Operadores de tipo JavaScript</h2>
+        <table>
+            <tr> <th>Operador</th> <th>Descripción</th></tr>
+            <tr> <td>typeof</td> <td>Devuelve el tipo de una variable</td> </tr>
+            <tr> <td>instanceof</td> <td>Devuelve true si un objeto es una instancia de in tupe de objeto</td> </tr>
+        </table>
+        <p><strong>Nota</strong> Los veremos más adelante</p>
+    </section>
+
+    <section>
+        <h2>Operadores bit a bit de JavaScript</h2>
+        <p>Los operadores de bits trabajan con números de 32 bits.</p>
+        <p>Cualquier operando numérico en la operación se convierte en un número de 32 bits. El resultado se vuelve a convertir en un número de JavaScript.</p>
+        <table>
+            <tr> <th>Operador</th><th>Descripción</th><th>Ejemplo</th><th>Igual a</th><th>Resultado</th><th>Decimal</th> </tr>
+            <tr> <td>&</td><td>AND</td><td>5 & 1</td><td>0101 & 0001</td><td>0001</td><td>1</td> </tr>
+            <tr> <td>|</td><td>OR</td><td>5 | 1</td><td>0101 | 0001</td><td>0101</td><td>5</td> </tr>
+            <tr> <td>~</td><td>NOT</td><td>~ 5</td><td>~0101</td><td>1010</td><td>10</td> </tr>
+            <tr> <td>^</td><td>XOR</td><td>5 ^ 1</td><td>0101 ^ 0001</td><td>0100</td><td>4</td> </tr>
+            <tr> <td>&lt;&lt;</td><td>Desplazamiento a izquierda</td><td>5 &lt;&lt; 1</td><td>0101 &lt;&lt; 1</td><td>1010</td><td>10</td> </tr>
+            <tr> <td>&gt;&gt;</td><td>Desplazamiento a la derecha</td><td>5 &gt;&gt; 1</td><td>0101 &gt;&gt; 1</td><td>0010</td><td>2</td> </tr>
+            <tr> <td>&gt;&gt;&gt;</td><td>Desplazamiento a la derecha sin signo</td><td>5 &gt;&gt;&gt; 1</td><td>0101 &gt;&gt;&gt; 1</td><td>0010</td><td>2</td> </tr>
+        </table>
+        <p>Los ejemplos anteriores utilizan ejemplos sin signo de 4 bits. Pero JavaScript usa números con signo de 32 bits.</p>
+        <p>Debido a esto, en JavaScript, ~ 5 no devolverá 10. Devolverá -6.</p>
+        <p>~000000000000000000000000000000101 devolverá 111111111111111111111111111111010</p>
+        <p>NOTA: Se verán más adelante.</p>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Multiplica 10por 5y muestra el resultado con un alert.</p>
+        <pre>
+            alert(105);
+        </pre>
+    </section>
+</body>
+</html>

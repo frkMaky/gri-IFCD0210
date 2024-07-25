@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces HTML : diferentes colores</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Enlaces HTML : diferentes colores</h1>
+    <p class="tabular"><q>Un enlace HTML se muestra en un color diferente dependiendo de si ha sido visitado, no visitado o está
+        activo.</q></p>
+    <section>
+        <h2>Colores de enlaces HTML</h2>
+        <p>De forma predeterminada, aparecerá un enlace como este (en todos los navegadores):</p>
+        <ul>
+            <li>Un enlace no visitado está subrayado y en azul.</li>
+            <li>Un enlace visitado está subrayado y en color violeta.</li>
+            <li>Un enlace activo está subrayado y en rojo.</li>
+        </ul>
+        <p>Puede cambiar los colores del estado del enlace mediante CSS:</p>
+        <p><em>Aquí, un enlace no visitado aparecerá en verde sin subrayado. Un enlace visitado será de color rosa sin
+            subrayado. Un enlace activo aparecerá en amarillo y subrayado. Además, al pasar el mouse sobre un
+            enlace (a:hover), este se volverá rojo y subrayado:</em></p>
+        <pre>
+            &lt;style&gt;
+                a:link {
+                    color: green;
+                    background-color: transparent;
+                    text-decoration: none;
+                }
+                a:visited {
+                    color: pink;
+                    background-color: transparent;
+                    text-decoration: none;
+                }
+                a:hover {
+                    color: red;
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
+                a:active {
+                    color: yellow;
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Botones de enlace</h2>
+        <p>Un enlace también puede tener el estilo de un botón mediante CSS:</p>
+        <pre>
+            &lt;style&gt;
+                a:link, a:visited {
+                    background-color: #f44336;
+                    color: white;
+                    padding: 15px 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                }
+                a:hover, a:active {
+                    background-color: red;
+                }
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Utilice CSS para eliminar el subrayado del enlace.</p>
+        <pre>
+            &lt;a href="html_images.asp" style=""&gt;Imágenes HTML&lt;/a&gt;
+        </pre>
+    </section>
+</body>
+</html>

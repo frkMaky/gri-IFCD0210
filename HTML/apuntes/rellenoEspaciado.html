@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relleno y espaciado en las tablas en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Relleno y espaciado en las tablas en HTML</h1>
+    <p class="tabular"><q>Las tablas HTML pueden ajustar el relleno dentro de las celdas y también el espacio entre las celdas.</q></p>
+    <section>
+        <h2>Tabla HTML: relleno de celdas</h2>
+        <p>El relleno de celda es el espacio entre los bordes de la celda y el contenido de la celda.</p>
+        <p>De forma predeterminada, el relleno se establece en 0.</p>
+        <p>Para agregar relleno en las celdas de la tabla, use la propiedad padding de CSS</p>
+        <pre>
+            th, td {
+                padding: 15px;
+            }
+        </pre>
+        <p>Para agregar relleno solo encima del contenido, use la propiedad padding-top.</p>
+        <p>Y los demás se ponen del lado de las propiedades padding-bottom, padding-left y padding-right</p>
+        <pre>
+            th, td {
+                padding-top: 10px;
+                padding-bottom: 20px;
+                padding-left: 30px;
+                padding-right: 40px;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Tabla HTML: espaciado de celdas</h2>
+        <p>El espacio entre celdas es el espacio entre cada celda.</p>
+        <p>De forma predeterminada, el espacio está establecido en 2 píxeles.</p>
+        <p>Para cambiar el espacio entre las celdas de la tabla, use la propiedad border-spacing de CSS en el elemento table</p>
+        <pre>
+            table {
+                border-spacing: 30px;
+            }
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice la propiedad CSS correcta para agregar 15 píxeles de espacio entre el borde de la celda y el contenido de la celda.</p>
+        <pre>
+            .table td {
+                : 15px;
+            }
+        </pre>
+    </section>
+</body>
+</html>

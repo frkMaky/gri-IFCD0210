@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de columnas de la tabla en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Grupo de columnas de la tabla en HTML</h1>
+    <p class="tabular"><q>El elemento &lt;colgroup&gt; se utiliza para diseñar columnas específicas de una tabla.</q></p>
+    <section>
+        <h2>Grupo de columnas de una tabla en HTML</h2>
+        <p>Si desea aplicar estilo a las dos primeras columnas de una tabla, utilice los elementos &lt;colgroup&gt; y &lt;col&gt;.</p>
+        <p>El elemento &lt;colgroup&gt; debe usarse como contenedor para las especificaciones de la columna.</p>
+        <p>Cada grupo se especifica con un elemento &lt;col&gt;.</p>
+        <p>El atributo span especifica cuántas columnas obtienen el estilo.</p>
+        <p>El atributo style especifica el estilo que se dará a las columnas.</p>
+        <pre>
+            &lt;table&gt;
+                &lt;colgroup&gt;
+                &lt;col span="2" style="background-color: #D6EEEE"&gt;
+                &lt;/colgroup&gt;
+                &lt;tr&gt;
+                &lt;th&gt;MON&lt;/th&gt;
+                &lt;th>&gt;TUE&lt;/th&gt;
+                &lt;th&gt;WED&lt;/th&gt;
+                &lt;th&gt;THU&lt;/th&gt;
+                ...
+        </pre>
+        <p>Nota: La etiqueta &lt;colgroup&gt; debe ser hija de un elemento &lt;table&gt; y debe colocarse antes de
+            cualquier otro elemento de la tabla, como &lt;thead&gt;,&lt;tr&gt;,&lt;td&gt;,etc. pero después del elemento
+            &lt;caption&gt;, si está presente.</p>
+    </section>
+
+    <section>
+        <h2>Propiedades CSS legales</h2>
+        <p>Sólo hay una selección muy limitada de propiedades CSS que pueden usarse en el grupo col</p>
+        <pre class="negrita">
+            propiedad width
+            propiedad visibility
+            propiedades background
+            propiedades border
+        </pre>
+        <p>Todas las demás propiedades CSS no tendrán ningún efecto en sus tablas.</p>
+    </section>
+
+    <section>
+        <h2>Múltiples elementos de columna</h2>
+        <p>Si desea diseñar más columnas con diferentes estilos, use más elementos &lt;col&gt; dentro de &lt;colgroup&gt;</p>
+        <pre>
+            &lt;table&gt;
+                &lt;colgroup&gt;
+                    &lt;col span="2" style="background-color: #D6EEEE"&gt;
+                    &lt;col span="3" style="background-color: pink"&gt;
+                &lt;/colgroup&gt;
+                &lt;tr&gt;
+                &lt;th&gt;MON&lt;/th&gt;
+                &lt;th>&gt;TUE&lt;/th&gt;
+                &lt;th&gt;WED&lt;/th&gt;
+                &lt;th&gt;THU&lt;/th&gt;
+                ...
+        </pre>
+    </section>
+
+    <section>
+        <h2>Grupos de columnas vacíos</h2>
+        <p>Si desea aplicar estilo a las columnas en medio de una tabla, inserte un elemento &lt;col&gt; "vacío" (sin estilos) para las columnas anteriores </p>
+        <pre>
+            &lt;table&gt;
+                &lt;colgroup&gt;
+                    &lt;col span="3"&gt;
+                    &lt;col span="2" style="background-color: pink"&gt;
+                &lt;/colgroup&gt;
+                &lt;tr&gt;
+                &lt;th&gt;MON&lt;/th&gt;
+                &lt;th>&gt;TUE&lt;/th&gt;
+                &lt;th&gt;WED&lt;/th&gt;
+                &lt;th&gt;THU&lt;/th&gt;
+                ...
+        </pre>
+    </section>
+
+    <section>
+        <h2>Ocultar columnas</h2>
+        <p>Puedes ocultar columnas con la propiedad visibility: collapse</p>
+        <pre>
+            &lt;table&gt;
+                &lt;colgroup&gt;
+                    &lt;col span="2"&gt;
+                    &lt;col span="3" style="visibility: collapse"&gt;
+                &lt;/colgroup&gt;
+                &lt;tr&gt;
+                &lt;th&gt;MON&lt;/th&gt;
+                &lt;th>&gt;TUE&lt;/th&gt;
+                &lt;th&gt;WED&lt;/th&gt;
+                &lt;th&gt;THU&lt;/th&gt;
+                ...
+        </pre>  
+    </section>
+
+    <section>
+        <h2>Etiquetas de tabla HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;colgroup&gt;</td> <td>Especifica un grupo de uno o más columnas en una tabla</td> </tr>
+            <tr> <td>&lt;col&gt;</td> <td>Especifica propiedades columna para cada columna dentro de un elemento &lt;colgroup&gt;</td> </tr>
+            <tr> <td>&lt;thead&gt;</td> <td>Agrupa el contenido de la cabecera de una tabla</td> </tr>
+            <tr> <td>&lt;tbody&gt;</td> <td>Agrupa el contenido del cuerpo de la tabla</td> </tr>
+            <tr> <td>&lt;tfoot&gt;</td> <td>Agrupa el contenido del pie de la tabla</td> </tr>
+            
+        </table>
+    </section>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Funciones de JavaScript</h1>
+    <p class="tabular">Una función de JavaScript es un bloque de código diseñado para realizar una tarea particular.</p>
+    <p class="tabular">Una función de JavaScript se ejecuta cuando "algo" la invoca (le llama).</p>
+    <pre class="tabular">
+        // Function to compute the product of p1 and p2
+        function myFunction(p1, p2) {
+            return p1 * p2;
+        }
+    </pre>
+    <section>
+        <h2>Sintaxis de funciones de JavaScript</h2>
+        <p>Una función de JavaScript se define con la palabra clave function, seguida de un nombre , seguido de
+            paréntesis () .</p>
+        <p>Los nombres de funciones pueden contener letras, dígitos, subrayados y signos de dólar (las mismas
+            reglas que las variables).</p>
+        <p>Los paréntesis pueden incluir nombres de parámetros separados por comas:
+            ( parámetro1, parámetro2,... )</p>
+        <p>El código a ejecutar, por la función, se coloca entre llaves: {}</p>
+        <pre>
+            function name(parameter1, parameter2, parameter3) {
+                // code to be executed
+            }
+        </pre>
+        <p>Los parámetros de la función se enumeran entre paréntesis () en la definición de la función.</p>
+        <p>Los argumentos de la función son los valores que recibe la función cuando se invoca.</p>
+        <p>Dentro de la función, los argumentos (los parámetros) se comportan como variables locales.</p>
+    </section>
+
+    <section>
+        <h2>Invocación de función</h2>
+        <p>El código dentro de la función se ejecutará cuando "algo" invoque (llame) la función:</p>
+        <ul>
+            <li>Cuando ocurre un evento (cuando un usuario hace clic en un botón)</li>
+            <li>Cuando se invoca (llama) desde código JavaScript</li>
+            <li>Automáticamente (se invoca a sí mismo)</li>
+        </ul>
+        <p><em>Aprenderá mucho más sobre la invocación de funciones más adelante</em></p>
+    </section>
+
+    <section>
+        <h2>declaración return</h2>
+        <p>Cuando JavaScript llega a una declaración return, la función dejará de ejecutarse.</p>
+        <p>Si la función se invocó desde una declaración, JavaScript "volverá" a ejecutar el código después de la
+            declaración que lo invocó.</p>
+        <p>Las funciones suelen calcular un valor de retorno . El valor de retorno se "devuelve" a la "persona que
+            llama":</p>
+        <pre>
+            Calcula el producto de dos números y devuelve el resultado:
+        
+            // Function is called, the return value will end up in x
+            let x = myFunction(4, 3);
+        
+            function myFunction(a, b) {
+                // Function returns the product of a and b
+                return a * b;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>¿Por qué funciones?</h2>
+        <p>Con funciones puedes reutilizar código</p>
+        <p>Puede escribir código que pueda usarse muchas veces.</p>
+        <p>Puede utilizar el mismo código con diferentes argumentos para producir resultados diferentes.</p>
+    </section>
+
+    <section>
+        <h2>El operador ()</h2>
+        <p>El operador () invoca (llama) a la función:</p>
+        <pre>
+            Convertir Fahrenheit a Celsius:
+
+            function toCelsius(fahrenheit) {
+                return (5/9) * (fahrenheit-32);
+            }
+            let value = toCelsius(77);
+            
+        </pre>
+
+        <pre>
+            Acceder a una función con parámetros incorrectos puede devolver una respuesta incorrecta:
+
+            function toCelsius(fahrenheit) {
+                return (5/9) * (fahrenheit-32);
+            }
+            let value = toCelsius();
+        </pre>
+
+        <pre>
+            Acceder a una función sin () devuelve la función y no el resultado de la función:
+
+            function toCelsius(fahrenheit) {
+                return (5/9) * (fahrenheit-32);
+            }
+            let value = toCelsius;
+        </pre>
+
+        <p><strong>Nota </strong>Como puede ver en los ejemplos anteriores, toCelsius se refiere al objeto de función y
+            toCelsius() al resultado de la función.</p>
+    </section>
+
+    <section>
+        <h2>Funciones utilizadas como valores de variables</h2>
+        <p>Las funciones se pueden usar de la misma manera que se usan las variables, en todo tipo de fórmulas,
+            asignaciones y cálculos.</p>
+        <p>En lugar de utilizar una variable para almacenar el valor de retorno de una</p>
+        <pre>
+            let x = toCelsius(77);
+            let text = "The temperature is " + x + " Celsius";
+        </pre>
+        <p>Puedes usar la función directamente, como valor de variable:</p>
+        <pre>
+            let text = "The temperature is " + toCelsius(77) + " Celsius";
+        </pre>
+        <p><em>Aprenderá mucho más sobre las funciones más adelante</em></p>
+    </section>
+
+    <section>
+        <h2>Variables locales</h2>
+        <p>Las variables declaradas dentro de una función de JavaScript se vuelven LOCALES a la función.</p>
+        <p>Solo se puede acceder a las variables locales desde dentro de la función.</p>
+        <pre>
+            // code here can NOT use carName
+            function myFunction() {
+                let carName = "Volvo";
+                // code here CAN use carName
+            }
+            // code here can NOT use carName
+        </pre>
+        <p>Dado que las variables locales sólo se reconocen dentro de sus funciones, las variables con el mismo
+            nombre se pueden utilizar en diferentes funciones.</p>
+        <p>Las variables locales se crean cuando se inicia una función y se eliminan cuando se completa la función.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio:</h2>
+        <p>Ejecute la función denominada myFunction.</p>
+        <pre>
+            function myFunction() {
+                alert("Hello World!");
+            }
+            
+            ;
+        </pre>
+    </section>
+</body>
+</html>

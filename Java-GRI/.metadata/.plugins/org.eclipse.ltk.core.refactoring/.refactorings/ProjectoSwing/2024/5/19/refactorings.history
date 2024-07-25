@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ProjectoSwing/flecha.svg&apos; to &apos;flecha.jpg&apos;" description="Rename resource &apos;flecha.svg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="flecha.svg" name="flecha.jpg" stamp="1715255846981" updateReferences="true"/>
+</session>

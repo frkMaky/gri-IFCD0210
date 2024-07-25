@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Numeros</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios Numeros</h1>
+    <div id="ejercicio1">
+        <p class="enunciado">Introduce un numero y di si este es entero o no</p>
+        <script>
+            let entrada = Number(prompt("Ejercicio 1 Introduce un numero"));
+
+            function comprobarNumero(cadena) {
+                if (Number.isInteger( cadena )) {
+                    document.write("Has introducido un número entero: " +  cadena);
+                } else {
+                    document.write("No es un número la cadena introducida: " +  cadena);
+                }
+            }
+            comprobarNumero(entrada);
+
+        </script>
+    </div>
+    <div id="ejercicio2">
+        <p class="enunciado">Introduce un numero y di si este es entero o no mostrando en pantalla "es entero" o "no es entero"</p>
+        <script>
+            let entrada2 = Number(prompt("Ejercicio 2 Introduce un numero"));
+
+            function comprobarEntero(cadena) {
+                if (Number.isInteger( cadena )) {
+                    document.write("Es entero");
+                } else {
+                    document.write("No es entero");
+                }
+            }
+            comprobarEntero(entrada2);
+
+        </script>
+    </div>
+    <div id="ejercicio3">
+        <p class="enunciado">Introduce un numero y si es positivo muestra "Es positivo o 0" y es es negativo muestra "Es negativo"</p>
+        <script>
+            let entrada3 = Number(prompt("Ejercicio 3 Introduce un numero"));
+
+            function comprobaPositivo(cadena) {
+                if (Number.isInteger( cadena )) {
+                    if (cadena >= 0) {
+                        document.write("Es positivo o 0");
+                    } else {
+                        document.write("Es negativo");
+                    } 
+                    
+                } else {
+                    document.write("No es un número");
+                }
+            }
+            comprobaPositivo(entrada3);
+
+        </script>
+    </div>
+    <div id="ejercicio4">
+        <p class="enunciado">Comprueba si el nº introducido es PAR, mostrando "Es PAR" o "Es IMPAR" segun corresponda</p>
+        <script>
+            let entrada4 = Number(prompt("Ejercicio 3 Introduce un numero"));
+
+            function comprobaPar(cadena) {
+                if (Number.isInteger( cadena )) {
+                    if (cadena %2 == 0) {
+                        document.write("Es PAR");
+                    } else {
+                        document.write("Es IMPAR");
+                    } 
+                    
+                } else {
+                    document.write("No es un número");
+                }
+            }
+            comprobaPar(entrada4);
+
+        </script>
+    </div>
+    <div id="ejercicio5">
+        <p class="enunciado">Comprueba si el nº introducido es PAR y mayor, igual o menor que 0, mostrando "Es PAR" o "Es IMPAR" segun corresponda</p>
+        <p class="enunciado">Si es par e igual o mayor a 0 "Par positivo". </p>
+        <p class="enunciado">Si es par e igual o menor a 0 "Par negativo". </p>
+        <p class="enunciado">Si es impar  "Impar". </p>
+        
+        <script>
+            let entrada5 = Number(prompt("Ejercicio 3 Introduce un numero"));
+
+            function comprobaPar2(cadena) {
+                if (Number.isInteger( cadena )) {
+                    if (cadena %2 == 0) {
+                        if (cadena>0) {
+                            document.write("Par positivo");
+                        }else if (cadena< 0){
+                            document.write("Par negativo");
+                        }else{
+                            document.write("Par y");
+                        }
+                    } else {
+                        document.write("Impar");
+                    } 
+                    
+                } else {
+                    document.write("No es un número");
+                }
+            }
+            comprobaPar2(entrada5);
+
+        </script>
+    </div>
+    <div id="ejercicio6">
+        <p class="enunciado">Realiza la ecuacion de 2do grado para x^2-4=0 </p>
+        
+        <script>
+            function segundoGrado(x) {
+                let a = 1;
+                let b = 0;
+                let c = -4;
+
+                let raiz =Math.sqrt (Math.pow(b,2) -(4*a*c));
+                let sol1 = (-b -raiz) / (2*a);
+                let sol2 = (-b +raiz) / (2*a);
+
+                document.write("Resultado:" + sol1 + " / " + sol2) ;
+
+            }
+            segundoGrado(2);
+
+        </script>
+    </div>
+    <div id="ejercicio7">
+        <p class="enunciado">Como consegir el numero 9.656 conseguir el mismo con dos cifras decimales trabajando con caddenas</p>
+        
+        <script>
+            function dosDecimales() {
+                let num =9.656;
+                let posicion = num.toString().indexOf('.');
+                let subcadena = num.toString().substring(0,posicion+3); // +3 el '.' y las 2 cifras decimales
+                document.write(parseFloat(subcadena));
+            }
+            dosDecimales();
+
+        </script>
+    </div>
+</body>
+</html>

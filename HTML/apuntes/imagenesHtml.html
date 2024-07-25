@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Imágenes HTML</h1>
+    <p class="tabular"><q>Las imágenes pueden mejorar el diseño y la apariencia de una página web.</q></p>
+    <pre>
+        &lt;img src="img_girl.jpg" alt="Girl in a jacket"&gt;
+    </pre>
+    <section>
+        <h2>Sintaxis de las imágenes en HTML</h2>
+        <p>La etiqueta &lt;img&gt; de HTML se utiliza para incrustar una imagen en una página web.</p>
+        <p>Técnicamente, las imágenes no se insertan en una página web; Las imágenes están vinculadas a páginas
+            web. La etiqueta &lt;img&gt; crea un hueco para la imagen a la que se hace referencia.</p>
+        <p>La etiqueta &lt;img&gt; está vacía, contiene solo atributos y no tiene una etiqueta de cierre.</p>
+        <p>La etiqueta &lt;img&gt; tiene dos atributos obligatorios:</p>
+        <ul>
+            <li>src: especifica la ruta a la imagen.</li>
+            <li>alt: especifica un texto alternativo para la imagen.</li>
+        </ul>
+        <p class="negrita tabular">&lt;img src="url" alt="textoalternativo"&gt;</p>
+    </section>
+
+    <section>
+        <h2>El atributo src</h2>
+        <p>El atributo src es requerido y especifica la ruta (URL) a la imagen.</p>
+        <p><span class="negrita">Nota:</span>  Cuando se carga una página web, es el navegador, en ese momento, el que obtiene la imagen de un
+            servidor web y la inserta en la página. Por lo tanto, asegúrese de que la imagen permanezca en el mismo
+            lugar en relación con la página web; de lo contrario, sus visitantes verán un icono de enlace roto. El icono
+            del enlace roto y el texto alternativo alt se muestran si el navegador no puede encontrar la imagen.</p>
+        <pre>
+            &lt;img src="img_chania.jpg" alt="Flowers in Chania"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El atributo alt</h2>
+        <p>El atributo alt es requerido y proporciona un texto alternativo para una imagen, si el usuario por algún
+            motivo no puede verla (debido a una conexión lenta, un error en el atributo src o si el usuario usa un lector
+            de pantalla).</p>
+        <p>El valor del atributo alt debe describir la imagen:</p>
+        <pre>
+            &lt;img src="img_chania.jpg" alt="Flowers in Chania"&gt;
+        </pre>
+        <p>Si un navegador no puede encontrar una imagen, mostrará el valor del atributo alt:</p>
+        <pre>
+            &lt;img src="wrongname.gif" alt="Flowers in Chania"&gt;
+        </pre>
+        <p><span class="negrita">Consejo:</span>  un lector de pantalla es un programa de software que lee el código HTML y permite al usuario
+            "escuchar" el contenido. Los lectores de pantalla son útiles para personas con discapacidad visual o de
+            aprendizaje.</p>
+    </section>
+
+    <section>
+        <h2>Tamaño de imagen: ancho y alto</h2>
+        <p>Puede utilizar el atributo style para especificar el ancho y el alto de una imagen.</p>
+        <pre>
+            &lt;img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;"&gt;
+        </pre>
+        <p>Alternativamente, puede utilizar los atributos width y height</p>
+        <pre>
+            &lt;img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600"&gt;
+        </pre>
+        <p>Los atributos width y height siempre definen el ancho y el alto de la imagen en píxeles.</p>
+        <p><span class="negrita">Nota:</span> Especifique siempre el ancho y el alto de una imagen. Si no se especifican el ancho y el alto, la
+            página web puede parpadear mientras se carga la imagen.</p>
+    </section>
+
+    <section>
+        <h2>¿Ancho y alto o estilo?</h2>
+        <p>Los atributos width y height de style son válidos en HTML.</p>
+        <p>Sin embargo, sugerimos utilizar el atributo style. Evita que las hojas de estilos cambien el tamaño de
+            las imágenes:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;style&gt;
+                img {
+                    width: 100%;
+                }
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;img src="html5.gif" alt="HTML5 Icon" width="128" height="128"&gt;
+                &lt;img src="html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;"&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Imágenes en otra carpeta</h2>
+        <p>Si tienes tus imágenes en una subcarpeta, debes incluir el nombre de la carpeta en el atributo src:</p>
+        <pre>
+            &lt;img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Imágenes en otro servidor/sitio web</h2>
+        <p>Algunos sitios web apuntan a una imagen en otro servidor.</p>
+        <p>Para apuntar a una imagen en otro servidor, debe especificar una URL absoluta (completa) en el atributo
+            src:</p>
+        <pre>
+            &lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com"&gt;
+        </pre>
+        <p><span class="negrita">Notas sobre imágenes externas:</span>  Las imágenes externas pueden estar protegidas por derechos de autor. Si
+            no obtiene permiso para usarlo, es posible que esté infringiendo las leyes de derechos de autor. Además,
+            no puedes controlar las imágenes externas; pueden eliminarse o cambiarse repentinamente.</p>
+    </section>
+
+    <section>
+        <h2>Imágenes animadas</h2>
+        <p>HTML permite GIF animados:</p>
+        <pre>
+            &lt;img src="programming.gif" alt="Computer Man" style="width:48px;height:48px;"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Imagen como enlace</h2>
+        <p>Para utilizar una imagen como enlace, coloque la etiqueta &lt;img&gt; dentro de la etiqueta &lt;a&gt;:</p>
+        <pre>
+            &lt;a href="default.asp"&gt;
+                &lt;img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"&gt;
+            &lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Imagen flotante</h2>
+        <p>Utilice la propiedad float de CSS para permitir que la imagen flote hacia la derecha o hacia la
+            izquierda de un texto:</p>
+        <pre>
+            &lt;p&gt;&lt;img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;"&gt;
+                The image will float to the right of the text.&lt;/p&gt;
+            &lt;p&gt;&lt;img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;"&gt;
+                    The image will float to the left of the text.&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Formatos de imagen comunes</h2>
+        <p>Estos son los tipos de archivos de imagen más comunes, compatibles con todos los navegadores (Chrome,
+            Edge, Firefox, Safari, Opera):</p>
+        <table>
+            <tr>
+                <th>Abreviatura</th>
+                <th>formato de fichero</th>
+                <th>Extensión de fichero</th>
+            </tr>
+            <tr> <td>APNG</td> <td>Animated Portable Network Graphics</td> <td>.apng</td> </tr>
+            <tr> <td>GIF</td> <td>Graphics Interchange Format</td> <td>.gif</td> </tr>
+            <tr> <td>ICO</td> <td>Microsoft Icon</td> <td>.ico, .cur</td> </tr>
+            <tr> <td>JPEG</td> <td>Joint Photographic Expert Group Image</td> <td>.jpg, .jpeg, .jfif, .pjpeg, .pjp</td> </tr>
+            <tr> <td>PNG</td> <td>Portable Network Graphics</td> <td>.png</td> </tr>
+            <tr> <td>SVG</td> <td>Scalable Vector Graphics</td> <td>.svg</td> </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>Utilice el elemento &lt;img&gt; de HTML para definir una imagen.</li>
+            <li>Utilice el atributo src de HTMLpara definir la URL de la imagen</li>
+            <li>Utilice el atributo alt de HTML para definir un texto alternativo para una imagen, si no se puede
+                mostrar</li>
+            <li>Utilice los atributos widthy height de HTML o las propiedades width y height de CSS
+                para definir el tamaño de la imagen.</li>
+            <li>Utilice la propiedad float de CSS para dejar que la imagen flote hacia la izquierda o hacia la
+                derecha</li>
+        </ul>
+        <p><span class="negrita">Nota:</span> Cargar imágenes grandes lleva tiempo y puede ralentizar su página web. Utilice las imágenes con
+            cuidado.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio:</h2>
+        <p>Utilice los atributos de imagen HTML para establecer el tamaño de la imagen en 250 píxeles de ancho y
+            400 píxeles de alto.</p>
+        <pre>
+            &lt;img src="grito.png"="250"="400"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <p>Etiquetas de img de HTML</p>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;img&gt;</td> <td>Define una imagen</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

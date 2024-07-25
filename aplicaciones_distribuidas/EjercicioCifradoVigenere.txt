@@ -1,0 +1,72 @@
+
+Cifrado y Descifrado Vigenere
+
+Alfabeto con Ñ
+Clave SAL
+Mensaje ESTOESUNMENSAJE
+
+Cifrado -----------------------------
+
+ESTOESUNMENSAJE
+SALSALSALSALSAL
+
+C = ( M + K ) mod |A|
+
+A 0 	B 1 	C 2 	D 3 	E 4 	F 5 	G 6 	H 7 	I 8 	J 9 	K 10 	L 11 	M 12 	N 13	
+Ñ 14	O 15	P 16 	Q 17 	R 18 	S 19 	T 20	U 21 	V 22	W 23	X 24	Y 25	Z 26
+
+E S 	C = (  4 + 19 ) mod 27 = 23 mod 27 = 23 => W
+S A 	C = ( 19 +  0 ) mod 27 = 19 mod 27 = 19 => S
+T L 	C = ( 20 + 11 ) mod 27 = 31 mod 27 =  4 => E
+O S 	C = ( 15 + 19 ) mod 27 = 34 mod 27 =  7 => H
+E A 	C = (  4 +  0 ) mod 27 =  4 mod 27 =  4 => E
+S L 	C = ( 19 + 11 ) mod 27 = 30 mod 27 =  3 => D
+U S 	C = ( 21 + 19 ) mod 27 = 40 mod 27 = 13 => N
+N A 	C = ( 13 +  0 ) mod 27 = 13 mod 27 = 13 => N
+M L 	C = ( 12 + 11 ) mod 27 = 23 mod 27 = 23 => W
+E S 	C = (  4 + 19 ) mod 27 = 23 mod 27 = 23 => W
+N A 	C = ( 13 +  0 ) mod 27 = 13 mod 27 = 13 => N
+S L 	C = ( 19 + 11 ) mod 27 = 30 mod 27 =  3 => D
+A S 	C = (  0 + 19 ) mod 27 = 19 mod 27 = 19 => S
+J A 	C = (  9 +  0 ) mod 27 =  9 mod 27 =  9 => J
+E L 	C = (  4 + 11 ) mod 27 = 15 mod 27 = 15 => O
+
+Mensaje cifrado: WSEHEDNNWWNDSJO
+
+
+Descifrado -----------------------------
+
+D = ( C - K ) mod |A|
+
+Mensaje cifrado: WSEHEDNNWWNDSJO
+Clave SAL
+
+WSEHEDNNWWNDSJO
+SALSALSALSALSAL
+
+W S 	C = ( 23 - 19 ) mod 27 =  4 mod 27 =  4 => E
+S A 	C = ( 19 -  0 ) mod 27 = 19 mod 27 = 19 => S
+E L 	C = (  4 - 11 ) mod 27 =- 7 mod 27 = 20 => T
+H S 	C = (  7 - 19 ) mod 27 =-12 mod 27 = 15 => 0
+E A 	C = (  4 -  0 ) mod 27 =  4 mod 27 =  4 => E
+D L 	C = (  3 - 11 ) mod 27 =- 8 mod 27 = 19 => S
+N S 	C = ( 13 - 19 ) mod 27 =- 6 mod 27 = 21 => U
+N A 	C = ( 13 -  0 ) mod 27 = 13 mod 27 = 13 => N
+W L 	C = ( 23 - 11 ) mod 27 = 12 mod 27 = 12 => M
+W S 	C = ( 23 - 19 ) mod 27 =  4 mod 27 =  4 => E
+N A 	C = ( 13 -  0 ) mod 27 = 13 mod 27 = 13 => N
+D L 	C = (  3 - 11 ) mod 27 =- 8 mod 27 = 19 => S
+S S 	C = ( 19 - 19 ) mod 27 =  0 mod 27 =  0 => A
+J A 	C = (  9 -  0 ) mod 27 =  9 mod 27 =  9 => J
+O L 	C = ( 15 - 11 ) mod 27 =  4 mod 27 =  4 => E
+
+Mensaje descifrado: ESTOESUNMENSAJE
+
+
+
+
+
+
+
+
+

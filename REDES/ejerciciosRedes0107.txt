@@ -1,0 +1,164 @@
+--------------------------------------------------------------------------------------------------------------------------------------------
+	Ejercicio caso NINGUNA MASCARA DE SUBRED SATISFACE LOS REQUERIMIENTOS
+--------------------------------------------------------------------------------------------------------------------------------------------
+> Red de clase B 172.16.0.0
+> Necesitamos 300 subredes y 280 host por subred.
+
+	Clase B 172.16.0.0
+	16 bits de red 11111111 11111111 00000000 00000000
+	Nº de subredes: 2^S >= 300 subredes = 2^9 = 512 > 9 BITS de subred
+	Nº de host por subred = 2^H -2 >= 280 host = 2^9 -1 = 510 bits de host
+
+	NO SE LO PUEDE DAR > 32 bits IPv4 --> 32 = N + S + H = Claseb 16 +9 bits de subred + 9 bits de host = 34 bits
+	NO HAY NINGUNA MASCARA QUE CUMPLA LOS REQUISITOS
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+	Ejercicio caso UNA UNICA MASCARA DE SUBRED SATISFACE LOS REQUERIMIENTOS
+--------------------------------------------------------------------------------------------------------------------------------------------
+> Red de clase B 172.16.0.0
+> Necesitamos 200 subredes y 180 host por subred.
+	Clase B 172.16.0.0
+	16 bits de red 11111111 11111111 00000000 00000000
+	Nº de subredes: 2^S >= 200 subredes = 2^6 = 64 > 6 BITS de subred
+	Nº de host por subred = 2^H -2 >= 180 host = 2^8 - 2 = 254 > 8 bits de host
+
+	SOLUCION 32 >= N + S + H =  16 (claseB) + 8 (bits subred) + 8 (bits de host) > Mascara P = N + s = 16 + 8 =   /24 > 255.255.255.0 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+	Ejercicio caso MULTIPLES MASCARAS DE SUBRED SATISFACEN LOS REQUERIMIENTOS
+--------------------------------------------------------------------------------------------------------------------------------------------
+> Red de clase B 172.16.0.0
+> Necesitamos 50 subredes y 180 host por subred.
+	Clase B 172.16.0.0
+	16 bits de red 11111111 11111111 00000000 00000000
+	Nº de subredes: 2^S >= 50 subredes = 2^8 = 256 > 8 BITS de subred
+	Nº de host por subred = 2^H -2 >= 180 host = 2^8 - 2 = 254 > 8 bits de host
+
+	SOLUCION 32 >= N + S + H =  16 (claseB) + 6 (bits subred) + 8 (bits de host) > Mascara P = N + s = 16 + 6 = 22 > /22 > 255.255.252.0 HASTA  /24 > 255.255.255.0 (manteniendo los 8 bits de host igual)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+	Ejercicio calculo de subredes
+--------------------------------------------------------------------------------------------------------------------------------------------
+	
+Red 192.168.1.0
+Mascara 255.255.255.224
+Nº Magico = 256 -224 = 32
+		
+Subred 1 >> 192.168.1.0
+Subred 2 >> 192.168.1.32
+Subred 3 >> 192.168.1.64
+Subred 4 >> 192.168.1.96
+Subred 5 >> 192.168.1.128
+Subred 6 >> 192.168.1.160
+Subred 7 >> 192.168.1.192
+Subred 8 >> 192.168.1.224
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+	Ejercicio calculo de subredes
+--------------------------------------------------------------------------------------------------------------------------------------------
+1. Una empresa está acometiendo los esfuerzos de diseño de las subredes IP. Hasta
+ahora, el ingeniero senior ha decidido utilizar la red de clase B 172.23.0.0. El diseño
+exige 100 subredes, y la subred de mayor tamaño precisa 50 hosts. La dirección de la
+empresa exige que el diseño permita un 50% de incremento en el número de subredes
+y en el tamaño de la subred más grande. Los requisitos también exigen que se use una
+única máscara en toda la red de clase B. ¿Cuántas máscaras satisfacen los requisitos?
+a) 0
+b) 1 
+c) 2 <-----------------------------
+d) Más de 3
+
+B N = /16
+s = 2^x >= 100 subredes -->  2^7 = 128 
+H 2^H-2 >= 50 --> 2^7 = 128
+50% incremento en el nº de subredes > 100 + 50 >> 150 >> S = 2^x >= 150 >> 2⁸ = 256
+50% incremento en el nº de host > 50 +25 = 75 >> H = 2^7 128 
+
+32 >= N + S + H = 16 + 8 + 7  = 31
+
+mascara /24 255 255 255 0
+mascara /25 255 255 255 128
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+3. Un ingeniero ha previsto utilizar la red de clase B 172.19.0.0 y una máscara de subred
+en toda la red. Las respuestas siguientes indican las máscaras que el ingeniero ha
+tomado en consideración. Seleccione, de entre todas las respuestas, la máscara que
+proporcione el mayor número de hosts por subred, al mismo tiempo que los bits de
+subred suficientes como para soportar 1000 subred.
+a) 255.255.255.0
+b) /26 				<---------------
+c) 255.255.252.0
+d) /28
+ 
+ clase B 172.19.0.0 y una máscara de subred en toda la red.
+el mayor número de hosts por subred, al mismo tiempo que los bits de  subred suficientes como para soportar 1000 subred.
+
+S = 2^x >= 1000  --> 2^10 = 1024
+P = N + S = 16 + 10 = /26 Mascara 255.255.255.192
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+4. Un diseño de subredes utiliza la red de clase A 10.0.0.0, y el ingeniero debe seleccionar
+una única máscara para utilizarla en toda la red. El diseño requiere 1000 subredes,
+debiendo admitir la subred de mayor tamaño 200 hosts. ¿Cuál de las siguientes
+máscaras satisface los requisitos y maximiza también el número de subredes?
+a) /18
+b) /20
+c) /22
+d) /24 <---- 255.255.255.0
+
+ A 10.0.0.0,requiere 1000 subredes,la subred de mayor tamaño 200 hosts. 
+
+ s= 2^x >1000 --> S=10
+ h = 2^x -2 >= 200 --> H = 7
+
+ P = N + s = 8 + 10 = 18 > Mascara 255.255.192.0 
+ 32 - 7 = S >> 25 Mascara 255.255.255.128
+
+ Rango de /18 (255.255.192.0) a /25 (255.255.255.128)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+5. Un ingeniero ha calculado la lista de los ID de subred, en orden consecutivo, para la
+red 172.30.0/22, suponiendo que se utiliza la máscara /22 en toda la red. ¿Cuáles de
+las siguientes respuestas son ciertas? (seleccione dos respuestas).
+
+a) Cualesquiera dos ID de subred consecutivos difieren en un valor 22 en el tercer octeto.
+b) Cualesquiera dos ID de subred consecutivos difieren en un valor 16 en el cuarto octeto.
+c) La lista contiene 64 ID de subred. <----
+d) El último ID de subred es 172.30.252.0 <----
+ 
+N = 16 
+P = 22 - 26 > 6
+
+255.255.252.0
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+6. ¿Cuál de los siguientes es un ID de subred válido para la red 192.168.9.0, utilizando la
+máscara /29 y suponiendo que esa máscara se emplea en toda la red?
+a) 192.168.9.144 <-----
+b) 192.168.9.58
+c) 192.168.9.242
+d) 192.168.9.9 
+
+192.168.9.0/29 --> 255.255.255.248
+
+H = 2^3 = 8 
+--------------------------------------------------------------------------------------------------------------------------------------------
+7. ¿Cuál de los siguientes no es un ID de subred válido para la red 172.19.0.0, utilizando
+la máscara /24 y suponiendo que esa máscara se emplea en toda la red?
+a) 172.19.0.0
+b) 172.19.1.0 
+c) 172.19.255.0
+d) 172.19.0.16 <-----
+
+172.19.0.0/24 --> 255.255.255.0
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+8. ¿Cuál de los siguientes no es un ID de subred válido para la red 10.0.0.0. utilizando la
+máscara /25 y suponiendo que esa máscara se emplea en toda la red?
+a) 10.0.0.0
+b) 10.255.255.0
+c) 10.255.127.128 <-----
+d) 10.1.1.192
+
+10.0.0.0/25 --> 255.255.255.128
+--------------------------------------------------------------------------------------------------------------------------------------------

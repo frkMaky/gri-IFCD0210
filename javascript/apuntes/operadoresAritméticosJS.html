@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores aritméticos de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Operadores aritméticos de JavaScript</h1>
+    <h2 class="tabular"><q>Operadores aritméticos de JavaScript</q></h2>
+    <p class="tabular"><q>Los operadores aritméticos realizan operaciones aritméticas con números (literales o variables).</q></p>
+    <table class="tabular">
+        <tr> <th>Operador</th> <th>Descripción</th> </tr>
+        <tr> <td>+</td> <td>Suma</td> </tr>
+        <tr> <td>-</td> <td>Resta</td> </tr>
+        <tr> <td>*</td> <td>Producto</td> </tr>
+        <tr> <td>**</td> <td>Exponenciación (ES2016)</td> </tr>
+        <tr> <td>/</td> <td>División</td> </tr>
+        <tr> <td>%</td> <td>Módulo (resto de una división)</td> </tr>
+        <tr> <td>++</td> <td>Incremento</td> </tr>
+        <tr> <td>--</td> <td>Decremento</td> </tr>
+    </table>
+    <section>
+        <h2>Operaciones aritméticas</h2>
+        <p>Una operación aritmética típica opera con dos números.</p>
+        <p>Los dos números pueden ser literales:</p>
+        <pre>
+            let x = 100 + 50;
+        </pre>
+        <p>o variables:</p>
+        <pre>
+            let x = a + b;
+        </pre>
+        <p>o expresiones:</p>
+        <pre>
+            let x = (100 + 50) * a;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Operadores y operandos</h2>
+        <p>Los números (en una operación aritmética) se llaman <strong> operandos .</strong></p>
+        <p>La operación (a realizar entre los dos operandos) está definida por un <strong> operador .</strong></p>
+        <table>
+            <tr> <th>Operando</th> <th>Operador</th> <th>Operando</th> </tr>
+            <tr> <td>100</td> <td>+</td> <td>50</td> </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Suma</h2>
+        <p>El operador de <strong>suma ( +)</strong>  suma números:</p>
+        <pre>
+            let x = 5;
+            let y = 2;
+            let z = x + y;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Restando</h2>
+        <p>El operador de <strong>resta ( -)</strong>  resta números.</p>
+        <pre>
+            let x = 5;
+            let y = 2;
+            let z = x - y;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Producto</h2>
+        <p>El operador de <strong>multiplicación ( *)</strong>  multiplica números.</p>
+        <pre>
+            let x = 5;
+            let y = 2;
+            let z = x * y;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Cociente</h2>
+        <p>El operador de <strong>división ( /)</strong>  divide números.</p>
+        <pre>
+            let x = 5;
+            let y = 2;
+            let z = x / y;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Resto de una división</h2>
+        <p>El operador de <strong>módulo ( %)</strong> devuelve el resto de la división.</p>
+        <pre>
+            let x = 5;
+            let y = 2;
+            let z = x % y;
+        </pre>
+        <p>En aritmética, la división de dos números enteros produce un <strong> cociente y un resto .</strong></p>
+        <p>En matemáticas, el resultado de una <strong>operación de módulo</strong> es el <strong>resto</strong> de una división aritmética.</p>
+    </section>
+
+    <section>
+        <h2>Incremento</h2>
+        <p>El operador de <strong>incremento (++ )</strong>  incrementa los números.</p>
+        <pre>
+            let x = 5;
+            x++;
+            let z = x;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Decremento</h2>
+        <p>El operador de <strong>decremento ( --)</strong> disminuye los números.</p>
+        <pre>
+            let x = 5;
+            x--;
+            let z = x;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Exponenciación</h2>
+        <p>El operador de <strong>exponenciación ( **)</strong> eleva el primer operando a la potencia del segundo operando.</p>
+        <pre>
+            let x = 5;
+            let z = x ** 2;
+        </pre>
+        <p><em>x ** y produce el mismo resultado que Math.pow(x,y):</em></p>
+        <pre>
+            let x = 5;
+            let z = Math.pow(x,2);
+        </pre>
+    </section>
+
+    <section>
+        <h2>Precedencia del operador</h2>
+        <p>La precedencia de operadores describe el orden en el que se realizan las operaciones en una expresión aritmética.</p>
+        <pre>
+            let x = 100 + 50 * 3;
+        </pre>
+        <p>¿El resultado del ejemplo anterior es igual a 150 * 3, o es igual a 100 + 150?</p>
+        <p>¿Se hace primero la suma o la multiplicación?</p>
+        <p>Como en las matemáticas, primero se hace la multiplicación.</p>
+        <p>La multiplicación ( *) y la división ( /) tienen mayor <strong>prioridad</strong> que la suma ( +) y la resta ( -).</p>
+        <p>Y (como en matemáticas) la precedencia se puede cambiar usando paréntesis.</p>
+        <p>Cuando se utilizan paréntesis, las operaciones dentro de los paréntesis se calculan primero:</p>
+        <pre>
+            let x = (100 + 50) * 3;
+        </pre>
+        <p>Cuando muchas operaciones tienen la misma precedencia (como suma y resta o multiplicación y división), se calculan de izquierda a derecha:</p>
+        <pre>
+            let x = 100 + 50 - 3;
+            let x = 100 / 50 * 3;
+        </pre>
+        <p><strong>Nota </strong>Veremos la precedencia más en detalle más adelante.</p>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Divide 10por 2y muestra el resultado con un alert.</p>
+        <pre>
+            alert(102);
+        </pre>
+    </section>
+</body>
+</html>

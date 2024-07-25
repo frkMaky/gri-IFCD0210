@@ -1,0 +1,74 @@
+RSA - Claves
+
+Clave pública:
+
+	(e,n) = (3,253)
+
+Clave privada:
+
+	(d,n) = (147,253)
+
+Cifrado:
+
+C = Me mod n
+
+
+Asignemos a cada letra un número:
+
+Con las claves del ejemplo vamos a cifrar el mensaje M:
+
+A B C D E F G H I J K L M
+0 1 2 3 4 5 6 7 8 9 10 11 12
+
+N O P Q R S T U V W X Y Z
+13 14 15 16 17 18 19 20 21 22 23 24 25
+
+
+--------- MENSAJE ---------
+
+ S E G  U  R I D A D
+18 4 6 20 17 8 3 0 3
+
+---------------------------
+
+RSA - Claves
+
+Cifrado con Clave Pública: (3,253)
+
+M = 18 4 6 20 17 8 3 0 3
+
+18e3 = 5832 mod 253 = 13
+ 4e3 =   64 mod 253 = 64
+ 6e3 =  216 mod 253 = 216
+20e3 = 8000 mod 253 = 157
+17e3 = 4913 mod 253 = 106
+ 8e3 =  512 mod 253 = 6
+ 3e3 =   27 mod 253 = 27
+ 0e3 =    0 mod 253 = 0
+ 3e3 =   27 mod 253 = 27
+
+C = 13 64 216 157 106 6 27 0 27
+	
+
+Descifrado:
+
+Descifrado con Clave Privada: (147,253)
+
+C = 13 64 216 157 106 6 27 0 27
+
+ 13e147 mod 253 = 18
+ 64e147 mod 253 =  4
+216e147 mod 253 =  6
+157e147 mod 253 = 20
+106e147 mod 253 = 17
+  6e147 mod 253 =  8
+ 27e147 mod 253 =  3
+  0e147 mod 253 =  0
+ 27e147 mod 253 =  3
+
+----- DESCRIFRADO ---------
+
+M = 18 4 6 20 17 8 3 0 3
+	S  E G  U  R I D A D
+
+---------------------------

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos numéricos de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Métodos numéricos de JavaScript</h1>
+    <section>
+        <h2>Métodos numéricos de JavaScript</h2>
+        <p>Estos métodos numéricos se pueden utilizar en todos los números de JavaScript:</p>
+        <table>
+            <tr><th>Método</th><th>Descripción</th></tr>
+            <tr><td>toString()</td><td>Devuelve un número como una cadena</td></tr>
+            <tr><td>toExponential()</td><td>Devuelve un número escrito en notación exponencial</td></tr>
+            <tr><td>toFixed()</td><td>Devuelve un número escrito con varios decimales.</td></tr>
+            <tr><td>toPrecision()</td><td>Devuelve un número escrito con una longitud especificada</td></tr>
+            <tr><td>valueOf()</td><td>Devuelve un número como un número</td></tr>
+        </table>
+    </section>
+    <section>
+        <h2>El método toString()</h2>
+        <p>El método toString() devuelve un número como una cadena.</p>
+        <p>Todos los métodos numéricos se pueden utilizar con cualquier tipo de números (literales, variables o expresiones):</p>
+        <pre>
+            let x = 123;
+            x.toString();
+            (123).toString();
+            (100 + 23).toString();
+        </pre>
+    </section>
+    <section>
+        <h2>El método toExponential()</h2>
+        <p>toExponential()devuelve una cadena, con un número redondeado y escrito usando notación exponencial.</p>
+        <p>Un parámetro define el número de caracteres detrás del punto decimal:</p>
+        <pre>
+            let x = 9.656;
+            x.toExponential(2);
+            x.toExponential(4);
+            x.toExponential(6);
+        </pre>
+        <p>El parámetro es opcional. Si no lo especifica, JavaScript no redondeará el número.</p>
+    </section>
+    <section>
+        <h2>El método toFixed()</h2>
+        <p>toFixed()devuelve una cadena, con el número escrito con un número específico de decimales:</p>
+        <pre>
+            let x = 9.656;
+            x.toFixed(0);
+            x.toFixed(2);
+            x.toFixed(4);
+            x.toFixed(6);
+        </pre>
+        <p>toFixed(2) es perfecto para trabajar con dinero.</p>
+    </section>
+    <section>
+        <h2>El método toPrecision()</h2>
+        <p>toPrecision() devuelve una cadena, con un número escrito con una longitud especificada:</p>
+        <pre>
+            let x = 9.656;
+            x.toPrecision();
+            x.toPrecision(2);
+            x.toPrecision(4);
+            x.toPrecision(6);
+        </pre>
+    </section>
+    <section>
+        <h2>El método valueOf()</h2>
+        <p>valueOf() devuelve un número como un número.</p>
+        <pre>
+            let x = 123;
+            x.valueOf();
+            (123).valueOf();
+            (100 + 23).valueOf();
+        </pre>
+        <p>En JavaScript, un número puede ser un valor primitivo (tipo de = número) o un objeto (tipo de = objeto).</p>
+        <p>El método valueOf() se utiliza internamente en JavaScript para convertir objetos numéricos en valores primitivos.</p>
+        <p>Todos los tipos de datos de JavaScript tienen un método valueOf() y un toString().</p>
+    </section>
+    <section>
+        <h2>Convertir variables en números</h2>
+        <p>Hay 3 métodos de JavaScript que se pueden utilizar para convertir una variable en un número:</p>
+        <table>
+            <tr><th>Método</th><th>Descripción</th></tr>
+            <tr><td>Number()</td><td>Devuelve un número convertido a partir de su argumento.</td></tr>
+            <tr><td>parseFloat()</td><td>Analiza su argumento y devuelve un número de coma flotante</td></tr>
+            <tr><td>parseInt()</td><td>Analiza su argumento y devuelve un número entero.</td></tr>
+        </table>
+        <p>Los métodos anteriores no son métodos numéricos . Son métodos globales de JavaScript.</p>
+    </section>
+    <section>
+        <h2>El método Number()</h2>
+        <p>El método Number() se puede utilizar para convertir variables de JavaScript en números:</p>
+        <pre>
+            Number(true);
+            Number(false);
+            Number("10");
+            Number(" 10");
+            Number("10 ");
+            Number(" 10 ");
+            Number("10.33");
+            Number("10,33");
+            Number("10 33");
+            Number("John");
+        </pre>
+        <p>Si el número no se puede convertir, se devuelve NaN (No es un número).</p>
+    </section>
+    <section>
+        <h2>El método Number() utilizado en las fechas</h2>
+        <p>Number() también puede convertir una fecha en un número.</p>
+        <pre>
+            Number(new Date("1970-01-01"))
+        </pre>
+        <p><strong>Nota </strong> El método Date() devuelve el número de milisegundos desde el 1.1.1970.</p>
+        <p>El número de milisegundos entre 1970-01-02 y 1970-01-01 es 86400000:</p>
+        <pre>
+            Number(new Date("1970-01-02"))
+        </pre>
+        <pre>
+            Number(new Date("2017-09-30"))
+        </pre>
+    </section>
+    <section>
+        <h2>El método parseInt()</h2>
+        <p>parseInt() analiza una cadena y devuelve un número entero. Se permiten espacios. Sólo se devuelve el primer número:</p>
+        <pre>
+            parseInt("-10");
+            parseInt("-10.33");
+            parseInt("10");
+            parseInt("10.33");
+            parseInt("10 20 30");
+            parseInt("10 years");
+            parseInt("years 10");
+        </pre>
+        <p>Si el número no se puede convertir, se devuelve NaN (No es un número).</p>
+    </section>
+    <section>
+        <h2>El método parseFloat()</h2>
+        <p>parseFloat() analiza una cadena y devuelve un número. Se permiten espacios. Sólo se devuelve el primer número:</p>
+        <pre>
+            parseFloat("10");
+            parseFloat("10.33");
+            parseFloat("10 20 30");
+            parseFloat("10 years");
+            parseFloat("years 10");
+        </pre>
+        <p>Si el número no se puede convertir, se devuelve NaN (No es un número).</p>
+    </section>
+    <section>
+        <h2>Métodos de objetos numéricos</h2>
+        <p>Estos métodos de objeto pertenecen al objeto Number :</p>
+        <table>
+            <tr><th>Método</th><th>Descripción</th></tr>
+            <tr><td>Number.isInteger()</td><td>Devuelve verdadero si el argumento es un número entero</td></tr>
+            <tr><td>Number.isSafeInteger()</td><td>Devuelve verdadero si el argumento es un número entero seguro</td></tr>
+            <tr><td>Number.parseFloat()</td><td>Convierte una cadena en un número</td></tr>
+            <tr><td>Number.parseInt()</td><td>Convierte una cadena en un número entero</td></tr>
+        </table>
+    </section>
+    <section>
+        <h2>Los métodos numéricos no se pueden utilizar en variables</h2>
+        <p>Los métodos numéricos anteriores pertenecen al objeto Number de JavaScript .</p>
+        <p>Solo se puede acceder a estos métodos como Number.isInteger().</p>
+        <p>El uso de X.isInteger() donde X es una variable generará un error:</p>
+        <p>TypeError X.isInteger is not a function.</p>
+    </section>
+    <section>
+        <h2>El método Number.isInteger()</h2>
+        <p>El método Number.isInteger() devuelve true si el argumento es un número entero.</p>
+        <pre>
+            Number.isInteger(10);
+            Number.isInteger(10.5);
+        </pre>
+    </section>
+    <section>
+        <h2>El método Number.isSafeInteger()</h2>
+        <p>Un número entero seguro es un número entero que se puede representar exactamente como un número de doble precisión.</p>
+        <p>El método Number.isSafeInteger()devuelve true si el argumento es un número entero seguro.</p>
+        <pre>
+            Number.isSafeInteger(10);
+            Number.isSafeInteger(12345678901234567890);
+        </pre>
+        <p>Los enteros seguros son todos los números enteros desde -(2 53 - 1) hasta +(2 53 - 1).</p>
+        <p>Esto es seguro: 9007199254740991. Esto no es seguro: 9007199254740992.</p>
+    </section>
+    <section>
+        <h2>El método Number.parseFloat()</h2>
+        <p>Number.parseFloat() analiza una cadena y devuelve un número.</p>
+        <p>Se permiten espacios. Sólo se devuelve el primer número:</p>
+        <pre>
+            Number.parseFloat("10");
+            Number.parseFloat("10.33");
+            Number.parseFloat("10 20 30");
+            Number.parseFloat("10 years");
+            Number.parseFloat("years 10");
+        </pre>
+        <p>Si el número no se puede convertir, se devuelve NaN (No es un número).</p>
+        <p><strong>Nota </strong> Los métodos Number Number.parseInt() y Number.parseFloat() son los mismos que los
+            métodos globales parseInt() y parseFloat().</p>
+        <p>El propósito es la modularización de globales (para facilitar el uso del mismo código JavaScript fuera del navegador).</p>
+    </section>
+    <section>
+        <h2>El método Number.parseInt()</h2>
+        <p>Number.parseInt() analiza una cadena y devuelve un número entero.</p>
+        <p>Se permiten espacios. Sólo se devuelve el primer número:</p>
+        <pre>
+            Number.parseInt("-10");
+            Number.parseInt("-10.33");
+            Number.parseInt("10");
+            Number.parseInt("10.33");
+            Number.parseInt("10 20 30");
+            Number.parseInt("10 years");
+            Number.parseInt("years 10");
+        </pre>
+        <p>Si el número no se puede convertir, se devuelve NaN (No es un número).</p>
+    </section>
+</body>
+</html>

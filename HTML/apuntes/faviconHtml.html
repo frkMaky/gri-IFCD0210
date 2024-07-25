@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Favicon HTML</h1>
+    <p class="tabular"><q>Un favicon es una pequeña imagen que se muestra junto al título de la página en la pestaña del navegador.</q></p>
+    <section>
+        <h2>Cómo agregar un favicon en HTML</h2>
+        <p>Puedes usar cualquier imagen que quieras como favicon. También puedes crear tu propio favicon en sitios como https://www.favicon.cc.</p>
+        <p><span class="negrita">Consejo:</span> un favicon es una imagen pequeña, por lo que debe ser una imagen simple con alto contraste.</p>
+        <p>Se muestra una imagen de favicon a la izquierda del título de la página en la pestaña del navegador</p>
+        <p>Para agregar un favicon a su sitio web, guarde su imagen de favicon en el directorio raíz de su servidor web o cree una carpeta en el
+        directorio raíz llamada imágenes y guarde su imagen de favicon en esta carpeta. Un nombre común para una imagen de favicon es "favicon.ico".</p>
+        <p>A continuación, agregue un elemento &lt;link&gt; a su archivo "index.html", después del elemento &lt;title&gt;, así:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;title&gt;My Page Title&lt;/title&gt;
+            &lt;link rel="icon" type="image/x-icon" href="/images/favicon.ico"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;h1&gt;This is a Heading&lt;/h1&gt;
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <p>Ahora, guarde el archivo "index.html" y vuelva a cargarlo en su navegador. La pestaña de su navegador
+            ahora debería mostrar su imagen de favicon a la izquierda del título de la página.</p>
+    </section>
+    
+    <section>
+        <h2>Compatibilidad con el formato de archivo Favicon</h2>
+        <p>La siguiente tabla muestra el formato de archivo compatible con una imagen de favicon:</p>
+        <table>
+            <tr>
+                <th>Browser</th>
+                <th>ICO</th>
+                <th>PNG</th>
+                <th>GIF</th>
+                <th>JPEG</th>
+                <th>SVG</th>
+            </tr>
+            <tr> <td>Edge</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> </tr>
+            <tr> <td>Chrome</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> </tr>
+            <tr> <td>Firefox</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> </tr>
+            <tr> <td>Opera</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> </tr>
+            <tr> <td>Safari</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> <td>YES</td> </tr>        
+        </table>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <p>Utilice el elemento &lt;link&gt; de HTML para insertar un favicon</p>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Qué etiqueta HTML se utiliza para manejar el favicon (la pequeña imagen a la izquierda en la pestaña del navegador):</p>
+        <pre>
+            &lt;rel="icon" type="image/x-icon" href="/images/favicon.ico"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiqueta de enlace HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;link&gt;</td> <td>Define la relación entre un documento y un recurso externo</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Comentarios de JavaScript</h1>
+    <p class="tabular"><em>Los comentarios de JavaScript se pueden utilizar para explicar el código JavaScript y hacerlo más legible.</em></p>
+    <p class="tabular"><em>Los comentarios de JavaScript también se pueden utilizar para evitar la ejecución al probar código alternativo.</em></p>
+
+    <section>
+        <h2>Comentarios de una sola línea</h2>
+        <p>Los comentarios de una sola línea comienzan con //.</p>
+        <p>//JavaScript ignorará cualquier texto entre y al final de la línea (no se ejecutará).</p>
+        <p>Este ejemplo utiliza un comentario de una sola línea antes de cada línea de código:</p>
+        <pre>
+            // Change heading:
+            document.getElementById("myH").innerHTML = "My First Page";
+            
+            // Change paragraph:
+            document.getElementById("myP").innerHTML = "My first paragraph.";
+        </pre>
+        <p><em>Este ejemplo utiliza un comentario de una sola línea al final de cada línea para explicar el código:</em></p>
+        <pre>
+            let x = 5; // Declare x, give it the value of 5
+            let y = x + 2; // Declare y, give it the value of x + 2
+        </pre>
+    </section>
+
+    <section>
+        <h2>Comentarios de varias líneas</h2>
+        <p>Los comentarios de varias líneas comienzan con /*y terminan con */.</p>
+        <p>Cualquier texto entre /*y */será ignorado por JavaScript.</p>
+        <p>Este ejemplo utiliza un comentario de varias líneas (un bloque de comentarios) para explicar el código:</p>
+        <pre>
+            /*
+            The code below will change
+            the heading with id = "myH"
+            and the paragraph with id = "myP"
+            in my web page:
+            */
+            document.getElementById("myH").innerHTML = "My First Page";
+            document.getElementById("myP").innerHTML = "My first paragraph.";
+        </pre>
+        <p><em>Lo más común es utilizar comentarios de una sola línea.</em></p>
+        <p><em>Los comentarios en bloque se utilizan a menudo para documentación formal.</em></p>
+    </section>
+
+    <section>
+        <h2>Uso de comentarios para evitar la ejecución</h2>
+        <p>El uso de comentarios para evitar la ejecución de código es adecuado para las pruebas de código.</p>
+        <p>Agregar //delante de una línea de código cambia las líneas de código de una línea ejecutable a un comentario.</p>
+        <p>Este ejemplo utiliza // para evitar la ejecución de una de las líneas de código:</p>
+        <pre>
+            //document.getElementById("myH").innerHTML = "My First Page";
+            document.getElementById("myP").innerHTML = "My first paragraph.";
+        </pre>
+        <p><em>Este ejemplo utiliza un bloque de comentarios para evitar la ejecución de varias líneas:</em></p>
+        <pre>
+            /*
+            document.getElementById("myH").innerHTML = "My First Page";
+            document.getElementById("myP").innerHTML = "My first paragraph.";
+            */
+        </pre>
+    </section>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tablas>
+	<tabla1>
+		<nombre> </nombre>
+		<apellidos> </apellidos>
+		<dni></dni>
+	</tabla1>
+
+	<tabla2>
+		<codigo></codigo>
+		<nombre></nombre>
+		<descripcion></descripcion>
+	</tabla2>
+
+</tablas>

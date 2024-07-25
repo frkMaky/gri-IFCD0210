@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedor Array Sort</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        div {
+            height: 100vh;
+            width: 100%;
+            border: 1px solid black;
+            text-align: center;
+            align-content: center;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        #contenedor1 { background-color: blue; color: white;}
+        #contenedor2 { background-color: red; color: white;}
+        #contenedor3 { background-color: pink;}
+        #contenedor4 { background-color: black; color: white;}
+        #contenedor5 { background-color: violet;}
+        #contenedor6 { 
+            background-color: white;
+            position: relative;
+        }
+        button {
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border: 1px solid black;
+            border-radius: 1rem;
+            background-color: transparent;
+            margin: .5rem;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: palevioletred;
+            font-weight: bold;
+        }
+        button:active {
+            background-color: pink;
+            color: red;
+        }
+        #contenedor6 #alafabetico {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        #contenedor6 #numerico {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        Crea 6 contenedores que ocupen 1/6 de la pantalla
+        Con colores distintos y con los siguiente numeros: 25,12,16,3,29 
+        En el 6to colocar botones para orden alfabetico y numerico colocados uno derecha arriba y otro izquierda abajo
+    -->
+
+      
+    <div id="contenedor1">25</div>
+    <div id="contenedor2">12</div>
+    <div id="contenedor3">16</div>
+    <div id="contenedor4">3</div>
+    <div id="contenedor5">29</div>
+    <div id="contenedor6">
+        <button id="alafabetico" onclick="alfabetico()">Ordenar Alfabeticamente</button>
+        <button id="numerico" onclick="numerico()">Ordenar Numericamente</button>
+    </div>
+
+    <script>
+        //Numeros
+        const numeros = [25,12,16,3,29];
+        const colores = ["blue","red","pink","black","violet"];
+
+        function iniciar() {
+            const contenedor = document.getElementsByTagName("div");
+                
+            for (let i=0;i<contenedor.length-1;i++){ // -1 se exluye el contenedor de los botones
+                contenedor[i].innerHTML = numeros[i];
+                contenedor[i].style.backgroundColor = colores[i];
+            }
+        }
+        iniciar(); // llenado inicial 
+
+        function alfabetico() {
+            const alfa =  numeros.toSorted();
+            const alfaColor = colores.toSorted();
+        
+            for (let i=0;i<alfa.length;i++) {
+                let contenedor = document.getElementById("contenedor"+(i+1));
+                contenedor.innerHTML = alfa[i];
+                contenedor.style.backgroundColor = alfaColor[i];
+            }
+        }
+
+        function numerico() {
+            const numer =  numeros.sort(function(a, b){return a - b});
+            const numerColor = colores.toSorted(function(a, b){return a - b});
+        
+            for (let i=0;i<numer.length;i++) {
+                let contenedor = document.getElementById("contenedor"+(i+1));
+                contenedor.innerHTML = numer[i];
+                contenedor.style.backgroundColor = numerColor[i];
+            }
+        }
+        
+    </script>
+</body>
+</html>

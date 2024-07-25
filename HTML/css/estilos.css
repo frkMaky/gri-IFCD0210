@@ -1,0 +1,9 @@
+body{
+    background-color: #dbeb34;
+}
+h1, p {
+    color: #cc4190;
+}
+p:last-child {
+    font-style: italic;
+}

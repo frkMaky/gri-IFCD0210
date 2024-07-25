@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Listas en HTML</h1>
+    <p class="tabular"><q>Las listas HTML permiten a los desarrolladores web agrupar un conjunto de elementos relacionados en listas.</q></p>
+    <p><em>Lista no ordenada</em></p>
+    <ul class="tabular">
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+    <p><em>Lista ordenada</em></p>
+    <ol class="tabular">
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ol>
+    <section>
+        <h2>Lista no ordenada en html</h2>
+        <p>Una lista no ordenada comienza con la etiqueta &lt;ul&gt;. Cada elemento de la lista comienza con la etiqueta &lt;li&gt;.</p>
+        <p>Los elementos de la lista estarán marcados con viñetas (pequeños círculos negros) de forma predeterminada:</p>
+        <pre>
+            &lt;ul&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Lista HTML ordenada</h2>
+        <p>Una lista ordenada comienza con la etiqueta &lt;ol&gt;. Cada elemento de la lista comienza con la etiqueta &lt;li&gt;.</p>
+        <p>Los elementos de la lista estarán marcados con números de forma predeterminada</p>
+        <pre>
+            &lt;ol&gt;
+                &lt;li&gt;Coffee&lt;/li&gt;
+                &lt;li&gt;Tea&lt;/li&gt;
+                &lt;li&gt;Milk&lt;/li&gt;
+            &lt;/ol&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Listas de descripción en HTML</h2>
+        <p>HTML también admite listas de descripciones.</p>
+        <p>Una lista de descripción es una lista de términos, con una descripción de cada término.</p>
+        <p>La &lt;dl&gt; etiqueta define la lista de descripción (description list), la etiqueta &lt;dt&gt; define el término y la &lt;dd&gt; etiqueta describe cada término:</p>
+        <pre>
+            &lt;dl&gt;
+                &lt;dt&gt;Coffee&lt;/dt&gt;
+                &lt;dd&gt;- black hot drink&lt;/dd&gt;
+                &lt;dt&gt;Milk&lt;/dt&gt;
+                &lt;dd&gt;- white cold drink&lt;/dd&gt;
+            &lt;/dl&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Agregue un elemento de lista con el texto "Café" dentro del elemento &lt;ul&gt;.</p>
+        <pre>
+            &lt;ul&gt;Café&lt;/ul&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de lista HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;ul&gt;</td> <td>Define una lista no ordenada</td> </tr>
+            <tr> <td>&lt;ol&gt;</td> <td>Define una lista ordenada</td> </tr>
+            <tr> <td>&lt;li&gt;</td> <td>Define un item de la lista</td> </tr>
+            <tr> <td>&lt;dl&gt;</td> <td>Define una lista de descripción</td> </tr>
+            <tr> <td>&lt;dt&gt;</td> <td>Define un término en una lista de descripción</td> </tr>
+            <tr> <td>&lt;dd&gt;</td> <td>Describe el término en una lista de descripción</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

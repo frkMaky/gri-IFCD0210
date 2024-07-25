@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicio de XML - Corregir errores de sintaxis de "figuras.xml"
+Corregir los errores que hay en el siguiente documento XML () para que esté bien formado. 
+Para ello, puede ser necesario crear nuevas etiquetas o atributos. -->
+
+<figuras>
+    <figura_plana>
+       <nombre>cuadrado</nombre>
+       <lados>4</lados>
+    </figura_plana>
+    <figura_plana>
+        <nombre>triángulo</nombre>
+        <lados>3</lados>
+    </figura_plana>
+    <figura_tridimensional>
+        <nombre>cubo</nombre>
+        <aristas>12</aristas>
+        <caras>6</caras>
+    </figura_tridimensional>
+</figuras>

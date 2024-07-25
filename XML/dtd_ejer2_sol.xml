@@ -1,0 +1,19 @@
+<!--
+ Considera un sistema de gestión de tareas que se va a implementar en XML. Diseñ    a un DTD que permita
+representar las tareas con sus respectivos atributos, como el título, la descripción, la fecha de creación y la
+prioridad. Además, cada tarea puede tener subtareas anidadas.
+Define el elemento raíz «tareas» que puede contener una o más tareas. Cada tarea está compuesta por
+elementos obligatorios como «titulo», «descripcion», «fecha» y «prioridad», y puede tener un elemento
+opcional «subtareas» para anidar subtareas. Además, agrega un atributo «id» a cada tarea para
+identificarlas de forma única.
+-->
+<!DOCTYPE tareas [
+    <!ELEMENT tareas (tarea+)>
+    <!ELEMENT tarea (titulo, descripcion, fecha, prioridad, subtareas?)>
+    <!ELEMENT titulo (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT fecha (#PCDATA)>
+    <!ELEMENT prioridad (#PCDATA)>
+    <!ELEMENT subtareas (tarea+)>
+    <!ATTLIST tarea id ID #REQUIRED>
+]>  

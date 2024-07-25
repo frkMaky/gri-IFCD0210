@@ -1,0 +1,30 @@
+Ejercicio 7:
+RSA: p = 3, q = 11, e = 7. Cifra el mensaje 2. Descifra para comprobar si se obtiene el mensaje
+original.
+
+
+n = p * q
+∅ = ( p - 1 ) * ( q - 1 )
+
+n = 3 * 11 = 33
+∅(n) = 2 * 10 = 20
+
+1 < e < ∅, MCD( ∅, e ) = 1.
+e = 7
+
+(e*d) mod ∅(n) = (7 * d) mod 20 = 1
+d = 3
+
+Clave pública: (e,n) = (7,33)
+Clave privada: (d,n) = (3,33)
+
+Cifrado: C = M e mod n
+
+c = 2e7 mod 33 = 29 
+
+Descifrado: C d mod n = M
+
+d = 29e3 mod 33 = 24389 mod 33 = 2
+
+CIFRADO 29
+DESCIFRADO 2

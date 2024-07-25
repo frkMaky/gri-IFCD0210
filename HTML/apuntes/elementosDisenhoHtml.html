@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos y técnicas de diseño en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Elementos y técnicas de diseño en HTML</h1>
+    <p class="tabular"><q>Los sitios web suelen mostrar contenido en varias columnas (como una revista o un periódico).</q></p>
+    <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+        &lt;title&gt;CSS Template&lt;/title&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+        &lt;style&gt;
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            /* Style the header */
+            header {
+                background-color: #666;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+
+            /* Create two columns/boxes that floats next to each other */
+            nav {
+                float: left;
+                width: 30%;
+                height: 300px; /* only for demonstration, should be removed */
+                background: #ccc;
+                padding: 20px;
+            }
+
+            /* Style the list inside the menu */
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            article {
+                float: left;
+                padding: 20px;
+                width: 70%;
+                background-color: #f1f1f1;
+                height: 300px; /* only for demonstration, should be removed */
+            }
+
+            /* Clear floats after the columns */
+            section::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /* Style the footer */
+            footer {
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+
+            /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each
+            other, on small screens */
+            @media (max-width: 600px) {
+                nav, article {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+
+            &lt;h2&gt;CSS Layout Float&lt;/h2&gt;
+            &lt;p&gt;In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.&lt;/p&gt;
+            &lt;p&gt;Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)&lt;/p&gt;
+
+            &lt;header&gt;
+                &lt;h2&gt;Cities&lt;/h2&gt;
+            &lt;/header&gt;
+
+            &lt;section&gt;
+                &lt;nav&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;London&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Paris&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;Tokyo&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+
+                &lt;article&gt;
+                    &lt;h1&gt;London&lt;/h1&gt;
+                    &lt;p&gt;London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.&lt;/p&gt;
+                    &lt;p&gt;Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.&lt;/p&gt;
+                &lt;/article&gt;
+            &lt;/section&gt;
+
+            &lt;footer&gt;
+                &lt;p&gt;Footer&lt;/p&gt;
+            &lt;/footer&gt;
+
+        &lt;/body&gt;
+        &lt;/html&gt;
+
+    </pre>
+    <section>
+        <h2>Elementos de diseño HTML</h2>
+        <p>HTML tiene varios elementos semánticos que definen las diferentes partes de una página web:</p>
+        <ul>
+            <li>&lt;header&gt; - Define un encabezado para un documento o una sección</li>
+            <li>&lt;nav&gt; - Define un conjunto de enlaces de navegación.</li>
+            <li>&lt;section&gt; - Define una sección en un documento.</li>
+            <li>&lt;article&gt; - Define un contenido independiente y autónomo.</li>
+            <li>&lt;aside&gt; - Define contenido aparte del contenido (como una barra lateral)</li>
+            <li>&lt;footer&gt; - Define un pie de página para un documento o una sección</li>
+            <li>&lt;details&gt; - Define detalles adicionales que el usuario puede abrir y cerrar a pedido</li>
+            <li>&lt;summary&gt; - Define un encabezado para el elemento<details>.</li>
+        </ul>
+        <p><em>NOTA: otra forma de definirlo sería así, con el main. Elige una de las dos opciones</em></p>
+    </section>
+
+    <section>
+        <h2>Técnicas de diseño HTML</h2>
+        <p>Existen cuatro técnicas diferentes para crear diseños de varias columnas. Cada técnica tiene sus pros y sus contras:</p>
+        <ul>
+            <li>frameworks CSS</li>
+            <li>Propiedad float CSS</li>
+            <li>flexbox CSS</li>
+            <li>grid CSS</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>frameworks CSS</h2>
+        <p>Si desea crear su diseño rápidamente, puede utilizar un marco CSS, como W3.CSS o Bootstrap .</p>
+    </section>
+
+    <section>
+        <h2>Diseño flotante CSS</h2>
+        <p>Es común realizar diseños web completos utilizando la propiedad float de CSS. float es fácil de
+            aprender: solo necesita recordar cómo funcionan las propiedades float y clear. Inconvenientes: los
+            elementos flotantes están vinculados al flujo de documentos, lo que puede perjudicar la flexibilidad.
+            Veremos más información más adelante.</p>
+    </section>
+
+    <section>
+        <h2>Diseño de caja flexible CSS</h2>
+        <p>El uso de flexbox garantiza que los elementos se comporten de manera predecible cuando el diseño de la
+            página debe adaptarse a diferentes tamaños de pantalla y diferentes dispositivos de visualización. Veremos
+            más adelante más información.</p>
+        <pre>
+            * {
+                box-sizing: border-box;
+            }
+                
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+                
+                /* Style the header */
+            header {
+                background-color: #666;
+                padding: 30px;    
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+                
+                /* Container for flexboxes */
+            section {
+                display: -webkit-flex;
+                display: flex;
+            }
+                
+                /* Style the navigation menu */
+            nav {
+                -webkit-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+                background: #ccc;
+                padding: 20px;
+            }
+                
+                /* Style the list inside the menu */
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+                
+                /* Style the content */ 
+            article {
+                -webkit-flex: 3;
+                -ms-flex: 3;
+                flex: 3;
+                background-color: #f1f1f1;
+                padding: 10px;
+            }
+                
+                /* Style the footer */
+            footer {
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+                
+                /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead
+                of next to each other */
+            @media (max-width: 600px) {
+                section {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                }
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Diseño en grid CSS</h2>
+        <p>El módulo CSS Grid Layout ofrece un sistema de diseño basado en cuadrículas, con filas y columnas, lo
+            que facilita el diseño de páginas web sin tener que utilizar elementos flotantes ni posicionamiento.
+            Veremos información más adelante.</p>
+    </section>
+</body>
+</html>

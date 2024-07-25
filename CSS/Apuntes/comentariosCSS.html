@@ -1,0 +1,76 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Comentarios en CSS</h1>
+    <p class="tabular"><q>Los comentarios en CSS no se muestran en el navegador, pero pueden ayudar a documentar su código fuente.</q></p>
+    <section>
+        <h2>Comentarios CSS</h2>
+        <p>Los comentarios se utilizan para explicar el código y pueden ayudar cuando edite el código fuente en una fecha posterior.</p>
+        <p>Los navegadores ignoran los comentarios.</p>
+        <p>Un comentario CSS se coloca dentro del elemento &lt;style&gt;, comienza /* y termina con */:</p>
+        <pre>
+            /* This is a single-line comment */
+            p {
+                color: red;
+            }
+        </pre>
+        <p>Puedes agregar comentarios donde quieras en el código:</p>
+        <pre>
+            p {
+                color: red; /* Set text color to red */
+            }
+        </pre>
+        <p>Incluso en medio de una línea de código:</p>
+        <pre>
+            p {
+                color: /*red*/blue;
+            }
+        </pre>
+        <p>Los comentarios también pueden abarcar varias líneas:</p>
+        <pre>
+            /* This is
+            a multi-line
+            comment */
+            
+            p {
+                color: red;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Comentarios HTML y CSS</h2>
+        <p>En el tutorial de HTML, aprendiste que puedes agregar comentarios a tu fuente HTML usando la sintaxis &lt;!--...--&gt;.</p>
+        <p>En el siguiente ejemplo, utilizamos una combinación de comentarios HTML y CSS:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;style&gt;
+                p {
+                    color: red; /* Set text color to red */
+                }
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h2&gt;My Heading&lt;/h2&gt;
+                &lt;!-- These paragraphs will be red --&gt;
+                &lt;p&gt;Hello World!&lt;/p&gt;
+                &lt;p&gt;This paragraph is styled with CSS.&lt;/p&gt;
+                &lt;p&gt;CSS comments are not shown in the output.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+</body>
+</html>

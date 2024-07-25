@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio PseudoElementos</title>
+    <style>
+        div{
+            max-width: 50%;
+            margin: 0 auto;
+            background-color: lavender;
+            padding: 20px auto;
+            margin: 0 auto;
+            text-align: justify;
+            padding: 30px;
+        }
+        p {
+            margin: 30px auto;
+            text-align: justify;
+        }
+        p::first-line {
+            color:blue;
+            font-weight: bold;
+        }
+        blockquote::before {
+            background-color: violet;
+            border-radius: 50%;
+        }
+        blockquote::after {
+            background-color: violet;
+            border-radius: 50%;
+        }
+        li::marker {
+            font-size: 24px;
+            color:violet;
+        }
+        .comillas {
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .comillas::before {
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <p>Is your architecture prepared for inmersive driver growth? Iteratively touching base <br/>
+            about integrating cryptoes will make us leaders in the company-wide dot-bomb industry.</p>
+        <p>Intelligently engineering effectively best-od-breed brands is crucial to our long-term<br/>
+            enterprise.our business productizes capabilities to globally and reliably impact our actionable vertical.</p>
+
+        <blockquote><span class="comillas">&#10077;</span> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus commodi dicta optio voluptatum. Eius, ducimus? Porro libero, 
+            eaque soluta numquam repudiandae, voluptatem ea facilis incidunt illum, recusandae modi ut quae.<span class="comillas">&#10078;</span> </blockquote>
+
+        <ul>
+            <li><innput type=radio name="radioButton" id="elem0">Ender</input></li>
+            <li><innput type=radio name="radioButton" id="elem1">Petra</input></li>
+            <li><innput type=radio name="radioButton" id="elem2">Bean</input></li>
+        </ul>
+        
+        
+        
+    </div>
+    
+</body>
+</html>

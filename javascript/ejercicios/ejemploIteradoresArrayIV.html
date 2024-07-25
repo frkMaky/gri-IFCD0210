@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<p id="demo"></p>
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits.keys();
+let text = "";
+for (let x of keys) {
+text += x + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+<p>Array.keys() is not supported in Internet Explorer.</p>
+</body>
+</html>

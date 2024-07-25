@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charset en HTML (juegos de caracteres)</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Charset en HTML (juegos de caracteres)</h1>
+    <p class="tabular"><q>Para mostrar una página HTML correctamente, un navegador web debe saber qué juego de caracteres utilizar.</q></p>
+    
+    <section>
+        <h2>El atributo del juego de caracteres HTML</h2>
+        <p>El juego de caracteres se especifica en la etiqueta &lt;meta&gt;</p>
+        <pre>
+            &lt;meta charset="UTF-8"&gt;
+        </pre>
+        <p>La especificación HTML5 anima a los desarrolladores web a utilizar el juego de caracteres UTF-8.
+            ¡UTF-8 cubre casi todos los caracteres y símbolos del mundo!</p>
+    </section>
+
+    <section>
+        <h2>El conjunto de caracteres ASCII</h2>
+        <p>ASCII fue el primer estándar de codificación de caracteres para la web. Definió 128 caracteres diferentes
+            que podrían usarse en Internet</p>
+        <ul>
+            <li>Letras inglesas (AZ)</li>
+            <li>Números (0-9)</li>
+            <li>Personajes especiales como! $ + - ( ) @ &gt; >.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>El conjunto de caracteres ANSI</h2>
+        <p>ANSI (Windows-1252) era el juego de caracteres original de Windows:</p>
+        <ul>
+            <li>Idéntico a ASCII para los primeros 127 caracteres</li>
+            <li>Caracteres especiales del 128 al 159</li>
+            <li>Idéntico a UTF-8 de 160 a 255</li>
+        </ul>
+        <pre>
+            &lt;meta charset="Windows-1252"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El juego de caracteres ISO-8859-1</h2>
+        <p>ISO-8859-1 era el juego de caracteres predeterminado para HTML 4. Este juego de caracteres admitía 256
+            códigos de caracteres diferentes. HTML 4 también admitía UTF-8.</p>
+        <ul>
+            <li>Idéntico a ASCII para los primeros 127 caracteres</li>
+            <li>No utiliza los caracteres del 128 al 159.</li>
+            <li>Idéntico a ANSI y UTF-8 de 160 a 255</li>
+        </ul>
+        <pre>
+            Ejemplo html4
+            &lt;meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"&gt;
+        </pre>
+
+        <pre>
+            Ejemplo html5
+            &lt;meta charset="ISO-8859-1"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El conjunto de caracteres UTF-8</h2>
+        <ul>
+            <li>es idéntico a ASCII para los valores de 0 a 127</li>
+            <li>No utiliza los caracteres del 128 al 159.</li>
+            <li>Idéntico a ANSI y 8859-1 de 160 a 255</li>
+            <li>Continúa desde el valor 256 hasta 10 000 caracteres</li>
+        </ul>
+        <pre>
+            &lt;meta charset="UTF-8"&gt;
+        </pre>
+    </section>
+</body>
+</html>

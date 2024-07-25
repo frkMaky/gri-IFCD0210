@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemento &lt;picture&gt; de HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Elemento &lt;picture&gt; de HTML</h1>
+    <p class="tabular"><q>El elemento &lt;picture&gt; de HTML le permite mostrar diferentes imágenes para diferentes
+        dispositivos o tamaños de pantalla.</q></p>
+    <section>
+        <h2>El elemento &lt;picture&gt; de HTML</h2>
+        <p>El elemento &lt;picture&gt; de HTML ofrece a los desarrolladores web más flexibilidad a la hora de
+            especificar recursos de imágenes.</p>
+        <p>El elemento &lt;picture&gt; contiene uno o más elementos &lt;source&gt;, cada uno de los cuales hace
+            referencia a diferentes imágenes a través del atributo srcset. De esta manera el navegador puede elegir
+            la imagen que mejor se ajuste a la vista y/o dispositivo actual.</p>
+        <p>Cada elemento &lt;source&gt; tiene un atributo media que define qué tamaño de imagen es el más adecuado.</p>
+
+        <p>Muestra diferentes imágenes para diferentes tamaños de pantalla:</p>
+        <pre>
+            &lt;picture&gt;
+                &lt;source media="(min-width: 650px)" srcset="img_food.jpg"&gt;
+                &lt;source media="(min-width: 465px)" srcset="img_car.jpg"&gt;
+                &lt;img src="img_girl.jpg"&gt;
+            &lt;/picture&gt;
+        </pre>
+        <p><span class="negrita">Nota:</span>  Especifique siempre un elemento &lt;img&gt; como el último elemento secundario del elemento
+            &lt;picture&gt;. El elemento &lt;img&gt; lo utilizan navegadores que no lo admiten &lt;picture&gt; o si ninguna
+            de las etiquetas &lt;source&gt; coincide.
+        </p>
+    </section>
+
+    <section>
+        <h2>Cuándo utilizar el elemento picture</h2>
+        <p>Hay dos propósitos principales para el elemento &lt;picture&gt;</p>
+        <ol>
+            <li><span class="negrita">Ancho de banda</span>
+                <p>Si tienes una pantalla o dispositivo pequeño, no es necesario cargar un archivo de imagen grande. El
+                navegador utilizará el primer elemento &lt;source&gt; con valores de atributos coincidentes e ignorará
+                cualquiera de los siguientes elementos.</p></li>
+            <li><span class="negrita">Soporte de formato</span>
+                <p>Es posible que algunos navegadores o dispositivos no admitan todos los formatos de imagen. Al usar el
+                    elemento &lt;picture&gt;, puede agregar imágenes de todos los formatos y el navegador usará el primer
+                    formato que reconozca e ignorará cualquiera de los siguientes elementos.</p></li>
+        </ol>
+        <p>El navegador utilizará el primer formato de imagen que reconozca:</p>
+        <pre>
+            &lt;picture&gt;
+                &lt;source srcset="img_avatar.png"&gt;
+                &lt;source srcset="img_girl.jpg"&gt;
+                &lt;img src="img_beatles.gif" alt="Beatles" style="width:auto;"&gt;
+            &lt;/picture&gt;
+        </pre>
+        <p> <span class="negrita">Nota</span> El navegador utilizará el primer elemento &lt;source&gt; con valores de atributos coincidentes e
+            ignorará los siguientes elementos &lt;source&gt;.</p>
+    </section>
+
+    <section>
+        <h2>Etiquetas de imagen HTML</h2>
+        <table>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>&lt;picture&gt;</td>
+                <td>Define un contenedor para múltiples recursos de imágenes</td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

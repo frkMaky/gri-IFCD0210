@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframes en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>iframes en HTML </h1>
+    <p class="tabular"><q>Un iframe HTML se utiliza para mostrar una página web dentro de otra página web.</q></p>
+    <section>
+        <h2>Sintaxis del iframe de HTML</h2>
+        <p>La etiqueta <strong>iframe</strong> de HTML especifica un marco en línea.</p>
+        <p>Un marco en línea se utiliza para incrustar otro documento dentro del documento HTML actual.</p>
+        <h3>Sintaxis</h3>
+        <pre>&lt; iframe src="url" title="description"&gt;&lt; /iframe&gt;</pre>
+        <p> <span class="negrita">Consejo: </span>Es una buena práctica incluir siempre un atributo title para el archivo <strong>iframe</strong>. Los
+            lectores de pantalla lo utilizan para leer cuál es el contenido del iframe.</p>
+    </section>
+
+    <section>
+        <h2>iframe - Establecer altura y ancho</h2>
+        <p>Utilice los atributos <em>height</em> y <em>width</em> para especificar el tamaño del iframe.</p>
+        <p>La altura y el ancho se especifican en píxeles de forma predeterminada:</p>
+        <pre>
+            &lt; iframe src="demo_iframe.htm" height="200" width="300" title="Iframe Example"&gt;&lt;/iframe&gt;
+        </pre>
+        <p>O puedes agregar el atributo <em>style</em> y usar las propiedades de CSS <em>height</em> y <em>width</em> :</p>
+        <pre>
+            &lt; iframe src="demo_iframe.htm" style="height:200px;width:300px;" title="Iframe Example"&gt;&lt;/iframe&gt;
+        </pre>
+
+    </section>
+    
+    <section>
+        <h2>iframe - Eliminar el borde</h2>
+        <p>De forma predeterminada, un iframe tiene un borde alrededor.</p>
+        <p>Para eliminar el borde, agregue el atributo <em>style</em> y use la propiedad <em>border</em> de CSS:</p>
+        <pre>
+            &lt;iframe src="demo_iframe.htm" style="border:none;" title="Iframe Example"&gt;&lt;/iframe&gt;
+        </pre>
+        <p>Con CSS, también puedes cambiar el tamaño, estilo y color del borde del iframe</p>
+        <pre>
+            &lt;iframe src="demo_iframe.htm" style="border:2px solid red;" title="Iframe Example"&gt;&lt;/iframe&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>iframe: destino de un enlace</h2>
+        <p>Se puede utilizar un iframe como marco de destino para un enlace.</p>
+        <p>El atributo <em>target</em> del enlace debe hacer referencia al atributo <em>name</em> del iframe:</p>
+        <pre>
+            &lt;iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"&gt;&lt;/iframe&gt;
+            &lt;p&gt;&lt;a href="https://www.w3schools.com" target="iframe_a">W3Schools.com&lt;/a&gt;&lt;/p&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>La etiqueta &lt;iframe&gt; HTML especifica un marco en línea.</li>
+            <li>El atributo src define la URL de la página a incrustar.</li>
+            <li>Incluya siempre un atributo title (para lectores de pantalla)</li>
+            <li>Los atributos height y width especifican el tamaño del iframe.</li>
+            <li>Use border:none;para eliminar el borde alrededor del iframe.</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Cree un iframe con una dirección URL que vaya a https://www.w3schools.com.</p>
+        <pre>
+            &lt;iframe="https://www.w3schools.com"&gt;&lt;/iframe&gt;
+        </pre>
+    </section>
+</body>
+</html>

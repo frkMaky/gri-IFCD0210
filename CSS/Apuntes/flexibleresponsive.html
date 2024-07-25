@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS flexible responsive</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>CSS flexible responsive</h1>
+    <section>
+        <h2>Caja flexible responsiva</h2>
+        <p>Por ejemplo, si desea crear un diseño de dos columnas para la mayoría de los tamaños de pantalla y un
+            diseño de una columna para tamaños de pantalla pequeños (como teléfonos y tabletas), puede cambiar
+            flex-direction de row a column en un punto de interrupción específico (800 px en el ejemplo
+            a continuación):</p>
+        <pre>
+            .flex-container {
+                display: flex;
+                flex-direction: row;
+            }
+            /* Responsive layout - makes a one column layout instead of a two-column layout */
+            @media (max-width: 800px) {
+                .flex-container {
+                    flex-direction: column;
+                }
+            }
+        </pre>
+        <p>Otra forma es cambiar el porcentaje de la propiedad flex de los elementos flexibles para crear diferentes
+            diseños para diferentes tamaños de pantalla. Tenga en cuenta que también tenemos que incluir flex-
+            wrap: wrap; en el contenedor flexible para que este ejemplo funcione:</p>
+        <pre>
+            .flex-container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .flex-item-left {
+                flex: 50%;
+            }
+            .flex-item-right {    
+                flex: 50%;
+            }
+            /* Responsive layout - makes a one column layout instead of a two-column layout */
+            @media (max-width: 800px) {
+                .flex-item-right, .flex-item-left {
+                    flex: 100%;
+                }
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>Galería de imágenes responsiva usando Flexbox</h2>
+        <p>Utilice flexbox para crear una galería de imágenes responsiva que varía entre cuatro, dos o imágenes de
+            ancho completo, según el tamaño de la pantalla:</p>
+        <a href="../Ejercicios/ejemploGaleria.html" target="_blank">Ejemplo Galeria de Imagenes FLEX</a> 
+    </section>
+    <section>
+        <h2>Sitio web responsivo usando Flexbox</h2>
+        <p>Utilice flexbox para crear un sitio web responsivo, que contenga una barra de navegación flexible y contenido flexible:</p>
+        <a href="../Ejercicios/ejemploSitioResponsive.html" target="_blank">Ejemplo Sitio Responsive</a>
+    </section>
+</body>
+</html>

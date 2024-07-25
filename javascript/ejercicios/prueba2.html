@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        div{
+            margin: 0;
+            padding: 0;
+            gap: 0;
+            background-color: beige;
+            height: 700px;
+            border: 1px solid black;
+        }
+        #contenedor1 {width: 20%;}
+        #contenedor2 {width: 30%;}
+        #contenedor3 {
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        
+        }
+        button {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: violet;
+        }
+        button:hover {
+            background-color: lightpink;
+            font-weight: bold;
+            color: purple;
+            -webkit-box-shadow: 29px 33px 56px 0px rgba(230,25,230,1);
+            -moz-box-shadow: 29px 33px 56px 0px rgba(230,25,230,1);
+            box-shadow: 29px 33px 56px 0px rgba(230,25,230,1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Tenemos 2 contenedores de alto 700px y ancho 20%,30% y el tercero el resto 
+        Realizar una funcion que ponga el ultimo contenedor violeta (sin param ni devuelva nada)
+        y tenemos un boton con el texto cambiar color, que lo que hace es llamar a la funcion
+    -->
+    <div id="contenedor1"></div>
+    <div id="contenedor2"></div>
+    <div id="contenedor3">
+        <button onclick="ponerVioleta();">Cambiar Color</button>
+    </div>
+    
+
+    <script>
+        function ponerVioleta() { // Cambia a violeta el fondo del contenedor3
+            document.getElementById("contenedor3").style.backgroundColor = "violet";
+        }
+    </script>
+</body>
+</html>

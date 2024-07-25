@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Colores en HTML</h1>
+    <p class="tabular"><q>Los colores HTML se especifican con nombres de colores predefinidos o con valores RGB, HEX, HSL,
+        RGBA o HSLA.</q></p>
+    <section>
+        <h2>Nombres de colores</h2>
+        <p>En HTML, se puede especificar un color utilizando un nombre de color:</p>
+        <table>
+            <tr> 
+                <td style="background-color: tomato;">Tomato</td>
+                <td style="background-color: orange;">Orange</td>
+            </tr>
+
+            <tr> 
+                <td style="background-color: dodgerblue;">DodgerBlue</td>
+                <td style="background-color: mediumseagreen;">Medium Sea Green</td>
+            </tr>
+
+            <tr> 
+                <td style="background-color:gray;">Gray</td>
+                <td style="background-color: slateblue;">Slate blue</td>
+            </tr>
+
+            <tr> 
+                <td style="background-color: violet;">Violet</td>
+                <td style="background-color: lightgray;">Light gray</td>
+            </tr>
+        </table>
+        <p><q>HTML admite 140 nombres de colores estándar</q></p>
+    </section>
+
+    <section>
+        <h2>Color de fondo</h2>
+        <p>Puede establecer el color de fondo para los elementos HTML:</p>
+        <pre>
+            &lt;h1 style="background-color:DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+            &lt;p style="background-color:Tomato;"&gt;Lorem ipsum...&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Color de texto</h2>
+        <p>Puede configurar el color del texto:</p>
+        <pre>
+            &lt;h1 style="color:Tomato;"&gt;Hello World&lt;/h1&gt;
+            &lt;p style="color:DodgerBlue;"&gt;Lorem ipsum&lt;/p&gt;
+            &lt;p style="color:MediumSeaGreen;"&gt;Ut wisi enim...&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Color del borde</h2>
+        <p>Puedes establecer el color de los bordes:</p>
+        <pre>
+            &lt;h1 style="border:2px solid Tomato;"&gt;Hello World&lt;/h1&gt;
+            &lt;h1 style="border:2px solid DodgerBlue;"&gt;Hello World&lt;/h1&gt;
+            &lt;h1 style="border:2px solid Violet;"&gt;Hello World&lt;/h1&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Valores de color</h2>
+        <p>En HTML, los colores también se pueden especificar utilizando valores RGB, valores HEX, valores HSL,
+            valores RGBA y valores HSLA.</p>
+        <p>Los siguientes tres elementos &lt;div&gt; tienen su color de fondo configurado con valores RGB, HEX y HSL:</p>
+        <pre>
+            rgb(255,99,71)
+            #ff6347
+            hsl(9,100%,64%)
+        </pre>
+        <p>Los siguientes dos elementos &lt;div&gt; tienen su color de fondo configurado con valores RGBA y HSLA, que
+            agregan un canal Alfa al color (aquí tenemos un 50% de transparencia):</p>
+        <pre>
+            rgba(255,99,71,0.5)
+            hsla(9,100%,64%,0.5)
+        </pre>
+        <p>Ejemplos:</p>
+        <pre>
+            &lt;h1 style="background-color:rgb(255, 99, 71);"&gt;...&lt;/h1&gt;
+            &lt;h1 style="background-color:#ff6347;"&gt;...&lt;/h1&gt;
+            &lt;h1 style="background-color:hsl(9, 100%, 64%);"&gt;...&lt;/h1&gt;
+            &lt;h1 style="background-color:rgba(255, 99, 71, 0.5);"&gt;...&lt;/h1&gt;
+            &lt;h1 style="background-color:hsla(9, 100%, 64%, 0.5);"&gt;...&lt;/h1&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Inserte la propiedad correcta para que el color del texto sea violeta.</p>
+        <pre>
+            &lt;p style=": violet"&gt;Este es un párrafo.&lt;/p&gt;
+        </pre>
+    </section>
+
+
+</body>
+</html>

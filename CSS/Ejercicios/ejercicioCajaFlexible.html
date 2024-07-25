@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Caja Flexible</title>
+    <!-- Crear una web con un logo y unmenu con HOME, ABOUT US y CONTACT posicionando de forma horizontal  mientras el ancho
+    sea superior a 800 px, y disposicion vertical a menos ancho -->
+    <style>
+        header{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        nav {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+        nav a, nav a:visited {
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid #CC3977;
+            background-color: #F19957;
+            padding: 5px 20px;
+            border-radius: 10px;
+            margin-left: 10px;
+            background-color: #1473B2;
+            color:#ffffff;
+        }
+        nav a:hover{
+            background-color: #CC3977;
+            color: #000000;
+        }
+        nav a:active{ background-color: #F19957; color:#CC3977;}
+
+        @media (max-width: 800px) { /** TABLET */
+            header {
+                flex-flow: column wrap;
+            }
+            nav {
+                flex-flow: column wrap;
+                gap:.5rem;
+            }
+        }
+        @media (max-width: 410px) { /** MOVIL */
+            
+
+            #contenedorLogo img {
+                width: auto;
+            }
+            nav {
+                flex-flow: column wrap;
+                gap:.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="contenedorLogo">
+            <img src="images/logo.jpg" alt="Logo" />
+        </div>
+        <nav>
+            <a href="#">HOME</a>
+            
+            <a href="#">ABOUT US</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+    
+</body>
+</html>

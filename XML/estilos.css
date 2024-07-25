@@ -1,0 +1,15 @@
+/** Define los siguientes estilos CSS:Aplicar un fondo azul claro a los títulos de los libros.
+Aplicar un color de texto rojo al autor de cada libro.Aplicar un estilo de fuente cursiva a los 
+géneros de los libros.Aplicar un tamaño de fuente más grande al año de publicación de cada libro. */
+titulo{
+    background-color: lightblue;
+}
+autor {
+    color:red;
+}
+genero {
+    font-style: italic;;
+}
+anio {
+    font-size: larger;
+}

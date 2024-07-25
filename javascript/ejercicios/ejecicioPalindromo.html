@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromos</title>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Bubbler+One&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica+SC&family=Monoton&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sacramento&display=swap" rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                color: #363636;
+                background-color: #f8f8f8;
+                font-family: "Anek Telugu", sans-serif;
+            }
+    
+            h1 {
+                text-align: center; 
+                color: #dc2f2f;
+                margin-top: 50px;
+            }
+    
+            div {
+                border:3px solid #ff894c; 
+                background-color: #f8f8f8;
+                border-radius: 10px;
+                width: 80%;
+                padding: 20px;
+                margin: 50px auto;
+            }
+            .enunciado {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        </style>
+</head>
+<body>
+    <h1>Palindromos</h1>
+    <!-- Comprueba si una palabra de 5 letras es un palindromo -->
+
+    <div>
+        <script>
+            function palabraPalindromo(frase) {
+                let palabra = frase.split('');
+                let palindromo = true;
+                for (let i=0;i<palabra.length;i++){
+                    if (palabra[i] != palabra[palabra.length-1 -i]) {
+                        palindromo = false;
+                    }
+                }
+                if (palindromo) {
+                    return "Es un palíndromo";
+                } else {
+                    return "No es un palíndromo";
+                }
+            }
+            let frase_a_analirar = "sosos";
+            document.write(" La palabra o frase: <br><strong>" + frase_a_analirar + "</strong><br> ¿es un palindromo?: <strong>" + palabraPalindromo(frase_a_analirar) + "</strong>");
+        </script>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+public class EjercicioBreak {
+
+	public static void main(String[] args) {
+		// Escribe los numeros desde el mil en adelante asta encontrar el 1100 en cuyo caso paras de escribir números    
+
+		int num = 1000;
+		while (true) {
+			System.out.println(num++);
+			if (num > 1100) {
+				break;
+			}
+		}
+	}
+
+}

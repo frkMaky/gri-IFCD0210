@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedad de fuente en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Propiedad de fuente en CSS</h1>
+    
+    <section>
+        <h2>La propiedad de fuente CSS</h2>
+        <p>Para acortar el código, también es posible especificar todas las propiedades de fuente individuales en una
+            sola propiedad.</p>
+        <p>La propiedad font es una propiedad abreviada para:</p>
+        <ul>
+            <li>font-style</li>
+            <li>font-variant</li>
+            <li>font-weight</li>
+            <li>font-size/line-height</li>
+            <li>font-family</li>
+        </ul>
+        <p><strong>Nota: </strong>Los valores font-size y font-family son obligatorios. Si falta uno de los otros valores, se
+            utiliza su valor predeterminado.</p>
+        <h3>Ejemplo</h3>
+        <p>Use font para establecer varias propiedades de fuente en una declaración:</p>
+        <pre>
+            p.a {
+                font: 20px Arial, sans-serif;
+            }
+            p.b {
+                font: italic small-caps bold 12px/30px Georgia, serif;
+            }
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Establezca la fuente para &lt;h1&gt; en "Verdana".</p>
+        <pre>
+                &lt;style&gt;
+                    h1 {
+                        : Verdana;
+                    }
+                &lt;/style&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Este es un encabezado&lt;/h1&gt;
+                    &lt;p&gt;Este es un párrafo&lt;/p&gt;
+                &lt;/body&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Todas las propiedades de fuentes CSS</h2>
+        <table>
+            <tr> <th>Propiedad</th> <th>Descripción</th> </tr>
+            <tr> <td>font</td> <td>Establece todas las propiedades fuente en una declaración</td></tr>
+            <tr> <td>font-family</td> <td>Especifica tipo de fuente para el texto</td></tr>
+            <tr> <td>font-size</td> <td>Especifica el tamaño del fuente del texto</td></tr>
+            <tr> <td>font-style</td> <td>Especifica el estilo de fuente para el texto</td></tr>
+            <tr> <td>font-variant</td> <td>Especifica si o no un texto debería ser mostrado en letras mayúsculas pequeñas</td></tr>
+            <tr> <td>font-weight</td> <td>Especifica el peso de una fuente</td></tr>
+        </table>
+    </section>
+</body>
+</html>

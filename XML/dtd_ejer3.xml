@@ -1,0 +1,43 @@
+<!-- A partir de la siguiente tabla, crea un documento XML que represente la información de los empleados de
+una empresa.
+Nombre Apellido Edad Departamento Cargo
+Ana García 30 Ventas Ejecutivo de ventas
+Luis Rodríguez 45 Finanzas Analista financiero
+
+Nombre Apellido Edad Departamento Cargo
+María López 28 Marketing Especialista en redes sociales -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE empleados SYSTEM "empleado.dtd"
+    <!ELEMENT empleados (empleado*)> 
+    <!ELEMENT empleado (nombre, apellido, edad, departamento, cargo)* > 
+    <!ELEMENT nombre (#PCDATA) >
+    <!ELEMENT apellido (#PCDATA) >
+    <!ELEMENT edad (#PCDATA) >
+    <!ELEMENT dapartamento (#PCDATA) >
+    <!ELEMENT cargo (#PCDATA) >
+>
+
+<empleados>
+    <empleado>
+        <nombre>Ana </nombre>
+        <apellido>Garcia</apellido>
+        <edad>30</edad>
+        <departamento>Ventas</departamento>
+        <cargo>Ejecutivo de Ventas</cargo>
+    </empleado>
+    <empleado>
+        <nombre>Luis</nombre>
+        <apellido>Rodriguez</apellido>
+        <edad>45</edad>
+        <departamento>Finanzas</departamento>
+        <cargo>Analista financiero</cargo>
+    </empleado>
+     <empleado>
+        <nombre>MAría</nombre>
+        <apellido>Lopez</apellido>
+        <edad>28</edad>
+        <departamento>MArketing</departamento>
+        <cargo>Especialista en redes sociales</cargo>
+    </empleado>
+
+</empleado>

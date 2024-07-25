@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/css" href="estilo-usuarios.css" ?>
+<usuarios>
+
+    <usuario>
+        <nombre apellido="Maquieira">Pablo</nombre>
+        <dni>45678911L</dni>
+    </usuario>
+
+    <usuario>
+        <nombre apellido="Maquieira">Marcos</nombre> 
+        <dni>58457812J</dni>
+    </usuario>
+
+    <usuario>
+        <nombre apellido="Perez">María</nombre>
+        <dni>78945631M</dni>
+    </usuario>
+
+</usuarios>

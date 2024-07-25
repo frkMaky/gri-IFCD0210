@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Empleados de una empresa XML
+A partir de la siguiente tabla, crea un documento XML que represente la información de los empleados de una empresa.
+Nombre Apellido  Edad  Departamento  Cargo
+Ana     García   30        Ventas   Ejecutivo de ventas
+Luis  Rodríguez 45 Finanzas Analista financiero
+María López      28   Marketing Especialista en redes sociales -->
+<empleados>
+    <empleado>
+        <nombre>Ana</nombre>
+        <apellido>García</apellido>
+        <edad>30</edad>
+        <departamento>Ventas</departamento>
+        <cargo>Ejecutivo de ventas</cargo>
+    </empleado>
+    <empleado>
+        <nombre>Luis</nombre>
+        <apellido>Rodriguez</apellido>
+        <edad>45</edad>
+        <departamento>Finanzas</departamento>
+        <cargo>Analista financiero</cargo>
+    </empleado>
+    <empleado>
+        <nombre>María</nombre>
+        <apellido>López</apellido>
+        <edad>28</edad>
+        <departamento>Marketing</departamento>
+        <cargo>Especialista en redes sociales</cargo>
+    </empleado>
+
+</empleados>

@@ -1,0 +1,94 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Unidades en CSS</h1>
+
+    <section>
+        <h2>Unidades en CSS</h2>
+        <p>CSS tiene varias unidades diferentes para expresar una longitud.</p>
+        <p>Muchas propiedades CSS toman valores de "longitud", como width, margin, padding, font-size, etc.</p>
+        <p>La longitud es un número seguido de una unidad de longitud, como 10px, 2em, etc. Se permiten
+            decimales y si pones cero punto algo, ese cero se puede omitir. Ej. 0.7=> .7</p>
+        <pre>
+            Establezca diferentes valores de longitud, usando px (píxeles):
+            h1 {
+                font-size: 60px;
+            }
+            p {
+                font-size: 25px;
+                line-height: 50px;
+            }
+        </pre>
+        <p><span class="negrita">Nota:</span> No puede aparecer un espacio en blanco entre el número y la unidad. Sin embargo, si el valor es 0,
+            se puede omitir la unidad.</p>
+        <p>Para algunas propiedades CSS, se permiten longitudes negativas.</p>
+        <p>Hay dos tipos de unidades de longitud: <span class="negrita">absolutas y relativas.</span></p>
+    </section>
+
+    <section>
+        <h2>Longitudes absolutas</h2>
+        <p>Las unidades de longitud absoluta son fijas y una longitud expresada en cualquiera de ellas aparecerá
+            exactamente en ese tamaño.</p>
+        <p>No se recomienda el uso de unidades de longitud absoluta en la pantalla, porque los tamaños de la pantalla
+            varían mucho. Sin embargo, se pueden utilizar si se conoce el medio de salida, como por ejemplo para el
+            diseño de impresión.</p>
+        <table>
+            <tr> <th>Unidad</th> <th>Descripción</th> </tr>
+            <tr> <td>cm</td> <td>centímetros</td> </tr>
+            <tr> <td>mm</td> <td>milímetros</td> </tr>
+            <tr> <td>in</td> <td>pulgadas (1in = 96px = 2.54cm)</td> </tr>
+            <tr> <td>px *</td> <td>píxeles</td> </tr>
+            <tr> <td>pt</td> <td>puntos (1pt = 1/72 de 1in)</td> </tr>
+            <tr> <td>pc</td> <td>picas (1pc = 12 pt)</td> </tr>
+        </table>
+        <p> <em> * Los píxeles (px) son relativos al dispositivo de visualización. Para dispositivos con baja densidad (low-dpi), 1px es un píxel (punto) 
+            del dispositivo en la pantalla. Para impresoras y pantallas de alta resolución, 1px implica varios píxeles del dispositivo.</em></p>
+    </section>
+
+    <section> 
+        <h2>Longitudes relativas</h2>
+        <p>Las unidades de longitud relativa especifican una longitud relativa a otra propiedad de longitud. Las
+            unidades de longitud relativa escalan mejor entre diferentes medios de renderizado.</p>
+        <table>
+            <tr> <th>Unidad</th> <th>Descripción</th> </tr>
+            <tr> <td>em</td> <td>Relativo al tamaño de fuente del elemento (2em significa 2 veces el tamaño de la fuente actual)</td> </tr>
+            <tr> <td>ex</td> <td>Relativo a la x-height de la fuente actual (raramente usado)</td> </tr>
+            <tr> <td>ch</td> <td>Relativo al ancho del "0" (cero)</td> </tr>
+            <tr> <td>rem</td> <td>Relativo al tamaño de fuente del elemento raíz</td> </tr>
+            <tr> <td>vw</td> <td>Relativo al 1% del ancho del viewport*</td> </tr>
+            <tr> <td>vh</td> <td>Relativo al 1% del alto del viewport*</td> </tr>
+            <tr> <td>vmin</td> <td>Relativo al 1% de la dimensión más pequeña del viewport*</td> </tr>
+            <tr> <td>vmax</td> <td>Relativo al 1% de la dimensión más larga del viewport*</td> </tr>
+            <tr> <td>%</td> <td>Relativo al elemento padre</td> </tr>
+        </table>
+        <p><span class="negrita">Consejo:</span>  ¡Las unidades em y rem son prácticas para crear un diseño perfectamente escalable!
+            * Ventana gráfica = el tamaño de la ventana del navegador. Si la ventana gráfica tiene 50 cm de ancho,
+            1vw = 0.5 cm.</p>
+    </section>
+
+    <section>
+        <h2>Soporte del navegador</h2>
+        <p>Los números de la tabla especifican la primera versión del navegador que admite totalmente la unidad de longitud.</p>
+
+        <table>
+            <tr> <th></th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Safari</th> <th>Opera</th> </tr>
+            <tr> <td>em, ex, %, px, cm, mm, in, pt, pc</td> <td>1.0</td> <td>3.0</td> <td>1.0</td> <td>1.0</td> <td>3.5</td> </tr>
+            <tr> <td>ch</td>     <td>27.0</td> <td>9.0</td> <td>1.0</td> <td>7.0</td> <td>20.0</td> </tr>
+            <tr> <td>rem</td>    <td>4.0</td> <td>9.0</td> <td>3.6</td> <td>4.1</td> <td>11.6</td> </tr>
+            <tr> <td>vh, vw</td> <td>20.0</td> <td>9.0</td> <td>19.0</td> <td>6.0</td> <td>20.0</td> </tr>
+            <tr> <td>vmin</td>   <td>20.0</td> <td>12.0</td> <td>19.0</td> <td>6.0</td> <td>20.0</td> </tr>
+            <tr> <td>vmax</td>     <td>26.0</td> <td>16.0</td> <td>19   .0</td> <td>7.0</td> <td>20.0</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

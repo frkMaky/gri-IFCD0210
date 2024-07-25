@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Vídeo en HTML</h1>
+    <p class="tabular"><q>El elemento &lt;video&gt; de HTML se utiliza para mostrar un vídeo en una página web.</q></p>
+    <pre>
+        &lt;html&gt;
+        &lt;body&gt;
+
+        &lt;video width="400" controls&gt;
+            &lt;source src="mov_bbb.mp4" type="video/mp4"&gt;
+            &lt;source src="mov_bbb.ogg" type="video/ogg"&gt;
+            Your browser does not support HTML video.
+            &lt;/video&gt;
+
+            &lt;p&gt;
+                Video courtesy of
+                &lt;a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny&lt;/a&gt;
+            &lt;/p&gt;
+
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+    <section>
+        <h2>El elemento &lt;video&gt; de HTML</h2>
+        <p>Para mostrar un vídeo en HTML, utilice el elemento &lt;video&gt;</p>
+        <pre>
+            &lt;video width="320" height="240" controls&gt;
+                &lt;source src="movie.mp4" type="video/mp4"&gt;
+                &lt;source src="movie.ogg" type="video/ogg"&gt;
+                
+                Su navegador no soporta la etiqueta vídeo.
+            &lt;/video&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Cómo funciona</h2>
+        <p>El atributo controls agrega controles de video, como reproducción, pausa y volumen.</p>
+        <p>Es una buena idea incluir siempre atributos width y height. Si no se configuran el alto y el ancho, la
+            página puede parpadear mientras se carga el video.</p>
+        <p>El elemento &lt;source&gt; le permite especificar archivos de vídeo alternativos entre los que el navegador
+            puede elegir. El navegador utilizará el primer formato reconocido.</p>
+        <p>El texto entre las etiquetas &lt;video&gt; y &lt;/video&gt; solo se mostrará en navegadores que no admitan el
+            elemento &lt;video&gt;.</p>
+    </section>
+
+    <section>
+        <h2>HTML &lt;video&gt; Reproducción automática (autoplay)</h2>
+        <p>Para iniciar un video automáticamente, use el atributo autoplay</p>
+        <pre>
+            &lt;video width="320" height="240" autoplay&gt;
+                &lt;source src="movie.mp4" type="video/mp4"&gt;
+                &lt;source src="movie.ogg" type="video/ogg"&gt;
+                Su navegador no soporta la etiqueta vídeo.
+            &lt;/video&gt;
+        </pre>
+        <p><span class="negrita">Nota: </span>los navegadores Chromium no permiten la reproducción automática en la mayoría de los casos. Sin
+            embargo, siempre se permite la reproducción automática silenciada.</p>
+        <p>Agregue muted después de autoplay para permitir que su video comience a reproducirse
+            automáticamente (pero silenciado)</p>
+        <pre>
+            &lt;video width="320" height="240" autoplay muted&gt;
+            &lt;source src="movie.mp4" type="video/mp4"&gt;
+            &lt;source src="movie.ogg" type="video/ogg"&gt;
+            Su navegador no soporta la etiqueta vídeo.
+        &lt;/video&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Soporte del navegador</h2>
+        <p>Los números de la tabla especifican la primera versión del navegador que admite totalmente el elemento &lt;video&gt;.</p>
+        <table>
+            <tr> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Safari</th> <th>Opera</th> </tr>
+            <tr> <td>4.0</td> <td>9.0</td> <td>3.5</td> <td>4.0</td> <td>10.5</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Formatos de vídeo HTML</h2>
+        <p>Hay tres formatos de vídeo compatibles: MP4, WebM y Ogg. El soporte del navegador para los diferentes
+            formatos es</p>
+        <table>
+            <tr> <th>Navegador</th> <th>MP4</th> <th>WebM</th> <th>Ogg</th> </tr>
+            <tr> <td>Edge</td> <td>Si</td> <td>Si</td> <td>Si</td> </tr>
+            <tr> <td>Chrome</td> <td>Si</td> <td>Si</td> <td>Si</td> </tr>
+            <tr> <td>Firefox</td> <td>Si</td> <td>Si</td> <td>Si</td> </tr>
+            <tr> <td>Safari</td> <td>Si</td> <td>Si</td> <td>No</td> </tr>
+            <tr> <td>Opera</td> <td>Si</td> <td>Si</td> <td>Si</td> </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Vídeo HTML: tipos de medios</h2>
+        <table>
+            <tr> <th>Formato de fichero</th> <th>Tipo</th> </tr>
+            <tr> <td>MP4</td> <td>video/mp4</td></tr>
+            <tr> <td>WebM</td> <td>video/webm</td></tr>
+            <tr> <td>Ogg</td> <td>video/ogg</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Vídeo HTML: métodos, propiedades y eventos</h2>
+        <p>El DOM HTML define métodos, propiedades y eventos para el elemento &lt;video&gt;</p>
+        <p>Esto le permite cargar, reproducir y pausar videos, así como configurar la duración y el volumen.</p>
+        <p>También hay eventos DOM que pueden notificarle cuando un video comienza a reproducirse, se pausa, etc.</p>
+    <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+
+        &lt;div style="text-align:center"&gt;
+            &lt;button onclick="playPause()"&gt;Play/Pause&lt;/button&gt;
+            &lt;button onclick="makeBig()"&gt;Big&lt;/button&gt;
+            &lt;button onclick="makeSmall()"&gt;Small&lt;/button&gt;
+            &lt;button onclick="makeNormal()"&gt;Normal&lt;/button&gt;
+            &lt;br&gt;&lt;br&gt;
+            &lt;video id="video1" width="420"&gt;
+                &lt;source src="mov_bbb.mp4" type="video/mp4"&gt;
+                &lt;source src="mov_bbb.ogg" type="video/ogg"&gt;
+                Your browser does not support HTML video.
+            &lt;/video&gt;
+        &lt;/div&gt;
+
+        &lt;script&gt;
+            var myVideo = document.getElementById("video1");
+
+            function playPause() {
+                if (myVideo.paused)
+                    myVideo.play();
+                else
+                    myVideo.pause();
+            }
+
+            function makeBig() {
+                myVideo.width = 560;
+            }
+
+            function makeSmall() {
+                myVideo.width = 320
+            }
+
+            function makeNormal() {
+                myVideo.width = 420;
+            }
+        &lt;/script&gt;
+
+        &lt;p&gt;Video courtesy of &lt;a href="https://www.bigbuckbunny.org/" target="_blank"&gt;Big Buck Bunny&lt;/a&gt;&lt;/p&gt;
+
+        &lt;/body&gt; 
+        &lt;/html&gt;
+    </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de vídeo en HTMLEtiquetas de vídeo en HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td> &lt;video&gt; </td> <td>Define un video</td></tr>
+            <tr> <td> &lt;source&gt; </td> <td>Define múltiples recursos media para elementos media, tales como &lt;video&gt; y &lt;audio&gt;</td></tr>
+        </table>
+    </section>
+</body>
+</html>

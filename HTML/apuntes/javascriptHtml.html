@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Javascript en HTML</h1>
+    <p class="tabular"><q>JavaScript hace que las páginas HTML sean más dinámicas e interactivas.</q></p>
+    <section>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+                &lt;h1&gt;My First JavaScript&lt;/h1&gt;
+                &lt;button type="button"onclick="document.getElementById('demo').innerHTML = Date()"&gt;
+                Click me to display Date and Time.
+                &lt;/button&gt;
+                &lt;p id="demo"&gt;&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>La etiqueta &lt;script&gt; de HTML</h2>
+        <p>La etiqueta &lt;script&gt; de HTML se utiliza para definir un script del lado del cliente (JavaScript).</p>
+        <p>El elemento &lt;script&gt; contiene instrucciones de script o apunta a un archivo de script externo a través del atributo src.</p>
+        <p>Los usos comunes de JavaScript son la manipulación de imágenes, la validación de formularios y los cambios dinámicos de contenido.</p>
+        <p>Para seleccionar un elemento <strong>HTML</strong> , JavaScript utiliza con mayor frecuencia el método <strong>document.getElementById()</strong> .</p>
+        <p>Este ejemplo de JavaScript escribe "¡Hola JavaScript!" en un elemento HTML con id="demo":</p>
+        <pre>
+            &lt;script&gt;
+                document.getElementById("demo").innerHTML = "Hello JavaScript!";
+            &lt;/script&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Una muestra de JavaScript</h2>
+        <p>Aquí hay algunos ejemplos de lo que JavaScript puede hacer:</p>
+        <p>JavaScript puede cambiar el contenido:</p>
+        <pre>
+            document.getElementById("demo").innerHTML = "Hello JavaScript!";
+        </pre>
+        <p>JavaScript puede cambiar estilos:</p>
+        <pre>
+            document.getElementById("demo").style.fontSize = "25px";
+            document.getElementById("demo").style.color = "red";
+            document.getElementById("demo").style.backgroundColor = "yellow";
+        </pre>
+        <p>JavaScript puede cambiar atributos:</p>
+        <pre>
+            document.getElementById("image").src = "picture.gif";
+        </pre>
+    </section>
+
+    <section>
+        <h2>La etiqueta &lt;noscript&gt; de HTML</h2>
+        <p>La etiqueta &lt;noscript&gt; de HTML define un contenido alternativo que se mostrará a los usuarios que tienen scripts deshabilitados en su navegador o 
+            tienen un navegador que no admite scripts:</p>
+        <pre>
+            &lt;script&gt;
+                document.getElementById("demo").innerHTML = "Hello JavaScript!";
+            &lt;/script&gt;
+            &lt;noscript&gt;Sorry, your browser does not support JavaScript!&lt;/noscript&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice JavaScript para cambiar el contenido HTML del elemento <p> a "¡Hola mundo!".</p>
+        <pre>
+            &lt;body&gt;
+                &lt;p id="demo"&gt;Hola.&lt;/p&gt;
+                &lt;script&gt;
+                    document.("demo").innerHTML = "¡Hola mundo!";
+                &lt;/script&gt;
+            &lt;/body&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de script en HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th></tr>
+            <tr> <td>&lt;script&gt;</td> <td>Define un script en la parte del cliente</td> </tr>
+            <tr> <td>&lt;noscript&gt;</td> <td>Defines un contenido alternativo para usuarios que no soportar scripts en la cara cliente</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

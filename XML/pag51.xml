@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<niveles>
+    <nivel1 estado="visible">
+        <titulo_n1>Interpretaci&#243;n gr&#225;fica</titulo_n1>
+        <contenido_n1>El dibujo es una de las herramientas m&#225;s &#250;tiles y necesarias a la hora de plasmar, en un papel
+        y de manera r&#225;pida, el concepto que queremos construir hacer realidad;por esto hay ciertas necesidades t&#233;cnicas que 
+        debemos plantear en este t&#237;tulo.</contenido_n1>
+    </nivel1>
+    <nivel2 estado="visible">
+        <titulo_n2>Escalas</titulo_n2>
+    </nivel2>
+    <nivel2 estado="oculto">
+        <titulo_n2>planos</titulo_n2>
+    </nivel2>
+</niveles>

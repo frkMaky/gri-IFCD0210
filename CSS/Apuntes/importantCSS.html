@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La regla !important en css</title>
+    <link rel="stylesheet" href="./css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>La regla !important en css</h1>
+    <section>
+        <h2>!important</h2>
+        <p>La regla !important en CSS se utiliza para agregar más importancia a una propiedad/valor de lo
+            normal.</p>
+        <p>De hecho, si usa la regla !important, anulará TODAS las reglas de estilo anteriores para esa propiedad
+            específica en ese elemento.</p>
+        <pre>
+            #myid {
+                background-color: blue;
+            }
+            .myclass {
+                background-color: gray;
+            }
+            p {
+                background-color: red !important;
+            }
+        </pre>
+        <p><strong>Ejemplo explicado</strong> En el ejemplo anterior. Los tres párrafos tendrán un color de fondo rojo, aunque el selector de ID y el
+            selector de clase tienen una mayor especificidad. La regla !important anula la propiedad
+            background-color en ambos casos.</p>
+    </section>
+    <section>
+        <h2>Importante acerca de !important</h2>
+        <p>La única forma de anular una regla !important es incluir otra regla !important en una
+            declaración con la misma (o mayor) especificidad en el código fuente, ¡y aquí comienza el problema! Esto
+            hace que el código CSS sea confuso y la depuración será difícil, ¡especialmente si tienes una hoja de
+            estilos grande!</p>
+        <p>Aquí hemos creado un ejemplo sencillo. No está muy claro, cuando miras el código fuente CSS, qué color
+            se considera más importante:</p>
+        <pre>
+            #myid {
+                background-color: blue !important;
+            }
+            .myclass {
+                background-color: gray !important;
+            }
+            
+            p {
+                background-color: red !important;
+            }
+        </pre>
+        <p><strong>Consejo: </strong>es bueno conocer la regla !important. Es posible que lo veas en algún código fuente CSS.
+            Sin embargo, no lo utilices a menos que sea absolutamente necesario.</p>
+    </section>
+
+    <section>
+        <h2>Quizás uno o dos usos claros de !important</h2>
+        <p>Una forma de utilizar !important es si tiene que anular un estilo que no se puede anular de ninguna
+            otra manera. Esto podría ocurrir si está trabajando en un sistema de gestión de contenido (CMS) y no
+            puede editar el código CSS. Luego, puede configurar algunos estilos personalizados para anular algunos
+            de los estilos del CMS.</p>
+        <p>Otra forma de usar !important es: suponga que desea una apariencia especial para todos los botones
+            de una página. Aquí, los botones tienen un estilo con un color de fondo gris, texto blanco y algo de relleno
+            y borde:</p>
+        <pre>
+            .button {
+                background-color: #8c8c8c;
+                color: white;
+                padding: 5px;
+                border: 1px solid black;
+            }
+        </pre>
+        <p>A veces, el aspecto de un botón puede cambiar si lo colocamos dentro de otro elemento con mayor
+            especificidad y las propiedades entran en conflicto. Aquí hay un ejemplo de esto:</p>
+        <pre>
+            .button {
+                background-color: #8c8c8c;
+                color: white;
+                padding: 5px;
+                border: 1px solid black;
+            }
+            #myDiv a {
+                color: red;
+                background-color: yellow;
+            }
+        </pre>
+        <p>Para "forzar" que todos los botones tengan el mismo aspecto, pase lo que pase, podemos agregar la regla
+            !important a las propiedades del botón, así:</p>
+        <pre>
+            .button {
+                background-color: #8c8c8c !important;
+                color: white !important;
+                padding: 5px !important;
+                border: 1px solid black !important;
+            }
+            #myDiv a {
+                color: red;
+                background-color: yellow;
+            }
+        </pre>
+    </section>
+    
+</body>
+</html>

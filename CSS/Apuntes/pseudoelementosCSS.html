@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoelementos en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Pseudoelementos en CSS</h1>
+    <h3 class="tabular"><q>¿Qué son los pseudoelementos?</q></h3>
+    <p class="tabular"><q>Un pseudoelemento en CSS se utiliza para diseñar partes específicas de un elemento.</q></p>
+    <p class="tabular"><q>Por ejemplo, se puede utilizar para:</q></p>
+    <ul class="tabular">
+        <li>Aplicar estilo a la primera letra o línea de un elemento</li>
+        <li>Insertar contenido antes o después del contenido de un elemento</li>
+    </ul>
+    <section>
+        <h2>Sintaxis</h2>
+        <p>La sintaxis de los pseudoelementos:</p>
+        <pre>
+            selector::pseudoelemento {
+                propiedad: valor;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>El pseudoelemento ::first-line</h2>
+        <p>El pseudoelemento ::first-line se utiliza para agregar un estilo especial a la primera línea de un texto.</p>
+        <p>El siguiente ejemplo da formato a la primera línea del texto en todos los elementos &lt;p&gt;:</p>
+        <pre>
+            p::first-line {
+                color: #ff0000;
+                font-variant: small-caps;
+            }
+        </pre>
+        <p><strong>Nota: </strong>El pseudoelemento ::first-line solo se puede aplicar a elementos a nivel de bloque.</p>
+        <p>Las siguientes propiedades se aplican al pseudoelemento::first-line:</p>
+        <ul>
+            <li>propiedades de fuente</li>
+            <li>propiedades de color</li>
+            <li>propiedades de fondo</li>
+            <li>word-spacing</li>
+            <li>letter-spacing</li>
+            <li>text-decoration</li>
+            <li>vertical-align</li>
+            <li>text-transform</li>
+            <li>line-height</li>
+            <li>clear</li>
+        </ul>
+
+        <p><strong>Observe la notación de dos puntos dobles </strong><em>::first-line versus :first-line</em></p>
+        <p>Los dos puntos dobles reemplazaron la notación de dos puntos simples para pseudoelementos en CSS3.</p>
+        <p>Este fue un intento del W3C de distinguir entre <strong> pseudoclases y pseudoelementos .</strong></p>
+        <p>La sintaxis de dos puntos se utilizó tanto para pseudoclases como para pseudoelementos en CSS2 y CSS1.</p>
+        <p>Para compatibilidad con versiones anteriores, la sintaxis de dos puntos es aceptable para los pseudoelementos CSS2 y CSS1.</p>
+    </section>
+
+    <section>
+        <h2>El pseudoelemento ::first-letter</h2>
+        <p>El pseudoelemento ::first-letter se utiliza para agregar un estilo especial a la primera letra de un texto.</p>
+        <p>El siguiente ejemplo da formato a la primera letra del texto en todos los elementos &lt;p&gt;:</p>
+        <pre>
+            p::first-letter {
+                color: #ff0000;
+                font-size: xx-large;
+            }
+        </pre>
+        <p><strong>Nota: </strong> El pseudoelemento ::first-letter solo se puede aplicar a elementos a nivel de bloque.</p>
+        <p>Las siguientes propiedades se aplican al pseudoelemento ::first-letter:</p>
+        <ul>
+            <lli>propiedades de fuente</lli>
+            <lli>propiedades de color</lli>
+            <lli>propiedades de fondo</lli>
+            <lli>propiedades de margen</lli>
+            <lli>propiedades de padding</lli>
+            <lli>propiedades de borde</lli>
+            <lli>text-decoration</lli>
+            <lli>vertical-align(solo si "float" es "none")</lli>
+            <lli>text-transform</lli>
+            <lli>line-height</lli>
+            <lli>float</lli>
+            <lli>clear</lli>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Pseudoelementos y clases HTML</h2>
+        <p>Los pseudoelementos se pueden combinar con clases HTML:</p>
+        <pre>
+            p.intro::first-letter {
+                color: #ff0000;
+                font-size: 200%;
+            }
+        </pre>
+        <p>El ejemplo anterior mostrará la primera letra de los párrafos con clase="intro", en rojo y en un tamaño mayor.</p>
+    </section>
+
+
+    <section>
+        <h2>Múltiples pseudoelementos</h2>
+        <p>También se pueden combinar varios pseudoelementos.</p>
+        <p>En el siguiente ejemplo, la primera letra de un párrafo será roja y tendrá un tamaño de fuente xx-grande.</p>
+        <p>El resto de la primera línea será azul y en minúsculas. El resto del párrafo tendrá el tamaño y color de fuente predeterminados:</p>
+        <pre>
+            p::first-letter {
+                color: #ff0000;
+                font-size: xx-large;
+            }
+            p::first-line {
+                color: #0000ff;
+                font-variant: small-caps;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>CSS: el pseudoelemento ::before</h2>
+        <p>El pseudoelemento ::before se puede utilizar para insertar algún contenido antes del contenido de un elemento.</p>
+        <p>El siguiente ejemplo inserta una imagen antes del contenido de cada elemento &lt;h1&gt;:</p>
+        <pre>
+            h1::before {
+                content: url(smiley.gif);
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>CSS: el pseudoelemento ::after</h2>
+        <p>El pseudoelemento::after se puede utilizar para insertar algún contenido después del contenido de un elemento.</p>
+        <p>El siguiente ejemplo inserta una imagen después del contenido de cada elemento &lt;h1&gt;:</p>
+        <pre>
+            h1::after {
+                content: url(smiley.gif);
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>CSS: el pseudoelemento ::marker</h2>
+        <p>El pseudoelemento ::marker selecciona los marcadores de los elementos de la lista.</p>
+        <p>El siguiente ejemplo aplica estilo a los marcadores de los elementos de la lista:</p>
+        <pre>
+            ::marker {
+                color: red;
+                font-size: 23px;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>CSS: el pseudoelemento ::selection</h2>
+        <p>El pseudoelemento ::selection coincide con la parte de un elemento seleccionada por un usuario.</p>
+        <p>Las siguientes propiedades CSS se pueden aplicar a ::selection: color, background, cursor y outline.</p>
+        <p>El siguiente ejemplo hace que el texto seleccionado sea rojo sobre un fondo amarillo:</p>
+        <pre>
+            ::selection {
+                color: red;
+                background: yellow;
+            }
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Establece el color de fondo en rojo, de la primera línea del párrafo.</p>
+        <pre>
+
+            &lt;style&gt;
+                {
+                background-color: red;
+                }
+            &lt;/style&gt;
+            &lt;body&gt;
+                &lt;p clase="intro"&gt;
+                    En mis años más jóvenes y vulnerables
+                    mi padre me dio algunos consejos que he
+                    estado dando vueltas en mi mente desde entonces.
+                    "Siempre que tengas ganas de criticar a alguien", me dijo,
+                    'Solo recuerda que todas las personas en este mundo
+                    No he tenido las ventajas que has tenido.
+                &lt;/p&gt;
+            &lt;/body&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Todos los pseudoelementos CSS</h2>
+        <table>
+            <tr> <th>Selector</th> <th>Ejemplo</th> <th> Descripción del ejemplo</th> </tr>
+            <tr> <td>::after</td> <td>p::after</td> <td> Inserta algo después del contenido del elemento &lt;p&gt;</td></tr>
+            <tr> <td>::before</td> <td>p::before</td> <td> Inserta algo antes del contenido de cada elemento &lt;p&gt;</td></tr>
+            <tr> <td>::first-letter</td> <td>p::first-letter</td> <td> Selecciona la primera letra de cada elemento &lt;p&gt;</td></tr>
+            <tr> <td>::first-line</td> <td>p::first-line</td> <td> Selecciona la primera línea de cada elemento &lt;p&gt;</td></tr>
+            <tr> <td>::marker</td> <td>::marker</td> <td> Selecciona los marcadores de los items de la lista</td></tr>
+            <tr> <td>::selection</td> <td>p::selection</td> <td>Selecciona la porción de un elemento que es seleccionada por un usuario</td></tr>
+        </table>
+    </section>
+
+</body>
+</html>

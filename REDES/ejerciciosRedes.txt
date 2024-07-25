@@ -1,0 +1,244 @@
+Paso 1: Convertir la mascara a formato prefijo
+Paso 2: Determinar N según clase ( A 8 / B 16 / c 24)
+Paso 3: P = N + S => S = P - N
+Paso 4: 32 = P + H => H = 32 - p
+Paso 5: Numero de hosts por subred = 2^H - 2
+Paso 6: Numero de subredes = 2^S
+
+-------------------------------------------------------------------------------------------------------------------
+
+Paso 1: Convertir la mascara a formato prefijo  H = 32 - P  
+Paso 2: Convertir la IP a su equivalente binario 
+Paso 3: Copiar los bits de prefijo de la dirección IP.
+Paso 4: Escribis 0sen los bist de host ( para direccion de difusion, convertir todo a 1s en los bits de host)
+Paso 5: Convertir el numero resultante de 32 bits, de 8 en 8 bits, a decimal
+
+172.16.150.41/18
+
+Paso 1: Convertir la mascara a formato prefijo  H = 32 - P   > /18
+Paso 2: Convertir la IP a su equivalente binario             > 11111111 11111111 11000000 000000000
+Paso 3: Copiar los bits de prefijo de la dirección IP.       > 10101100 00010000 10010110 00101001
+
+4 > IP DE RED 10101100 00010000 10000000 00000000 
+    IP DE DIFUSION 10101100 00010000 10111111 11111111
+
+5 > IP DE RED 172.16.128.0
+    IP DE DIFUSION 172.16.191.255
+-------------------------------------------------------------------------------------------------------------------
+Hallar id de subred e ip de difusion
+1.-> 8.1.4.5/16  
+    1 > /16
+    2 > 00001000 00000001 0000000 00000000
+    3 > 00001000 00000001 0000010 00000101
+    4 > IP DE RED > 00001000 00000001 0000000 00000000
+        IP DE DIFUSION > 00001000 00000001 11111111 11111111
+    5 > IP DE RED > 8.1.0.0
+        IP DE DIFUSION > 8.1.255.255
+
+
+2.-> 130.4.102.1 /24
+    1 > /24
+    2 > 11111111 11111111 11111111 00000000
+    3 > 10000010 00000100 01100110 00000000
+    4 > IP DE RED > 10000010 00000100 01100110 00000000
+        IP DE DIFUSION > 10000010 00000100 01100110 11111111
+    5 > IP DE RED > 130.4.102.0
+        IP DE DIFUSION > 130.4.102.255
+
+3.-> 199.1.1.100/24
+    1 > /24
+    2 > 11111111 11111111 11111111 00000000
+    3 > 11000111 00000001 00000001 00000000
+    4 > IP DE RED > 11000111 00000001 00000001 00000000
+        IP DE DIFUSION > 11000111 00000001 00000001 11111111
+    5 > IP DE RED > 199.1.1.0
+        IP DE DIFUSION > 199.1.1.255
+
+4.-> 130.4.102.1 255.255.252.0
+    1 > /22
+    2 > 11111111 11111111 11111100 00000000
+    3 > 10000010 00000100 11111100 00000000
+    4 > IP DE RED > 10000010 00000100 11111100 00000000
+        IP DE DIFUSION > 10000010 00000100 11111111 11111111
+    5 > IP DE RED > 130.4.102.0
+        IP DE DIFUSION > 130.4.255.255
+
+5.-> 199.1.1.100 255.255.255.224
+    1 > /27
+    2 > 11111111 11111111 11111111 11100000
+    3 > 11000111 00000001 00000001 01100000
+    4 > IP DE RED > 11000111 00000001 00000001 01100000
+        IP DE DIFUSION > 11000111 00000001 00000001 011011111
+    5 > IP DE RED > 199.1.1.96
+        IP DE DIFUSION > 199.1.1.127
+
+-------------------------------------------------------------------------------------------------------------------
+
+Sin usar calculadora obten el id de subred y la direccion de difusion de subred
+10.77.55.3      / 24 > IP SUBRED 10.77.55.0     / IP DIFUSION 10.77.55.255 
+172.30.99.4     / 24 > IP SUBRED 172.30.99.0    / IP DIFUSION 172.30.99.255
+192.168.6.54    / 24 > IP SUBRED 192.168.6.0    / IP DIFUSION 192.168.6.255
+10.77.3.14      / 16 > IP SUBRED 10.77.0.0      / IP DIFUSION 10.77.255.255
+172.22.55.77    / 16 > IP SUBRED 10.77.0.0      / IP DIFUSION 10.77.255.255
+1.99.53.76      /  8 > IP SUBRED 1.0.0.0        / IP DIFUSION 1.255.255.255   
+
+-------------------------------------------------------------------------------------------------------------------
+Calculo de ID de subred para mascaras dificiles:
+1- Si el octeto de mascara = 255 => copia la IP decimal
+2. Si el octeto de máscara = 0 => escribe 0
+3. Si no es ninguno de los casos anteriores => 
+    a. Magico = 256-mascara
+    b. Asignar al ID de subred un valor igual al multiplo del numero magico que 
+    este mas proximo a la direccion IP sin que sea mayor que la misma
+
+LOS CALCULOS SE HACEN SOBRE EL OCTETO DE LA MASCARA AFECTADO Y EL OCTETO DE LA IP QUE SE CORRESPODE 
+
+IP 130.4.102.1 
+mascara: 255.255.240.0 => Afectado el 3er octeto (240) el paso 3 para los multiplos sobre el terce grupo de la ip 130.4."102".1 
+
+130.4.102.1
+
+Magico = 256-240 (mascara) = 16
+Multiplos de 16 > 0, 16, 32, 48,64,80,96, 112...
+
+ID DE SUBRED > 130.4.96.0 
+--------------------------------------
+
+Ejercicio: Cálculo del ID de subred para máscaras difíciles
+a) IP 10.77.55.3, máscara: 255.248.0.0
+        1 > /13
+        2 > 11111111 11111000 00000000 00000000
+        3 > 00001010 01001101 00110111 00000011
+        4 > IP DE RED > 00001010 01001000 00000000 00000000
+            IP DE DIFUSION > 00001010 01001111 11111111 11111111
+        5 > IP DE RED > 10.72.0.0
+            IP DE DIFUSION > 10.79.255.255
+
+        >> Calculo con Nº magico 
+        MASCARA 255.248.0.0
+        Magico = 256 - 248  =  8
+        Multiplos de 8: 8*7 = 72 >> menor que 77 (10.77)
+        IP DE RED > 10.72.0.0
+
+b) IP 172.30.99.4, máscara: 255.255.192.0
+        >> Calculo con Nº magico 
+        MASCARA 255.255.192.0
+        Magico = 256 - 192  =  64
+        Multiplos de 64: 64*1 = 64 >> menor que 99 (172.30.99)
+        IP DE RED > 172.30.64.0
+
+c) IP 192.168.6.54, máscara: 255.255.255.252
+        >> Calculo con Nº magico 
+        MASCARA 255.255.255.252
+        Magico = 256 - 252  =  4
+        Multiplos de 4: 4*13 = 52 >> menor que 54 (192.168.6.54)
+        IP DE RED > 192.168.6.13
+
+d) IP 10.77.3.14, máscara 255.255.128.0
+        >> Calculo con Nº magico 
+        MASCARA  255.255.128.0
+        Magico = 256 - 128  =  128
+        Multiplos de 128: 128 *0  = 0 >> menor que 3 (10.77.3)
+        IP DE RED > 10.77.0.0
+
+e) IP 172.22.55.77, máscara 255.255.254.0
+        >> Calculo con Nº magico 
+        MASCARA  255.255.254.0
+        Magico = 256 - 254  =  2
+        Multiplos de 2: 27 *2   = 54 >> menor que 55 (172.22.55)
+        IP DE RED > 172.22.54.0
+
+f) IP 1.99.53.76, máscara 255.255.255.248
+        >> Calculo con Nº magico 
+        MASCARA  255.255.255.248
+        Magico = 256 - 248  =  8
+        Multiplos de 8: 8 * 9 = 72 >> menor que 76 (1.99.53.76)
+        IP DE RED > 1.99.53.72
+
+Calculo direccion difusion de subred
+1 Para el id de subred haces los pasos anteriores y luego suma al id de subred el  numero magico y restale 1
+2 Si el octeto tiene mascara 255 copias el id de subred
+3 Si el octeto tiene mascara 0 => Escribes 255 
+
+        Ejemplo: 130.4.102.1 /  255.255.240.0
+        >> Calculo con Nº magico 
+        MASCARA  255.255.240.0
+        Magico = 256 - 240  =  16
+        Multiplos de 16: 0, 16, 32, 48, 64, 80, 96,  menor que 102 (130.4.102)
+        IP DE RED > 130.4.96.0
+        IP DE DIFUSION > 130.4. (96+16-1).255 > 130.4.111.255
+
+3. ¿Cuál de las siguientes es el ID de subred residente para la dirección IP 10.7.99.133/24?
+a) 10.0.0.0  
+b)10.7.0.0
+c)10.7.99.0 <--------------
+d) 10.7.99.128
+
+MASCARA: 255.255.255.0
+IP 10.7.99.133
+RED: 10.7.99.0
+DIFUSION: 10.7.99.255
+
+
+4) ¿Cuál de las siguientes es la subred residente para la dirección IP 192.168.44.97/30?
+a) 192.168.44.0
+b) 192.168.44.64
+c)192.168.44.96 <-------------------
+d) 192.168.44.128
+
+MASCARA: /30 > 255.255.255.252
+IP 192.168.44.97
+Magico: 256 - 252 = 4
+Multiplos 4 < 97 >> 24 *4 = 96
+RED: 192.168.44.96
+DIFUSION: 192.168.44.(96 + 4 - 1) = 192.168.44.99
+
+
+5.¿Cuál de las siguientes es la dirección de difusión de subred para la subred en la que reside la dirección
+IP 172.31.77.201/27?
+a) 172.31.201.255
+b) 172.31.255.255
+c) 172.31.77.223 <----------------------
+d) 172.31.77.207
+
+MASCARA: 11111111 11111111 11111111 11100000 > 255.255.255.224
+IP 172.31.77.201
+Magico: 256 - 224 = 32
+Multiplos 32 < 201 >> 192
+RED: 172.31.77.192
+DIFUSION: 172.31.77.(192+32 - 1) = 172.31.77.223 
+
+6. Un colega ingeniero nos pide que configuremos el servidor DHCP, para poder arrendar las últimas 100
+direcciones IP utilizables de la subred 10.1.4.0/23. ¿Cuál de las siguientes direcciones IP podría
+arrendarse como resultado de la nueva configuración?
+a) 10.1.4.156  IP UTILIZABLE DENTRO DE LA SUBRED
+b) 10.1.4.254  IP UTILIZABLE DENTRO DE LA SUBRED
+c) 10.1.5.200 <------- IP UTILIZABLE DENTRO DE LA SUBRED Y DE LAS ULTIMAS 100 UTILIZABLE
+d) 10.1.7.200
+e) 10.1.255.200
+
+MASCARA: /23 > 255.255.254.0
+RED: 10.1.4.0
+Magico (256-254 = 2)
+DIFUSION: 10.1.(4 + 2 - 1).255 = 10.1.5.255
+
+
+7) Un colega ingeniero nos pide que configuremos el servidor DHCP para poder arrendar las primeras 20
+direcciones IP utilizables de la subred 192.168.9.96/27. ¿Cuál de las siguientes direcciones IP podría
+arrendarse como resultado de la nueva configuración?
+a) 192.168.9.126
+b) 192.168.9.110 <------- IP UTILIZABLE DENTRO DE LA SUBRED Y DE LAS PRIMERAS 20
+c) 192.168.9.1
+d) 192.168.9.119
+
+MASCARA: /27 > 255.255.255.224
+RED: 192.168.9.96
+Magico (256-224 = 32) 
+Multiplo 3 *32 = 96
+RED 192.168.9.96
+DIFUSION: 192.168.9.(96+32-1) = 192.168.9.127
+
+
+>> Luego de estos ejercicios de calcular ip y mascaras ha mandado terminar y dar aspecto al CRUD
+y para quien ya lo tenga ponerle un formulario para logueo, si logueas ok te muestra el crud, si no te dice que no tienes acceso 
+ 

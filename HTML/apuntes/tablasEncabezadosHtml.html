@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encabezados de tabla HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Encabezados de tabla HTML</h1>
+    <p class="tabular"><q>Las tablas HTML pueden tener encabezados para cada columna o fila, o para muchas columnas/filas.</q></p>
+    <section>
+        <h2>Encabezados de tabla HTML</h2>
+        <p>Los encabezados de las tablas se definen con elementos th. Cada elemento th representa una celda de la tabla.</p>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Firstname&lt;/th&gt;
+                    &lt;th&gt;Lastname&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;50&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Eve&lt;/td&gt;
+                    &lt;td&gt;Jackson&lt;/td&gt;
+                    &lt;td&gt;94&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Encabezados de mesa verticales</h2>
+        <p>Para utilizar la primera columna como encabezados de tabla, defina la primera celda de cada fila como elemento &lt;th&gt;</p>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Firstname&lt;/th&gt;
+                    &lt;th&gt;Lastname&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;50&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Eve&lt;/td&gt;
+                    &lt;td&gt;Jackson&lt;/td&gt;
+                    &lt;td&gt;94&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Alinear encabezados de tabla</h2>
+        <p>De forma predeterminada, los encabezados de las tablas están en negrita y centrados</p>
+        <table>
+            <tr> <th>Nombre</th> <th>Apellido</th> <th>Edad</th> </tr>
+            <tr> <td>Jill</td> <td>Herrero</td> <td>50</td> </tr>
+            <tr> <td>Vispera</td> <td>Jackson</td> <td>94</td> </tr>
+        </table>
+        <p>Para alinear a la izquierda los encabezados de la tabla, use la propiedad text-align CSS</p>
+        <pre>
+            th {
+                text-align: left;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Encabezado para varias columnas</h2>
+        <p>Puede tener un encabezado que abarque dos o más columnas.</p>
+        <p>Para hacer esto, use el atributo colspan en el elemento &lt;th&gt; </p>
+        <table>
+            <tr> <th colspan="2">Nombre</th> <th>Edad</th> </tr>
+            <tr> <td>Jill</td> <td>Herrero</td> <td>50</td> </tr>
+            <tr> <td>Vispera</td> <td>Jackson</td> <td>94</td> </tr>
+        </table>
+        <pre>
+            &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th colspan="2"&gt;Nombre&lt;/th&gt;
+                &lt;th&gt;Edad&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Jill&lt;/td&gt;
+                &lt;td&gt;Vispera&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;50&lt;/td&gt;
+                &lt;td&gt;94&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Título de la tabla</h2>
+        <p>Puede agregar un título que sirva como encabezado para toda la tabla.</p>
+        <table style="width:100%">
+            <caption>Monthly savings</caption>
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>$50</td>
+            </tr>
+        </table>
+        <p>Para agregar un título a una tabla, use la etiqueta &lt;caption&gt;</p>
+        <p><span class="negrita">Nota:</span> La etiqueta &lt;caption&gt; debe insertarse inmediatamente después de la etiqueta &lt;table&gt;</p>
+        <pre>
+            &lt;table&gt;
+            &lt;caption&gt;Monthly savings&lt;/caption&gt;
+            &lt;tr&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Agregue un título de tabla llamado "Nombres".</p>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Nombre&lt;/th&gt;
+                    &lt;th&gt;Apellido&lt;/th&gt;
+                
+                    &lt;th&gt;Puntos&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/ td&gt;
+                    &lt;td&gt;50&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de tabla HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;caption&gt;</td> <td>Define el título de la tabla</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

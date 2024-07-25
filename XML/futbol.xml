@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="estilos-futbol.css" ?>
+
+<!-- Escribir un documento XML bien formado que guarde información de dos equipos de fútbol (nombre,
+ciudad y entrenador) con dos jugadores (nombre, posición y nacionalidad) cada uno. La posición (portero,
+defensa, medio, delantero) deberá representarse mediante un atributo del jugador. Utilizar datos reales
+para los equipos y jugadores. No obstante, no deberá indicarse el nombre del entrenador. -->
+
+<equipos>
+    <equipo>
+        <nombre>RC Celta</nombre>
+        <ciudad>Vigo</ciudad>
+        <entrenador />
+        <jugadores>
+            <jugador posicion="delantero">
+                <nombre>Iago Aspas</nombre>
+                <nacionalidad>Española</nacionalidad>
+            </jugador>
+            
+            <jugador posicion="portero">
+                <nombre>Yago Nuñez Lopez</nombre>
+                <nacionalidad>Española</nacionalidad>
+            </jugador>
+
+        </jugadores>
+
+    </equipo>
+
+    <equipo>
+        <nombre>FC Barcelona</nombre>
+        <ciudad>Barcelona</ciudad>
+        <entrenador />
+        <jugadores>
+            <jugador posicion="delantero">
+                <nombre>Lionel Messi</nombre>
+                <nacionalidad>Argentino</nacionalidad>
+            </jugador>
+            
+            <jugador posicion="defensa">
+                <nombre>Carles Puyol</nombre>
+                <nacionalidad>Española</nacionalidad>
+            </jugador>
+
+        </jugadores>
+
+    </equipo>
+</equipos>

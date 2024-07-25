@@ -1,0 +1,19 @@
+
+public class DeclararMismaLinea {
+
+	public static void main(String[] args) {
+		// Crea 3 variables: 5, 7, 2 y muestra el resultado de 5 elevado a 7 y luego menos dos
+		
+		int a=5, b=7, c=2;
+		int resultado = (int) Math.pow(a, b) - c;
+		System.out.println("El resultado es " + resultado);
+		
+		// Declara el tipo de dato mas adecuado para cada uno de estos numeros
+		byte numero1 = 26;
+		int numero2 = 181818181;
+		double numero3 = 13.45567888938f;
+		
+
+	}
+
+}

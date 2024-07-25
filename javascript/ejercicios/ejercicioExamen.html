@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Examen </title>
+    <!-- 2. Metes un número por consola e tes que mostrar se é divisible
+    por 2,3, 5 e 7. Se é divisible por varios tes que mostrar eses.
+    -->
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1.6rem;
+        }
+
+    </style>
+</head>
+<body>
+        <p>Metes un número por consola e tes que mostrar se é divisible
+            por 2,3, 5 e 7. Se é divisible por varios tes que mostrar eses.</p>
+            <label for="numero">Numero:</label>
+            <input type="number" id="numero" placeholder="Introduce número">
+            <button onclick="sacarDivisores();">Calcular</button>
+            <input type="reset" value="Limpiar" onclick="vaciar();">
+        
+    <div id="resultado"></div>
+
+    <script>
+        const divisores = []; // Litado de los divisores
+
+        function sacarDivisores() { // Coge el valor de numero y devuelve los divisores
+
+            let numero = document.querySelector('#numero').value;
+            let resultado = document.querySelector('#resultado');
+
+            if (numero % 2 == 0 ) {
+                divisores.push("Divisible por 2");
+            } 
+            if (numero % 3 == 0) {
+                divisores.push("Divisible por 3");
+            } 
+            if (numero % 5 == 0) {
+                divisores.push("Divisible por 5");
+            }
+            if (numero % 7 == 0) {
+                divisores.push("Divisible por 7");
+            }
+
+            let cadena = '';
+            for (let i=0;i < divisores.length; i++) {
+                cadena += divisores[i] + "<br>";
+            }
+            resultado.innerHTML += cadena;
+
+        }
+        function vaciar() {
+            resultado.innerHTML = '';
+            divisores.splice(0);
+        }
+    </script>
+</body>
+</html>

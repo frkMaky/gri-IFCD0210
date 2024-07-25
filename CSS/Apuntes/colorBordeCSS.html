@@ -1,0 +1,64 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color del borde en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Color del borde en CSS</h1>
+   
+    <section>
+        <h2>Color del borde CSS</h2>
+        <p>La propiedad border-color se utiliza para establecer el color de los cuatro bordes.</p>
+        <p>El color se puede configurar mediante:</p>
+        <ul>
+            <li>nombre: especifique un nombre de color, como "rojo"</li>
+            <li>HEXADECIMAL: especifique un valor HEXADECIMAL, como "#ff0000"</li>
+            <li>RGB: especifique un valor RGB, como "rgb(255,0,0)"</li>
+            <li>HSL: especifique un valor HSL, como "hsl(0, 100%, 50%)"</li>
+            <li>transparente</li>
+        </ul>
+        <p> <span class="negrita">Nota: </span> Si border-color no se establece, hereda el color del elemento.</p>
+        <p><span class="negrita">Ejemplo: </span> <a href="../Ejercicios/ejemploColorBorde.html" target="_blank">Color Borde CSS</a></p>
+    </section>
+
+    <section>
+        <h2>Valores hexagonales</h2>
+        <p>El color del borde también se puede especificar mediante un valor hexadecimal (HEX):</p>
+        <pre>
+            p.one {
+                border-style: solid;
+                border-color: #ff0000; /* red */
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Valores RGB</h2>
+        <p>O usando valores RGB:</p>
+        <pre>
+            p.one {
+                border-style: solid;
+                border-color: rgb(255, 0, 0); /* red */
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Valores HSL</h2>
+        <p>También puede utilizar valores HSL:</p>
+        <pre>
+            p.one {
+                border-style: solid;
+                border-color: hsl(0, 100%, 50%); /* red */
+            }
+        </pre>
+    </section>
+</body>
+</html>

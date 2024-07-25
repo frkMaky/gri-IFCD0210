@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Pares - Rango</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio Pares - Rango</h1>
+
+    <div id="ejercicio1">
+        <p class="enunciado">Pide numero mientras no sea par y menor que 10 y mayor que -10.</p>
+        <p class="enunciado">Luego pide otro número x y repite x veces (mostrándolo por pantalla) el primer número</p>
+        <script>
+            let numeroPar = Number(prompt("Introduce numero par entre -10 y 10"));
+            while ((numeroPar<=-10 || numeroPar>=10) ||  numeroPar%2!=0 ) {
+                console.log(numeroPar);
+                numeroPar = Number(prompt("Introduce numero par entre -10 y 10"));    
+            }
+
+            let repeticiones = Number(prompt("Introduce el nº de repeticiones"));
+            while (repeticiones > 0) {
+                document.write(numeroPar +  "<br/>");
+                repeticiones--;
+            }
+
+        </script>
+    </div>
+
+
+    
+</body>
+</html>

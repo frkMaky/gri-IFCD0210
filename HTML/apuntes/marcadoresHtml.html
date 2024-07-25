@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces HTML: crear marcadores</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Enlaces HTML: crear marcadores</h1>
+    <p class="tabular"><q>Los enlaces HTML se pueden utilizar para crear marcadores, de modo que los lectores puedan saltar a
+        partes específicas de una página web.</q></p>
+    <section>
+        <h2>Crear un marcador en HTML</h2>
+        <p>Los marcadores pueden resultar útiles si una página web es muy larga.</p>
+        <p>Para crear un marcador, primero cree el marcador y luego agréguele un enlace.</p>
+        <p>Cuando se hace clic en el enlace, la página se desplazará hacia abajo o hacia arriba hasta la ubicación con
+            el marcador.</p>
+        <p><em>Primero, use el atributo id para crear un marcador:</em></p>
+        <pre>
+            &lt;h2 id="C4"&gt;Capítulo 4&lt;/h2&gt;
+        </pre>
+        <p><em>Luego, agregue un enlace al marcador ("Saltar al Capítulo 4"), desde la misma página:</em></p>
+        <pre>
+            &lt;a href="#C4"&gt;Saltar al Capítulo 4 &lt;/a&gt;
+        </pre>
+        <p><em>También puedes agregar un enlace a un marcador en otra página:</em></p>
+        <pre>
+            &lt;a href="html_demo.html#C4"&gt;Jump to Chapter 4&lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>Utilice el atributo id (id="valor") para definir marcadores en una página</li>
+            <li>Utilice el atributo href (href="# valor") para vincular al marcador</li>
+        </ul>
+    </section>
+    
+    <section class="negrita">
+        <h2>Ejercicio:</h2>
+        <p>Agregue un enlace a un marcador, en la misma página, con id="mytext".</p>
+        <pre>
+            &lt;a=""&gt;Ir al nuevo texto&lt;/a&gt;
+        </pre>
+    </section>
+</body>
+</html>

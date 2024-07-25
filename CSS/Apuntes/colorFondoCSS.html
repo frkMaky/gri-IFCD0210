@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondos en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Fondos en CSS</h1>
+    <p class="tabular"><em>Las propiedades de fondo de CSS se utilizan para agregar efectos de fondo a los elementos.</em></p>
+    <section>
+        <p>En estos capítulos, aprenderá sobre las siguientes propiedades de fondo de CSS:</p>
+        <ul>
+            <li>background-color</li>
+            <li>background-image</li>
+            <li>background-repeat</li>
+            <li>background-attachment</li>
+            <li>background-position</li>
+            <li>background(propiedad abreviada)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Color de fondo CSS</h2>
+        <p>La propiedad background-color especifica el color de fondo de un elemento.</p>
+        <h3>Ejemplo</h3>
+        <p>El color de fondo de una página se establece así:</p>
+        <pre>
+            body {
+                background-color: lightblue;
+            }
+        </pre>
+        <p>Con CSS, un color suele especificarse mediante:</p>
+        <ul>
+            <li>un nombre de color válido, como "red"</li>
+            <li>un valor HEXADECIMAL, como "#ff0000"</li>
+            <li>un valor RGB, como "rgb(255,0,0)"</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Otros elementos</h2>
+        <p>Puede establecer el color de fondo para cualquier elemento HTML:</p>
+        <h3>Ejemplo</h3>
+        <p>Aquí, los elementos <h1>, <p> y <div> tendrán diferentes colores de fondo:</p>
+        <pre>
+            h1 {
+                background-color: green;
+            }
+            div {
+                background-color: lightblue;
+            }
+            
+            p {
+                background-color: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Opacidad / Transparencia</h2>
+        <p>La propiedad opacity especifica la opacidad/transparencia de un elemento. Puede tomar un valor de 0.0
+            a 1.0. Cuanto menor sea el valor, más transparente:</p>
+        <h3>Ejemplo</h3>
+        <pre>
+            div {
+                background-color: green;
+                opacity: 0.3;
+            }
+        </pre>
+        <p><strong>Nota: </strong> Cuando se utiliza la propiedad opacity para agregar transparencia al fondo de un elemento,
+            todos sus elementos secundarios heredan la misma transparencia. Esto puede hacer que el texto dentro de
+            un elemento totalmente transparente sea difícil de leer.</p>
+    </section>
+
+    <section>
+        <h2>Transparencia usando RGBA</h2>
+        <p>Si no desea aplicar opacidad a elementos secundarios, como en nuestro ejemplo anterior, utilice valores de
+            color <strong>RGBA</strong> . El siguiente ejemplo establece la opacidad del color de fondo y no del texto:</p>
+
+        <p>Puedes usar RGB como valor de color. Además de RGB, puede utilizar un valor de color RGB con un
+            canal <strong>alfa (RGBA)</strong>, que especifica la opacidad de un color.</p>
+
+        <p>Un valor de color RGBA se especifica con: rgba(rojo, verde, azul, alfa ). El parámetro alfa es un número
+            entre 0.0 (completamente transparente) y 1.0 (completamente opaco).</p>
+
+        <h3>Ejemplo</h3>
+
+        <pre>
+            div {
+                background: rgba(0, 128, 0, 0.3) /* Green background with 30% opacity */
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>La propiedad de color de fondo de CSS</h2>
+
+        <table>
+            <tr> <th>Propiedad</th> <th>Descripción</th> </tr>
+            <tr> <td>background-</td> <td>color Establece el color de fondo de un elemento</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Enlaces HTML</h1>
+    <p class="tabular"><q>Los enlaces se encuentran en casi todas las páginas web. Los enlaces permiten a los usuarios hacer click
+        para pasar de una página a otra.</q></p>
+
+    <section>
+        <h2>Enlaces HTML - Hipervínculos</h2>
+        <p>Los enlaces HTML son hipervínculos.</p>
+        <p>Puedes hacer click en un enlace y saltar a otro documento.</p>
+        <p>Cuando mueves el mouse sobre un enlace, la flecha del mouse se convertirá en una mano.</p>
+        <p><span class="negrita>">Nota:</span> Un enlace no tiene por qué ser texto. ¡Un enlace puede ser una imagen o cualquier otro elemento
+            HTML!</p>
+    </section>
+
+    <section>
+        <h2>Enlaces HTML: sintaxis</h2>
+        <p>La etiqueta HTML &lt;a&gt; define un hipervínculo. Tiene la siguiente sintaxis:</p>
+        <p class="tabular negrita">&lt;a href="url"&gt;texto del enlace&lt;/a&gt;</p>
+        <p>El atributo más importante del elemento &lt;a&gt; es el atributo href, que indica el destino del enlace.</p>
+        <p>El texto del enlace es la parte que será visible para el lector.</p>
+        <p>Al hacer clic en el texto del enlace, se enviará al lector a la dirección URL especificada.</p>
+        <p><em>Este ejemplo muestra cómo crear un enlace a W3Schools.com:</em></p>
+        <pre>
+            &lt;a href="https://www.w3schools.com/"&gt;Visit W3Schools.com!&lt;/a&gt;
+        </pre>
+        <p>De forma predeterminada, los enlaces aparecerán de la siguiente manera en todos los navegadores:</p>
+        <ul>
+            <li>Un enlace no visitado está subrayado y en azul.</li>
+            <li>Un enlace visitado está subrayado y en color violeta.</li>
+            <li>Un enlace activo está subrayado y en rojo.</li>
+        </ul>
+        <p><span class="negrita">Consejo: </span>Los enlaces se pueden diseñar con CSS para darle otro aspecto.</p>
+    </section>
+
+    <section>
+        <h2>Enlaces HTML: el atributo de destino</h2>
+        <p>De forma predeterminada, la página vinculada se mostrará en la ventana actual del navegador. Para
+            cambiar esto, debes especificar otro destino para el enlace.</p>
+        <p>El atributo target especifica dónde abrir el documento vinculado.</p>
+        <p>El atributo target puede tener uno de los siguientes valores:</p>
+        <ul>
+            <li>_self- Por defecto. Abre el documento en la misma ventana/pestaña en la que se hizo click.</li>
+            <li>_blank- Abre el documento en una nueva ventana o pestaña.</li>
+            <li>_parent- Abre el documento en el marco principal.</li>
+            <li>_top- Abre el documento en el cuerpo completo de la ventana.</li>
+        </ul>
+        <p><em>Utilice target="_blank" para abrir el documento vinculado en una nueva ventana o pestaña del navegador:</em></p>
+        <pre>
+            &lt;a href="https://www.w3schools.com/" target="_blank"&gt;Visit W3Schools!&lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>URL absolutas frente a URL relativas</h2>
+        <p>Los dos ejemplos anteriores utilizan una <span class="negrita">URL absoluta</span>  (una dirección web completa) en el atributo
+            href.</p>
+        <p>Un enlace local (un enlace a una página dentro del mismo sitio web) se especifica con una <span class="negrita">URL relativa</span> 
+            (sin la parte "https://www"):</p>
+        <pre>
+            &lt;h2&gt;Absolute URLs&lt;/h2&gt;
+            &lt;p&gt;&lt;a href="https://www.w3.org/"&gt;W3C&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;&lt;/p&gt;
+            &lt;h2&gt;Relative URLs&lt;/h2&gt;
+            &lt;p&gt;&lt;a href="html_images.asp"&gt;HTML Images&lt;/a&gt;&lt;/p&gt;
+            &lt;p&gt;&lt;a href="/css/default.asp"&gt;CSS Tutorial&lt;/a&gt;&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Enlaces HTML: utilice una imagen como enlace</h2>
+        <p>Para usar una imagen como enlace, simplemente coloque la etiqueta &lt;img&gt; dentro de la etiqueta &lt;a&gt;:</p>
+        <pre>
+            &lt;a href="default.asp"&gt;
+                &lt;img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"&gt;
+            &lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Enlace a una dirección de correo electrónico</h2>
+        <p>Usa mailto:dentro del atributo href para crear un enlace que abra el programa de correo electrónico
+            del usuario (para permitirle enviar un nuevo correo electrónico):</p>
+        <pre>
+            &lt;a href="mailto:someone@example.com"&gt;Send email&lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Botón como enlace</h2>
+        <p>Para utilizar un botón HTML como enlace, debe agregar algún código JavaScript.</p>
+        <p>JavaScript le permite especificar qué sucede en ciertos eventos, como hacer clic en un botón:</p>
+        <pre>
+            &lt;button onclick="document.location='default.asp'"&gt;HTML Tutorial&lt;/button&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Títulos de enlaces</h2>
+        <p>El atributo title especifica información adicional sobre un elemento. La información suele mostrarse
+            como texto informativo cuando el ratón se mueve sobre el elemento.</p>
+        <pre>
+            &lt;a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section"&gt;Visit our HTML Tutorial&lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Más sobre URL absolutas y URL relativas</h2>
+        <p>Utilice una URL completa para vincular a una página web:</p>
+        <pre>
+            &lt;a href="https://www.w3schools.com/html/default.asp"&gt;HTML tutorial&lt;/a&gt;
+        </pre>
+        <p>Enlace a una página ubicada en la carpeta html del sitio web actual:</p>
+        <pre>
+            &lt;a href="/html/default.asp"&gt;HTML tutorial&lt;/a&gt;
+        </pre>
+        <p>Enlace a una página ubicada en la misma carpeta que la página actual:</p>
+        <pre>
+            &lt;a href="default.asp"&gt;HTML tutorial&lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>Utilice el elemento &lt;a&gt; para definir un enlace</li>
+            <li>Utilice el atributo href para definir la dirección del enlace</li>
+            <li>Utilice el atributo target para definir dónde abrir el documento vinculado</li>
+            <li>Utilice el elemento &lt;img&gt;(dentro &lt;a&gt;) para utilizar una imagen como enlace</li>
+            <li>Utilice el esquema mailto:dentro del atributo href para crear un enlace que abra el programa de
+                correo electrónico del usuario.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Etiquetas de enlace HTML</h2>
+        <table>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td> &lt;a&gt;</td>
+                <td> Define un hipervínculo</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Ejercicio:</h2>
+        <p>Utilice el HTML correcto para convertir el texto siguiente en un enlace a "default.html".</p>
+        <pre>
+            >Visite nuestro tutorial HTML.
+        </pre>
+    </section>
+</body>
+</html>

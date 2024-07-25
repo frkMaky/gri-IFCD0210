@@ -1,0 +1,117 @@
+----------------------------------------------------------------------------------------------------------------------------------------
+
+1. Configura GIT definiendo el nombre del usuario, el email y activar el coloreado de la salida. Mostrar la configuracion inicial
+
+git config --global user.name “Pablo Maquieira”
+git config --global user.email “freakghost@gmail.com”
+git config --global color.ui auto
+git config --list
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+2. Crea un repositorio nuevo 
+
+git init
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+3. Comprueba el estado del repositorio 
+
+
+Crea un fichero indice.txt con el siguiente contenido: 
+Capítulo 1: Introduccion a GIT
+Capitulo 2: Flujo de trabajo básico
+Capitulo 3: Repositorios remosotos
+
+
+> Cmprueba de nuevo el estado del repositorio
+
+	pablo@pablo-Lenovo-ideapad-330-15ICH:/var/www/html/gri/git$ git status -s
+	?? indice.txt
+
+> Añade el fichero a la zona de intercambio temporal
+
+	pablo@pablo-Lenovo-ideapad-330-15ICH:/var/www/html/gri/git$ git add indice.txt 
+
+> Vuelve a comprobar el estado del repositorio 
+
+	pablo@pablo-Lenovo-ideapad-330-15ICH:/var/www/html/gri/git$ git status -s
+	A  indice.txt
+
+----------------------------------------------------------------------------------------------------------------------------------------
+5- Cambia el fichero índice.txt para que contenga lo siguiente:
+
+    Capítulo 1: Introducción a Git
+	Capítulo 2: Flujo de trabajo básico
+   	Capítulo 3: Gestión de ramas
+   	Capítulo 4: Repositorios remotos
+
+> Mostrar los cambios con respecto a la última versión guardada en el repositorio
+
+pablo@pablo-Lenovo-ideapad-330-15ICH:/var/www/html/gri/git$ git diff
+diff --git a/indice.txt b/indice.txt
+index 6bfb459..fe26db1 100644
+--- a/indice.txt
++++ b/indice.txt
+@@ -1,3 +1,4 @@
+-Capítulo 1: Introduccion a GIT
+-Capitulo 2: Flujo de trabajo básico
+-Capitulo 3: Repositorios remosotos
++    Capítulo 1: Introducción a Git
++       Capítulo 2: Flujo de trabajo básico
++       Capítulo 3: Gestión de ramas
++       Capítulo 4: Repositorios remotos
+
+> Hacer un commit de los cambios con el mensaje “Añadido capítulo 3 sobre gestión de ramas”
+
+pablo@pablo-Lenovo-ideapad-330-15ICH:/var/www/html/gri/git$ git commit -m “Añadido_capítulo_3_sobre_gestión_de_ramas”
+[main 270b973] “Añadido_capítulo_3_sobre_gestión_de_ramas”
+ 1 file changed, 3 insertions(+)
+ create mode 100644 indice.txt
+
+----------------------------------------------------------------------------------------------------------------------------------------
+6.- Muestra los cambios de la ultima version del repositorio con respecto a la anterior.
+
+pablo@pablo-Lenovo-ideapad-330-15ICH:/var/www/html/gri/git$ git show
+commit 270b973c7f5256915849039b689434e42cba07ce (HEAD -> main, origin/main)
+Author: “Pablo <“pablo.maquieira@gmail.com”>
+Date:   Tue Jul 2 13:08:52 2024 +0200
+
+    “Añadido_capítulo_3_sobre_gestión_de_ramas”
+
+diff --git a/indice.txt b/indice.txt
+new file mode 100644
+index 0000000..6bfb459
+--- /dev/null
++++ b/indice.txt
+@@ -0,0 +1,3 @@
++Capítulo 1: Introduccion a GIT
++Capitulo 2: Flujo de trabajo básico
++Capitulo 3: Repositorios remosotos
+
+> Cambiar el mensaje del ultimo commint por "Añadico_capitulo_3_sobre_gestion_de_ramas_al_indice"
+
+pablo@pablo-Lenovo-ideapad-330-15ICH:/var/www/html/gri/git$ git commit --amend -m "Añadico_capitulo_3_sobre_gestion_de_ramas_al_indice"
+[main 6042fd6] Añadico_capitulo_3_sobre_gestion_de_ramas_al_indice
+ Date: Tue Jul 2 13:08:52 2024 +0200
+ 1 file changed, 3 insertions(+)
+ create mode 100644 indice.txt
+
+
+ pablo@pablo-Lenovo-ideapad-330-15ICH:/var/www/html/gri/git$ git show
+commit 6042fd6df6951e32bd0589fb73d6eaecd93e24fc (HEAD -> main)
+Author: “Pablo <“pablo.maquieira@gmail.com”>
+Date:   Tue Jul 2 13:08:52 2024 +0200
+
+    Añadico_capitulo_3_sobre_gestion_de_ramas_al_indice
+
+diff --git a/indice.txt b/indice.txt
+new file mode 100644
+index 0000000..6bfb459
+--- /dev/null
++++ b/indice.txt
+@@ -0,0 +1,3 @@
++Capítulo 1: Introduccion a GIT
++Capitulo 2: Flujo de trabajo básico
++Capitulo 3: Repositorios remosotos
+----------------------------------------------------------------------------------------------------------------------------------------

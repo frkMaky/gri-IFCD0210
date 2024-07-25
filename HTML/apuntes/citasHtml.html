@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Citas en HTML</h1>
+    <p class="tabular"><q>En este capítulo veremos los elementos &lt;blockquote&gt;, &lt;q&gt;, &lt;abbr&gt;, &lt;address&gt;, &lt;cite&gt; y
+        &lt;bdo&gt; HTML.</q></p>
+    <section>
+        <h2>&lt;blockquote&gt; para citas</h2>
+        <p>El elemento de HTML &lt;blockquote&gt; define una sección que se cita de otra fuente.</p>
+        <p>Los navegadores suelen aplicar sangría a los elementos &lt;blockquote&gt;.</p>
+        <pre>
+            &lt;p&gt;Here is a quote from WWF's website:&lt;/p&gt;
+            &lt;blockquote cite="http://www.worldwildlife.org/who/index.html"&gt;
+            For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation
+            organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the
+            world to develop and deliver innovative solutions that protect communities, wildlife, and the places in
+            which they live.
+            &lt;/blockquote&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>HTML &lt;q&gt; para citas breves</h2>
+        <p>La etiqueta de HTML &lt;q&gt; define una cita breve.</p>
+        <p>Los navegadores normalmente insertan comillas alrededor de la cita.</p>
+        <pre>
+            &lt;p&gt;WWF's goal is to: &lt;q&gt;Build a future where people live in harmony with nature.&lt;/q&gt;&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>&lt;abbr&gt; para abreviaturas</h2>
+        <p>La etiqueta HTML &lt;abbr&gt; define una abreviatura o un acrónimo, como "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".</p>
+        <p>Marcar abreviaturas puede proporcionar información útil a los navegadores, sistemas de traducción y motores de búsqueda.</p>
+        <p><span class="negrita">Consejo:</span> utilice el atributo title para mostrar la descripción de la abreviatura/acrónimo cuando
+             pase el mouse sobre el elemento.</p>
+        <pre>
+            &lt;p&gt;The &lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt; was founded in 1948.&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>&lt;address&gt; para información de contacto</h2>
+        <p>La etiqueta de HTML &lt;address&gt; define la información de contacto del autor/propietario de un documento o artículo. </p>
+        <p>La información de contacto puede ser una dirección de correo electrónico, URL, dirección física, número de teléfono,
+             identificador de redes sociales, etc.</p>
+        <p>El texto del elemento &lt;address&gt; generalmente se muestra en cursiva y 
+            los navegadores siempre agregarán un salto de línea antes y después del elemento &lt;address&gt;.</p>
+        <pre>
+            &lt;address&gt;
+                Written by John Doe.&lt;br&gt;
+                Visit us at:&lt;br&gt;
+                Example.com&lt;br&gt;
+                Box 564, Disneyland&lt;br&gt;
+                USA
+            &lt;/address&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>&lt;cite&gt; para el título de un trabajo</h2>
+        <p>La etiqueta de HTML &lt;cite&gt; define el título de una obra creativa (por ejemplo, un libro, un poema, una canción, una película,
+        un cuadro, una escultura, etc.).</p>
+        <p><span class="negrita">Nota</span>El nombre de una persona no es el título de una obra.</p>
+        <p>El texto del elemento &lt;cite&gt; normalmente se muestra en cursiva.</p>
+        <pre>
+            &lt;p&gt;&lt;cite&gt;The Scream&lt;/cite&gt; by Edvard Munch. Painted in 1893.&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>&lt;bdo&gt; para sobreescritura bidireccional</h2>
+        <p>BDO significa sobreescritura bidireccional.</p>
+        <p>La etiqueta HTML &lt;bdo&gt; se utiliza para cambiar la forma de escritura del texto actual:</p>
+        <pre>
+            &lt;bdo dir="rtl"&gt;This text will be written from right to left&lt;/bdo&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Utilice un elemento HTML para agregar comillas alrededor de las letras "Frío".</p>
+        <pre>
+            &lt;p&gt;
+            Soy tan Frío.
+            &lt;/p&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Elementos de citas y citas HTML</h2>
+        <table>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Descripción</th>
+            </tr>
+            <tr> <td> &lt;abbr&gt;</td> <td>Define una abreviatura o acrónimo </td> </tr>
+            <tr> <td> &lt;address&gt;</td> <td>Define información de contacto para el autor o propietario de un documento</td> </tr>
+            <tr> <td> &lt;bdo&gt;</td> <td>Define la dirección de un texto </td> </tr>
+            <tr> <td> &lt;blockquote&gt;</td> <td>Define la sección que se cita de otra fuente </td> </tr>
+            <tr> <td> &lt;cite&gt;</td> <td>Define el título de un trabajo </td> </tr>
+            <tr> <td> &lt;q&gt;</td> <td>Define una cita corta </td> </tr>
+        </table>
+    </section>
+
+</body>
+</html>

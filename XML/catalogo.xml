@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Catálogo de productos electrónicos XML
+Crea un documento XML que represente un catálogo de productos electrónicos. 
+Cada producto debe tener los siguientes elementos: 
+nombre, descripción, precio y una lista de características. Cada característica debe tener un nombre y un valor asociado.
+Incluye al menos dos productos en el catálogo, cada uno con diferentes características. -->
+<catalogo>
+
+    <producto>
+        <nombre>Portatil Lenovo</nombre>
+        <descripcion>Ordenador portatil</descripcion>
+        <precio>2000€</precio>
+        <caracteristicas>
+            <caracteristica nombre="grafica" valor="NVDIA 2080ti" /> 
+            <caracteristica nombre="color" valor="negro" />
+        </caracteristicas>
+    </producto>
+
+    <producto>
+        <nombre>Movil</nombre>
+        <descripcion>Tlfno Movil</descripcion>
+        <precio>300€</precio>
+        <caracteristicas>
+            <caracteristica nombre="marca" valor="Samsung" /> 
+            <caracteristica nombre="SO" valor="Android" />
+        </caracteristicas>
+    </producto>
+
+</catalogo>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de cadenas de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Búsqueda de cadenas de JavaScript</h1>
+    <section>
+        <h2>indexOf()</h2>
+        <p>El método indexOf()devuelve el índice (posición) de la primera aparición de una cadena en una
+            cadena, o devuelve -1 si no se encuentra la cadena:</p>
+        <pre>
+            let text = "Please locate where 'locate' occurs!";
+            let index = text.indexOf("locate");
+        </pre>
+        <p><strong>Nota </strong> JavaScript cuenta las posiciones desde cero.</p>
+        <p>0 es la primera posición en una cadena, 1 es la segunda, 2 es la tercera,...</p>
+    </section>
+    <section>
+        <h2>lastIndexOf()</h2>
+        <p>El método lastIndexOf() devuelve el índice de la <strong>última</strong> aparición de un texto especificado en una cadena:</p>
+        <pre>
+            let text = "Please locate where 'locate' occurs!";
+            let index = text.lastIndexOf("locate");
+        </pre>
+        <p>Ambos indexOf()y lastIndexOf()devuelve -1 si no se encuentra el texto:</p>
+        <pre>
+            let text = "Please locate where 'locate' occurs!";
+            let index = text.lastIndexOf("John");
+        </pre>
+        <p>Ambos métodos aceptan un segundo parámetro como posición inicial de la búsqueda:</p>
+        <pre>
+            let text = "Please locate where 'locate' occurs!";
+            let index = text.indexOf("locate", 15);
+        </pre>
+        <p>Los métodos lastIndexOf() buscan hacia atrás (desde el final hasta el principio), es decir: si el
+            segundo parámetro es 15, la búsqueda comienza en la posición 15 y busca hasta el principio de la cadena.</p>
+        <pre>
+            let text = "Please locate where 'locate' occurs!";
+            text.lastIndexOf("locate", 15);
+        </pre>
+    </section>
+    <section>
+        <h2>search()</h2>
+        <p>El método search() busca una cadena (o una expresión regular) en una cadena y devuelve la posición de la coincidencia:</p>
+        <pre>
+            let text = "Please locate where 'locate' occurs!";
+            text.search("locate");
+            
+            let text = "Please locate where 'locate' occurs!";
+            text.search(/locate/);
+        </pre>
+    </section>
+    <section>
+        <h2>¿Te diste cuenta?</h2>
+        <p>¿Los dos métodos indexOf()y search()son <strong>iguales</strong>?</p>
+        <p>¿Aceptan los mismos argumentos (parámetros) y devuelven el mismo valor?</p>
+        <p>Los dos métodos <strong>NO</strong> son iguales. Estas son las diferencias:</p>
+        <ul>
+            <li>El método search() no puede tomar un segundo argumento de posición inicial.</li>
+            <li>El método indexOf() no puede aceptar valores de búsqueda potentes (expresiones regulares).</li>
+        </ul>
+    </section>
+    <section>
+        <h2>match()</h2>
+        <p>El método match() devuelve una matriz que contiene los resultados de hacer coincidir una cadena con
+            una cadena (o una expresión regular).</p>
+        <pre>
+            Realice una búsqueda de "ain":
+            
+            let text = "The rain in SPAIN stays mainly in the plain";
+            text.match("ain");
+        </pre>
+        <pre>
+            Realice una búsqueda de "ain":
+
+            let text = "The rain in SPAIN stays mainly in the plain";
+            text.match(/ain/);
+        </pre>
+        <pre>
+            Realice una búsqueda global de "ain":
+
+            let text = "The rain in SPAIN stays mainly in the plain";
+            text.match(/ain/g);
+        </pre>
+        <pre>
+            Realice una búsqueda global que no distinga entre mayúsculas y minúsculas de "ain":
+
+            let text = "The rain in SPAIN stays mainly in the plain";
+            text.match(/ain/gi);
+        </pre>
+        <p><strong>Nota </strong> Si una expresión regular no incluye el modificador g (búsqueda global), match()devolverá solo la
+            primera coincidencia en la cadena.</p>
+        <p>Lea más sobre expresiones regulares más adelante</p>
+    </section>
+    <section>
+        <h2>matchAll()</h2>
+        <p>El método matchAll() devuelve un iterador que contiene los resultados de hacer coincidir una cadena
+            con una cadena (o una expresión regular).</p>
+        <pre>
+            const iterator = text.matchAll("Cats");
+        </pre>
+        <p>Si el parámetro es una expresión regular, se debe establecer el indicador global (g); de lo contrario, se
+            genera un TypeError.</p>
+        <pre>
+            const iterator = text.matchAll(/Cats/g);
+        </pre>
+        <p>Si desea buscar sin distinguir entre mayúsculas y minúsculas, se debe configurar el indicador de insensibilidad (i):</p>
+        <pre>
+            const iterator = text.matchAll(/Cats/gi);
+        </pre>
+        <p><strong>Notas</strong><br>
+            MatchAll() es una característica de ES2020 .<br>
+            MatchAll() no funciona en Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>includes()</h2>
+        <p>El método includes() devuelve verdadero si una cadena contiene un valor específico.</p>
+        <p>De lo contrario regresa false.</p>
+        <pre>
+            Compruebe si una cadena incluye "mundo":
+            
+            let text = "Hello world, welcome to the universe.";
+            text.includes("world");
+        </pre>
+        <pre>
+            Compruebe si una cadena incluye "mundo". Comience en la posición 12:
+
+            let text = "Hello world, welcome to the universe.";
+            text.includes("world", 12);
+        </pre>
+        <p><strong>Notas</strong><br>
+            includes()distingue entre mayúsculas y minúsculas.<br>
+            includes()es una característica de ES6 .<br>
+            includes()no es compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>startsWith()</h2>
+        <p>El método startsWith() devuelve true si una cadena comienza con un valor específico.</p>
+        <p>De lo contrario devuelve false:</p>
+        <pre>
+            Devuelve verdadero:
+
+            let text = "Hello world, welcome to the universe.";
+            text.startsWith("Hello");
+        </pre>
+        <pre>
+            Devuelve falso:
+
+            let text = "Hello world, welcome to the universe.";
+            text.startsWith("world")
+        </pre>
+        <p>Se puede especificar una posición inicial para la búsqueda:</p>
+        <pre>
+            Devuelve falso:
+
+            let text = "Hello world, welcome to the universe.";
+            text.startsWith("world", 5)
+        </pre>
+        <pre>
+            Devuelve verdadero:
+            
+            let text = "Hello world, welcome to the universe.";
+            text.startsWith("world", 6)
+        </pre>
+        <p><strong>Notas</strong><br>
+            StartsWith() distingue entre mayúsculas y minúsculas.<br>
+            StartsWith() es una característica de ES6 .<br>
+            StartsWith() no es compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>endsWith()</h2>
+        <p>El método endsWith() devuelve true si una cadena termina con un valor específico.</p>
+        <p>De lo contrario devuelve false:</p>
+        <pre>
+            Compruebe si una cadena termina con "Doe":
+            
+            let text = "John Doe";
+            text.endsWith("Doe");
+        </pre>
+        <pre>
+            Compruebe si los 11 primeros caracteres de una cadena terminan en "mundo":
+            
+            let text = "Hello world, welcome to the universe.";
+            text.endsWith("world", 11);
+        </pre>
+        <p><strong>Notas</strong><br>
+            endsWith()distingue entre mayúsculas y minúsculas.<br>
+            endsWith()es una característica de ES6 .<br>
+            endsWith()no es compatible con Internet Explorer.</p>
+    </section>
+</body>
+</html>

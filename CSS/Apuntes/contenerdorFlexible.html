@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedor flexible CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Contenedor flexible CSS</h1>
+    <section>
+        <h2>Elemento principal (contenedor)</h2>
+        <p>Este es un contenedor flexible (el área azul) con tres elementos flexibles :</p>
+        <p>El contenedor flexible se vuelve flexible estableciendo la propiedad display en flex:</p>
+        <pre>
+            .flex-container {
+                display: flex;
+            }
+        </pre>
+        <p>Las propiedades del contenedor flexible son:</p>
+        <ul>
+            <li>flex-direction</li>
+            <li>flex-wrap</li>
+            <li>flex-flow</li>
+            <li>justify-content</li>
+            <li>align-items</li>
+            <li>align-content</li>
+        </ul>
+    </section>
+    <section>
+        <h2>La propiedad flex-direction</h2>
+        <p>La propiedad flex-direction define en qué dirección el contenedor quiere apilar los elementos flexibles.</p>
+        <pre>
+            El valor column apila los elementos flexibles verticalmente (de arriba a abajo):
+        
+            .flex-container {
+                display: flex;
+                flex-direction: column;
+            }
+        </pre>
+        <pre>
+            El valor column-reverse apila los elementos flexibles verticalmente (pero de abajo hacia arriba):
+
+            .flex-container {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        </pre>
+        <pre>
+            El valor row apila los elementos flexibles horizontalmente (de izquierda a derecha):
+
+            .flex-container {
+                display: flex;
+                flex-direction: row;
+            }
+        </pre>
+        <pre>
+            El valor row-reverse apila los elementos flexibles horizontalmente (pero de derecha a izquierda):
+
+            .flex-container {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad flex-wrap</h2>
+        <p>La propiedad flex-wrap especifica si los elementos flexibles deben ajustarse o no.</p>
+        <p>Los ejemplos siguientes tienen 12 elementos flexibles para demostrar mejor la propiedad flex-wrap.</p>
+        <pre>
+            El valor wrap especifica que los elementos flexibles se ajustarán si es necesario:
+            
+            .flex-container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        </pre>
+        <pre>
+            El valor nowrap especifica que los elementos flexibles no se ajustarán (esto es el valor predeterminado):
+        
+            .flex-container {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+        </pre>
+        <pre>
+            El valor wrap-reverse especifica que los elementos flexibles se ajustarán si es necesario, en orden inverso:
+
+            .flex-container {
+                display: flex;
+                flex-wrap: wrap-reverse;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad flex-flow</h2>
+        <p>La propiedad flex-flow es una propiedad abreviada para establecer las propiedades flex-direction y flex-wrap.</p>
+        <pre>
+            .flex-container {
+                display: flex;
+                flex-flow: row wrap;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad justify-content</h2>
+        <p>La propiedad justify-content se utiliza para alinear los elementos flexibles:</p>
+        <pre>
+            El valor center alinea los elementos flexibles en el centro del contenedor:
+
+            .flex-container {
+                display: flex;
+                justify-content: center;
+            }
+        </pre>
+        <pre>
+            El valor flex-start alinea los elementos flexibles al principio del contenedor (esto es el valor predeterminado):
+
+            .flex-container {
+                display: flex;
+                justify-content: flex-start;
+            }
+        </pre>
+        <pre>
+            El valor flex-end alinea los elementos flexibles al final del contenedor:
+
+            .flex-container {
+                display: flex;
+                justify-content: flex-end;
+            }
+        </pre>
+        <pre>
+            El valor space-around muestra los elementos flexibles con espacio antes, entre y después de las líneas:
+            
+            .flex-container {
+                display: flex;
+                justify-content: space-around;
+            }
+        </pre>
+        <pre>
+            El valor space-between muestra los elementos flexibles con espacio entre líneas:
+
+            .flex-container {
+                display: flex;
+                justify-content: space-between;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad align-items</h2>
+        <p>La propiedad align-items se utiliza para alinear los elementos flexibles.</p>
+        <p>En estos ejemplos utilizamos un contenedor de 200 píxeles de alto para demostrar mejor la propiedad align-items.</p>
+        <pre>
+            El valor center alinea los elementos flexibles en el medio del contenedor:
+    
+            .flex-container {
+                display: flex;
+                height: 200px;
+                align-items: center;
+            }
+        </pre>
+        <pre>
+            El valor flex-start alinea los elementos flexibles en la parte superior del contenedor:
+
+            .flex-container {
+                display: flex;
+                height: 200px;
+                align-items: flex-start;
+            }
+        </pre>
+        <pre>
+            El valor flex-end alinea los elementos flexibles en la parte inferior del contenedor:
+
+            .flex-container {
+                display: flex;
+                height: 200px;
+                align-items: flex-end;
+            }
+        </pre>
+        <pre>
+            El valor stretch extiende los elementos flexibles para llenar el contenedor (esto es el valor predeterminado):
+
+            .flex-container {
+                display: flex;
+                height: 200px;
+                align-items: stretch;
+            }
+        </pre>
+        <pre>
+            El valor baseline alinea los elementos flexibles, como se alinean sus líneas de base:
+
+            .flex-container {
+                display: flex;
+                height: 200px;
+                align-items: baseline;
+            }
+        </pre>
+        <p><strong>Nota: </strong>el ejemplo utiliza diferentes tamaños de fuente para demostrar que los elementos se alinean con la línea base del texto:</p>
+    </section>
+    <section>
+        <h2>La propiedad align-content</h2>
+        <p>La propiedad align-content se utiliza para alinear las líneas flexibles.</p>
+        <p>En estos ejemplos utilizamos un contenedor de 600 píxeles de alto, con la propiedad flex-wrap establecida en wrap, para demostrar mejor la propiedad align-content.</p>
+        <pre>
+            El valor space-between muestra las líneas flexibles con el mismo espacio entre ellas:
+
+            .flex-container {
+                display: flex;
+                height: 600px;
+                flex-wrap: wrap;
+                align-content: space-between;
+            }
+        </pre>
+        <pre>
+            El valor space-around muestra las líneas flexibles con espacio antes, entre y después de ellas:
+
+            .flex-container {
+                display: flex;
+                height: 600px;
+                flex-wrap: wrap;
+                align-content: space-around;
+            }
+        </pre>
+        <pre>
+            El valor stretch estira las líneas flexibles para ocupar el espacio restante (esto es el valor predeterminado):
+            
+            .flex-container {
+                display: flex;
+                height: 600px;
+                flex-wrap: wrap;
+                align-content: stretch;
+            }
+        </pre>
+        <pre>
+            El valor center muestra las líneas flexibles en el medio del contenedor:
+
+            .flex-container {
+                display: flex;
+                height: 600px;
+                flex-wrap: wrap;
+                align-content: center;
+            }
+        </pre>
+        <pre>
+            El valor flex-start muestra las líneas flexibles al inicio del contenedor:
+
+            .flex-container {
+                display: flex;
+                height: 600px;
+                flex-wrap: wrap;
+                align-content: flex-start;
+            }
+        </pre>
+        <pre>
+            El valor flex-end muestra las líneas flexibles al final del contenedor:
+
+            .flex-container {
+                display: flex;
+                height: 600px;
+                flex-wrap: wrap;
+                align-content: flex-end;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>Centrado perfecto</h2>
+        <p>En el siguiente ejemplo resolveremos un problema de estilo muy común: el centrado perfecto.</p>
+        <p><strong>SOLUCIÓN: </strong>Establezca las propiedades justify-content y align-items a center y el elemento flexible quedará perfectamente centrado:</p>
+        <pre>
+            .flex-container {
+                display: flex;
+                height: 300px;
+                justify-content: center;
+                align-items: center;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>Las propiedades del contenedor CSS Flexbox</h2>
+        <p>La siguiente tabla enumera todas las propiedades del contenedor CSS Flexbox:</p>
+        <table>
+            <tr> <th>Propiedad</th><th>Descripcion</th></tr>
+            <tr> <td>align-content</td> <td>Modifica el comportamiento de la propiedad flex-wrap. Es similar a align-items, pero en vez de alinear los items flexibles, alinea las líneas flexibles</td></tr>
+            <tr> <td>align-items</td> <td>Alinea verticalmente los items flexibles cuando los items no usan todo el espacio disponible en el eje cruzado</td></tr>
+            <tr> <td>display</td> <td>Especifica el tipo de caja usada para el elemento HTML</td> </tr>
+            <tr> <td>flex-direction</td> <td>Especifica la dirección de los items flexibles dentro de un contenedor flexible</td></tr>
+            <tr> <td>flex-flow</td> <td>Una propiedad abreviada para flex-direction y flex-wrap</td></tr>
+            <tr> <td>flex-wrap</td> <td>Especifica si los items flexibles deberían hacer wrap o no, si no hay suficiente hueco para ellos en una linea flexible</td></tr>
+            <tr> <td>justify-content</td> <td>Alinea horizontalmente los items flexibles cuando los items no usan todo el espacio disponible en el eje principal</td></tr>
+        </table>
+    </section>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding = "UTF-8" ?>
+<!-- Ejercicio de XML - Corregir errores de sintaxis de "vehiculos.xml"
+Corregir los errores que hay en el siguiente documento XML () para que esté bien formado. 
+Para ello, puede ser necesario crear nuevas etiquetas o atributos.
+-->
+<vehiculos>
+    <terrestres>
+        <vehiculo>bicicleta</vehiculo>
+        <vehiculo>coche</vehiculo>
+        <vehiculo>tractor</vehiculo>
+    </terrestres>
+    <acuaticos>
+        <vehiculo>canoa</vehiculo>
+    </acuaticos>
+    <aereos>
+        <vehiculo>avioneta</vehiculo>
+        <vehiculo>helicóptero</vehiculo>
+    </aereos>
+</vehiculos>

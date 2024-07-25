@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST pseudoclases y pseudoelementos:</title>
+    <style>
+        body {
+            margin:100px;
+        }
+        h1 {
+            text-align: center;
+        }
+        pre {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>TEST pseudoclases y pseudoelementos:</h1>
+    
+  <ol>
+    <li>Dale estilo al primer hijo del elemento
+        <pre>
+            div:first-child {color:red;} &lt;----- 
+            div first-child {color:red;}
+            .div.first-child {color:red;}
+        </pre>
+    </li>
+    <li>¿Cuál de los siguientes NO es un pseudo-elemento de CSS?
+        <pre>
+            ::selection
+            ::first-line
+            ::before
+            ::after
+            ::all-line &lt;-----
+        </pre>
+    </li>
+    <li>¿Qué pseudo-clase utilizamos para cambiar el estilo cuando pasamos el ratón por encima de un enlace?
+        <pre>
+            ::over
+            :hover &lt;-----
+            :active
+            :focus
+            :visited
+        </pre>
+    </li>
+    <li>¿Cómo seleccionamos las filas impares de una tabla?
+        <pre>
+            tr:nth-child(2n+1) &lt;-----
+            td:nth-child(2n+1)
+            tr:nth-child(2n)
+            tr:nth-child(even) 
+        </pre>
+    </li>
+  </ol>
+
+</body>
+</html>

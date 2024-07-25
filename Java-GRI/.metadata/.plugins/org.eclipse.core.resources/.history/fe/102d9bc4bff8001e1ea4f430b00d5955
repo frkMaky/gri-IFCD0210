@@ -1,0 +1,14 @@
+
+public class DeclararMismaLinea {
+
+	public static void main(String[] args) {
+		// Crea 3 variables: 5, 7, 2 y muestra el resultado de 5 elevado a 7 y luego menos dos
+		
+		dnt a=5, b=7, c=2;
+		int resultado = (int) Math.pow(a, b) - c;
+		System.out.println("El resultado es " + resultado);
+		
+
+	}
+
+}

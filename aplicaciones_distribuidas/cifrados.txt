@@ -1,0 +1,194 @@
+Ejemplo
+Supongamos que la clave es 9 y el mensaje a cifrar es:
+EL PRÓXIMO LUNES HAY EXAMEN DE MATEMATICAS
+NU YAXGRVX UDWNB QJH NGJVNW MN VJCNVJCRLJB
+
+Ejemplo
+Hemos recibido el siguiente mensaje codificado por el método de César con clave 10:
+QYIQKMÑEWLYWRDYNRK
+HOYHACEUNBONITODIA
+
+A - 0
+B - 1
+C - 2
+D - 3
+E - 4
+F - 5
+G - 6
+H - 7
+I - 8
+J - 9
+K - 10
+L - 11
+M - 12
+N - 13
+Ñ - 14
+O - 15
+P - 16
+Q - 17
+R - 18
+S - 19
+T - 20
+U - 21
+V - 22
+W - 23
+X - 24
+Y - 25
+Z - 26
+
+mod = 27
+
+M = Paris k= LOUP
+k = LOUPL
+
+CIFRADO c = ( M + K ) mod |A|
+
+
+P - L c = (16 + 11) mod 27 = 27 mod 27 = 0 = 'A'
+A - O c = (0 + 15) mod 27 = 15 mod 27 = 15 = 'O'
+R - U c = (18 + 21) mod 27 = 39 mod 27 = 12 = 'M'
+I - P c = (8 + 16) mod 27 = 24 mod 27 = 24 = 'X'
+S - L c = (19 + 11) mod 27 = 30 mod 27 = 3 = 'D'
+
+Mensaeje = PARIS
+Clave = LOUPL
+Encriptado = AOMXD
+
+DESCRIFRADO M = ( C - K ) mod |A|
+
+A - L m = (0 - 11) mod 27 = -11 mod 27 = 16 = 'P'
+O - O m = (15 - 15) mod 27 = 0 mod 27 = 0 = 'A'
+M - U m = (12 - 21) mod 27 = -9 mod 27 = 18 = 'R'
+X - P m = (24 - 16) mod 27 = 8 mod 27 = 8 = 'I'
+D - L m = (3 - 11) mod 27 = -8 mod 27 = 3 = 'S'
+
+22 pag 9
+
+A - 0
+B - 1
+C - 2
+D - 3
+E - 4
+F - 5
+G - 6
+H - 7
+I - 8
+J - 9
+K - 10
+L - 11
+M - 12
+N - 13
+Ñ - 14
+O - 15
+P - 16
+Q - 17
+R - 18
+S - 19
+T - 20
+U - 21
+V - 22
+W - 23
+X - 24
+Y - 25
+Z - 26
+
+
+M = "Estoesconfidencial"
+K = "melocoton"
+K2= "melocotonmelocoton"
+
+E M (4+12) 	MOD 27 = 16 MOD 27 = 16 P
+S E (19+4) 	MOD 27 = 23 MOD 27 = 23 W
+T L (20+11) MOD 27 = 31 MOD 27 = 4  E
+O O (15+15) MOD 27 = 30 MOD 27 = 3  D
+
+E C (4+2) 	MOD 27 = 6  MOD 27 = 6 G
+S O (19+15) MOD 27 = 34 MOD 27 = 7 H
+
+C T (2+20) 	MOD 27 = 22 MOD 27 = 22 V
+O O (15+15) MOD 27 = 30 MOD 27 = 3  D
+N N (13+13) MOD 27 = 26 MOD 27 = 26 Z
+F M (5+12) 	MOD 27 = 17 MOD 27 = 17 Q
+I E (8+4) 	MOD 27 = 12 MOD 27 = 12 M
+D L (3+11)	MOD 27 = 14 MOD 27 = 14 Ñ 
+E O (4+15) 	MOD 27 = 19 MOD 27 = 19 S
+N C (13+2) 	MOD 27 = 15 MOD 27 = 15 O
+C O (2+15) 	MOD 27 = 17 MOD 27 = 17 Q
+I T (8+20) 	MOD 27 = 28 MOD 27 = 1  B
+A O (0+15) 	MOD 27 = 15 MOD 27 = 15 O
+L N (11+13) MOD 27 = 24 MOD 27 = 24 X
+
+CLAVE = MELOCOTON
+MENSAJE = ESTO ES CONFIDENCIAL
+CIFRADO = PWED GH VDZQMÑSOQBOX
+
+
+
+A - 0
+B - 1
+C - 2
+D - 3
+E - 4
+F - 5
+G - 6
+H - 7
+I - 8
+J - 9
+K - 10
+L - 11
+M - 12
+N - 13
+O - 14
+P - 15
+Q - 16
+R - 17
+S - 18
+T - 19
+U - 20
+V - 21
+W - 22
+X - 23
+Y - 24
+Z - 25
+
+MOD 26 (sin ñ)
+
+Cifrar el mensaje "EJEMPLO CIFRADO" con la clave "CLAVE"
+
+E C  (4+2) 		MOD 26 = 6 	MOD 26 = 6   G
+J L  (9+11) 	MOD 26 = 20 MOD 26 = 20  U
+E A  (4+0) 		MOD 26 = 4 	MOD 26 = 4   E
+M V  (12+21) 	MOD 26 = 33 MOD 26 = 7   H
+P E  (15+4) 	MOD 26 = 19 MOD 26 = 19  T
+L C  (11+2) 	MOD 26 = 13 MOD 26 = 13  N
+O L  (14+11) 	MOD 26 = 25 MOD 26 = 25  Z
+ 
+C A  (2+0) 		MOD 26 = 2 	MOD 26 = 2  C
+I V  (8+21) 	MOD 26 = 29 MOD 26 = 3  D
+F E  (5+4) 		MOD 26 = 9 	MOD 26 = 9  J
+R C  (17+2) 	MOD 26 = 19 MOD 26 = 19 T
+A L  (0+11) 	MOD 26 = 11 MOD 26 = 11 L
+D A  (3+0) 		MOD 26 = 3 	MOD 26 = 3  D
+O V  (14+21) 	MOD 26 = 35 MOD 26 = 9  J
+
+CIFRADO: GUEHTNZ CDJTLDJ
+
+Descrifrado:
+
+G C ( 6 - 2 ) 		MOD 26 = 4 		MOD 26 = 4    E
+U L ( 20 - 11) 		MOD 26 = 9 		MOD 26 = 9    J
+E A ( 4 - 0 ) 		MOD 26 = 4 		MOD 26 = 4    E
+H V ( 7 - 21) 		MOD 26 = -14 	MOD 26 = 12   M
+T E ( 19 - 4) 		MOD 26 = 15 	MOD 26 = 15   P
+N C ( 13 - 2) 		MOD 26 = 11 	MOD 26 = 11   L
+Z L ( 25 - 11) 		MOD 26 = 14 	MOD 26 = 14   O
+
+C A ( 2 - 0) 		MOD 26 = 2 		MOD 26 = 2    C
+D V ( 3 - 21) 		MOD 26 = -18 	MOD 26 = 8    I
+J E ( 9 - 4) 		MOD 26 = 5 		MOD 26 = 5    F
+T C ( 19- 2) 		MOD 26 = 17 	MOD 26 = 17   R
+L L ( 11 - 11) 		MOD 26 = 0 		MOD 26 = 0    A
+D A ( 3 - 0) 		MOD 26 = 3 		MOD 26 = 3 	  D
+J V ( 9 - 21) 		MOD 26 = -18 	MOD 26 = 14   O
+
+DESCIFRADO = EJEMPLO CIFRADOx

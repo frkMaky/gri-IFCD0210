@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de array de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Métodos de array de JavaScript</h1>
+    <section>
+        <h2>Longitud del array</h2>
+        <p>La propiedad length devuelve la longitud (tamaño) de un array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let size = fruits.length;
+        </pre>
+    </section>
+    <section>
+        <h2>toString()</h2>
+        <p>El método de JavaScript toString()convierte un array en una cadena de valores del array (separados por comas).</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = fruits.toString();
+        </pre>
+        <p>Resultado: Banana,Orange,Apple,Mango</p>
+    </section>
+    <section>
+        <h2>at()</h2>
+        <p>ES2022 introdujo el método at():</p>
+        <pre>
+            Obtenga el tercer elemento de frutas usando at():
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let fruit = fruits.at(2);
+
+            Obtén el tercer elemento de las frutas usando []:
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let fruit = fruits[2];
+        </pre>
+        <p>El método at() devuelve un elemento indexado de un array.</p>
+        <p>El método at() devuelve lo mismo que [].</p>
+        <p>El método at() es compatible con todos los navegadores modernos desde marzo de 2022:</p>
+        <table>
+            <tr> <td>Chrome 92 </td> <td>Edge 92 </td><td>Firefox 90 </td><td>Safari 15.4 </td><td>Opera 78</td></tr>
+            <tr> <td>Apr 2021 </td> <td>Jul 2021 </td><td>Jul 2021 </td><td>Mar 2022 </td><td>Aug 2021</td></tr>
+        </table>
+        <p><strong>Nota </strong>Muchos idiomas permiten negative bracket indexing como [-1] acceder a elementos desde el
+            final de un objeto/array/cadena. Esto no es posible en JavaScript porque [] se usa para acceder tanto a
+            arrays como a objetos. obj[-1] se refiere al valor de la clave -1, no a la última propiedad del objeto.</p>
+        <p>El método at() se introdujo en ES2022 para resolver este problema.</p>
+    </section>
+    <section>
+        <h2>join()</h2>
+        <p>El método join() también une todos los elementos de el array en una cadena.</p>
+        <p>Se comporta igual que toString(), pero además puedes especificar el separador:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = fruits.join(" * ");
+        </pre>
+        <p>Resultado: Banana * Orange * Apple * Mango</p>
+    </section>
+    <section>
+        <h2>pop() y push()</h2>
+        <p>Cuando trabaja con arrays, es fácil eliminar elementos y agregar nuevos elementos.</p>
+        <p>Sacar elementos de un array o insertar elementos en un array.</p>
+    </section>
+    <section>
+        <h2>pop()</h2>
+        <p>El método pop() elimina el último elemento de un array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.pop();
+        </pre>
+        <p>El método pop() devuelve el valor que "sacó":</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let fruit = fruits.pop();
+        </pre>
+    </section>
+    <section>
+        <h2>push()</h2>
+        <p>El método push() agrega un nuevo elemento a un array (al final):</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.push("Kiwi");
+        </pre>
+        <p>El método push() devuelve la nueva longitud del array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let length = fruits.push("Kiwi");
+        </pre>
+    </section>
+    <section>
+        <h2>Elementos desplazamiento</h2>
+        <p>shift() es equivalente a pop, pero trabajando en el primer elemento en lugar del último.</p>
+    </section>
+    <section>
+        <h2>shift()</h2>
+        <p>El método shift() elimina el primer elemento del array y "desplaza" todos los demás elementos a un índice inferior.</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.shift();
+        </pre>
+        <p>El método shift() devuelve el valor que fue "desplazado":</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            let fruit = fruits.shift();
+        </pre>
+    </section>
+    <section>
+        <h2>unshift()</h2>
+        <p>El método unshift() agrega un nuevo elemento a un array (al principio) y "desplaza" los elementos más antiguos:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.unshift("Lemon");
+        </pre>
+        <p>El método unshift() devuelve la nueva longitud del array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.unshift("Lemon");
+        </pre>
+    </section>
+    <section>
+        <h2>Elementos cambiantes</h2>
+        <p>Se accede a los elementos del array utilizando su número de índice :</p>
+        <p>Los índices del array comienzan con 0:</p>
+        <p>[0] es el primer elemento del array
+            <br/>[1] es el segundo
+            <br/>[2] es el tercero...</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits[0] = "Kiwi";
+        </pre>
+    </section>
+    <section>
+        <h2>length</h2>
+        <p>La propiedad length proporciona una manera sencilla de agregar un nuevo elemento a un array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits[fruits.length] = "Kiwi";
+        </pre>
+    </section>
+    <section>
+        <h2>delete()</h2>
+        <p><strong>Advertencia ! </strong> El uso de delete() deja agujeros undefined en el array.</p>
+        <p>Utilice pop() o shift() en su lugar.</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            delete fruits[0];
+        </pre>
+    </section>
+    <section>
+        <h2>Fusionar arrays (concatenar)</h2>
+        <p>En los lenguajes de programación, la concatenación significa unir cadenas de un extremo a otro.</p>
+        <p>La concatenación "bola de " y "nieve" da "bola de nieve".</p>
+        <p>Concatenar arrays significa unir arrays de un extremo a otro.</p>
+    </section>
+    <section>
+        <h2>Concatenación de array de JavaScript()</h2>
+        <p>El método concat() crea un nuevo array fusionando (concatenando) arrays existentes:</p>
+        <pre>
+            const myGirls = ["Cecilie", "Lone"];
+            const myBoys = ["Emil", "Tobias", "Linus"];
+
+            const myChildren = myGirls.concat(myBoys);
+        </pre>
+        <p><strong>Nota </strong> El método concat() no cambia los arrays existentes. Siempre devuelve un nuevo array.</p>
+        <p>El método concat() puede tomar cualquier número de argumentos del array.</p>
+        <pre>
+            Ejemplo (fusión de tres arrays)
+            const arr1 = ["Cecilie", "Lone"];
+            const arr2 = ["Emil", "Tobias", "Linus"];
+            const arr3 = ["Robin", "Morgan"];
+
+            const myChildren = arr1.concat(arr2, arr3);
+        </pre>
+        <p>El método concat() también puede tomar cadenas como argumentos:</p>
+        <pre>
+            Ejemplo (Fusionar un array con valores)
+            const arr1 = ["Emil", "Tobias", "Linus"];
+            const myChildren = arr1.concat("Peter");
+        </pre>
+    </section>
+    <section>
+        <h2>copyWithin()</h2>
+        <p>El método copyWithin() copia elementos del array a otra posición en un array:</p>
+        <pre>
+            Copie al índice 2, todos los elementos del índice 0:
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.copyWithin(2, 0);
+        </pre>
+        <pre>
+            Copiar al índice 2, los elementos del índice 0 al 2:
+            const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+            fruits.copyWithin(2, 0, 2);
+        </pre>
+        <p><strong>Nota </strong> El método copyWithin() sobrescribe los valores existentes.</p>
+        <p>El método copyWithin() no agrega elementos al array.</p>
+        <p>El método copyWithin() no cambia la longitud del array.</p>
+    </section>
+    <section>
+        <h2>flat()</h2>
+        <p>Aplanar un array es el proceso de reducir la dimensionalidad de un array.</p>
+        <p>Es útil cuando desea convertir un array multidimensional en un array unidimensional.</p>
+        <p>ES2019 Se introdujo el método flat().</p>
+        <p>El método flat() crea un nuevo array con elementos de subarray concatenados a una profundidad especificada.</p>
+        <pre>
+            const myArr = [[1,2],[3,4],[5,6]];
+            const newArr = myArr.flat();
+        </pre>
+        <h3>Soporte del navegador</h3>
+        <p>JavaScript Array flat()es compatible con todos los navegadores modernos desde enero de 2020:</p>
+        <table>
+            <tr><td>Chrome 69</td><td>Edge 79</td><td>Firefox 62</td><td>Safari 12</td><td>Opera 56</td></tr>
+            <tr><td>Sep 2018</td><td>Jan 2020</td><td>Sep 2018</td><td>Sep 2018</td><td>Sep 2018</td></tr>
+        </table>
+    </section>
+    <section>
+        <h2>splice() y slice() en arrays</h2>
+        <p>El método splice() agrega nuevos elementos a un array.</p>
+        <p>El método slice()corta una parte de un array.</p>
+    </section>
+    <section>
+        <h2>splice()</h2>
+        <p>El método splice() se puede utilizar para agregar nuevos elementos a un array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.splice(2, 0, "Lemon", "Kiwi");
+        </pre>
+        <p>El primer parámetro (2) define la posición donde se deben agregar nuevos elementos.</p>
+        <p>El segundo parámetro (0) define cuántos elementos se deben eliminar .</p>
+        <p>El resto de parámetros ("Limón", "Kiwi") definen los nuevos elementos a añadir .</p>
+        <p>El método splice() devuelve un array con los elementos eliminados:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.splice(2, 2, "Lemon", "Kiwi");
+        </pre>
+    </section>
+    <section>
+        <h2>Usando splice() para eliminar elementos</h2>
+        <p>Con una configuración de parámetros inteligente, puede utilizar splice() para eliminar elementos sin dejar "agujeros" en el array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.splice(0, 1);
+        </pre>
+        <p>El primer parámetro (0) define la posición donde se deben agregar nuevos elementos.</p>
+        <p>El segundo parámetro (1) define cuántos elementos se deben eliminar .</p>
+        <p>El resto de parámetros se omiten. No se agregarán nuevos elementos.</p>
+    </section>
+    <section>
+        <h2>toSpliced()</h2>
+        <p>ES2023 agregó el método toSpliced() como una forma segura de empalmar un array sin alterar el array original.</p>
+        <p>La diferencia entre el nuevo método toSpliced() y el antiguo método splice() es que el nuevo método crea
+            un nuevo array, manteniendo el array original sin cambios, mientras que el método anterior alteró el array
+            original.</p>
+        <pre>
+            const months = ["Jan", "Feb", "Mar", "Apr"];
+            const spliced = months.toSpliced(0, 1);
+        </pre>
+    </section>
+    <section>
+        <h2>slice()</h2>
+        <p>El método slice() divide una parte de un array en un nuevo array:</p>
+        <pre>
+            Corte una parte de un array a partir del elemento 1 de el array ("Naranja"):
+            const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+            const citrus = fruits.slice(1);
+        </pre>
+        <p><strong>Nota </strong> El método slice() crea una nueva array.</p>
+        <p>El método slice() no elimina ningún elemento de el array fuente.</p>
+        <pre>
+            Corte una parte de un array a partir del elemento 3 de el array ("Apple"):
+
+            const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+            const citrus = fruits.slice(3);
+        </pre>
+        <p>El método slice() puede tomar dos argumentos como slice(1, 3).</p>
+        <p>Luego, el método selecciona elementos desde el argumento inicial y hasta (pero sin incluir) el argumento final.</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+            const citrus = fruits.slice(1, 3);
+        </pre>
+        <p>Si se omite el argumento final, como en los primeros ejemplos, el método slice() corta el resto del array.</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+            const citrus = fruits.slice(2);
+        </pre>
+    </section>
+    <section>
+        <h2>toString()</h2>
+        <p>JavaScript convierte automáticamente un array en una cadena separada por comas cuando se espera un
+            valor primitivo.</p>
+        <p>Este es siempre el caso cuando intenta generar un array.</p>
+        <p>Estos dos ejemplos producirán el mismo resultado:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = fruits.toString();
+        </pre>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = fruits;
+        </pre>
+        <p><strong>Nota</strong>Todos los objetos JavaScript tienen un método toString().</p>
+    </section>
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice el método Array correcto para eliminar el último elemento del array fruits</p>
+        <pre>
+            const fruits = ["plátano", "naranja", "manzana"];
+            ;
+        </pre>
+    </section>
+</body>
+</html>

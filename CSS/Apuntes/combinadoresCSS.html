@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinadores en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Combinadores en CSS</h1>
+
+    <section>
+        <h2>Combinadores en CSS</h2>
+        <p>Un combinador es algo que explica la relación entre los selectores.</p>
+        <p>Un selector CSS puede contener más de un selector simple. Entre los selectores simples podemos incluir un combinador.</p>
+        <p>Hay cuatro combinadores diferentes en CSS:</p>
+        <ul>
+            <li>selector descendiente (espacio)</li>
+            <li>selector hijo (&gt;)</li>
+            <li>selector de hermanos adyacentes (+)</li>
+            <li>selector de hermanos general (~)</li>
+        </ul>  
+    </section>
+
+    <section>
+        <h2>Selector descendientes</h2>
+        <p>El selector descendiente coincide con todos los elementos que son descendientes de un elemento específico.</p>
+        <p>El siguiente ejemplo selecciona todos los elementos &lt;p&gt; dentro de los elementos &lt;div&gt;:</p>
+        <pre>
+            div p {
+                background-color: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Selector hijo (&gt;)</h2>
+        <p>El selector hijo selecciona todos los elementos que son hijos de un elemento específico.</p>
+        <p>El siguiente ejemplo selecciona todos los elementos &lt;p&gt; que son hijos de un elemento &lt;div&gt;:</p>
+        <pre>
+            div ~ p {
+                background-color: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Ejercicio:</h2>
+        <p>Cambie el color de todos los elementos &lt;p&gt;, que son descendientes de elementos &lt;div&gt;, a "red".</p>
+        <pre>
+            &lt;style&gt;
+                {
+                    color:red;
+                }
+            &lt;/style&gt;
+            &lt;body&gt;
+            &lt;div&gt;
+                &lt;p&gt;Este es un párrafo.&lt;/p&gt;
+                &lt;p&gt;Este es un párrafo.&lt;/p&gt;
+            &lt;/div&gt;
+            
+            &lt;p&gt;Este es un párrafo.&lt;/p&gt;
+            &lt;p&gt;Este es un párrafo.&lt;/p&gt;
+            &lt;/body&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Todos los selectores de combinación CSS</h2>
+        <table>
+            <tr> <th>Selector</th> <th>Ejemplo</th> <th>Descripción</th> </tr>
+            <tr> <td>elemento elemento</td> <td>div p</td> <td> Selecciona todos los elementos &lt;p&gt; dentro de elementos &lt;div&gt;</td></tr>
+            <tr> <td>elemento&gt;elemento</td> <td>div &gt; p</td> <td> Selecciona todos los elementos &lt;p&gt; elements donde el padre es un elemento &lt;div&gt;</td></tr>
+            <tr> <td>elemento+elemento</td> <td>div + p</td> <td> Selecciona el primer elemento &lt;p&gt; que está situado inmediatamente después de elementos &lt;div&gt;</td></tr>
+            <tr> <td>elemento1~elemento2</td> <td>p ~ ul</td> <td> Selecciona cada elemento &lt;ul&gt; que es precedido por un elemento &lt;p&gt;</td></tr>
+        </table>
+    </section>
+</body>
+</html>

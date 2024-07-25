@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas de archivos en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Rutas de archivos en HTML</h1>
+    <p class="tabular"><q>Una ruta de archivo describe la ubicación de un archivo en la estructura de carpetas de un sitio web.</q></p>
+    <section>
+        <h2>Ejemplos de ruta de archivo</h2>
+        <table>
+            <tr> <th>Camino</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;img src="imagen.jpg"&gt;</td> <td>El archivo "picture.jpg" se encuentra en la misma carpeta que la página actual.</td></tr>
+            <tr> <td>&lt;img src="imagenes/imagen.jpg"&gt;</td> <td>El archivo "imagen.jpg" se encuentra en la carpeta de imágenes de la carpeta actual</td></tr>
+            <tr> <td>&lt;img src="/images/imagen.jpg"&gt;</td> <td>El archivo "picture.jpg" se encuentra en la carpeta de imágenes en la raíz de la página web actual.</td></tr>
+            <tr> <td>&lt;img src="../imagen.jpg"&gt;</td> <td>El archivo "imagen.jpg" se encuentra en la carpeta un nivel superior de la carpeta actual</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Rutas de archivos en HTML</h2>
+        <p>Una ruta de archivo describe la ubicación de un archivo en la estructura de carpetas de un sitio web.</p>
+        <p>Las rutas de archivos se utilizan al vincular archivos externos, como:</p>
+        <ul>
+            <li>páginas web</li>
+            <li>Imágenes</li>
+            <li>Hojas de estilo</li>
+            <li>JavaScripts</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Rutas absolutas de archivos</h2>
+        <p>Una ruta de archivo absoluta es la URL completa de un archivo:</p>
+        <pre>
+            &lt;img src="https://www.w3schools.com/images/picture.jpg" alt="Mountain"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Rutas de archivo relativas</h2>
+        <p>Una ruta de archivo relativa apunta a un archivo relativo a la página actual.</p>
+        <p>En el siguiente ejemplo, la ruta del archivo apunta a un archivo en la carpeta de imágenes ubicada en la raíz de la web actual:</p>
+        <pre>
+            &lt;img src="/images/picture.jpg" alt="Mountain"&gt;
+        </pre>
+        <p>En el siguiente ejemplo, la ruta del archivo apunta a un archivo en la carpeta de imágenes ubicada en la carpeta actual:</p>
+        <pre>
+            &lt;img src="images/picture.jpg" alt="Mountain"&gt;
+        </pre>
+        <p>En el siguiente ejemplo, la ruta del archivo apunta a un archivo en la carpeta de imágenes ubicada en la carpeta un nivel superior de la carpeta actual:</p>
+        <pre>
+            &lt;img src="../images/picture.jpg" alt="Mountain"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Mejores prácticas</h2>
+        <p>Es una buena práctica utilizar rutas de archivo relativas (si es posible).</p>
+        <p>Al utilizar rutas de archivos relativas, sus páginas web no estarán vinculadas a su URL base actual. Todos
+            los enlaces funcionarán en su propia computadora (localhost), así como en su dominio público actual y
+            sus dominios públicos futuros.</p>
+    </section>
+</body>
+</html>

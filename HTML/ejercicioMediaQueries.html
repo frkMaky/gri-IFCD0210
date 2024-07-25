@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+#izquierda { background-color: pink;     color: black;}
+#centro { background-color: crimson;}
+#derecha { background-color: blue;}
+div {
+    width: 30%;
+    float: left;
+    height: 200px;
+    text-align: center;
+    padding-top: 30px;
+    color: white;
+    margin-right: 20px;
+}
+@media screen and (max-width: 800px) {
+    div {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+</style>
+</head>
+<body>
+<div id="izquierda">Izquierda</div>
+<div id="centro">Centro</div>
+<div id="derecha">Derecha</div>
+
+</body>
+</html>

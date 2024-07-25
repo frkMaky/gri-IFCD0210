@@ -1,0 +1,205 @@
+1.1. Ejercicio resuelto: Catálogo de libros
+Dado el siguiente documento XML que representa un catálogo de libros:
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+	<book>
+		<title>XML in Practice</title>
+		<author>Joe Marini</author>
+		<year>2002</year>
+		<price>39.95</price>
+	</book>
+	<book>
+		<title>Learning XPath</title>
+		<author>John Smith</author>
+		<year>2010</year>
+		<price>29.99</price>
+	</book>
+	<book>
+		<title>Advanced XML Techniques</title>
+		<author>Lisa Johnson</author>
+		<year>2015</year>
+		<price>49.99</price>
+	</book>
+</catalog>
+
+Escribe consultas XPath para resolver las siguientes preguntas:
+1. Obtén el título de todos los libros.
+//book/title
+
+2. Encuentra el autor de los libros publicados después de 2005.
+//book[year>2005]/author/text()
+
+3. Obtén los títulos de los libros escritos por autores cuyo nombre comienza con la letra «J».
+//book[starts-with(author, 'J')]/title/text()
+
+4. Encuentra el año de publicación del libro cuyo título contiene la palabra «XPath».
+//book[contains(title,'XPath')]/year/text()
+
+
+
+1.2. Ejercicio resuelto: Lista de estudiantes
+Dado el siguiente documento XML que representa una lista de estudiantes y sus calificaciones:
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+		<name>John Smith</name>
+		<grades>
+			<grade subject="Math">85</grade>
+			<grade subject="Science">92</grade>
+			<grade subject="History">78</grade>
+		</grades>
+		</student>
+		<student>
+		<name>Alice Johnson</name>
+		<grades>
+			<grade subject="Math">90</grade>
+			<grade subject="Science">87</grade>
+			<grade subject="History">92</grade>
+		</grades>
+	</student>
+	<student>
+		<name>Emma Davis</name>
+		<grades>
+			<grade subject="Math">95</grade>
+			<grade subject="Science">88</grade>
+			<grade subject="History">91</grade>
+		</grades>
+	</student>
+</students>
+Escribe consultas XPath para resolver las siguientes preguntas:
+1. Obtén el nombre de todos los estudiantes.
+//name/text()
+
+2. Encuentra el promedio de calificaciones de todos los estudiantes en Matemáticas (Math).
+sum(//grade[@subject='Math'])div count(//grade[@subject='Math'])
+avg(//grade[@subject='Math'])
+
+3. Obtén el nombre de los estudiantes que tienen una calificación de Historia (History) mayor a 80.
+//student[grades/grade[@subject='History'] > 80] / name 
+
+
+1.3. Ejercicio resuelto: Lista de empleados
+Dado el siguiente documento XML que representa una lista de empleados de una empresa:
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+	<employee>
+		<name>John Smith</name>
+		<age>35</age>
+		<department>IT</department>
+		<salary>50000</salary>
+	</employee>
+	<employee>
+		<name>Alice Johnson</name>
+		<age>28</age>
+		<department>HR</department>
+		<salary>45000</salary>
+	</employee>
+	<employee>
+		<name>Michael Davis</name>
+		<age>42</age>
+		<department>Finance</department>
+		<salary>60000</salary>
+	</employee>
+	<employee>
+		<name>Sarah Brown</name>
+		<age>31</age>
+		<department>IT</department>
+		<salary>55000</salary>
+	</employee>
+</employees>
+
+Escribe consultas XPath para resolver las siguientes preguntas:
+1. Obtén el nombre de todos los empleados del departamento de IT.
+//employee[department = 'IT']/name/text()
+
+2. Encuentra la edad promedio de los empleados en el departamento de HR.
+avg (//employee[department = 'HR']/age)
+
+3. Encuentra el salario más alto entre todos los empleados.
+max( //salary/number() )
+
+4. Obtén el nombre del empleado más joven.
+//employee[min( age/number() )]
+
+5. Encuentra el nombre de los empleados que tienen un salario mayor a 50000 y pertenecen al
+departamento de IT.
+//employee[salary > 50000][department = 'IT']
+
+1.4. Ejercicio resuelto: Lista de aulas
+Dado el siguiente documento XML que representa una lista de aulas de una escuela:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<school>
+	<classroom id="101" floor="1">
+		<name>Math Classroom</name>
+		<furniture>
+			<chairs>30</chairs>
+			<desks>15</desks>
+			<tables>5</tables>
+		</furniture>
+		<equipment>
+			<windows>4</windows>
+			<whiteboards>2</whiteboards>
+			<computers>20</computers>
+			<lockers>10</lockers>
+		</equipment>
+	</classroom>
+	<classroom id="201" floor="2">
+		<name>Science Laboratory</name>
+		<furniture>
+			<chairs>24</chairs>
+			<desks>12</desks>
+			<tables>8</tables>
+		</furniture>
+		<equipment>
+			<windows>6</windows>
+			<whiteboards>1</whiteboards>
+			<microscopes>10</microscopes>
+			<safetyShowers>1</safetyShowers>
+		</equipment>
+	</classroom>
+	<classroom id="301" floor="3">
+		<name>Language Arts Classroom</name>
+		<furniture>
+			<chairs>25</chairs>
+			<desks>20</desks>
+			<tables>6</tables>
+		</furniture>
+		<equipment>
+			<windows>3</windows>
+			<whiteboards>2</whiteboards>
+			<computers>15</computers>
+			<bookshelves>5</bookshelves>
+		</equipment>
+	</classroom>
+	<classroom id="401" floor="4">
+		<name>History Classroom</name>
+		<furniture>
+			<chairs>28</chairs>
+			<desks>18</desks>
+			<tables>7</tables>
+		</furniture>
+		<equipment>
+			<windows>5</windows>
+			<whiteboards>3</whiteboards>
+			<computers>12</computers>
+			<lockers>8</lockers>
+		</equipment>
+	</classroom>
+</school>
+
+Escribe consultas XPath para resolver las siguientes preguntas:
+1. Obtén el nombre de todas las aulas en el segundo piso.
+//classroom[@floor = 2]
+
+2. Encuentra el número total de sillas en todas las aulas.
+sum(//chairs)
+
+3. Encuentra el número de ventanas en el aula de Language Arts.
+//classroom[name='Language Arts Classroom']//windows
+
+4. Encuentra el número promedio de ordenadores total.
+avg(//computers)
+
+5. Obtén el nombre de las aulas que tienen más de 26 sillas.
+//classroom/furniture[chairs>26]/name

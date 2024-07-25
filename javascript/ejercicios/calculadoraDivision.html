@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div id="ejercicio1">
+        <p class="enunciado">Calculador de divisiones, si el divisor es 0 mostrar "Es una división por 0". Entradas por prompt y resultado con 2 decimales</p>
+        <script>
+            function calculadoraDivisiones() {
+                let dividendo = Number(prompt("Introduce el dividendo "));
+                let divisor = Number(prompt("Introduce el divisor "));
+
+                if (divisor==0) {
+                    document.write("Es una division por 0: " +  "Resultado de la division " + dividendo + " / " + divisor + " = " +  dividendo/divisor);
+                } else {
+                    document.write("Resultado de la division " + dividendo + " / " + divisor + " = " +  (dividendo/divisor).toFixed(2));
+                }
+            }
+            calculadoraDivisiones();
+
+        </script>
+    </div>
+</body>
+</html>

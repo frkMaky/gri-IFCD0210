@@ -1,0 +1,72 @@
+body {
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+    height: 150%;
+}
+#contenido{
+    background-image: url("../images/fondoFabio.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+header img {
+    width: 200px;
+    margin:50px 50px;
+}
+
+#cajaNombreCentral{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#nombreCentral{
+    color: white;
+    text-transform: uppercase;
+    font-size: 60px;
+    margin-top: 200px;
+
+}
+#cajaNombreCentral, #contacto, #socialMedia, #autorFoto  {
+    display:flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 20px;
+}
+#contacto a, #contacto a:visited{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-top: 100px;
+}
+#socialMedia i {
+    color: white;
+    margin: 30px 10px;
+    font-size: 15px;
+}
+#socialMedia a {
+    text-decoration: none;
+}
+#autorFoto {
+    color: white;
+    font-size: 15px;
+    margin: 50px 20px;
+    padding-bottom: 30px;
+}
+#autorFoto a {
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+footer {
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    width: 100%;
+}

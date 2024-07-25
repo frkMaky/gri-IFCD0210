@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos flexibles en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Elementos flexibles en CSS</h1>
+    <section>
+        <h2>Elementos hijo (items)</h2>
+        <p>Los elementos hijo directos de un contenedor flexible se convierten automáticamente en elementos flexibles (flex).</p>
+        <pre>
+            &lt;div class="flex-container"&gt;
+                &lt;div&gt;1 &lt;/div&gt;
+                &lt;div&gt;2 &lt;/div&gt;
+                &lt;div&gt;3 &lt;/div&gt;
+                &lt;div&gt;4 &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+        <p>El elemento de arriba representa cuatro elementos flexibles azules dentro de un contenedor flexible gris.</p>
+        <p>Las propiedades del elemento flexible son:</p>
+        <ul>
+            <li>order</li>
+            <li>flex-grow</li>
+            <li>flex-shrink</li>
+            <li>flex-basis</li>
+            <li>flex</li>
+            <li>align-self</li>
+        </ul>
+    </section>
+    <section>
+        <h2>La propiedad order</h2>
+        <p>La propiedad order especifica el orden de los elementos flexibles.</p>
+        <p>El primer elemento flexible del código no tiene por qué aparecer como el primer elemento del diseño.</p>
+        <p>El valor del orden debe ser un número, el valor predeterminado es 0.</p>
+        <pre>
+            La propiedad order puede cambiar el orden de los elementos flexibles:
+
+            &lt;div class="flex-container"&gt;
+                &lt;div style="order:3"&gt;1 &lt;/div&gt;
+                &lt;div style="order:2"&gt;2 &lt;/div&gt;
+                &lt;div style="order:4"&gt;3 &lt;/div&gt;
+                &lt;div style="order:1"&gt;4 &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad flex-grow</h2>
+        <p>La propiedad flex-grow especifica cuánto crecerá un elemento flexible en relación con el resto de elementos flexibles.</p>
+        <p>El valor debe ser un número, el valor predeterminado es 0.</p>
+        <pre>
+            Haga que el tercer elemento flexible crezca ocho veces más rápido que los otros elementos flexibles:
+            
+            &lt;div class="flex-container"&gt;
+                &lt;div style="flex-grow:1"&gt;1 &lt;/div&gt;
+                &lt;div style="flex-grow:1"&gt;2 &lt;/div&gt;
+                &lt;div style="flex-grow:8"&gt;3 &lt;/div&gt;
+            &lt;/div&gt;         
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad flex-shrink</h2>
+        <p>La propiedad flex-shrink especifica cuánto se reducirá un elemento flexible en relación con el resto de los elementos flexibles.</p>
+        <p>El valor debe ser un número, el valor predeterminado es 1.</p>
+        <pre>
+            No permita que el tercer elemento flexible se encoja tanto como los otros elementos flexibles:
+
+            &lt;div class="flex-container"&gt;
+                &lt;div&gt;1 &lt;/div&gt;
+                &lt;div&gt;2 &lt;/div&gt;
+                &lt;div style="flex-shrink: 0"&gt;3 &lt;/div&gt;
+                &lt;div&gt;4 &lt;/div&gt;
+                &lt;div&gt;5 &lt;/div&gt;
+                &lt;div&gt;6 &lt;/div&gt;
+                &lt;div&gt;7 &lt;/div&gt;
+                &lt;div&gt;8 &lt;/div&gt;
+                &lt;div&gt;9 &lt;/div&gt;
+                &lt;div&gt;19 &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad flex-basis</h2>
+        <p>La propiedad flex-basis especifica la longitud inicial de un elemento flexible.</p>
+        <pre>
+            Establezca la longitud inicial del tercer elemento flexible en 200 píxeles:
+
+            &lt;div class="flex-container"&gt;
+                &lt;div&gt;1 &lt;/div&gt;
+                &lt;div&gt;2 &lt;/div&gt;
+                &lt;div style="flex-basis: 200px"&gt;3 &lt;/div&gt;
+                &lt;div&gt;4 &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad flex</h2>
+        <p>La propiedad flex es una propiedad abreviada de las propiedades flex-grow, flex-shrink y flex-basis.</p>
+        <pre>
+            Haga que el tercer elemento flexible no se pueda ampliar (0), no se pueda reducir (0) y tenga una longitud inicial de 200 píxeles:
+
+            &lt;div class="flex-container"&gt;
+                &lt;div&gt;1 &lt;/div&gt;
+                &lt;div&gt;2 &lt;/div&gt;
+                &lt;div style="flex:0 0 200px"&gt;3 &lt;/div&gt;
+                &lt;div&gt;4 &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+    </section>
+    <section>
+        <h2>La propiedad align-self</h2>
+        <p>La propiedad align-self especifica la alineación del elemento seleccionado dentro del contenedor flexible.</p>
+        <p>La propiedad align-self anula la alineación predeterminada establecida por la propiedad align-items del contenedor.</p>
+        <p>En estos ejemplos utilizamos un contenedor de 200 píxeles de alto para demostrar mejor la propiedad align-self:</p>
+        <pre>
+            Alinee el tercer elemento flexible en el medio del contenedor:
+
+            &lt;div class="flex-container"&gt;
+                &lt;div&gt;1 &lt;/div&gt;
+                &lt;div&gt;2 &lt;/div&gt;
+                &lt;div style="align-self:center"&gt;3 &lt;/div&gt;
+                &lt;div&gt;4 &lt;/div&gt;
+            &lt;/div&gt;
+        </pre>
+        <pre>
+            Alinee el segundo elemento flexible en la parte superior del contenedor y el tercer elemento flexible en la parte inferior del contenedor:
+
+            &lt;div class="flex-container"&gt;
+                &lt;div&gt;1 &lt;/div&gt;
+                &lt;div style="align-self:self-start"&gt;2 &lt;/div&gt;
+                &lt;div style="align-self:self-end"&gt;3 &lt;/div&gt;
+                &lt;div&gt;4 &lt;/div&gt;
+            &lt;/div&gt;         
+        </pre>
+    </section>
+    <section>
+        <h2>Propiedades de los elementos CSS Flexbox</h2>
+        <p>La siguiente tabla enumera todas las propiedades de los elementos CSS Flexbox:</p>
+        <table>
+            <tr> <th>Propiedad</th> <th>Descripción</th> </tr>
+            <tr> <td>align-self</td> <td>Especifica la alineación de un elemento flexible (sobreescribe la propiedad align-items del contenedor flexible)</td></tr>
+            <tr> <td>flex</td> <td>Una propiedad abreviada para las propiedades flex-grow, flex-shrink y flex-basis</td> </tr>
+            <tr> <td>flex-basis</td> <td>Especifica la longitud inicial de un elemento flexible.</td> </tr>
+            <tr> <td>flex-grow</td> <td>Especifica cuánto crecerá un elemento flexible en relación con el resto de los elementos flexibles dentro del mismo contenedor.</td> </tr>
+            <tr> <td>flex-shrink</td> <td>Especifica cuánto se reducirá un elemento flexible en relación con el resto de los elementos flexibles dentro del mismo contenedor.</td> </tr>
+            <tr> <td>order</td> <td>Especifica el orden de los items flexible dentro del mismo contenedor</td> </tr>
+        </table>
+    </section>
+</body>
+</html>

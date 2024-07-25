@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Comentarios en HTML</h1>
+    <p class="tabular"><q>Los comentarios en HTML no se muestran en el navegador, pero pueden ayudar a documentar su código
+        fuente HTML.</q></p>
+    <section>
+        <h2>Etiqueta de comentario en HTML</h2>
+        <p>Puede agregar comentarios a su código HTML utilizando la siguiente sintaxis:</p>
+        <p class="verde">&lt;!-- Write your comments here --&gt;</p>
+        <p>Observe que hay un signo de exclamación (!) en la etiqueta inicial, pero no en la etiqueta final.</p>
+        <p><span class="negrita">Nota:</span>El navegador no muestra los comentarios, pero pueden ayudar a documentar el código fuente
+            HTML.</p>
+    </section>
+    
+    <section>
+        <h2>Añadir comentarios</h2>
+        <p>Con comentarios puedes colocar notificaciones y recordatorios en tu código HTML:</p>
+        <pre>
+            &lt;!-- This is a comment --&gt;
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;!-- Remember to add more information here --&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Ocultar contenido</h2>
+        <p>Los comentarios se pueden utilizar para ocultar contenido.</p>
+        <p>Esto puede resultar útil si oculta contenido temporalmente:</p>
+        <pre>
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;!-- &lt;p&gt;This is another paragraph &lt;/p&gt; --&gt;
+            &lt;p&gt;This is a paragraph too.&lt;/p&gt;
+        </pre>
+        <p>También puedes ocultar más de una línea. Todo lo que esté entre <span class="verde"> &lt;!-- y --&gt;</span> quedará oculto en la
+            pantalla.</p>
+        <p>Ocultar una sección de código HTML:</p>
+        <pre>
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;!--
+            &lt;p&gt;Look at this cool image:&lt;/p&gt;
+            &lt;img border="0" src="pic_trulli.jpg" alt="Trulli"&gt;
+            --&gt;
+            &lt;p&gt;This is a paragraph too.&lt;/p&gt;
+        </pre>
+        <p>Los comentarios también son excelentes para depurar HTML, porque puedes comentar líneas de código
+            HTML, una a la vez, para buscar errores.</p>
+    </section>
+
+    <section>
+        <h2>Ocultar contenido en línea</h2>
+        <p>Los comentarios se pueden utilizar para ocultar partes en medio del código HTML.</p>
+        <p>Ocultar una parte de un párrafo:</p>
+        <pre>
+            &lt;p&gt;This &lt;!-- great text --&gt;is a paragraph.&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Utilice la etiqueta de comentario HTML para crear un comentario a partir del texto "Esto es un
+            comentario".</p>
+        <pre>
+            &lt;h1&gt;Esto es un encabezado&lt;/h1&gt;
+            esto es un comentario
+            &lt;p&gt;Esto es un párrafo.&lt;/p&gt;
+        </pre>
+    </section>
+
+</body>
+</html>

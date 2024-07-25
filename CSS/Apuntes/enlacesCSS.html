@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Enlaces en CSS</h1>
+    <p class="tabular"><q>Con CSS, los enlaces se pueden diseñar de muchas maneras diferentes.</q></p>
+    
+    <section>
+        <h2>estilo</h2>
+        <p>Los enlaces se pueden diseñar con cualquier propiedad CSS (p. ej color, font-family, background, etc.).</p>
+        <h3 class="ejercicio">Ejemplo</h3>
+        <pre>
+            a {
+                color: hotpink;
+            }
+        </pre>
+        <p>Además, los enlaces pueden tener diferentes estilos según el estado en el que se encuentren.</p>
+        <p>Los cuatro estados de los enlaces son:</p>
+        <ul>
+            <li><em>a:link- </em> un enlace normal y no visitado</li>
+            <li><em>a:visited- </em> un enlace que el usuario ha visitado</li>
+            <li><em>a:hover- </em> un enlace cuando el usuario pasa el mouse sobre él</li>
+            <li><em>a:active- </em> un enlace en el momento en que se hace clic en él</li>
+        </ul>
+        <h3 class="ejercicio">Ejemplo</h3>
+        <pre>
+            /* unvisited link */
+            a:link {
+                color: red;
+            }
+            /* visited link */
+            a:visited {
+                color: green;
+            }
+            /* mouse over link */
+            a:hover {
+                color: hotpink;
+            }
+            /* selected link */
+            a:active {
+                color: blue;
+            }
+        </pre>
+        <p>Al configurar el estilo para varios estados de enlace, existen algunas reglas de orden:</p>
+        <ul>
+            <li>a:hover DEBE venir después de a:link y a:visited</li>
+            <li>a:active DEBE venir después de a:hover</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Decoración de texto</h2>
+        <p>La propiedad text-decoration se utiliza principalmente para eliminar subrayados de enlaces:</p>
+        <h3 class="ejercicio">Ejemplo</h3>
+        <pre>
+            a:link {
+                text-decoration: none;
+            }
+            a:visited {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            a:active {
+                text-decoration: underline;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Color de fondo</h2>
+        <p>La propiedad background-color se puede utilizar para especificar un color de fondo para los enlaces:</p>
+        <h3 class="ejercicio">Ejemplo</h3>
+        <pre>
+            a:link {
+                background-color: yellow;
+            }
+            a:visited {
+                background-color: cyan;
+            }
+            a:hover {
+                background-color: lightgreen;
+            }
+            a:active {
+                background-color: hotpink;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Botones de enlace</h2>
+        <p>Este ejemplo muestra un ejemplo más avanzado en el que combinamos varias propiedades CSS para mostrar enlaces como cuadros/botones:</p>
+        <h3 class="ejercicio">Ejemplo</h3>
+        <pre>
+            a:link, a:visited {
+                background-color: #f44336;
+                color: white;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+            a:hover, a:active {
+                background-color: red;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Más ejemplos</h2>
+        <h3>Ejemplo</h3>
+        <p>Este ejemplo demuestra cómo agregar otros estilos a los hipervínculos:</p>
+        <pre>
+            a.one:link {color: #ff0000;}
+            a.one:visited {color: #0000ff;}
+            a.one:hover {color: #ffcc00;}
+            a.two:link {color: #ff0000;}
+            a.two:visited {color: #0000ff;}
+            a.two:hover {font-size: 150%;}
+            a.three:link {color: #ff0000;}
+            a.three:visited {color: #0000ff;}
+            a.three:hover {background: #66ff66;}
+            a.four:link {color: #ff0000;}
+            a.four:visited {color: #0000ff;}
+            a.four:hover {font-family: monospace;}
+            a.five:link {color: #ff0000; text-decoration: none;}
+            a.five:visited {color: #0000ff; text-decoration: none;}
+            a.five:hover {text-decoration: underline;}
+        </pre>
+        <h3>Ejemplo</h3>
+        <p>Otro ejemplo de cómo crear cuadros/botones de enlace:</p>
+        <pre>
+            a:link, a:visited {
+                background-color: white;
+                color: black;
+                border: 2px solid green;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+            a:hover, a:active {
+                background-color: green;
+                color: white;
+            }
+        </pre>
+        <h3>Ejemplo</h3>
+        <p>Este ejemplo demuestra los diferentes tipos de cursores (puede resultar útil para enlaces):</p>
+        <pre>
+            &lt;span style="cursor: auto"&gt;auto&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: crosshair"&gt;crosshair&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: default"&gt;default&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: e-resize"&gt;e-resize&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: help"&gt;help&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: move"&gt;move&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: n-resize"&gt;n-resize&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: ne-resize"&gt;ne-resize&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: nw-resize"&gt;nw-resize&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: pointer"&gt;pointer&lt;/span&gt;br&gt;
+            &lt;span style="cursor: progress"&gt;progress&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: s-resize"&gt;s-resize&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: se-resize"&gt;se-resize&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: sw-resize"&gt;sw-resize&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: text"&gt;text&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: w-resize"&gt;w-resize&lt;/span&gt;&lt;br&gt;
+            &lt;span style="cursor: wait"&gt;wait&lt;/span&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Establezca el color de los enlaces en "rojo".</p>
+        <pre>
+            &lt;style&gt;
+                {
+                    color:red;
+                }
+            &lt;/style&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Este es un encabezado&lt;/h1&gt;
+                &lt;p&gt;Este es un párrafo&lt;/p&gt;
+                &lt;a href="http://w3schools.com">Este es un enlace&lt;/a&gt;
+            &lt;/body&gt;
+        </pre>
+    </section>
+</body>
+</html>

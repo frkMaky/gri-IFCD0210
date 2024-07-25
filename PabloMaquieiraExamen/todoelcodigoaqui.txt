@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Examen - Pablo A. Maquieira Varela</title>
+    <!--
+        1. Realiza o seguinte exercicio:
+        Crea 10 contenedores. En total todos eles ocuparán o ancho da pantalla e todos terán o mesmo ancho e de alto
+        todos 500px.
+        contenedor1 => cor de fondo azul, contido 11111
+        contenedor2 => cor de fondo amarelo, contido 22222
+        contenedor3 => cor de fondo vermello (rojo), contido 33333
+        contenedor4 => cor de fondo verde, contido 44444
+        contenedor5 => cor de fondo violeta, contido 55555
+        contenedor6 => cor de fondo marrón, contido 66666
+        contenedor7 => cor de fondo gris, contido 77777
+        contenedor8 => cor de fondo beige, contido 88888
+        contenedor9 => cor de fondo rosa, contido 99999
+        contenedor10 =>cor de fondo negro, con letras brancas, contido un botón no cal ó facer click mostrarase dentro do
+        mesmo contenedor un array con cada un dos valores dos elementos. Además tamén se mostrará o resultado de
+        sumar os contidos de todos os contenedores.
+
+        Valoración do exercicio:
+        5p se consegues realizar os contenedores co mesmo ancho
+        +1p se os contenedores ocupan toda a pantalla
+        +1p se consegues meter un botón
+        +1p se consegues mostrar o array ó pulsar o botón
+        +1p se consegues realizar a suma ó pulsar o botón
+        +1p se o código é eficiente e empregas bucles ou o que consideres oportuno para melloralo.
+    -->
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%; /** 10px = 1rem */
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+main{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 0;
+    row-gap: 0;
+    align-content: center;
+}
+header {
+    display: block;
+    width: 100%;
+}
+div{
+    border:1px solid black;
+    flex: 1 0 10%;
+    height: 500px;
+    font-size: 4rem;
+    text-align: center;
+    align-content: center;
+}
+.contenedor10{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+}
+.contenedor10 button {
+    margin: 1rem;
+    padding: 3rem;
+    font-size: 4rem;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 1rem;
+}
+.contenedor10 button:hover {
+    background-color: darkgray;
+    color: cyan;
+}
+.contenedor10 button:active {
+    background-color: gray;
+    color: red;
+}
+p.resultado {
+    text-align: justify;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 2.4rem;
+    margin-top: 2rem;
+}
+
+footer{
+    text-align: right;
+    margin: 3rem 2rem;
+    font-size: 1.6rem;
+}
+    </style>
+</head>
+<body>
+    <main>
+        <div class="contenedor1"></div>
+        <div class="contenedor2"></div>
+        <div class="contenedor3"></div>
+        <div class="contenedor4"></div>
+        <div class="contenedor5"></div>
+        <div class="contenedor6"></div>
+        <div class="contenedor7"></div>
+        <div class="contenedor8"></div>
+        <div class="contenedor9"></div>
+        <div class="contenedor10">
+            <button id="botonSumar" onclick="sumar()">Sumar</button>
+            <p class="resultado"></p>
+        </div>
+    </main>
+
+    <footer>
+        <h1>Ejercicio práctico IFCD0210 - Examen</h1>
+        <h2>Pablo Abraham Maquieira Varela &copy;</h2>
+    </footer>
+    <script>
+        // Colores de fonde
+const colores =["blue","yellow","red","green","purple","brown","gray","beige","pink","black"]; 
+// Contenido contenedores
+const contenido = [11111,22222,33333, 44444,55555, 66666, 77777,88888,99999];
+
+
+// Rellenar contenedores con color de fondo y texto
+let contenedores = document.querySelectorAll('div');
+for (let i=0; i < contenedores.length - 1 ;i++) {
+    contenedores[i].style.backgroundColor = colores[i];
+    contenedores[i].innerHTML = contenido[i];
+}
+
+
+function sumar(){ // Suma el valor del contenido del array "contenido" y lo muestra en el p.resultado
+    let suma = 0;
+    
+    for (let i=0;i<contenido.length;i++) {
+        suma += Number(contenido[i]);
+    }
+    document.querySelector('.resultado').innerHTML = "";
+    document.querySelector('.resultado').innerHTML += `Contenido del array:<br> ${mostraVertical(contenido)} `;
+    document.querySelector('.resultado').innerHTML += `<br>Resultado de la suma: ${suma}`;
+}
+function mostraVertical(matriz){
+    // Muestra verticalmente los elementos de la matriz para hacer un innerHTML
+    let cadena ='';
+    for (let i=0;i<matriz.length;i+=2){
+        if (matriz[i+1] != undefined) {
+            cadena += `${matriz[i]}, ${matriz[i+1]} <br>`;
+        } else {
+            cadena += `${matriz[i]} <br>`;
+        }
+    }
+    return cadena;
+}
+    </script>
+</body>
+</html>

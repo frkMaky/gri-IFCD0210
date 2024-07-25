@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class DeclararMismaLinea {
+
+	public static void main(String[] args) {
+		
+		// Crea 3 variables: 5, 7, 2 y muestra el resultado de 5 elevado a 7 y luego menos dos
+		int a=5, b=7, c=2;
+		int resultado = (int) Math.pow(a, b) - c;
+		System.out.println("El resultado es " + resultado);
+		
+		// Declara el tipo de dato mas adecuado para cada uno de estos numeros
+		byte numero1 = 26;
+		int numero2 = 181818181;
+		double numero3 = 13.45567888938f;
+		
+		// Halla el area del triangulo de base 3 y altura 4 
+		// A = (b*h) / 2
+		double base = 3;
+		double altura = 4;
+		double areaTriangulo = (base*altura)/2;
+		System.out.println(areaTriangulo);
+		
+		// Muestra la mitada del siguiente numero 922337203685477587
+		System.out.println(922337203685477587L / 2);
+	
+		// Calcula la suma de 25 millones con 32000
+		// Las variables declaralas con notacion cientifica
+		double primerNumero = 25e6d;
+		double segundoNumero = 32e3d;
+		double resultadoSuma = primerNumero + segundoNumero;
+		System.out.println("El resultado es: " + resultadoSuma );
+	
+		// Crea una variable boolean que indique puerta abierta false y muestra el resultado
+		boolean isPuertaAbierta = false;
+		System.out.println("Está la puerta abierta: " + isPuertaAbierta );
+	
+		// Teniendo un lado de 5, y un diametro de 20; halla el area de un cuadrado del rectangulo
+		// sabiendo que los lados largos son el doble del pequeño y el area del circulo
+		double lado = 5;
+		double diametro = 20;
+		System.out.println("El area del cuadrado es: " + (lado * lado) );
+		System.out.println("El area del rectangulo es: " + (lado * (2*lado) ) );
+		System.out.println("El area del círculo es: " + (Math.PI * (Math.pow(diametro/2, 2)) ) );
+		
+		// Representar caracteres con numero ascii
+		char miVar1 = 65, miVar2 = 66, miVar3 = 67;
+		System.out.println(miVar1);
+		System.out.println(miVar2);
+		System.out.println(miVar3);
+	
+		// Clase SCANNER 
+		System.out.print("Introduce un número: ");
+		Scanner entrada = new Scanner(System.in); // Terminal
+		int num = entrada.nextInt();
+		System.out.println("Has introducido el numero: " + num);
+		
+		// pide dos números con decimales por consola y muestra la suma de ellos: "La suma de x más y es z"
+		System.out.print("Introduce el valor de x: ");
+		int x = entrada.nextInt();
+		System.out.print("Introduce el valor de y: ");
+		int y = entrada.nextInt();
+		int z = x + y;
+		System.out.println("La suma de " + x + " mas " + y + " es  "+  z);
+		
+		//entrada.close(); 
+		
+		// pide una cadena por consola * y muestra "La cadena es x "
+		System.out.println("Introduce una cadena");
+		Scanner entradaCadena = new Scanner(System.in);
+		String cadena = entradaCadena.nextLine();
+		System.out.println("La cadena es " + cadena);
+		//entradaCadena.close();
+	}
+
+}

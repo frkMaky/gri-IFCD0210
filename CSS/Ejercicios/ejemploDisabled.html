@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" lang="es">
+    <title>Ejemplo PseudoClase Disabled</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        input[type=text]:enabled {
+            background: #ffff00;
+        }
+
+        input[type=text]:disabled {
+            background: #dddddd;   
+        }
+        
+        table {
+            margin: 0 auto; /** centrar */ 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplo PseudoClase Disabled</h1>
+
+    <form action="">
+        <table>
+            <tr> 
+                <td>First name: </td>
+                <td> <input type="text" value="Mickey"> </td>
+            </tr>
+
+            <tr> 
+                <td>Last name: </td>
+                <td> <input type="text" value="Mouse"> </td>
+            </tr>
+
+            <tr> 
+                <td>Country:  </td>
+                <td> <input type="text" disabled value="Disneyland"> </td>
+            </tr>
+
+            <tr> 
+                <td>Password: </td>
+                <td> <input type="password" name="password" value="psw" disabled> </td>
+            </tr>
+        </table>
+        
+        
+         
+    </form>
+</body>
+</html>

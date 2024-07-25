@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo de fuente en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Estilo de fuente en CSS</h1>
+    
+    <section>
+        <h2>font-style</h2>
+        <p>La propiedad font-style se utiliza principalmente para especificar texto en cursiva.</p>
+        <p>Esta propiedad tiene tres valores:</p>
+        <ul>
+            <li>normal: el texto se muestra normalmente</li>
+            <li>cursiva: el texto se muestra en cursiva</li>
+            <li>oblicuo: el texto está "inclinado" (el oblicuo es muy similar a la cursiva, pero menos compatible)</li>
+        </ul>
+        <pre>
+            Ejemplo
+
+            p.normal {
+                font-style: normal;
+            }
+            p.italic {
+                font-style: italic;
+            }
+            p.oblique {
+                font-style: oblique;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>font-weight</h2>
+        <p>La propiedad font-weight especifica el peso de una fuente:</p>
+        <pre>
+            Ejemplo
+
+            p.normal {
+                font-weight: normal;
+            }
+            p.thick {
+                font-weight: bold;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>font-variant</h2>
+        <p>La propiedad font-variant especifica si un texto debe mostrarse como sigue: todas las letras
+            minúsculas se convierten a letras mayúsculas. Sin embargo, las letras mayúsculas convertidas aparecen en
+            un tamaño de fuente más pequeño que las letras mayúsculas originales en el texto.</p>
+        <pre>
+            Ejemplo
+
+            p.normal {
+                font-variant: normal;
+            }
+            p.small {
+                font-variant: small-caps;
+            }
+        </pre>
+    </section>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombras CSS en texto y contenedores o cajas</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Sombras CSS en texto y contenedores o cajas</h1>
+    <section>
+        <h2>Sombras en texto y contenedores o cajas con CSS</h2>
+        <p>Gracias a las propiedades de CSS3 <strong>text-shadow</strong> y <strong>box-shadow</strong> podemos aplicar sombras en los
+            textos y en los contenedores para así enriquecer nuestras interfaces.</p>
+    </section>
+
+    <section>
+        <h2>Propiedades text-shadow y box-shadow</h2>
+        <p>El formato es prácticamente el mismo para las dos propiedades.</p>
+        <ul>
+            <li><strong>text-shadow: </strong> posx posy desenfoque color | none;</li>
+            <li><strong>box-shadow: </strong> posx posy desenfoque tamaño color inset | none;</li>
+        </ul>
+        <p>Significado de las propiedades:</p>
+        <ul>
+            <li><strong>posx: </strong> sombra que se aplica en el eje horizontal.</li>
+            <li><strong>posy: </strong> sombra que se proyecta en el eje vertical.</li>
+            <li><strong>desenfoque o blur: </strong> cantidad de sombra borrosa.</li>
+            <li><strong>tamaño: </strong> tamaño de la sombra hacia los lados.</li>
+            <li><strong>color: </strong> color de la sombra.</li>
+            <li><strong>inset: </strong> posiciona la sombra dentro del marco.</li>
+        </ul>
+        <h3>Importante:</h3>
+        <ul>
+            <li>Para aplicar sombras arriba y a la izquierda se deben utilizar valores negativos.</li>
+            <li>Para aplicar doble sombra se pueden poner dos valores separados con coma.</li>
+            <li>Recuerda que para este tipo de propiedades debemos incluir los prefijos para navegadores.</li>
+        </ul>
+        <h3>Ejemplo</h3>
+        <p>Veamos por ejemplo qué significan los valores de la propiedad «text-shadow» del siguiente ejemplo:</p>
+        <pre>
+            text-shadow: 3px 4px 0px #fff;
+        </pre>
+        <ul>
+            <li>3px: es el tamaño de la sombra que se aplica a la derecha del texto.</li>
+            <li>4px: es la sombra que se proyecta hacia abajo.</li>
+            <li>0px: es la cantidad de sombra borrosa que se aplica.</li>
+            <li>#fff: es el color de la sombra. Se puede aplicar también en RGBA y HSLA.</li>
+        </ul>
+        <p>Para aplicar sombras arriba y a la izquierda se deben utilizar valores negativos.</p>
+        <p>Ejemplo</p>
+        <p>Veamos también un ejemplo de «box-shadow»:</p>
+        <pre>
+            box-shadow: 10px 12px 14px 2px rgba(0,0,0,0.47);
+        </pre>
+        <ul>
+            <li>10px. La sombra estará desplazada 10 píxeles hacia la derecha desde el borde del elemento.</li>
+            <li>12px. La sombra estará desplazada 12 píxeles hacia abajo desde el borde del elemento.</li>
+            <li>14px. La sombra tendrá un desenfoque de 14 píxeles, lo que hará que la sombra tenga un aspecto difuso y suave.</li>
+            <li>2px. La sombra se extenderá 2 píxeles desde el tamaño definido por el blur-radius.</li>
+            <li>Color: rgba(0,0,0,0.47). El color de la sombra será un gris oscuro con una opacidad de 0.47, lo que significa que la sombra será algo transparente.</li>
+        </ul>
+        <p>Ejemplo</p>
+        <p>Para aplicar varias sombras se puede añadir una lista de sombras separadas por comas. En el siguiente ejemplo se aplicarían dos sombras.</p>
+        <pre>
+            text-shadow: 3px 4px 0px #fff, 2px 2px 1px #ccc;
+        </pre>
+        <p>NOTA: para este tipo de propiedades debemos incluir los prefijos para los navegadores correspondientes:</p>
+        <table>
+            <tr> <th>Prefijo</th> <th>Navegador</th> </tr>
+            <tr> <td>-moz-</td> <td>Firefox</td> </tr>
+            <tr> <td>-webkit-</td> <td> Safari y Chrome</td> </tr>
+            <tr> <td>-o-</td> <td> Opera</td> </tr>
+            <tr> <td>-khtml-</td> <td> Konqueror</td> </tr>
+            <tr> <td>-ms-</td> <td> Internet Explorer y Microsoft Edge</td> </tr>
+        </table>
+        <p>Por ejemplo:</p>
+        <pre>
+            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+        </pre>
+        <p>Ejemplo</p>
+        <p>Prueba las siguientes propiedades sobre diferentes párrafos y observa las diferencias entre los distintos valores.</p>
+        <pre>
+            .shadow1 { text-shadow: 3px 3px 2px rgba(152, 150, 207, 0.7);}
+            .shadow2 {box-shadow: 10px 10px 14px 2px rgba(0,0,0,0.47);}
+            .shadow3 {box-shadow: 5px 1px 4px 2px #45f875 inset;}
+            .shadow4 {text-shadow: 3px 4px 0px grey, 2px 2px 1px yellow;}
+        </pre>
+    </section>
+
+    <section>
+        <h2>Generadores de sombra online</h2>
+        <p>Para facilitarnos la tarea de la creación de sombras podemos utilizar un generador de sombras tanto para los textos como para las cajas o contenedores.</p>
+        <p><strong>Generador de sombras en textos y cajas o contenedores:</strong> cssgenerator.org/box-shadow-css-generator.html</p>
+    </section>
+
+</body>
+</html>

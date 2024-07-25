@@ -1,0 +1,32 @@
+Ejercicio: ------------------ 
+
+Cifrado Cesar clave 3 mensaje "SAL"
+Alfabeto de la A a la Z sin Ñ
+Cifrado y descifrado
+
+A 0 	B 1 	C 2 	D 3 	E 4 	F 5 	G 6 	H 7 	I 8 	J 9 	K 10 	L 11 	M 12 	
+N 13	O 14	P 15 	Q 16 	R 17 	S 18 	T 19	U 20 	V 21	W 22	X 23	Y 24	Z 25
+
+------------------ CIFRADO 
+
+E (x) = ( x + k ) mod Alphabet
+
+Mensaje: SAL
+
+S = 18 + 3 mod 26 = 21 V
+A =  0 + 3 mod 26 =  3 D
+L = 11 + 3 mod 26 = 14 O
+
+Mensaje cifrado: VDO
+
+------------------ DESCIFRADO
+
+M (x) = ( x - k ) mod Alphabet
+
+Mensaje cifrado: VDO
+
+V = (21 - 3) mod 26 = 18 S
+D = ( 3 - 3) mod 26 =  0 A
+O = (14 - 3) mod 26 = 11 L
+
+Mensaje descifrado: SAL

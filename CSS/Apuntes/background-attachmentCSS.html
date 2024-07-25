@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-attachment en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>background-attachment en CSS</h1>
+    
+    <section>
+        <h2>Adjunto de fondo CSS</h2>
+        <p>La propiedad background-attachment especifica si la imagen de fondo debe desplazarse o ser fija
+            (no se desplazará con el resto de la página):</p>
+        <h3>Ejemplo</h3>
+        <p>Especifique que la imagen de fondo debe arreglarse:</p>
+        <pre>
+            body {
+                background-image: url("img_tree.png");
+                background-repeat: no-repeat;
+                background-position: right top;
+                background-attachment: fixed;
+            }
+        </pre>
+        <h3>Ejemplo</h3>
+        <p>Especifique que la imagen de fondo debe desplazarse con el resto de la página:</p>
+        <pre>
+            body {
+                background-image: url("img_tree.png");
+                background-repeat: no-repeat;
+                background-position: right top;
+                background-attachment: scroll;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>La propiedad background-attachment CSS</h2>
+        <table>
+            <tr> <th>Propiedad</th> <th>Descripcióm</th> </tr>
+            <tr> <td>background-attachment</td> <td>Establece si una imagen de fondo es fija o se mueve con el resto de la página al hacer scroll</td></tr>
+        </table>
+    </section>
+</body>
+</html>

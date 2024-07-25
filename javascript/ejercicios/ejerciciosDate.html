@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Date</title>
+    <link rel="stylesheet" href="../css/ejercicios.css">
+    <!-- Crea dos botones. En cada uno habrá una función.
+El primero muestra la fecha y hora actual.
+El segundo mostrará la fecha y hora en función de
+la información que le des mediante un prompt. Pedirás
+año, mes ("enero"...),día, hora, minuto, segundo, ms -->
+</head>
+<body>
+    <h1>Ejercicios Date</h1>
+
+    <div id="ejercicio1">
+        <p class="enunciado">Crea dos botones. En cada uno habrá una función.El primero muestra la fecha y hora actual.</p>
+        <p class="enunciado">El segundo mostrará la fecha y hora en función de la información que le des mediante un prompt.</p>
+        <p class="enunciado">Pedirás año, mes ("enero"...),día, hora, minuto, segundo, ms</p>
+        <button class="boton" onclick="dosFechas()">Ejecutar</button>
+        <div id="resultadoEjer1"></div>
+        <script>
+            // Globales 
+            let resultadoEjer1 = document.getElementById('resultadoEjer1');
+
+            function dosFechas(){
+                //Incluir botones
+                resultadoEjer1.innerHTML ="";
+                resultadoEjer1.innerHTML += "<div class='centrar' id='botonera'>";
+                document.getElementById('botonera').innerHTML += "<button class='boton' onclick='horaActual()'>Fecha y Hora Actual</button>";
+                document.getElementById('botonera').innerHTML += "<button class='boton' onclick='pedirHora()'>Pedir Fecha y Hora</button>";
+                resultadoEjer1.innerHTML += "</div>";
+            };
+
+            // Funciones 
+            function horaActual() { // Muestra la hora actual en el resultadoEjer1
+
+                let fechaActual = new Date() ;
+                resultadoEjer1.innerHTML += "<p class='resaltar'> Fecha actual: " + fechaActual + "</p>";
+
+            }
+            function pedirHora() { // Con un prompt pide los parametros de la hora a mostrar
+
+                const datos = ["año","mes","día","hora","minuto","segundo","milisegundo"];
+                const fechaIndicadaArray = [];
+
+                for (let i=0;i<datos.length;i++) {
+                    fechaIndicadaArray[i] = Number(prompt("Introduce el " + datos[i] + " a mostrar"));
+ 
+                }
+
+                let fechaIndicada = new Date(fechaIndicadaArray[0],fechaIndicadaArray[1],fechaIndicadaArray[2],fechaIndicadaArray[3],fechaIndicadaArray[4],fechaIndicadaArray[5],fechaIndicadaArray[6]);
+                resultadoEjer1.innerHTML += "<p class='resaltar'> Fecha indicada: " + fechaIndicada + "</p>";
+            }
+
+        </script>  
+    </div>
+
+    <div id="ejercicio2">
+        <p class="enunciado">Crea una aplicacion que pida por prompt ciertos datos</p>
+        <p class="enunciado">Minimo 2 datos pero puede meter hasta 6 datos (año, mes , dia, hora, minuto, segundo, milisegundo)</p>
+        <p class="enunciado">Introducir datos hasta que metas -1</p>
+        <p class="enunciado">Si no metes dos datos muestra un cuadro de alerta que indique "no es posible obtener la fecha"</p>
+        <button class="boton" onclick="appFechaFlexible()">Ejecutar</button>
+        <div id="resultadoEjer2"></div>
+        <script>
+            //Globales 
+            let resultadoEjer2 = document.getElementById('resultadoEjer2');
+
+            function appFechaFlexible() { // Pide datos de 2 a 7 para construir una fecha 
+
+                const titulos = ["año","mes","día","hora","minuto","segundo","milisegundo"];
+                const datos = [];
+                let siguiente = 0;
+                // let cadenaFecha = [];
+                let contador = 0;
+
+                while (siguiente != -1 || datos.length<2) {
+                    siguiente = Number(prompt(`Introduce el siguiente dato: ${titulos[contador++]} (-1 para terminar)`)); 
+
+                    if (siguiente==-1 && datos.length<2) { // Si no hay dos elementos minimo salta la vuelta y los vuelve a pedir
+                        contador--;
+                        continue;
+                    }
+
+                    datos.push(siguiente);
+
+                    if (datos.length == 7) { // Si se ha llegado a la longitud, se fuerza -1 para salir
+                        siguiente = -1;
+                        datos.push(siguiente);
+                    }
+                }
+                const cadenaFecha = datos.slice(0,datos.length-1); // Se quita el -1 final para construir la fecha
+                
+                resultadoEjer2.innerHTML += `<p>Fecha obtenida: ${ devolverFecha(cadenaFecha) }`;
+
+            }
+            function devolverFecha (arrayFecha) { // Devuelve los datos pasados en el array como una fecha 
+
+                let fecha;
+
+                switch (arrayFecha.length){
+                    case 2:
+                        fecha = new Date(arrayFecha[0],arrayFecha[1]);
+                        break;
+                    case 3:
+                        fecha = new Date(arrayFecha[0],arrayFecha[1],arrayFecha[2]);
+                        break;
+                    case 4:
+                        fecha = new Date(arrayFecha[0],arrayFecha[1],arrayFecha[2],arrayFecha[3]);
+                        break;
+                    case 5:
+                        fecha = new Date(arrayFecha[0],arrayFecha[1],arrayFecha[2],arrayFecha[3],arrayFecha[4]);
+                        break;
+                    case 6:
+                        fecha = new Date(arrayFecha[0],arrayFecha[1],arrayFecha[2],arrayFecha[3],arrayFecha[4],arrayFecha[5]);
+                        break;
+                    case 7:
+                        fecha = new Date(arrayFecha[0],arrayFecha[1],arrayFecha[2],arrayFecha[3],arrayFecha[4],arrayFecha[5],arrayFecha[6]);
+                        break;
+                    default:
+                        fecha = new Date();
+                }
+
+                return fecha;
+
+            }
+        </script>  
+    </div>
+    <div id="ejercicio2">
+        <p class="enunciado">Crea 4 botones que muestren la fecha actual </p>
+        <p class="enunciado">Pon fecha normal en el primero</p>
+        <p class="enunciado">Pon fecha normal en el primero.</p>
+        <p class="enunciado">Pon fecha más legible en el segundo</p>
+        <p class="enunciado">Pon fecha en estándar UTC</p>
+        <p class="enunciado">Pon fecha en estándar ISO</p>
+        <p class="enunciado">sin utilizar la palabra reservada function</p>
+        <p class="enunciado">Si no metes dos datos muestra un cuadro de alerta que indique "no es posible obtener la fecha"</p>
+        <div id="resultadoEjer3"></div>
+        <script>
+            //Globales 
+            let resultadoEjer3 = document.getElementById('resultadoEjer3');
+
+            const fecha = new Date(2024,4,5,12,12);
+
+            resultadoEjer3.innerHTML += "<div class='centrar' id='botonera3'> ";
+            document.getElementById('botonera3').innerHTML += `<button class='boton' onclick='resultadoEjer3.innerHTML += fecha.toString() + "<br>";'>Fecha Normal</button>`;
+            document.getElementById('botonera3').innerHTML += `<button class='boton' onclick='resultadoEjer3.innerHTML += fecha.toDateString()+ "<br>";'>Fecha Más Legible</button>`;
+            document.getElementById('botonera3').innerHTML += `<button class='boton' onclick='resultadoEjer3.innerHTML += fecha.toUTCString()+ "<br>";'>Fechas Estandar UTC</button>`;
+            document.getElementById('botonera3').innerHTML += `<button class='boton' onclick='resultadoEjer3.innerHTML += fecha.toISOString()+ "<br>";'>Fecha Estandar ISO</button>`;
+            resultadoEjer3.innerHTML += "</div> ";
+            
+
+        </script>  
+    </div>
+</body>
+</html>

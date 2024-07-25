@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript let</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>JavaScript let</h1>
+    <p>La palabra clave let se introdujo en ES6 (2015)</p>
+    <p>Las variables declaradas con let tienen alcance de bloque</p>
+    <p>Las variables declaradas con let deben declararse antes de su uso.</p>
+    <p>Las variables declaradas con let no se pueden volver a declarar en el mismo ámbito</p>
+    <section>
+        <h2>Alcance del bloque</h2>
+        <p>Antes de ES6 (2015), JavaScript no tenía Block Scope .</p>
+        <p>JavaScript tenía alcance global y alcance de función .</p>
+        <p>ES6 introdujo las dos nuevas palabras clave de JavaScript: let y const.</p>
+        <p>Estas dos palabras clave proporcionaron Block Scope en JavaScript:</p>
+        <pre>
+            No se puede acceder a las variables declaradas dentro de un bloque { } desde fuera del bloque:
+            {
+            let x = 2;
+            }
+            // x can NOT be used here
+        </pre>
+    </section>
+    <section>
+        <h2>Alcance global (global scope)</h2>
+        <p>Las variables declaradas con var siempre tienen Global Scope .</p>
+        <p>Las variables declaradas con la palabra clave var NO pueden tener alcance de bloque:</p>
+        <pre>
+            Variables declaradas con var dentro de un bloque { } pueden accederse desde fuera del bloque:
+            {
+            var x = 2;
+            }
+            // x CAN be used here
+        </pre>
+    </section>
+    <section>
+        <h2>No se puede volver a declarar</h2>
+        <p>Las variables definidas con let no se pueden volver a declarar.</p>
+        <p>No puedes redeclarar accidentalmente una variable declarada con let.</p>
+        <p>Con let no puedes hacer esto:</p>
+        <pre>
+            let x = "John Doe";
+            let x = 0;
+        </pre>
+        <p>Las variables definidas con var se pueden redeclarar.</p>
+        <p>Con var puedes hacer esto:</p>
+        <pre>
+            var x = "John Doe";
+            var x = 0;
+        </pre>
+    </section>
+    <section>
+        <h2>Redeclaración de variables</h2>
+        <p>Redeclarar una variable usando la palabra clave var puede plantear problemas.</p>
+        <p>Redeclarar una variable dentro de un bloque también redeclarará la variable fuera del bloque:</p>
+        <pre>
+            var x = 10;
+            // Here x is 10
+            {
+            var x = 2;
+            // Here x is 2
+            }
+            // Here x is 2
+        </pre>
+        <p>Redeclarar una variable usando la palabra clave let puede resolver este problema.</p>
+        <p>Redeclarar una variable dentro de un bloque no redeclarará la variable fuera del bloque:</p>
+        <pre>
+            let x = 10;
+            // Here x is 10
+            {
+            let x = 2;
+            // Here x is 2
+            }
+            // Here x is 10
+        </pre>
+    </section>
+    <section>
+        <h2>Diferencia entre var, let y const</h2>
+        <table>
+            <tr>   <td></td>    <td>Alcance</td>    <td>Redeclarar</td>     <td>Reasignar</td>  </tr>
+            <tr>   <td>var</td>    <td>NO</td>    <td>SI</td>     <td>SI</td>  </tr>
+            <tr>   <td>let</td>    <td>SI</td>    <td>NO</td>     <td>SI</td>  </tr>
+            <tr>   <td>const</td>    <td>SI</td>    <td>NO</td>     <td>NO</td>  </tr>
+        </table>
+        <h2>¿Lo que es bueno?</h2>
+        <p>Let y const tiene alcance de bloque .</p>
+        <p>Let y const no se puede volver a declarar .</p>
+        <p>Let y const debe declararse antes de su uso.</p>
+        <h2>¿Qué no es bueno?</h2>
+        <p>varno es necesario declararlo.</p>
+    </section>
+    <section>
+        <h2>Soporte del navegador</h2>
+        <p>Las palabras clave lety constno son compatibles con Internet Explorer 11 o versiones anteriores.</p>
+        <p>La siguiente tabla define las primeras versiones del navegador con soporte completo:</p>
+        <table>
+            <tr><td>Chrome 49 </td> <td>Edge 12 </td> <td>Firefox 36 </td> <td>Safari 11</td> <td> Opera 36</td> </tr>
+            <tr><td>Mar,2016 </td> <td>Jul, 2015 </td> <td>Jan, 2015 </td> <td>Sep, 2017 </td> <td>Mar, 2016</td> </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Redeclaración</h2>
+        <p>Se permite redeclarar una variable JavaScript con varen cualquier parte de un programa:</p>
+        <pre>
+            var x = 2;
+            // Now x is 2
+            var x = 3;
+            // Now x is 3
+        </pre>
+        <p>Con let, NO se permite redeclarar una variable en el mismo bloque:</p>
+        <h3>Ejemplo</h3>
+        <pre>
+            var x = 2; // Allowed
+            let x = 3; // Not allowed
+            {
+            let x = 2; // Allowed
+            let x = 3; // Not allowed
+            }
+            {
+            let x = 2; // Allowed
+            var x = 3; // Not allowed
+            }
+        </pre>
+        <p>Redeclarar una variable con let, en otro bloque, ESTÁ permitido:</p>
+        <pre>
+            let x = 2; // Allowed
+            {
+            let x = 3; // Allowed
+            }
+            {
+            let x = 4; // Allowed
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>Let puede ser usada antes de ser declarada</h2>
+        <p>Puede utilizar la variable antes de declararla:</p>
+        <pre>
+            Esto esta bien:
+            carName = "Volvo";
+            var carName;
+        </pre>
+        <p>El uso de una variable let antes de declararla dará como resultado ReferenceError:</p>
+        <pre>
+            carName = "Saab";
+            let carName = "Volvo";
+        </pre>
+    </section>
+</body>
+</html>

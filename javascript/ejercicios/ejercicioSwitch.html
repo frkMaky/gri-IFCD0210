@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Switch</title>
+    <!-- Crea un programa que pida un número por consola.
+    Si es 2  que muestre "ES DOS Y PAR", si es 5
+    "ES CINCO IMPAR". En el resto de casos "NO SE SABE".
+    Usar switch case-->
+    <link rel="stylesheet" href="../css/ejercicios.css">
+</head>
+
+<body>
+    <h1>Ejercicio SWITCH</h1>
+
+    <div class="ejercicio1">
+        <p class="enunciado">Crea un programa que pida un número por consola. Si es 2  que muestre "ES DOS Y PAR", si es 5
+            "ES CINCO IMPAR". En el resto de casos "NO SE SABE". Usar switch case </p>
+        <button onclick="switcheando()">Introducir numero</button>
+        <div id="resultado"></div>
+    
+        <script>
+            function switcheando() {
+                let numero = Number( prompt("Introduce un numero") );
+                let resultado = document.getElementById("resultado");
+    
+                switch(numero) {
+                    case 2:
+                        resultado.innerHTML = "ES DOS Y PAR";
+                        break;
+                    case 5:
+                        resultado.innerHTML = "ES CINCO IMPAR";
+                        break;
+                    default:
+                        resultado.innerHTML = "NO SE SABE";
+                }
+            }
+        </script>
+    </div>
+
+    <div class="ejercicio2">
+        <p class="enunciado">realiza el ejercicio anterior con un if en lugar de un switch </p>
+        <button onclick="switcheandoConIf()">Introducir numero</button>
+        <div id="resultado2"></div>
+    
+        <script>
+            function switcheandoConIf() {
+                let numero = Number( prompt("Introduce un numero") );
+                let resultado = document.getElementById("resultado2");
+    
+                if (numero == 2) {
+                    resultado.innerHTML = "ES DOS Y PAR";
+                } else if (numero == 5) {
+                    resultado.innerHTML = "ES CINCO IMPAR";
+                }else {
+                    resultado.innerHTML = "NO SE SABE";
+                }
+            }
+        </script>
+    </div>
+    <div class="ejercicio3">
+        <p class="enunciado">Convierte el switch en un if </p>
+        <pre>
+                  if (numerosOrden[j] == numeros [0]) {
+                    document.getElementById("contenedor"+j).innerHTML = numeros[0];
+                    document.getElementById("contenedor"+j).style.backgroundColor = colores[0];
+                    
+                  } else if (numerosOrden[j] == numeros [1]) {
+                    document.getElementById("contenedor"+j).innerHTML = numeros[1];
+                    document.getElementById("contenedor"+j).style.backgroundColor = colores[1];
+                    
+                  }else if (numerosOrden[j] == numeros [2]) {
+                    document.getElementById("contenedor"+j).innerHTML = numeros[2];
+                    document.getElementById("contenedor"+j).style.backgroundColor = colores[2];
+                    
+                  }else if (numerosOrden[j] == numeros [3]) {
+                    document.getElementById("contenedor"+j).innerHTML = numeros[3];
+                    document.getElementById("contenedor"+j).style.backgroundColor = colores[3];
+                    
+                  }else if (numerosOrden[j] == numeros [4]) {
+                    document.getElementById("contenedor"+j).innerHTML = numeros[4];
+                    document.getElementById("contenedor"+j).style.backgroundColor = colores[4];
+                    
+                  }
+          
+        </pre>
+    </div>
+    <div class="ejercicio4">
+        <p class="enunciado">Mejorar para simplificar el codigo </p>
+        <pre>
+            for (let j = 0;j&lt;5;j++) {
+                for (let k=0;k&lt;5;k++) {
+                    if (numerosOrden[j] == numeros [k]) {
+                        document.getElementById("contenedor"+j).innerHTML = numeros[k];
+                        document.getElementById("contenedor"+j).style.backgroundColor = colores[k];
+                    }
+                }        
+            } 
+        </pre>
+    </div>
+    <div class="ejercicio5">
+        <p class="enunciado">Jugamos a un juego con los numeros 4 80 20 21 23 35 </p>
+        <p class="enunciado">Se considera acierto si consigues los numeros seguidos 20 y 4 </p>
+        <div id="resultadoAleatorio" class="resaltar"></div>
+        <script>
+
+            // Jugar a numeros random
+            function jugar() {
+                const aleatorios = [4,80,20,21,23,35];
+
+                let resultado = aleatorios.sort(function(){ return 0.5 - Math.random()});
+
+                let resultadoAleatorio = document.getElementById("resultadoAleatorio");
+                resultadoAleatorio.innerHTML = resultado.toString();
+
+                if (comprobarPremio(resultado)) {
+                    resultadoAleatorio.innerHTML += "<br> Has GANADO!!";
+                } else {
+                    resultadoAleatorio.innerHTML += "<br> has perdido";
+                }
+            }
+
+            // Comprueba si 20 y 4 van seguidos
+            function comprobarPremio(resultado) {
+                let gandador = false;
+
+                for (let i=0;i<resultado.length-1;i++) {
+                    if (resultado[i]==20 && resultado[i+1]==4) {
+                        gandador = true;
+                    }
+                }
+                return gandador;
+            }
+
+        </script>
+        <button onclick="jugar()">Jugar</button>
+    </div>
+    <div class="ejercicio6">
+        <p class="enunciado">Tenemos el siguiente array [40, 100, 1, 5, 25, 10] aleatorio</p>
+        <p class="enunciado">y queremos conseguir que la suma de los primeros numeros sea >= 75 para ganar </p>
+        <p class="enunciado">Luego halla el maximo y minimo y muestralo por consola</p>
+        <div id="resultadoEjer6" class="resaltar"></div>
+        <script>
+            function juegosRandom(){
+                const original = [40, 100, 1, 5, 25, 10];
+
+                // Aleatorio
+                const aleatorio = original.sort(function(){ return 0.5 - Math.random()});
+
+                // Comprobar 2 primeros >= 75
+                let ganador  = comprobarGanador(aleatorio);
+                
+                // Maximo y minimo
+                let maximo = Math.max.apply(null, aleatorio);
+                let minimo = Math.min.apply(null, aleatorio);
+
+                // Salidas por pantalla 
+                let resultado = document.getElementById('resultadoEjer6');
+                resultado.innerHTML =  `Array original ${original.toString()} <br>`;
+                resultado.innerHTML += `Array aleatorio ${aleatorio.toString()} <br>`;
+                resultado.innerHTML += `¿Ganaste? ${ganador?"Has ganado":"Has perdido"} <br>`;
+                resultado.innerHTML += `Elemento maximo  ${maximo} <br>`;
+                resultado.innerHTML += `Elemento minimo  ${minimo} <br>`;
+            }
+
+            function comprobarGanador(matriz){ // Comprueba si los dos primeros elementos del array suman 75 o mas
+                if (matriz[0]+matriz[1] >= 75 ) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+        <button onclick="juegosRandom()">Jugar</button>
+    </div>
+    
+    <div class="ejercicio7">
+        <p class="enunciado">Tenemos el siguiente array [40, 100, 1, 5, 25, 10] aleatorio</p>
+        <p class="enunciado">y queremos conseguir que la suma de los primeros numeros sea >= 65 para ganar </p>
+        <p class="enunciado">Luego muestralo por consola</p>
+        <div id="resultadoEjer7" class="resaltar"></div>
+        <script>
+            function juegosRandom2(){
+                const original = [40, 100, 1, 5, 25, 10];
+                let ganador = false;
+                let aleatorio =[];
+
+                while (!ganador) {
+                    aleatorio = original.toSorted(function(){ return 0.5 - Math.random()});
+                    // Comprobar 2 primeros >= 50
+                    ganador  = comprobarGanador65(aleatorio);
+                }
+                
+                // Salidas por pantalla 
+                let resultado = document.getElementById('resultadoEjer7');
+                resultado.innerHTML =  `Array original ${original.toString()} <br>`;
+                resultado.innerHTML += `Array aleatorio ${aleatorio.toString()} <br>`;
+              }
+
+            function comprobarGanador65(matriz){ // Comprueba si los dos primeros elementos del array suman 65 o mas
+                if (matriz[0]+matriz[1] >= 65 ) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+        <button onclick="juegosRandom2()">Jugar</button>
+    </div>
+</body>
+</html>

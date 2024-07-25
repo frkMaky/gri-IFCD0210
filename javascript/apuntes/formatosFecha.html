@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatos de tipo fecha de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Formatos de tipo fecha de JavaScript</h1>
+    <section>
+        <h2>Entrada de tipo Date</h2>
+        <p>Generalmente existen 3 tipos de formatos de entrada de fecha de JavaScript:</p>
+        <table>
+            <tr> <th>Tipo</th> <th>Ejemplo</th> </tr>
+            <tr> <td>Fecha ISO</td> <td>"2015-03-25" (La Norma Internacional)</td> </tr>
+            <tr> <td>Fecha short</td> <td>"03/25/2015 "</td> </tr>
+            <tr> <td>Fecha long</td> <td>"Mar 25 2015" o "25 Mar 2015"</td> </tr>
+        </table>
+        <p>El formato ISO sigue un estándar estricto en JavaScript.</p>
+        <p>Los otros formatos no están tan bien definidos y pueden ser específicos del navegador.</p>
+    </section>
+    <section>
+        <h2>Salida de tipo Date</h2>
+        <p>Independientemente del formato de entrada, JavaScript generará (de forma predeterminada) las fechas en formato de cadena de texto completo:</p>
+        <pre>
+            Sun Mar 17 2024 18:00:29 GMT+0100 (hora estándar de Europa central)
+        </pre>
+    </section>
+    <section>
+        <h2>Fechas ISO de JavaScript</h2>
+        <p>ISO 8601 es el estándar internacional para la representación de fechas y horas.</p>
+        <p>La sintaxis ISO 8601 (AAAA-MM-DD) también es el formato de fecha de JavaScript preferido:</p>
+        <h3>Ejemplo (fecha completa)</h3>
+        <pre>
+            const d = new Date("2015-03-25");
+        </pre>
+        <p>La fecha calculada será relativa a su zona horaria.</p>
+        <p>Dependiendo de su zona horaria, el resultado anterior variará entre el 24 y el 25 de marzo.</p>
+    </section>
+    <section>
+        <h3>Fechas ISO (año y mes)</h3>
+        <p>Las fechas ISO se pueden escribir sin especificar el día (YYYY-MM):</p>
+        <pre>
+            const d = new Date("2015-03");
+        </pre>
+        <p>Las zonas horarias variarán el resultado anterior entre el 28 de febrero y el 01 de marzo.</p>
+    </section>
+    <section>
+        <h2>Fechas ISO (solo año)</h2>
+        <p>Las fechas ISO se pueden escribir sin mes ni día (YYYY):</p>
+        <pre>
+            const d = new Date("2015");
+        </pre>
+        <p>Las zonas horarias variarán el resultado anterior entre el 31 de diciembre de 2014 y el 1 de enero de 2015.</p>
+    </section>
+    <section>
+        <h2>Fechas ISO (Fecha-Hora)</h2>
+        <p>Las fechas ISO se pueden escribir añadiendo horas, minutos y segundos (YYYY-MM-DDTHH:MM:SSZ):</p>
+        <pre>
+            const d = new Date("2015-03-25T12:00:00Z");
+        </pre>
+        <p>La fecha y la hora están separadas por T mayúscula.</p>
+        <p>La hora UTC se define con una letra mayúscula Z.</p>
+        <p>Si desea modificar la hora relativa a UTC, elimine la Z y agregue +HH:MM o -HH:MM en su lugar:</p>
+        <pre>
+            const d = new Date("2015-03-25T12:00:00-06:30");
+        </pre>
+        <p>UTC (hora universal coordinada) es lo mismo que GMT (hora media de Greenwich).</p>
+        <p>Omitir T o Z en una cadena de fecha y hora puede dar resultados diferentes en diferentes navegadores.</p>
+    </section>
+    <section>
+        <h2>Zonas horarias</h2>
+        <p>Al establecer una fecha, sin especificar la zona horaria, JavaScript utilizará la zona horaria del navegador.</p>
+        <p>Al obtener una fecha, sin especificar la zona horaria, el resultado se convierte a la zona horaria del navegador.</p>
+        <p>En otras palabras: si se crea una fecha/hora en GMT (hora media de Greenwich), la fecha/hora se
+            convertirá a CDT (hora de verano del centro de EEUU.) si un usuario navega desde el centro de EE. UU.</p>
+    </section>
+    <section>
+        <h2>Fechas cortas de JavaScript.</h2>
+        <p>Las fechas cortas se escriben con una sintaxis "MM/DD/YYYY" como esta:</p>
+        <pre>
+            const d = new Date("03/25/2015");
+        </pre>
+        <h3>¡ADVERTENCIAS!</h3>
+        <p>En algunos navegadores, los meses o días sin ceros a la izquierda pueden producir un error:</p>
+        <pre>
+            const d = new Date("2015-3-25");
+        </pre>
+        <p>El comportamiento de "YYYY/MM/DD" no está definido.
+            Algunos navegadores intentarán adivinar el formato. Algunos devolverán NaN.</p>
+        <pre>
+            const d = new Date("2015/03/25");
+        </pre>
+        <p>El comportamiento de "DD-MM-YYYY" tampoco está definido.
+            Algunos navegadores intentarán adivinar el formato. Algunos devolverán NaN.</p>
+        <pre>
+            const d = new Date("25-03-2015");
+        </pre>
+    </section>
+    <section>
+        <h2>Fechas largas de JavaScript.</h2>
+        <p>Las fechas largas suelen escribirse con una sintaxis "MMM DD YYYY" como esta:</p>
+        <pre>
+            const d = new Date("Mar 25 2015");
+        </pre>
+        <p>El mes y el día pueden estar en cualquier orden:</p>
+        <pre>
+            const d = new Date("25 Mar 2015");
+        </pre>
+        <p>Y el mes se puede escribir completo (January ) o abreviado (Jan):</p>
+        <pre>
+            const d = new Date("January 25 2015");
+        </pre>
+        <pre>
+            const d = new Date("Jan 25 2015");
+        </pre>
+        <p>Se ignoran las comas. Los nombres no distinguen entre mayúsculas y minúsculas:</p>
+        <pre>
+            const d = new Date("JANUARY, 25, 2015");
+        </pre>
+    </section>
+    <section>
+        <h2>Parsear datos</h2>
+        <p>Si tiene una cadena de fecha válida, puede usar el método Date.parse() para convertirla a milisegundos.</p>
+        <p>Date.parse()devuelve el número de milisegundos entre la fecha y el 1 de enero de 1970:</p>
+        <pre>
+            let msec = Date.parse("March 21, 2012");
+        </pre>
+        <p>Luego puedes usar la cantidad de milisegundos para convertirlo en un objeto de tipo Darw:</p>
+        <pre>
+            let msec = Date.parse("March 21, 2012");
+            const d = new Date(msec);
+        </pre>
+    </section>
+</body>
+</html>

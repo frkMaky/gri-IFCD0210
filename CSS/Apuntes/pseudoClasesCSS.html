@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclases en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Pseudoclases en CSS</h1>
+    <section>
+        <h2>¿Qué son las pseudoclases?</h2>
+        <p>Se utiliza una pseudoclase para definir un estado especial de un elemento.</p>
+        <p>Por ejemplo, se puede utilizar para:</p>
+        <ul>
+            <li>Aplicar estilo a un elemento cuando un usuario pasa el mouse sobre él</li>
+            <li>Diseñe los enlaces visitados y no visitados de manera diferente</li>
+            <li>Aplicar estilo a un elemento cuando recibe el foco</li>
+        </ul>
+        <p>NOTA: Es posible que en versiones antiguas de tu navegador no funcionen.</p>
+    </section>
+
+    <section>
+        <h2>Sintaxis</h2>
+        <p>La sintaxis de pseudoclases:</p>
+        <pre>
+            selector:pseudo-clase {
+                propiedad: valor;
+            }
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Pseudoclases para enlaces</h2>
+        <p>Los enlaces se pueden mostrar de diferentes maneras:</p>
+        <pre>
+            /* unvisited link */
+            a:link {
+                color: #FF0000;
+            }
+
+            /* visited link */
+            a:visited {
+                color: #00FF00;
+            }
+
+            /* mouse over link */
+            a:hover {
+                color: #FF00FF;
+            }
+
+            /* selected link */
+            a:active {
+                color: #0000FF;
+            }
+        </pre>
+        <p>Nota: ¡a:hover DEBE aparecer después a:link y a:visited en la definición de CSS para que
+            sea efectivo! a:active ¡DEBE aparecer después de a:hover en la definición de CSS para que sea
+            efectivo! Los nombres de pseudoclases no distinguen entre mayúsculas y minúsculas.</p>
+    </section>
+</body>
+</html>

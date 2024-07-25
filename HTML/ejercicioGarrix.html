@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Martín Garrix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(images/garrix_wall.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            font-family: "Roboto", sans-serif;
+        }
+        table.cartel {
+            background-color: #3f404a;
+            width: 60%;
+            height: 90%;
+            border: none;
+            border-collapse: collapse;
+        }
+        table td {
+            border-spacing: 50px;
+        }
+
+        tr:hover {background-color: #6d8a74;}
+
+        td { padding-left: 20px;}
+        .fecha {
+            font-size: 12px;
+            font-weight: bold;
+            color: darkgrey ;
+        }
+        .evento {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: white;
+            font-size: 28px;
+        }
+        .localidad{
+            font-size: 16px;
+            font-weight: normal;
+            color: darkgrey ;
+        }
+        .lugar {
+            font-size: 14px;
+            font-weight: normal;
+            color: darkgrey ; 
+            padding-bottom: 5px;
+        }
+        hr {
+            color: darkgrey ;
+        }
+        .boton {
+            width: 90%;
+            height: 30px;
+            background-color: #ada99e;
+            color: black;
+            font-weight:normal;
+            font-size: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .boton:hover {
+            cursor: pointer;
+            border-radius: 5px;
+            border: 1px solid lime;
+            color:black;
+            background-color: white;
+            font-weight: bold;
+        }
+        p {
+            font-size: 40px;
+            font-weight: bold;
+            float: left;
+            letter-spacing: 20px;
+        }
+        .barra:hover {
+            background-color: #3f404a;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="cartel">
+        <tr>
+            <td>
+                <table>
+                    <tr> <td class="fecha">2024-03-01</td> </tr>
+                    <tr> <td class="evento">MARTIN GARRIX</td> </tr>
+                    <tr> <td class="localidad">Lima, Perú</td> </tr>
+                    <tr> <td class="lugar">Multiespacio Costa 21</td> </tr>
+                </table>
+            </td>
+            <td> <button class="boton">GET TICKETS</button> </td>
+
+        </tr>
+        <tr class="barra"><td colspan="2"><hr></td></tr>
+      
+        <tr>
+            <td>
+                <table>
+                    <tr> <td class="fecha">2024-03-02</td> </tr>
+                    <tr> <td class="evento">MARTIN GARRIX</td> </tr>
+                    <tr> <td class="localidad">Santiago, Chile</td> </tr>
+                    <tr> <td class="lugar">Movistar Arena</td> </tr>
+                </table>
+            </td>
+            <td> <button class="boton">GET TICKETS</button> </td>
+           
+        </tr>
+        <tr class="barra"><td colspan="2"><hr></td></tr>
+        
+        <tr>
+            <td>
+                <table>
+                    <tr> <td class="fecha">2024-03-09</td> </tr>
+                    <tr> <td class="evento">SAUDI ARABIAN GRAND PRIX</td> </tr>
+                    <tr> <td class="localidad">Jeddah, Saudi Arabia</td> </tr>
+                    <tr> <td class="lugar">Jedda Corniche Circuit</td> </tr>
+                </table>
+            </td>
+            <td> <button class="boton">GET TICKETS</button> </td>
+                
+        </tr>
+        <tr class="barra"><td colspan="2"><hr></td></tr>
+
+        <tr>
+            <td>
+                <table>
+                    <tr> <td class="fecha">2024-03-22</td> </tr>
+                    <tr> <td class="evento">ULTRA MIAMI (DATE TO BE ANNOUNCED)</td> </tr>
+                    <tr> <td class="localidad">Miami, United States</td> </tr>
+                    <tr> <td class="lugar">Bayfron Park</td> </tr>
+                </table>
+            </td>
+            <td> <button class="boton">GET TICKETS</button> </td>
+           
+        </tr>
+
+    </table>
+   
+    
+</body>
+</html>

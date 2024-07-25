@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadenas de literales (Template String) de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Cadenas de literales (Template String) de JavaScript</h1>
+    <section>
+        <h2>Sintaxis de Back-Tics</h2>
+        <p>Las Template Strings utilizan comillas invertidas (``) en lugar de comillas ("") para definir una cadena:</p>
+        <pre>
+            let text = `Hello World!`;
+        </pre>
+    </section>
+    <section>
+        <h2>Comillas dentro de cadenas</h2>
+        <p>Las Template Strings permiten comillas simples y dobles dentro de una cadena:</p>
+        <pre>
+            let text = `He's often called "Johnny"`;
+        </pre>
+    </section>
+    <section>
+        <h2>Cadenas multilínea</h2>
+        <p>Las Template Strings permiten cadenas multilínea:</p>
+        <pre>
+            let text =
+                `The quick
+                brown fox
+                jumps over
+                the lazy dog`;
+        </pre>
+    </section>
+    <section>
+        <h2>Interpolación</h2>
+        <p>Template String proporciona una manera sencilla de interpolar variables y expresiones en cadenas.</p>
+        <p>El método se llama interpolación de cadenas.</p>
+        <p>La sintaxis es:</p>
+        <p><strong>${...}</strong></p>
+    </section>
+    <section>
+        <h2>Sustituciones de variables</h2>
+        <p>Las Template Strings permiten variables en cadenas:</p>
+        <pre>
+            let firstName = "John";
+            let lastName = "Doe";
+
+            let text = `Welcome ${firstName}, ${lastName}!`;
+        </pre>
+        <p>La sustitución automática de variables por valores reales se denomina interpolación de cadenas .</p>
+    </section>
+    <section>
+        <h2>Sustitución de expresiones</h2>
+        <p>Las Template Strings permiten expresiones en cadenas:</p>
+        <pre>
+            let price = 10;
+            let VAT = 0.25;
+
+            let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+        </pre>
+        <p>La sustitución automática de expresiones por valores reales se denomina interpolación de cadenas .</p>
+    </section>
+    <section>
+        <h2>Template Strings en HTML</h2>
+        <pre>
+            let header = "Template Strings";
+            let tags = ["template strings", "javascript", "es6"];
+
+            let html = `&lt;h2&gt;${header}&lt;/h2&gt;&lt;ul&gt;`;
+            for (const x of tags) {
+                html += `&lt;li&gt;${x}&lt;/li&gt;`;
+            }
+    
+            html += `&lt;/ul&gt;`;
+        </pre>
+    </section>
+    <section>
+        <h2>Soporte del navegador</h2>
+        <p>Template Strings es una característica de ES6 (JavaScript 2015).</p>
+        <p>ES6 es totalmente compatible con todos los navegadores modernos desde junio de 2017</p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteraciones en arrays</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Iteraciones en arrays</h1>
+    <section>
+        <h2>foreach()</h2>
+        <p>El método forEach() llama a una función una vez para cada elemento del array.</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let txt = "";
+            numbers.forEach(myFunction);
+    
+            function myFunction(value, index, array) {
+                txt += value + "&lt;br&gt;";
+            }
+        </pre>
+        <a href="../ejercicios/ejemploIteradoresArray.html" target="_blank">Ejemplo</a>
+        <p>Tenga en cuenta que la función toma 3 argumentos:</p>
+        <ul>
+            <li>El valor del item</li>
+            <li>El índice del item</li>
+            <li>El array en sí</li>
+        </ul>
+        <p>El ejemplo anterior utiliza sólo el parámetro de valor. El ejemplo se puede reescribir como:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let txt = "";
+            numbers.forEach(myFunction);
+            
+            function myFunction(value) {
+                txt += value + "&lt;br&gt;";
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>map()</h2>
+        <p>El método map() crea un nuevo array realizando una función en cada elemento del array.</p>
+        <p>El método map() no ejecuta la función para elementos de array sin valores.</p>
+        <p>El método map() no cambia el array original.</p>
+        <p>Este ejemplo multiplica cada valor de array por 2:</p>
+        <pre>
+            const numbers1 = [45, 4, 9, 16, 25];
+            const numbers2 = numbers1.map(myFunction);
+
+            function myFunction(value, index, array) {
+                return value * 2;
+            }
+        </pre>
+        <p>Tenga en cuenta que la función toma 3 argumentos:</p>
+        <ul>
+            <li>El valor del item</li>
+            <li>El índice de items</li>
+            <li>el array en sí</li>
+        </ul>
+        <p>Cuando una función de devolución de llamada usa solo el parámetro de valor, se pueden omitir los parámetros de índice y array:</p>
+        <pre>
+            const numbers1 = [45, 4, 9, 16, 25];
+            const numbers2 = numbers1.map(myFunction);
+
+            function myFunction(value) {
+                return value * 2;
+            }
+        </pre>
+        <a href="../ejercicios/ejemploIteradoresArrayII.html" target="_blank">Ejemplo</a>
+    </section>
+    <section>
+        <h2>flatMap()</h2>
+        <p>ES2019 agregó el método Array flatMap() a JavaScript.</p>
+        <p>El método flatMap() primero asigna todos los elementos de un array y luego crea un nuevo array.</p>
+        <pre>
+            const myArr = [1, 2, 3, 4, 5, 6];
+            const newArr = myArr.flatMap((x) => x * 2);
+        </pre>
+        <a href="../ejercicios/ejemploIteradoresArrayIII.html" target="_blank">Ejemplo</a>
+        <h3>Soporte del navegador</h3>
+        <table>
+            <tr> <td>Chrome 69</td> <td>Edge 79</td> <td>Firefox 62</td> <td>Safari 12</td> <td>Opera 56</td> </tr>
+            <tr> <td>Sep 2018</td> <td>Jan 2020 </td> <td>Sep 2018 </td> <td>Sep 2018 </td> <td>Sep 2018</td> </tr>
+        </table>
+    </section>
+    <section>
+        <h2>filter()</h2>
+        <p>El método filter() crea un nuevo array con elementos del array que pasan una prueba.</p>
+        <p>Este ejemplo crea un nuevo array a partir de elementos con un valor mayor que 18:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            const over18 = numbers.filter(myFunction);
+
+            function myFunction(value, index, array) {
+                return value > 18;
+            }
+        </pre>
+        <p>Tenga en cuenta que la función toma 3 argumentos:</p>
+        <ul>
+            <li>El valor del item</li>
+            <li>El índice del item</li>
+            <li>el array en sí</li>
+        </ul>
+        <p>En el ejemplo anterior, la función de devolución de llamada no utiliza los parámetros de índice y array, por lo que se pueden omitir:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            const over18 = numbers.filter(myFunction);
+
+            function myFunction(value) {
+                return value > 18;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>reduce()</h2>
+        <p>El método reduce() ejecuta una función en cada elemento del array para producir (reducirlo a) un valor único.</p>
+        <p>El método reduce() funciona de izquierda a derecha en el array.</p>
+        <p>El método reduce() no reduce el array original.</p>
+        <p>Este ejemplo encuentra la suma de todos los números en un array:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let sum = numbers.reduce(myFunction);
+
+            function myFunction(total, value, index, array) {
+                return total + value;
+            }
+        </pre>
+        <p>Tenga en cuenta que la función toma 4 argumentos:</p>
+        <ul>
+            <li>El total (el valor inicial/valor devuelto previamente)</li>
+            <li>El valor del item</li>
+            <li>El índice del item</li>
+            <li>el array en sí</li>
+        </ul>
+        <p>El ejemplo anterior no utiliza los parámetros de índice y array. Se puede reescribir como:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let sum = numbers.reduce(myFunction);
+
+            function myFunction(total, value) {
+                return total + value;
+            }
+        </pre>
+        <p>El método reduce() puede aceptar un valor inicial:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let sum = numbers.reduce(myFunction, 100);
+
+            function myFunction(total, value) {
+                return total + value;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>reduceRight()</h2>
+        <p>El método reduceRight() ejecuta una función en cada elemento del array para producir (reducirlo a) un valor único.</p>
+        <p>reduceRight() funciona de derecha a izquierda en el array.</p>
+        <p>El método reduceRight() no reduce el array original.</p>
+        <p>Este ejemplo encuentra la suma de todos los números en un array:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let sum = numbers.reduceRight(myFunction);
+
+            function myFunction(total, value, index, array) {
+                return total + value;
+            }
+        </pre>
+        <p>Tenga en cuenta que la función toma 4 argumentos:</p>
+        <ul>
+            <li>El total (el valor inicial/valor devuelto previamente)</li>
+            <li>El valor del item</li>
+            <li>El índice del item</li>
+            <li>el array en sí</li>
+        </ul>
+        <p>El ejemplo anterior no utiliza los parámetros de índice y array. Se puede reescribir como:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let sum = numbers.reduceRight(myFunction);
+
+            function myFunction(total, value) {
+                return total + value;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>every()</h2>
+        <p>El método every() comprueba si todos los valores del array pasan una prueba.</p>
+        <p>Este ejemplo comprueba si todos los valores del array son mayores que 18:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let allOver18 = numbers.every(myFunction);
+
+            function myFunction(value, index, array) {
+                return value > 18;
+            }
+        </pre>
+        <p>Tenga en cuenta que la función toma 3 argumentos:</p>
+        <ul>
+            <li>El valor del item</li>
+            <li>El índice del item</li>
+            <li>el array en sí</li>
+        </ul>
+        <p>Cuando una función de devolución de llamada usa solo el primer parámetro (valor), los demás parámetros se pueden omitir:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let allOver18 = numbers.every(myFunction);
+
+            function myFunction(value) {
+                return value > 18;
+            }
+        </pre>
+    </section>
+    <section>
+        <h2>some()</h2>
+        <p>El método some() comprueba si algunos valores del array pasan una prueba.</p>
+        <p>Este ejemplo comprueba si algunos valores del array son mayores que 18:</p>
+        <pre>
+            const numbers = [45, 4, 9, 16, 25];
+            let someOver18 = numbers.some(myFunction);
+
+            function myFunction(value, index, array) {
+                return value > 18;
+            }
+        </pre>
+        <p>Tenga en cuenta que la función toma 3 argumentos:</p>
+        <ul>
+            <li>El valor del item</li>
+            <li>El índice de item</li>
+            <li>el array en sí</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Array.from()</h2>
+        <p>El método Array.from() devuelve un objeto Array de cualquier objeto con una propiedad de longitud o cualquier objeto iterable.</p>
+        <h3>Ejemplo</h3>
+        <p>Cree una array a partir de una cadena:</p>
+        <pre>
+            Array.from("ABCDEFG");
+        </pre>
+        <h3>Soporte del navegador</h3>
+        <p>from()es una característica de ES6 (JavaScript 2015).</p>
+        <p>ES6 es totalmente compatible con todos los navegadores modernos desde junio de 2017:</p>
+        <table>
+            <tr> <td>Chrome 51</td> <td>Edge 15</td> <td>Firefox 54</td> <td>Safari 10</td> <td>Opera 38</td> </tr>
+            <tr> <td>May 2016</td> <td>Apr 2017</td> <td>Jun 2017</td> <td>Sep 2016</td> <td>Jun 2016</td> </tr>
+        </table>
+        <p>From() no es compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>keys()</h2>
+        <p>El método Array.keys()devuelve un objeto Array Iterator con las claves de un array.</p>
+        <h3>Ejemplo</h3>
+        <p>Cree un objeto Array Iterator, que contenga las claves del array:</p>
+        <pre>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            const keys = fruits.keys();
+            
+            for (let x of keys) {
+                text += x + "&lt;br&gt;";
+            }
+        </pre>
+        <a href="../ejercicios/ejemploIteradoresArrayIV.html" target="_blank">Ejemplo</a>
+        <h3>Soporte del navegador</h3>
+        <p>keys()es una característica de ES6 (JavaScript 2015).</p>
+        <p>ES6 es totalmente compatible con todos los navegadores modernos desde junio de 2017:</p>
+        <table>
+            <tr> <td>Chrome 51</td> <td>Edge 15</td> <td>Firefox 54</td> <td>Safari 10</td> <td>Opera 38</td> </tr>
+            <tr> <td>May 2016</td> <td>Apr 2017</td> <td>Jun 2017</td> <td>Sep 2016</td> <td>Jun 2016</td> </tr>
+        </table>
+        <p>keys()no es compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>entries()</h2>
+        <p>Cree un Array Iterator y luego repita los pares clave/valor:</p>
+        <pre>
+            const fruits = ["Plátano", "Naranja", "Manzana", "Mango"];
+            const f = fruits.entries();
+            
+            for (let x of f) {
+                document.getElementById("demo").innerHTML += x;
+            }
+        </pre>
+        <p>El método entries() devuelve un objeto Array Iterator con pares clave/valor:</p>
+        <pre>
+            [0, "Plátano"]
+            [1, "Naranja"]
+            [2, "Manzana"]
+            [3, "Mango"]
+        </pre>
+        <p>El método entries() no cambia el array original.</p>
+        <h3>Soporte del navegador</h3>
+        <p>entries() es una característica de ES6 (JavaScript 2015).</p>
+        <p>ES6 es totalmente compatible con todos los navegadores modernos desde junio de 2017:</p>
+        <table>
+            <tr> <td>Chrome 51</td> <td>Edge 15</td> <td>Firefox 54</td> <td>Safari 10</td> <td>Opera 38</td> </tr>
+            <tr> <td>May 2016</td> <td>Apr 2017</td> <td>Jun 2017</td> <td>Sep 2016</td> <td>Jun 2016</td> </tr>
+        </table>
+        <p>entries()no es compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>with()</h2>
+        <p>ES2023 agregó el método with() como una forma segura de actualizar elementos en un array sin alterar el array original.</p>
+        <pre>
+            const months = ["Januar", "Februar", "Mar", "April"];
+            const myMonths = months.with(2, "March");
+        </pre>
+    </section>
+    <section>
+        <h2>Extensión de array de JavaScript (...)</h2>
+        <p>El operador ... expande un iterable (como un array) en más elementos:</p>
+        <pre>
+            const q1 = ["Jan", "Feb", "Mar"];
+            const q2 = ["Apr", "May", "Jun"];
+            const q3 = ["Jul", "Aug", "Sep"];
+            const q4 = ["Oct", "Nov", "May"];
+            const year = [...q1, ...q2, ...q3, ...q4];
+        </pre>
+        <h3>Soporte del navegador</h3>
+        <p>...es una característica de ES6 (JavaScript 2015).</p>
+        <p>ES6 es totalmente compatible con todos los navegadores modernos desde junio de 2017:</p>
+        <table>
+            <tr> <td>Chrome 51</td> <td>Edge 15</td> <td>Firefox 54</td> <td>Safari 10</td> <td>Opera 38</td> </tr>
+            <tr> <td>May 2016</td> <td>Apr 2017</td> <td>Jun 2017</td> <td>Sep 2016</td> <td>Jun 2016</td> </tr>
+        </table>
+        <p>...no es compatible con Internet Explorer.</p>
+    </section>
+</body>
+</html>

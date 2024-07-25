@@ -1,0 +1,13 @@
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// Queremos mostrar el area del circulo sabiendo que su diametro es de 5
+		final double PI = Math.PI;
+		double diametro = 5;
+		double radio = diametro/2;
+
+	}
+
+
+}

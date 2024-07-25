@@ -1,0 +1,168 @@
+Ejercicio 2:
+Cifrado César carácter a carácter. K = 2, Mensaje = HOLA, ¿Cifrado? ¿Descifrado? Teniendo el
+siguiente alfabeto.
+A B C D E F G H I J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 23 23 24 25 26
+
+H 	c = ( m + k ) mod|a| = (  8 + 2 ) mod 26 = 10 => J
+O 	c = ( m + k ) mod|a| = ( 15 + 2 ) mod 26 = 17 => Q
+L 	c = ( m + k ) mod|a| = ( 12 + 2 ) mod 26 = 14 => N
+A 	c = ( m + k ) mod|a| = (  1 + 2 ) mod 26 =  3 => C
+
+Mensaje cifrado = JQNC
+
+J 	d = ( c - k ) mod|a| = (10 - 2) mod 26 =  8 => H 
+Q	d = ( c - k ) mod|a| = (17 - 2) mod 26 = 15 => O
+N	d = ( c - k ) mod|a| = (14 - 2) mod 26 = 12 => L
+C	d = ( c - k ) mod|a| = ( 3 - 2) mod 26 =  1 => A
+
+Mensaje descifrado: HOLA
+
+Ejercicio 3:
+Ejercicio 4:
+
+Página 107 del libro: Mensaje HOLA, cifrado RSA, se escoge aleatoriamente p = 47 y q = 59 y e
+= 17. Usa bloques de tamaño 2 caracteres. 
+Es
+pa
+ci
+o
+0 A1 B2 C3 D4 E5 F6 G7 H8 I9 J10 K11 L12 M13 N14 Ñ15 O16 P17 Q18 R19 S20 T21 U22 V23 W24 X25 Y26 Z27
+
+HO > 0816 
+LA > 1201
+
+
+p 47
+q 59
+e 17
+
+n = p*q  = 2773
+o(N) = (p-1)(q-1) = 2668
+e 17
+d = (e * d) mod o(n) = 1
+d = (17 * d) mod 2668 = 1 > 157
+
+Clave publica (n, e) > (2773, 17)
+Clave privada (n, d) > (2773, 157)
+
+CIFRADO HO > MeE mod N > (0816)e17 mod 2773 >  3,153063367×10⁴⁹ mod 2773 > 2293
+CIFRADO LA > MeE mod N > (1201)e17 mod 2773 >  2,250251842×10⁵² mod 2773 > 2526
+
+CIFRADO 2293 2526
+
+DESCIFRADO
+
+DESCIFRADO 2293 > CeD mod N > (2293)e157 mod 2773 > 08 (H) 16 (O)
+DESCIFRADO 2526 > CeD mod N > (3024)e157 mod 2773 > 12 (L) 01 (A)
+
+DESCIFRADO 0816 1201 > HO LA
+
+-------------------------------------------------------
+
+Ejercicio 5:
+Cifrado César: K = 5 mensaje = VOYALCINE. ¿Qué nos han contestado si el mensaje recibido es DTRTATD? , teniendo en cuenta que el alfabeto es:
+A B C D E F G H I J K L M N Ñ O P Q R S T U V W X Y Z
+1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
+
+
+V c=(m+k)mod|a| = ( 23 + 5) mod 27 =  1 => A  
+O c=(m+k)mod|a| = ( 16 + 5) mod 27 = 21 => T
+Y c=(m+k)mod|a| = ( 26 + 5) mod 27 =  4 => D
+A c=(m+k)mod|a| = (  1 + 5) mod 27 =  6 => F
+L c=(m+k)mod|a| = ( 12 + 5) mod 27 = 17 => P
+C c=(m+k)mod|a| = (  3 + 5) mod 27 =  8 => H
+I c=(m+k)mod|a| = (  9 + 5) mod 27 = 14 => N
+N c=(m+k)mod|a| = ( 14 + 5) mod 27 = 19 => R
+E c=(m+k)mod|a| = (  5 + 5) mod 27 = 10 => J
+
+D d=(c-k)mod|a| = (  4-5) mod 27 = 26 => Y 
+T d=(c-k)mod|a| = ( 21-5) mod 27 = 16 => O
+R d=(c-k)mod|a| = ( 19-5) mod 27 = 14 => N
+T d=(c-k)mod|a| = ( 21-5) mod 27 = 16 => O
+A d=(c-k)mod|a| = (  1-5) mod 27 = 23 => V
+T d=(c-k)mod|a| = ( 21-5) mod 27 = 16 => O
+D d=(c-k)mod|a| = (  4-5) mod 27 = 26 => Y
+?
+
+MENSAJE CIFRADO: ATDFPHNRJ
+RESPUESTA DESCIFRADA: YONOVOY?
+
+-------------------------------------------------------
+
+Ejercicio 6:
+RSA, mensaje NO, e = 131, d =4091, p = 71, q = 89. Codifiquemos en bloques de 2 caracteres.
+Obtener el mensaje cifrado y descifrado. Usa el alfabeto siguiente:
+
+Es
+pa
+ci
+o
+0 A1 B2 C3 ç4 D5 E6 F7 G8 H9 I10 J11 K12 L13 M14 N15 Ñ16 O17 P18 Q19 R20 S21 T22 U23 V24 W25 X26 Y27 Z28
+
+P = 71
+Q = 89
+E = 131
+Mensaje = NO
+
+N = p*q= 71 * 89 = 6319
+O(N) = 70 * 88 = 6160
+D => (e*d) mod =(N) => (131 * d) mod 6160 = 4091
+
+C = MeE mod N => 1517 e 131 mod 6319 = 3360
+
+D = CeD mod N => 3360 e 4091 mod 6319 = Desbordamiento => 1517mod6319 => 15(N) 17(O) 
+
+-------------------------------------------------------
+
+Ejercicio 8:
+RSA: p = 5, q = 11, e = 7. Cifra el mensaje 42 completo. Descifra para comprobar si se obtiene
+el mensaje original.
+
+P = 5
+Q = 11
+n = P * Q = 5 * 11 = 55
+O(N) = (P-1)(Q-1) = 4*10 = 40
+E = 7  
+D = (7*D)MODO(N) => (7 * d) MOD 40 = 1 ->
+D = 23
+
+C  MeE mod |n| -> 42e7 mod 55 -> 230539333248 mod 55 -> 48
+D  CeD mod |n| -> 48e23  mod 55 -> 4,66174442×10³⁸ mod 55 -> 42
+
+-------------------------------------------------------
+pag 108 > 25
+Realice un cifrado del texto "Hola que tal" mediante la especificacion RSA. 
+
+Es
+pa
+ci
+o
+0 A1 B2 C3 D4 E5 F6 G7 H8 I9 J10 K11 L12 M13 N14 O15 P16 Q17 R18 S19 T20 U21 V22 W23 X24 Y25 Z26
+
+P  47
+Q  59
+n = P * Q = 47 * 59 = > 2773
+o(n) = 46 * 58 = 2668
+E = 1<e<0(n) --> 17
+d 157
+
+Clave publica (n, e) -> (2773, 17)
+Clave privada (n, d) -> (2773, 157)
+
+HO LA _q ue _t al -> 0815 1201 0017 2105 0020 0112 
+
+Cifrando ... 
+
+C = MeE mod |a|
+
+0815e17 mod 27 -> 11
+1201e17 mod 27 -> 25
+0017e17 mod 27 -> 8
+2105e17 mod 27 -> 26
+0020e17 mod 27 -> 23
+0112e17 mod 27 -> 7
+
+CIFRADO 11 25 08 26 23 07 
+
+

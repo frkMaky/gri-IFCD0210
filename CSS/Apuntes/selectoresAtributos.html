@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores de atributos en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Selectores de atributos en CSS</h1>
+    <h3 class="tabular"><q>Diseñe elementos HTML con atributos específicos</q></h3>
+    <p class="tabular"><q>Es posible diseñar elementos HTML que tengan atributos o valores de atributos específicos.</q></p>
+
+    <section>
+        <h2>Selector CSS [atributo]</h2>
+        <p>El selector [atributo] se utiliza para seleccionar elementos con un atributo específico.</p>
+        <p>El siguiente ejemplo selecciona todos los elementos <a> con un atributo target:</p>
+        <pre>
+            a[target] {
+                background-color: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Selector CSS [atributo="valor"]</h2>
+        <p>El selector [atributo="valor"] se utiliza para seleccionar elementos con un atributo y valor específicos.</p>
+        <p>El siguiente ejemplo selecciona todos los elementos <a> con un atributo target="_blank":</p>
+        <pre>
+            a[target="_blank"] {
+                background-color: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Selector CSS [atributo~="valor"]</h2>
+        <p>El selector [atributo~="valor"]se utiliza para seleccionar elementos con un valor de atributo que <strong>contiene</strong> una palabra específica.</p>
+        <p>El siguiente ejemplo selecciona todos los elementos con un atributo de título que contiene una lista de palabras separadas por espacios, una de las cuales es "flor":</p>
+        <pre>
+            [title~="flor"] {
+                border: 5px solid yellow;
+            }
+        </pre>
+        <p>El ejemplo anterior coincidirá con elementos con título="flor", título="flor de verano" y título="flor nueva", <strong>pero no </strong>con título="mi-flor" o título="flores".</p>
+    </section>
+
+    <section>
+        <h2>Selector CSS [atributo|="valor"]</h2>
+        <p>El selector [atributo|="valor"]se utiliza para seleccionar elementos con el atributo especificado, cuyo valor puede ser exactamente el valor especificado, o el valor especificado seguido de un guión (-).</p>
+        <p><strong>Nota: </strong>El valor tiene que ser una palabra completa, ya sea sola, como class="top", o seguida de un guión ( - ), como class="top-text".</p>
+        <pre>
+            [class|="top"] {
+                background: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Selector CSS [atributo^="valor"]</h2>
+        <p>El selector [atributo^="valor"]se utiliza para seleccionar elementos con el atributo especificado, cuyo valor comienza con el valor especificado.</p>
+        <p>El siguiente ejemplo selecciona todos los elementos con un valor de atributo de clase que comienza con "top":</p>
+        <p><strong>Nota</strong> : ¡El valor no tiene que ser una palabra completa!</p>
+        <pre>
+            [class^="top"] {
+                background: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Selector CSS [atributo$="valor"]</h2>
+        <p>El selector [atributo$="valor"] se utiliza para seleccionar elementos cuyo valor de atributo termina con un valor específico.</p>
+        <p>El siguiente ejemplo selecciona todos los elementos con un valor de atributo de clase que termina en "test":</p>
+        <p><strong>Nota: </strong>¡El valor no tiene que ser una palabra completa!</p>
+        <pre>
+            [class$="test"] {
+                background: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Selector CSS [atributo*="valor"]</h2>
+        <p>El selector [atributo*="valor"] se utiliza para seleccionar elementos cuyo valor de atributo contiene un valor específico.</p>
+        <p>El siguiente ejemplo selecciona todos los elementos con un valor de atributo de clase que contiene "te":</p>
+        <p><strong>Nota: </strong> ¡El valor no tiene que ser una palabra completa!</p>
+        <pre>
+            [class*="te"] {
+                background: yellow;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Dando estilo a formularios</h2>
+        <p>Los selectores de atributos pueden ser útiles para diseñar formularios sin clase o ID:</p>
+        <pre>
+            input[type="text"] {
+                width: 150px;
+                display: block;
+                margin-bottom: 10px;
+                background-color: yellow;
+            }
+            input[type="button"] {
+                width: 120px;
+                margin-left: 35px;
+                display: block;
+            }
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Establezca el color de fondo en "red" para los elementos <a> que tienen un atributo target.</p>
+            <pre>
+                &lt;style&gt;
+                    {
+                    background-color: red;
+                    }    
+                &lt;/style&gt;
+                &lt;body&gt;
+                &lt;a href="https://w3schools.com"&gt;w3schools.com&lt;/a&gt;
+                &lt;a href="http://disney.com" target="_blank"&gt;Disney.com&lt;/a&gt;
+                &lt;a href="http://wikipedia.org" target="_top"&gt;wikipedia.org&lt;/a&gt;
+                &lt;/body&gt;
+            </pre>
+    </section>
+    
+</body>
+</html>

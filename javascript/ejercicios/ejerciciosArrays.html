@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Arrays</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #363636;
+        }
+        button {
+            all: unset;
+            border: 1px solid #ff894c;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px auto;
+        }
+        button:hover {
+            background-color: #ff894c;
+            color: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios Arrays</h1>
+
+    <div id="ejercicio1">
+        <p class="enunciado">Crea un array con los 5 primeros meses del año y muestra por pantalla Marzo</p>
+        <script>
+            const meses = ["Enero","Febreo","Marzo","Abril","Mayo"];
+
+            document.write(meses[2]);
+        
+        </script>
+    </div>
+    
+    <div id="ejercicio2">
+        <p class="enunciado">Usando un bucle for muestra los 10 primeros numeros por pantalla con saltos de linea</p>
+        <script>
+            for(let i=1;i<=10;i++) {
+                document.write(i + "<br>");
+            }
+        
+        </script>
+    </div>
+    <div id="ejercicio3">
+        <p class="enunciado">Usando un bucle for muestra los 20 primeros numeros pares por pantalla con saltos de linea</p>
+        <script>
+            for(let i=2;i <= 40;i+=2) {
+                document.write( i  + " - ");
+            }
+        
+        </script>
+    </div>
+    <div id="ejercicio4">
+        <p class="enunciado">Usando un bucle for muestra los numeros del 100 al 40</p>
+        <script>
+            for(let i=100;i >= 40;i--) {
+                document.write( i  + " - ");
+            }
+        </script>
+    </div>
+    <div id="ejercicio5">
+        <p class="enunciado">Usando un bucle for y un if  muestra de los 50 primeros numero los multiplos de 5 </p>
+        <script>
+            for(let i=0;i <= 50;i++) {
+                if (i%5 == 0) {
+                    document.write( i  + " - ");
+                }
+            }
+        </script>
+    </div>
+    <div id="ejercicio6">
+        <p class="enunciado">4 frutas, poner la 1 en la 2, la 2 en la 3, la 3 en la 4 y la 4 en la 1 </p>
+        <p class="enunciado">Mostar el array resultante con toString()</p>
+        <script>
+            const fruits = ["Banana","Orange","Apple","Mango"]
+            let ultimo = fruits[fruits.length -1];
+            for(let i=fruits.length-1;i >= 0 ;i--) {
+                let auxiliar;
+                auxiliar = fruits[i];
+                fruits[i] = fruits[i-1]; 
+                fruits[i-1] = auxiliar ;
+            }
+            fruits[0] = ultimo;
+            document.write(fruits.toString());
+        </script>
+    </div>
+    <div id="ejercicio7">
+        <p class="enunciado">Crea array de 10 colores Añade un valor a cada elemento</p>
+        <p class="enunciado">Luego muestra con toString y comprueba que es un array </p>
+        <script>
+            const colores = ["blue","red","cyan","yellow","violet","purple","black","white","pink","aliceblue"];
+            for (let i=0; i<=colores.length-1;i++) {
+                colores[i] = colores[i] + (i+1);
+            }
+            document.write(colores.toString());
+            document.write("<br>");
+            document.write(typeof colores);
+            document.write("<br>");
+            document.write( Array.isArray(colores));
+        </script>
+    </div>
+    <div id="ejercicio8">
+        <p class="enunciado">Crea array de 10 palabras y Añade a cada palabra el nº de caracteres que contiene dicha palabra</p>
+        <script>
+            const palabras = ["uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez"];
+
+            for (let i=0; i<=palabras.length-1;i++) { // Añadir el nº de letras a cada palabra
+                palabras[i] += " " + palabras[i].length;
+            }
+            //Mostrar por pantalla
+            for (let i = 0; i<palabras.length;i++) {
+                document.write(`${palabras[i]} <br>` );
+            }
+        </script>
+    </div>
+    <div id="ejercicio9">
+        <p class="enunciado">Crea array de 10 palabras y muestralas juntas separadas por " - "</p>
+        <script>
+            const palabras2 = ["uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez"];
+
+            //Mostrar por pantalla
+            document.write(palabras2.join(' - ') );
+            
+        </script>
+    </div>
+    <div id="ejercicio10">
+        <p class="enunciado">Crea array de 5 palabras y mete una nueva al final y muestra el tamaño del array</p>
+        <p class="enunciado">Quita la ultima y muestra de nuevo el tamaño del array</p>
+        <script>
+            const palabras3 = ["uno","dos","tres","cuatro","cinco"];
+            document.write(palabras3.toString() +"<br>");
+
+            palabras3.push("seis"); 
+            document.write(palabras3.toString()  + " Tamaño: " + palabras3.length  +"<br>");
+
+            palabras3.pop();
+            document.write(palabras3.toString()  + " Tamaño: " + palabras3.length  +"<br>");
+            
+        </script>
+    </div>
+    <div id="ejercicio11">
+        <p class="enunciado">Crea array de 5 palabras , elimina la primera y muestra el array resultante con su tamaño</p>
+        <script>
+            const palabras4 = ["uno","dos","tres","cuatro","cinco"];
+            document.write(palabras4.toString() +"<br>");
+
+            palabras4.shift(); 
+            document.write(palabras4.toString()  + " Tamaño: " + palabras4.length  +"<br>");
+        </script>
+    </div>
+    <div id="ejercicio12">
+        <p class="enunciado">Crea array de 5 palabras , elimina la primera y la ultima; luego  muestra el array resultante con su tamaño</p>
+        <script>
+            const palabras5 = ["uno","dos","tres","cuatro","cinco"];
+            document.write(palabras5.toString() +"<br>");
+
+            palabras5.shift();  //primera
+            palabras5.pop();    //Ultima
+
+            document.write(palabras5.toString()  + " Tamaño: " + palabras5.length  +"<br>");
+        </script>
+    </div>
+    <div id="ejercicio13">
+        <p class="enunciado">Crea array diasLaborables y otro diasNoLaborales , concatena en uno solo diasSemana y muestralo</p>
+        <script>
+            const diasLaborables = ["Lunes","Martes","Miercoles","Jueves","Viernes"];
+            const diasNoLaborales = ["Sábado","Domingo"];
+
+            const diasSemana = diasLaborables.concat(diasNoLaborales);
+
+            document.write(diasSemana.toString() +"<br>");
+
+        </script>
+    </div>
+    <div id="ejercicio14">
+        <p class="enunciado">Crea un array de 100 posiciones con los numeros del 1 al 100. Luego elimina los pares y muestra el resultado</p>
+        <script>
+            //Crear y rellenar array
+            const cienPosiciones = new Array(100);
+            for (let i=0;i<100;i++) {
+                cienPosiciones[i] = i;
+            }
+
+            let limite = cienPosiciones.length -1;
+            for (let i=0;i<limite;i++) {
+                if (i%2==0) {  // Eliminar los pares
+                    delete cienPosiciones[i];
+                }
+            }
+            document.write(cienPosiciones.join('\n'));
+
+        </script>
+    </div>
+    <div id="ejercicio15">
+        <p class="enunciado">Crea un array de 5 palabras que metera el usuario por conosla. Las palabras deben tener al menos 3 letras.</p>
+        <p class="enunciado">Mostrar con un alert la palabra con mas letras</p>
+        <script>
+            function palabrasTresLetras(){
+                const palabrasUsuario = [];
+
+                for (let i=0;i < 5;i++) { // Rellenar array con 5 palabras del usuario
+                    let palabraNueva='';
+                    while (palabraNueva.length < 3) { // comprobar minimo 3 letras
+                    palabraNueva = prompt("Palabra " + (i+1) + ": Introduce una palabra de al menos 3 letras");
+                    }
+                    palabrasUsuario.push(palabraNueva);
+                }
+
+                // Buscar la palabra con mas letras
+                let palabraLarga = '';
+                for (let i=0;i<palabrasUsuario.length;i++) {
+                    if (palabraLarga.length < palabrasUsuario[i].length) {
+                        palabraLarga = palabrasUsuario[i];
+                    } 
+                }
+                document.getElementById('ejercicio15').innerHTML += `<p> ${palabrasUsuario.toString()} </p>
+                <p>La palabra más larga del array es: ${palabraLarga} -  Caracteres: ${palabraLarga.length} `;
+                
+                /*
+                document.write(palabrasUsuario.toString() + "<br>");
+                document.write("La palabra más larga del array es: " + palabraLarga + " -  Caracteres: " + palabraLarga.length);
+                */
+                // alert con la palabra mas larga
+                alert("La palabra más larga del array es: " + palabraLarga + "\n Caracteres: " + palabraLarga.length);
+            }
+        </script>
+        <button onclick="palabrasTresLetras();">Ejecutar</button>
+    </div>
+    <div id="ejercicio16">
+        <p class="enunciado">Crea un array de 5 numeros entre 10 y 20.Mostrar por pantalla el array </p>
+        <script>
+            function numerosDiezViente(){
+                const numerosTeen = [];
+
+                for (let i=0;i < 5;i++) { // Rellenar array con 5 numeros del usuario
+                    let siguienteNumero=0;
+                    while (siguienteNumero < 10 || siguienteNumero > 20) { // comprobar minimo 3 letras
+                    siguienteNumero = prompt("Numero " + (i+1) + ": Introduce una numero entre 10 y 20");
+                    }
+                    numerosTeen.push(siguienteNumero);
+                }
+
+                // Mostar por pantalla
+                /*
+                document.write(numerosTeen.join(' - '));
+                */
+               document.getElementById('ejercicio16').innerHTML += `<p> ${numerosTeen.join(' - ')} </p>`;
+            }
+        </script>
+         <button onclick="numerosDiezViente();">Ejecutar</button>
+    </div>
+    <div id="ejercicio17">
+        <p class="enunciado">Utilizando splice, para un array con los elementos
+            Plátano, Fresa, Sandía elimina Fresa y añade en su lugar Fresón
+            y luego Mora </p>
+        <script>
+            const frutas = ["Platano","Fresa","Sandia"];
+
+            frutas.splice(1,1,"Freson","Mora")
+            // Mostar por pantalla
+            document.write(frutas.join(' - '));
+
+        </script>
+    </div>
+    <div id="ejercicio18">
+        <p class="enunciado">Array de 4 posciones casa, coche, carro,cola</p>
+        <p class="enunciado">Busca la palabara con mayor numero de la letra que te el usuario</p>
+        <script>
+            function buscaLetras(){
+                const palabrasRandom = ["Casa","Coche","Carro","Cola"];
+                const n_letras = [0,0,0,0];
+
+                let letra = prompt("¿que letra buscamos?");
+                /*
+                document.write("Letra buscada: " + letra + "<br>");
+                document.write("Array: " +  palabrasRandom.toString() + "<br>");
+                */
+                document.getElementById('ejercicio18').innerHTML += `<p>Letra buscada: ${letra}  </p>`;
+                document.getElementById('ejercicio18').innerHTML += `<p>Array: ${palabrasRandom.toString()}  </p>`;
+
+                // Contar la letra buscada en cada palabra
+                for (let i=0;i<palabrasRandom.length;i++) {
+                    for (let j=0;j< palabrasRandom[i].length;j++) {
+                        if (palabrasRandom[i].charAt(j) == letra) {
+                            n_letras[i]++;
+                        }
+                    }
+                };
+                /*
+                document.write("N_letras " + letra + ": " +  n_letras.toString() + "<br>");
+                */
+                document.getElementById('ejercicio18').innerHTML += `<p>N_letras  ${n_letras.toString()}  </p>`;
+
+                // Buscar la palabra con mayor nº de letras
+                let mayor = -1; // nº de letras de la palabra mas larga
+                let posicion = 0; // posicion del array con la palabra mas larga
+                for (let i=0;i<=n_letras.length;i++) {
+                    if ( n_letras[i] >= mayor ) {
+                        posicion = i; 
+                        mayor = n_letras[i];
+                    }
+                }
+                /*
+                document.write("Posición: " + posicion + "<br>");
+                document.write("Mayor: " + mayor + "<br>");
+                document.write(palabrasRandom[posicion-1]);
+                */
+                document.getElementById('ejercicio18').innerHTML += `<p>Posición:  ${posicion+1}  </p>`;
+                document.getElementById('ejercicio18').innerHTML += `<p>Mayor nº de letras ${mayor}  </p>`;
+                document.getElementById('ejercicio18').innerHTML += `<p>Palabra encontrada: ${palabrasRandom[posicion]}  </p>`;
+
+            }
+        </script>
+         <button onclick="buscaLetras();">Ejecutar</button>
+    </div>
+    <div id="ejercicio19">
+        <p class="enunciado">Array de 10 numeros entre 10 y 20 y busca el primer nº mayor que 17</p>
+        <script>
+             const numerosTeen2 = [12,13,15,15,19,20,19,20,17];
+             let primerNumeroMayorDe17 = numerosTeen2.find(numero => numero > 17);
+             document.write(primerNumeroMayorDe17);
+
+
+        </script>
+    </div>
+    <div id="ejercicio20">
+        <p class="enunciado">Array con AZUCAR AVELLANAS NOCILLA JAMON </p>
+        <p class="enunciado">Crea otro array utilizando un metodo y contenga avellanas y nocilla </p>
+        <script>
+            const crema = ["AZUCAR","AVELLANAS","NOCILLA","JAMON"];
+            const cremita = crema.slice(1,3);
+            document.write(cremita.toString());
+
+        </script>
+    </div>
+</body>
+</html>

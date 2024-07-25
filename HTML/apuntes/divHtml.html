@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El elemento div en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>El elemento div en HTML</h1>
+    <p class="tabular"><q>El elemento &lt;div&gt; se utiliza como contenedor para otros elementos HTML.</q></p>
+    <section>
+        <h2>El elemento &lt;div&gt;</h2>
+        <p>El elemento &lt;div&gt; es por defecto un elemento de bloque, lo que significa que toma todo el ancho
+            disponible y viene con saltos de línea antes y después.</p>
+        <p>Un elemento &lt;div&gt; ocupa todo el ancho disponible:&lt;/div&gt;
+        <p><em>Lorem Ipsum &lt;div&gt;I am a div&lt;/div&gt; dolor sit amet.</em></p>
+        <p>El elemento &lt;div&gt; no tiene atributos obligatorios, pero style, class e id son comunes.</p>
+    </section>
+
+    <section>
+        <h2>&lt;div&gt; como contenedor</h2>
+        <p>El elemento &lt;div&gt; se utiliza a menudo para agrupar secciones de una página web.</p>
+        <p>Un elemento &lt;div&gt; con elementos HTML:</p>
+        <pre>
+            &lt;div&gt;
+                &lt;h2&gt;London&lt;/h2&gt;
+                &lt;p&gt;London is the capital city of England.&lt;/p&gt;
+                &lt;p&gt;London has over 13 million inhabitants.&lt;/p&gt;
+            &lt;/div&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Alinear al centro un elemento &lt;div&gt;</h2>
+        <p>Si tiene un elemento &lt;div&gt; que no es 100% ancho y desea alinearlo al centro, establezca la propiedad
+            margin CSS en auto.</p>
+        <pre>
+            div {
+                width:300px;
+                margin:auto;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Múltiples elementos &lt;div&gt;</h2>
+        <p>Puedes tener muchos contenedores &lt;div&gt; en la misma página.</p>
+        <pre>
+            &lt;div&gt;
+                &lt;h2&gt;London&lt;/h2&gt;
+                &lt;p&gt;London is the capital city of England.&lt;/p&gt;
+                &lt;p&gt;London has over 13 million inhabitants.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h2&gt;Oslo&lt;/h2&gt;
+                &lt;p&gt;Oslo is the capital city of Norway.&lt;/p&gt;
+                &lt;p&gt;Oslo has over 600.000 inhabitants.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;h2&gt;Rome&lt;/h2&gt;
+                &lt;p&gt;Rome is the capital city of Italy.&lt;/p&gt;
+                &lt;p&gt;Rome has almost 3 million inhabitants.&lt;/p&gt;
+            &lt;/div&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Alinear elementos &lt;div&gt; uno al lado del otro</h2>
+        <p>Al crear páginas web, a menudo desea tener dos o más elementos &lt;div&gt; uno al lado del otro</p>
+        <p>Existen diferentes métodos para alinear elementos uno al lado del otro, todos incluyen algo de estilo</p>
+        <h3>float</h3>
+        <p>La propiedad float de CSS no estaba originalmente destinada a alinear elementos &lt;div&gt; uno al
+            lado del otro, pero se ha utilizado para este propósito durante muchos años.</p>
+        <p>La propiedad float de CSS se utiliza para posicionar y dar formato al contenido y permite que los
+            elementos floten uno al lado del otro en lugar de uno encima del otro.</p>
+        <p><em>Cómo usar float para alinear elementos div uno al lado del otro:</em></p>
+        <pre>
+            .mycontainer {
+                width:100%;    
+                overflow:auto;
+            }
+            .mycontainer div {
+                width:33%;
+                float:left;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>inline-block</h2>
+        <p>Si cambia la propiedad display del elemento &lt;div&gt; de block a inline-block, los elementos ya
+            no agregarán un salto de línea antes y después, y se mostrarán uno al lado del otro en lugar de uno encima
+            del otro.</p>
+        <p><em>Cómo usar display: inline-block para alinear elementos div uno al lado del otro:</em></p>
+        <pre>
+            div {
+                width: 30%;
+                display:
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>flex</h2>
+        <p> El módulo de diseño de CSS Flexbox se introdujo para facilitar el diseño de una estructura de diseño
+            flexible y responsiva sin utilizar flotación ni posicionamiento.</p>
+        <p>Para que el método CSS flex funcione, rodee los elementos <div> con otro elemento <div> y
+            asígnele el estado de contenedor flexible.</p>
+        <pre>
+            Cómo usar flex para alinear elementos div uno al lado del otro:
+
+            .mycontainer {
+                display: flex;
+            }
+            .mycontainer div {
+                width:33%;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>grid</h2>
+        <p>El módulo CSS Grid Layout ofrece un sistema de diseño basado en cuadrículas, con filas y columnas, lo
+            que facilita el diseño de páginas web sin tener que utilizar elementos flotantes ni posicionamiento.</p>
+        <p>Suena casi igual que flex, pero tiene la capacidad de definir más de una fila y posicionar cada fila
+            individualmente.</p>
+        <p>El método de cuadrícula CSS requiere que rodee los elementos &lt;div&gt; con otro elemento &lt;div&gt; y le
+            dé el estado como contenedor de cuadrícula, y debe especificar el ancho de cada columna.</p>
+        <pre>
+            Cómo usar la cuadrícula para alinear elementos &lt;div&gt; uno al lado del otro:
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: 33% 33% 33%;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Etiquetas de HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th></tr>
+            <tr> <td>&lt;div&gt;</td> <td>Defines una sección en un documento (nivel bloque)</td></tr>
+        </table>
+    </section>
+</body>
+</html>

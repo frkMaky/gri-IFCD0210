@@ -1,0 +1,82 @@
+/** Ejercico Ricos**/ 
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%; /** 10px = 1rem */
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+*,*::before,*::after {
+    box-sizing: inherit;
+}
+h1 {
+    padding-top: 3rem;
+    text-align: center;
+    font-size: 4rem;
+}
+table {
+    margin: 5rem auto;
+    width: 60%;
+    max-height: 50%;
+    border-collapse: collapse;
+}
+th,td {
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    font-size: 3rem;
+    text-align: center;
+}
+th {
+    background-color: yellow;
+}
+
+.azul {color: blue;}
+.rojo { background-color: red; color: #fff;}
+.verde {color:green;}
+
+.derecha {
+    width: 50%;
+    height: auto;
+    text-align: right;
+    padding: 0;
+}
+.izquierda {
+    width: 50%;
+    text-align: left;
+    padding: 0;
+    min-height: 20rem;
+
+}
+picture {
+    width: 100%;
+    min-height: 40rem;
+}
+img{
+    width: 100%;
+    max-width: 50%;
+    height: 100%;
+    min-height: 100%;
+    margin-bottom: -.9rem;
+}
+.izquierda img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: 80% 50%;
+}
+ul {
+    margin-left: 20rem;
+    margin-bottom: 20rem;
+    list-style: disc;
+}
+ol {
+    margin-left: 10rem;
+}
+li {
+    font-weight: bold;
+    font-size: 2rem;
+}

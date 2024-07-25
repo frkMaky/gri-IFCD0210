@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos Date de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Objetos Date de JavaScript</h1>
+    <p>Los objetos de tipo fecha de JavaScript nos permiten trabajar con fechas:</p>
+    <p><strong>Domingo 17 de marzo de 2024 17:49:56 GMT+0100 (hora estándar de Europa central)</strong></p>
+    <p>Año: 2024 Mes: 3 Día: 17 Horas: 17 Minutos: 49 Segundos: 56</p>
+    <pre>
+        const d = new Date();
+        const d = new Date("2022-03-25");
+    </pre>
+    <section>
+        <h2>Salida de Date</h2>
+        <p>De forma predeterminada, JavaScript utilizará la zona horaria del navegador y mostrará una fecha como una cadena de texto completo:</p>
+        <p><strong>Domingo 17 de marzo de 2024 17:49:56 GMT+0100 (hora estándar de Europa central)</strong></p>
+    </section>
+    <section>
+        <h2>Crear objetos Date</h2>
+        <p>Los objetos de tipo fecha se crean con el constructor new Date().</p>
+        <p>Hay 9 formas de crear un nuevo objeto de fecha:</p>
+        <pre>
+            new Date()
+            new Date(date string)
+            new Date(year,month)
+            new Date(year,month,day)
+            new Date(year,month,day,hours)
+            new Date(year,month,day,hours,minutes)
+            new Date(year,month,day,hours,minutes,seconds)
+            new Date(year,month,day,hours,minutes,seconds,ms)
+            new Date(milliseconds)
+        </pre>
+    </section>
+    <section>
+        <h2>new Date()</h2>
+        <p>new Date() crea un objeto de tipo Date con la fecha y hora actuales :</p>
+        <pre>
+            const d = new Date();
+        </pre>        
+    </section>
+    <section>
+        <h2>new Date( cadena-de-fecha )</h2>
+        <p>new Date(cadena-de-fecha) crea un objeto de fecha a partir de una cadena de tipo Date:</p>
+        <pre>
+            const d = new Date("October 13, 2014 11:13:00");
+            const d = new Date("2022-03-25");
+        </pre>
+    </section>
+    <section>
+        <h2>new Date( año, mes, ... )</h2>
+        <p>new Date(año, mes, ...) crea un objeto de fecha con una fecha y hora especificadas .</p>
+        <p>7 números especifican año, mes, día, hora, minuto, segundo y milisegundo (en ese orden):</p>
+        <pre>
+            const d = new Date(2018, 11, 24, 10, 33, 30, 0);
+        </pre>
+        <p><strong>Nota</strong>JavaScript cuenta los meses del 0 al 11 :</p>
+        <p>Enero = 0 .</p>
+        <p>Diciembre = 11 .</p>
+        <p>Especificar un mes superior a 11 no generará un error, pero agregará el desbordamiento al año siguiente:</p>
+        <p>Especificando:</p>
+        <pre>
+            const d = new Date(2018, 15, 24, 10, 33, 30);
+        </pre>
+        <p>Es lo mismo que:</p>
+        <pre>
+            const d = new Date(2019, 3, 24, 10, 33, 30);
+        </pre>
+        <p>Especificar un día superior al máximo no generará un error, pero agregará el desbordamiento al mes siguiente:</p>
+        <p>Especificando:</p>
+        <pre>
+            const d = new Date(2018, 5, 35, 10, 33, 30);
+        </pre>
+        <p>Es lo mismo que:</p>
+        <pre>
+            const d = new Date(2018, 6, 5, 10, 33, 30);
+        </pre>
+    </section>
+    <section>
+        <h2>Usando 6, 4, 3 o 2 números</h2>
+        <p>6 números especifican año, mes, día, hora, minuto, segundo:</p>
+        <pre>
+            const d = new Date(2018, 11, 24, 10, 33, 30);
+        </pre>
+        <p>5 números especifican año, mes, día, hora y minuto:</p>
+        <pre>
+            const d = new Date(2018, 11, 24, 10, 33);
+        </pre>
+        <p>4 números especifican año, mes, día y hora:</p>
+        <pre>
+            const d = new Date(2018, 11, 24, 10);
+        </pre>
+        <p>3 números especifican año, mes y día:</p>
+        <pre>
+            const d = new Date(2018, 11, 24);
+        </pre>
+        <p>2 números especifican año y mes:</p>
+        <pre>
+            const d = new Date(2018, 11);
+        </pre>
+        <p>No puedes omitir el mes. Si proporciona solo un parámetro, se tratará como milisegundos.</p>
+        <pre>
+            const d = new Date(2018);
+        </pre>
+    </section>
+    <section>
+        <h2>Siglo anterior</h2>
+        <p>Los años de uno y dos dígitos se interpretarán como 19xx:</p>
+        <pre>
+            const d = new Date(99, 11, 24);
+        </pre>
+        <pre>
+            const d = new Date(9, 11, 24);
+        </pre>
+    </section>
+    <section>
+        <h2>JavaScript almacena fechas como milisegundos</h2>
+        <p>JavaScript almacena fechas en milisegundos desde el 1 de enero de 1970.</p>
+        <p>La hora cero es el 1 de enero de 1970 a las 00:00:00 UTC .</p>
+        <p>Un día (24 horas) son 86.400.000 milisegundos.</p>
+        <p>Ahora el tiempo es: <strong>1710694196315</strong> milisegundos después del 1 de enero de 1970</p>
+    </section>
+    <section>
+        <h2>new Date( milisegundos )</h2>
+        <p>new Date(milliseconds) crea un nuevo objeto de tipo fecha como milisegundos más tiempo cero:</p>
+        <pre>
+            // 01 de enero de 1970 más 100 000 000 000 milisegundos es:
+            const d = new Date(100000000000);
+        </pre>
+        <pre>
+            // 01 de enero de 1970 menos 100 000 000 000 milisegundos es:
+            const d = new Date(-100000000000);
+        </pre>
+        <pre>
+            // 01 de enero de 1970 más 24 horas es:
+            const d = new Date(24 * 60 * 60 * 1000);
+            // or
+            const d = new Date(86400000);
+        </pre>
+        <pre>
+            // 01 de enero de 1970 más 0 milisegundos es:
+            const d = new Date(0);
+        </pre>
+    </section>
+    <section>
+        <h2>Métodos de tipo fecha</h2>
+        <p>Cuando se crea un objeto de fecha, varios métodos le permiten operar con él.</p>
+        <p>Los métodos de tipo fecha le permiten obtener y configurar el año, mes, día, hora, minuto, segundo y
+            milisegundo de los objetos de tipo fecha, utilizando la hora local o la hora UTC (universal o GMT).</p>
+    </section>
+    <section>
+        <h2>Visualización de fechas</h2>
+        <p>JavaScript (de forma predeterminada) generará fechas utilizando el método toString() . Esta es una
+            representación de cadena de la fecha, incluida la zona horaria. El formato se especifica en la
+            especificación ECMAScript:</p>
+        <pre>
+            Sun Mar 17 2024 17:49:56 GMT+0100 (hora estándar de Europa central)
+        </pre>
+        <p>Cuando muestra un objeto de fecha en HTML, se convierte automáticamente en una cadena, con
+            el método toString().</p>
+        <pre>
+            const d = new Date();
+            d.toString();
+        </pre>
+        <p>El método toDateString() convierte una fecha a un formato más legible:</p>
+        <pre>
+            const d = new Date();
+            d.toDateString();
+        </pre>
+        <p>El método toUTCString() convierte una fecha en una cadena utilizando el estándar UTC:</p>
+        <pre>
+            const d = new Date();
+            d.toUTCString();
+        </pre>
+        <p>El método toISOString() convierte una fecha en una cadena utilizando el estándar ISO:</p>
+        <pre>
+            const d = new Date();
+            d.toISOString();
+        </pre>
+    </section>
+</body>
+</html>

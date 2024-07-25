@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Variables de JavaScript</h1>
+    <h2>Las variables son contenedores para almacenar datos.</h2>
+    <p>Las variables de JavaScript se pueden declarar de 4 formas:</p>
+    <lu>
+        <li>Automáticamente</li>
+        <li>Usando var</li>
+        <li>Usando let</li>
+        <li>Usando const</li>
+    </lu>
+    <p>En este primer ejemplo, x, y y z son variables no declaradas.</p>
+    <p>Se declaran automáticamente cuando se utilizan por primera vez:</p>
+    <pre>
+        x = 5;
+        y = 6;
+        z = x + y;
+    </pre>
+    <h3>Nota</h3>
+    <p>Se considera una buena práctica de programación declarar siempre las variables antes de su uso.</p>
+    <p>De los ejemplos puedes adivinar:</p>
+    <lu>
+        <li>x almacena el valor 5</li>
+        <li>y almacena el valor 6</li>
+        <li>z almacena el valor 11</li>
+    </lu>
+    <pre>
+        var x = 5;
+        var y = 6;
+        var z = x + y;
+    </pre>
+    <h3>Nota</h3>
+    <p>La palabra clave var se utilizó en JavaScript desde 1995 hasta 2015.</p>
+    <p>Las palabras clave let y const se agregaron a JavaScript en 2015.</p>
+    <p>La palabra clave var sólo debe usarse en código escrito para navegadores más antiguos.</p>
+    <pre>
+        let x = 5;
+        let y = 6;
+        let z = x + y;
+    </pre>
+    <pre>
+        const x = 5;
+        const y = 6;
+        const z = x + y;
+    </pre>
+    <pre>
+        const price1 = 5;
+        const price2 = 6;
+        let total = price1 + price2;
+    </pre>
+    <p>Las dos variables price1 y price2 se declaran con la palabra clave const.</p>
+    <p>Estos son valores constantes y no se pueden cambiar.</p>
+    <p>La variable total se declara con la palabra clave let.</p>
+    <p>El valor total se puede cambiar.</p>
+
+    <section>
+        <h2>¿Cuándo utilizar var, let o const?</h2>
+        <ol>
+            <li>Declarar siempre variables</li>
+            <li>Use const si el valor no debe cambiarse.</li>
+            <li>Use const si no se debe cambiar el tipo (Arrays y Objetos)</li>
+            <li>Use let si no puede usar const</li>
+            <li>var Úselo únicamente si DEBE admitir navegadores antiguos.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Como el álgebra</h2>
+        <p>Al igual que en álgebra, las variables contienen valores:</p>
+        <pre>
+            let x = 5;
+            let y = 6;  
+        </pre>
+        <p>Al igual que en álgebra, las variables se utilizan en expresiones:</p>
+        <pre>
+            let z = x + y;
+        </pre>
+        <p>A partir del ejemplo anterior, puedes adivinar que el total calculado es 11.</p>
+        <h3>Nota</h3>
+        <p>Las variables son contenedores para almacenar valores.</p>
+    </section>
+
+    <section>
+        <h2>Identificadores de JavaScript</h2>
+        <p>Todas <strong>las variables </strong>de JavaScript deben <strong>identificarse </strong>con <strong>nombres únicos .</strong></p>
+        <p>Estos nombres únicos se denominan <strong>identificadores</strong></p>
+        <p>Los identificadores pueden ser nombres cortos (como x e y) o nombres más descriptivos (edad, suma, volumen total).</p>
+        <p>Las reglas generales para construir nombres de variables (identificadores únicos) son:</p>
+        <ul>
+            <li>Los nombres pueden contener letras, dígitos, guiones bajos y signos de dólar.</li>
+            <li>Los nombres deben comenzar con una letra.</li>
+            <li>Los nombres también pueden comenzar con $ y _</li>
+            <li>Los nombres distinguen entre mayúsculas y minúsculas (y e Y son variables diferentes).</li>
+            <li>Las palabras reservadas (como las palabras clave de JavaScript) no se pueden utilizar como nombres.</li>
+        </ul>
+        <h3>Nota</h3>
+        <p>Los identificadores de JavaScript distinguen entre mayúsculas y minúsculas.</p>
+    </section>
+
+    <section>
+        <h2>El operador de asignación</h2>
+        <p>En JavaScript, el signo igual ( =) es un operador de "asignación", no un operador "igual a".</p>
+        <p>Esto es diferente del álgebra. Lo siguiente no tiene sentido en álgebra:</p>
+        <pre>
+            x = x + 5
+        </pre>
+        <p>En JavaScript, sin embargo, tiene mucho sentido: asigna el valor de x + 5 a x.</p>
+        <p>(Calcula el valor de x + 5 y coloca el resultado en x. El valor de x se incrementa en 5).</p>
+        <h3>Nota</h3>
+        <p>El operador "igual a" está escrito como ==en JavaScript.</p>
+    </section>
+
+    <section>
+        <h2>Tipos de datos de JavaScript</h2>
+        <p>Las variables de JavaScript pueden contener números como 100 y valores de texto como "John Doe".</p>
+        <p>En programación, los valores de texto se denominan cadenas de texto.</p>
+        <p>JavaScript puede manejar muchos tipos de datos, pero por ahora, sólo piense en números y cadenas.</p>
+        <p>Las cadenas se escriben entre comillas dobles o simples. Los números se escriben sin comillas.</p>
+        <p>Si pones un número entre comillas, será tratado como una cadena de texto.</p>
+        <pre>
+            const pi = 3.14;
+            let person = "John Doe";
+            let answer = 'Yes I am!';
+        </pre>
+    </section>
+
+    <section>
+        <h2>Declarar una variable de JavaScript</h2>
+        <p>Crear una variable en JavaScript se llama "declarar" una variable.</p>
+        <p>Declaras una variable JavaScript con la palabra clave var o let:</p>
+        <pre>
+            var carName;
+            o:
+            let carName;
+        </pre>
+        <p>Después de la declaración, la variable no tiene valor (técnicamente es undefined).</p>
+        <p>Para <strong> asignar</strong>  un valor a la variable, use el signo igual:</p>
+        <pre>
+            carName = "Volvo";
+        </pre>
+        <p>También puedes asignar un valor a la variable cuando la declaras:</p>
+        <pre>
+            let carName = "Volvo";
+        </pre>
+        <p>En el siguiente ejemplo, creamos una variable llamada carName y le asignamos el valor "Volvo".</p>
+        <p>Luego "generamos" el valor dentro de un párrafo HTML con id="demo":</p>
+        <pre>
+            &lt;p id="demo"&gt;&lt;/p&gt;
+
+            &lt;script&gt;
+                let carName = "Volvo";
+                document.getElementById("demo").innerHTML = carName;
+            &lt;/script&gt;
+        </pre>
+        <h3>Nota</h3>
+        <p>Es una buena práctica de programación declarar todas las variables al comienzo de un script.</p>
+    </section>
+
+    <section>
+        <h2>Una declaración, muchas variables</h2>
+        <p>Puede declarar muchas variables en una sola declaración.</p>
+        <p>Comience la declaración con let y separe las variables por  <strong>coma :</strong></p>
+        <pre>
+            let person = "John Doe", carName = "Volvo", price = 200;
+        </pre>
+        <p>Una declaración puede abarcar varias líneas:</p>
+        <pre>
+            let person = "John Doe",
+            carName = "Volvo",
+            price = 200;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Valor = indefinido</h2>
+        <p>En los programas de computadora, las variables a menudo se declaran sin valor. El valor puede ser algo que deba calcularse o algo que se proporcionará más adelante, como la entrada del usuario.</p>
+        <p>Una variable declarada sin valor tendrá el valor undefined.</p>
+        <p>La variable carName tendrá el valor undefined después de la ejecución de esta declaración:</p>
+        <pre>
+            let carName;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Volver a declarar variables de JavaScript</h2>
+        <p>Si vuelve a declarar una variable JavaScript declarada con var, no perderá su valor.</p>
+        <p>La variable carName seguirá teniendo el valor "Volvo" después de la ejecución de estas declaraciones:</p>
+        <pre>
+            var carName = "Volvo";
+            var carName;
+        </pre>
+        <h3>Nota</h3>
+        <p>No puede volver a declarar una variable declarada con let o const.</p>
+        <p>Esto no funcionará:</p>
+        <pre>
+            let carName = "Volvo";
+            let carName;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Aritmética de JavaScript</h2>
+        <p>Al igual que con el álgebra, puedes hacer aritmética con variables de JavaScript, usando operadores como = y +:</p>
+        <pre>
+            let x = 5 + 2 + 3;
+        </pre>
+        <p>También puedes agregar cadenas, pero las cadenas estarán concatenadas:</p>
+        <pre>
+            let x = "John" + " " + "Doe";
+        </pre>
+        <p>Prueba también esto:</p>
+        <pre>
+            let x = "5" + 2 + 3;
+        </pre>
+        <h3>Nota</h3>
+        <p>Si pone un número entre comillas, el resto de los números se tratarán como cadenas y se concatenarán.</p>
+        <p>Ahora prueba esto:</p>
+        <pre>
+            let x = 2 + 3 + "5";
+        </pre>
+    </section>
+
+    <section>
+        <h2>Signo de dólar JavaScript $</h2>
+        <p>Dado que JavaScript trata un signo de dólar como una letra, los identificadores que contienen $ son nombres de variables válidos:</p>
+        <pre>
+            let $ = "Hello World";
+            let $$$ = 2;
+            let $myMoney = 5;
+        </pre>
+        <p>El uso del signo de dólar no es muy común en JavaScript, pero los programadores profesionales suelen utilizarlo como alias para la función principal en una biblioteca de JavaScript.</p>
+        <p>En la biblioteca JavaScript jQuery, por ejemplo, la función principal $ se utiliza para seleccionar elementos HTML. En jQuery $("p");significa "seleccionar todos los elementos p".</p>
+    </section>
+
+    <section>
+        <h2>Subrayado de JavaScript (_)</h2>
+        <p>Dado que JavaScript trata el guión bajo como una letra, los identificadores que contienen _ son nombres de variables válidos:</p>
+        <pre>
+            let _lastName = "Johnson";
+            let _x = 2;
+            let _100 = 5;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Cree una variable llamada carName y asígnele el valor Volvo.</p>
+        <pre>
+            let= "";
+        </pre>
+    </section>
+</body>
+</html>

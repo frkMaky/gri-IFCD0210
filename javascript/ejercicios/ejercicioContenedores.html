@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenedores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        div {
+            width: 50%;
+            height: 20vh;
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Crea 4 contenedores que ocupen la parte proporcional 1/4 de la pantalla,
+    Cada uno tendra el color de fondo siguiente mendiante javascript: amarillo, rojo, verde y lila
+    El texto por JS de cada cajita seda platano, fresa, manzana, arándano
+    En el verde se meterá toda la información de un array que contiene 3 frutas verdes
+    -->
+    <!-- crea 10 contenedores -->
+    <div id="amarillo"></div>
+    <div id="rojo"></div>
+    <div id="verde"></div>
+    <div id="lila"></div>
+    <div id="azul"></div>
+    <div id="rosa"></div>
+    <div id="negro"></div>
+    <div id="blanco"></div>
+    <div id="fucsia"></div>
+    <div id="marron"></div>
+    <script>
+        const titulosContenedor = ["Plátano","Fresa","Manzana","Arándano","Blueberry","Moras Rojas","Moras Negras","Coco","Granada","Nueces"];
+        const coloresFondo = ["yellow","red","green","purple","blue","pink","black","white","#FF00FF","brown"];
+        const frutasVerdes = ["Lima","Kiwi","Pera"];
+        
+        // Rellenar contenedores con el nombre sacado del array y el color de fondo
+        let contenedores = document.getElementsByTagName("div");
+        for (let i = 0; i < contenedores.length;i++) {
+            contenedores[i].textContent += titulosContenedor[i];
+            contenedores[i].style.backgroundColor += coloresFondo[i];
+        }
+
+        // Add el array de frutas verdes a Manzana / Verde
+        let verde = document.getElementById("verde");
+        verde.innerHTML += "<br/> " + frutasVerdes.toString();
+        
+        // Color contraste para fondos oscuros
+        let negro = document.getElementById("negro");
+        let marron = document.getElementById("marron");
+        negro.style.color = "white";
+        marron.style.color = "white";
+    </script>
+</body>
+</html>

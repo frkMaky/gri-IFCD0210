@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hastiales de Amsterdan</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+        }
+        header, main {
+            background-color: white;
+            margin: 0 auto;
+            max-width: 75%;
+            width: 75%;
+        }
+        h1 {
+            color: white;
+            background-color: #596e79;
+        }
+        header nav {
+            width: 75%;
+            background-color: white;
+            position:fixed;
+            height: 80px;
+        }
+
+        nav ul {
+            float: right;
+            list-style: none;
+        }
+        nav ul li {
+            margin-top: 30px;
+            margin-right: 15px;
+            float: right;
+            display: inline;
+        }
+        nav ul li a  {
+            color:#596e79;
+            width: 100%;
+            padding: 5px;
+            border: 3px solid #596e79; 
+        }
+        a {
+            color:white;
+            width: 100%;
+            padding: 5px;
+            border: 3px solid #596e79; 
+        }
+        section {
+            display: block;
+            background-color: #596e79;
+            padding: 5px 100px 10px;
+            color:white;
+            margin-bottom: 20px;
+        }
+        section h2 {
+            color: white;
+        
+            text-decoration: underline;
+        }
+        section p {
+            display: block;
+            margin-top: 30px;
+            width: 500px;
+            margin-bottom: 10px;
+            text-align: justify;
+            font-size: 20px;
+        }
+        section img:not(.flecha) {
+            max-width: 400px;
+            display: flex;
+        }
+
+        img, svg {
+            border: 5px solid white;
+            padding: 10px;
+        }
+        .flecha {
+            margin-top: 10px;
+            max-width:  50px;
+            max-height: 50px;
+        }
+        .hastialDiv {
+            display: grid;
+            grid-template-columns: 40% 40%;
+            grid-auto-flow: column;
+        }
+        .hastial p {
+            text-align: top;
+        }
+        .hastial img:not(.flecha) {
+            float: right;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>Hastiales de Amsterdan</h1>
+        <nav>
+            <ul>
+                <li><a href="#pico">Pico</a></li>
+                <li><a href="#escalonado">Escalonado</a></li>
+                <li><a href="#campana">Campana</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="inicio">
+            <p>Paseando por Amsterdam llaman la atención las terminaciones de las fachadas de las casas, todas parecidas pero todas diferentes</p>
+            <p>Son los llamados hastiales o piñones, un elemento arquitectonico que remata la fachada y que queda enmarcado por las dos vertientes del tejado. 
+                Se trata de un elmento decorativo cuyo estilo fue evolucionando a lo largo del siglo XVII hasta ser sustituido por balaustradas y cornisas barrocas
+            </p>
+        </section>
+
+        <section id="pico" class="hastial">
+            <h2><a href="#"> &#9461; Hastial el Pico </a></h2>
+            <div class="hastialDiv">
+                <p>El hastial en pico, o de caño, es el más común  en los almacenes del siglo XVII y consiste  en una protuberancia rectangularen
+                     el extremo del edificio <a href="#inicio"><img class="flecha" src="images/flecha.svg" alt="Flecha Arriba" /></a></p>
+                <img src="images/hastialPico.jpg" alt="Hastial Pico" />
+            </div>
+            
+            
+        </section>
+
+        <section id="escalonado" class="hastial">
+            <h2><a href="#">&#9462; Hastial escalonado</a></h2>
+            <div class="hastialDiv">
+                <p>El hastial escalonado, más ornamentado, se puso de moda en el primer tercio del siglo XVII en las casa particulares
+                    <a href="#inicio"><img class="flecha" src="images/flecha.svg" alt="Flecha Arriba" /></a>
+                </p>
+                <img src="images/hastialEscalonado.jpg" alt="Hastial Escalonado" />
+            </div>
+           
+           
+        </section>
+
+        <section id="campana" class="hastial">
+            <h2><a href="#">&#9464; Hastial campana</a></h2>
+            <div class="hastialDiv">
+                <p>El hastial campana se puso de moda entre 1660 y 1670
+                    <a href="#inicio"><img class="flecha" src="images/flecha.svg" alt="Flecha Arriba" /></a>
+                </p>
+                <img src="images/hastialCampana.jpg" alt="Hastial Campana" />
+            </div>
+           
+            
+            
+        </section>
+
+    </main>
+    
+</body>
+</html>

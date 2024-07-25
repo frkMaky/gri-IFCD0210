@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="../css/ejercicios.css"> <!-- Estilos Propios-->
+</head>
+<body>
+    <h1>Ejercicios Arrays II</h1>
+
+    <div id="ejercicio1">
+        <p class="enunciado">
+            Crea un array de 4 posiciones con los datos cogidos por consola 
+        uno de ellos será la cadena 'CASA' luego comprueba en que posición 
+        esta esa cadena dentro del Array. Si está en la 1ra posicion 
+        mostrarás "ESTA EN LA PRIMERA POSICION", de lo contrario, muestras la posición 
+        </p>
+        <script>
+            function arrayCasa() {
+                // Rellenar array
+                const miArray = [];
+                let contador =0;
+                while (contador < 4) {
+                    miArray[contador] = prompt(`Introduce la palabra nº ${contador}`).toUpperCase();
+                    contador++;
+                }
+
+                // Mostrar por pantalla 
+                for (let i=0;i<miArray.length;i++) {
+                    document.write(`Palabra ${miArray[i]}\n`);
+                }
+
+                // Posicion de 'CASA'
+                let posicion = miArray.indexOf('CASA');
+
+                // Mostrar en pantalla
+                //let ejercicio1 =  document.getElementById("ejercicio1");
+                //ejercicio1.innerHTML += "Resultado";
+                
+                // Resultado si CASA en primera posicion (0)
+                if (posicion == 0) {
+                    //ejercicio1.innerHTML += "'CASA' ESTA EN LA PRIMERA POSICION";
+                    document.write("'CASA' ESTA EN LA PRIMERA POSICION");
+                } else if(posicion == -1){
+                    //ejercicio1.innerHTML += "'CASA' no está en el Array";
+                    document.write(`'CASA' no está en el Array`);
+                } else {
+                    //ejercicio1.innerHTML += `'CASA' esta en la posición ${posicion}`;
+                    document.write(`'CASA' esta en la posición ${posicion}`);
+                }
+            }
+        </script>
+        <button onclick="arrayCasa();">Ejecutar</button>
+      
+    </div>
+
+    <div id="ejercicio2">
+        <p class="enunciado">
+            Modifica el programa anterior para que en el caso de que no se introduzca 'CASA'
+            muestre 'NO APARECE CASA'
+        </p>
+        <script>
+            function arrayCasaII() {
+                // Rellenar array
+                const miArray = [];
+                let contador =0;
+                while (contador < 4) {
+                    miArray[contador] = prompt(`Introduce la palabra nº ${contador}`).toUpperCase();
+                    contador++;
+                }
+
+                // Mostrar por pantalla 
+                for (let i=0;i<miArray.length;i++) {
+                    document.write(`Palabra ${miArray[i]} <br>`);
+                }
+
+                // Posicion de 'CASA'
+                let posicion = miArray.indexOf('CASA');
+                console.log(posicion);
+
+                // Mostrar en pantalla
+                /* let ejercicio2 =  document.getElementById('ejercicio2');
+                ejercicio2.innerHTML += "<p>Resultado</p>";
+                */
+                // Resultado si CASA en primera posicion (0)
+                if (posicion == 0) {
+                    //ejercicio2.innerHTML += "'CASA' ESTA EN LA PRIMERA POSICION";
+                    document.write("'CASA' ESTA EN LA PRIMERA POSICION");
+                } else if(posicion == -1){
+                    //ejercicio2.innerHTML += "NO APARECE CASA";
+                    document.write(`'CASA' no está en el Array`);
+                } else {
+                    //ejercicio2.innerHTML += "'CASA' esta en la posición" + posicion;
+                    document.write(`'CASA' esta en la posición ${posicion}`);
+                }
+            }
+        </script>
+        <button onclick="arrayCasaII();">Ejecutar</button>
+      
+    </div>
+
+    <div id="ejercicio3">
+        <p class="enunciado">
+            Crea un array disasSemanaLaborales y comprueba si incluye el sábado. Si no lo incluye muestra "no se incluye"
+        </p>
+        <script>
+            function diasSemana() {
+                // Rellenar array
+                const disasSemanaLaborales = ["lunes","martes","miercoles","jueves","viernes"];
+                let incluido = disasSemanaLaborales.includes('sabado'); // comprobacion
+                if (!incluido) { // Mensaje pantalla
+                    document.write("no se incluye");
+                }
+            }
+        </script>
+        <button onclick="diasSemana();">Ejecutar</button>
+      
+    </div>
+    <div id="ejercicio4">
+        <p class="enunciado">
+            Modifica el programa anterior, de forma que puedas meter los dias de semana laborales por consola
+            podran ser 5 o 6 dias. La condificion de parada de meter datos sera -1
+        </p>
+        <script>
+            function diasSemanaII() {
+                // Rellenar array
+                const disasSemanaLaboralesII = [];
+
+                let nuevoElemento = null;
+
+                while (nuevoElemento != -1 || disasSemanaLaboralesII.length < 6) {
+                    nuevoElemento = prompt("Introduce dia laborables (-1 para para fin)");
+                   
+                    if (nuevoElemento != -1 && disasSemanaLaboralesII.length <= 6) {
+                        disasSemanaLaboralesII.push(nuevoElemento);
+                    }
+                }
+
+                let incluido = disasSemanaLaboralesII.includes('sabado'); // comprobacion
+                if (!incluido) { // Mensaje pantalla
+                    document.write("no se incluye");
+                } else {
+                    document.write(disasSemanaLaboralesII.toString());
+                }
+            }
+        </script>
+        <button onclick="diasSemanaII();">Ejecutar</button>
+      
+    </div>
+    <div id="ejercicio5">
+        <p class="enunciado">
+            Teniendo el array de X numeros pares empezando en el 0, encuentra el primer nº mayor que 21 si existe
+            y muestra "EXISTE" o "NO EXISTE"
+        </p>
+        <script>
+            function paresContador() {
+                // Rellenar array
+                let numero =Number( prompt("Introduce el nº de pares") );
+                const pares = [];
+
+                for (let i=0;i<numero;i++){
+                    pares.push(i*2);
+                }
+                let mayor = pares.find(myFunction);
+                function myFunction(valorMayor) {
+                    return valorMayor > 21;
+                }
+                
+                document.write(pares.toString() + "<br>");
+                if (mayor != undefined) {
+                    document.write("EXISTE");
+                } else {
+                    document.write("NO EXISTE");
+                }
+                
+            }
+        </script>
+        <button onclick="paresContador()">Ejecutar</button>
+      
+    </div>
+
+    <div id="ejercicio6">
+        <p class="enunciado">
+            Crea un array de 5 numeros. El primero lo pides por consola y los restantes son 
+            10 veces el anterior. Encuentra el indice que cumpla que sea mayor que 150
+        </p>
+        <script>
+            function exponenciarNumero() {
+                // Rellenar array
+                const exponenciar = [];
+                exponenciar[0] = Number(prompt("Introduce el primer numero")) ;
+                for (let i=1;i<5;i++){
+                    exponenciar[i] = exponenciar[i-1] * 10;
+                }
+
+                // buscar indice mayor a 150
+                let indice = exponenciar.findIndex(buscarIndice);
+                function buscarIndice(valorMayor) {
+                    return valorMayor > 150;
+                }
+
+                // Salita por pantalla
+                document.write(exponenciar.toString() + "<br>");
+                if ((indice != undefined)||(indice ==-1)) {
+                    document.write(`El indice mayor que 150 es ${indice} con el elemento ${exponenciar[indice]}`);
+                } else {
+                    document.write(`No hay valores mayores a 150 en el Array`);
+                }
+                
+            }
+        </script>
+        <button onclick="exponenciarNumero()">Ejecutar</button>
+      
+    </div>
+    <div id="ejercicio7">
+        <p class="enunciado">
+            Crea un array de 10 numeros pares. Comprueba cual de los ultimos 
+            el que sea menor que 10.
+        </p>
+        <script>
+            function introducePares() {
+                // Rellenar array
+                const paresForzados = [];
+                
+                
+                for (let i=0;i<10;i++){
+                    
+                    let numero = -1;
+
+                    while(numero%2!=0) {
+                        numero = Number(prompt("Introduce nº par " + i));
+                    }
+                    paresForzados[i] = numero;
+                }
+
+                // buscar ultimo menor que 10
+                let indice = paresForzados.findLastIndex( (x) => {
+                    return x < 10;
+                } );
+
+                // Salita por pantalla
+                document.write(paresForzados.toString() + "<br>");
+                if ((indice != undefined)||(indice ==-1)) {
+                    document.write(`El ultimo indice menor que 10 es ${indice} con el elemento ${paresForzados[indice]}`);
+                } else {
+                    document.write(`No hay valores menores que 10 en el Array`);
+                }
+                
+            }
+        </script>
+        <button onclick="introducePares()">Ejecutar</button>
+      
+    </div>
+    <div id="ejercicio8">
+        <p class="enunciado">Crea un array de 10 posiciones.Si el nº introducido es par entonces metes la mitada de ese numero. Si es impar metes el doble.</p>
+        <p class="enunciado">Luego muestra el array. A continuación busca aquel índice cuyo valor del array sea mayor que 50 empezando por la derecha</p>
+        <script>
+            function dobleMitad() {
+                // Rellenar array
+                const numeros = [];
+                            
+                for (let i=0;i<10;i++){
+    
+                    let numero = Number(prompt((i+1) + " - Introduce nº "));
+
+                    if (numero%2==0) {
+                        numeros.push(numero/2);
+                    } else {
+                        numeros.push(numero*2);
+                    }
+                }
+
+                // mayor que 50 por la derecha
+                let indice = numeros.findLastIndex( (x) => {
+                    return x > 50;
+                } );
+
+                // Salita por pantalla
+                document.write(numeros.toString() + "<br>");
+                document.write("Indice mayor de 50 por la derecha: " +  indice +  "<br>");
+                document.write("Elemento: " +  numeros[indice]);
+                
+            }
+        </script>
+        <button onclick="dobleMitad()">Ejecutar</button>
+      
+    </div>
+    <div id="ejercicio9">
+        <p class="enunciado">Mete por consola 10 numeros. Incrementa a los multiplos de 3 20 unidades. Decrementa a los multiplos de 13 10 unidades</p>
+        <p class="enunciado">Luego muestra el array.Ordenalo de forma descendente</p>
+        <script>
+            function ordenacionMultiplos() {
+                // Rellenar array
+                const numeros = [];
+                            
+                for (let i=0;i<10;i++){
+    
+                    let numero = Number(prompt((i+1) + " - Introduce nº "));
+
+                    if (numero%3==0) {
+                        numeros.push(numero + 20);
+                    } else if(numero%13==0) {
+                        numeros.push(numero - 10);
+                    } else {
+                        numeros.push(numero);
+                    }
+                }
+
+                // Salida del  Array
+                document.write("Array: " + numeros.toString() + "<br>");
+                document.write("Ordenacion descendente: " +  numeros.sort().reverse().toString() +  "<br>");
+                
+            }
+        </script>
+        <button onclick="ordenacionMultiplos()">Ejecutar</button>
+      
+    </div>
+    <div id="ejercicio10">
+        <p class="enunciado">Mete 4 cadenas de 5 letras (si no tiene 5 vuelveles a pedir)</p>
+        <p class="enunciado">Luego ordenalas por orden alfabetico sin modificar el array original</p>
+        <script>
+            function cadenasDeCinco() {
+                // Rellenar array
+                const cadenas= [];
+                            
+                for (let i=0;i<4;i++){
+
+                    let cadena = "";
+                    
+                    while (cadena.length != 5) {
+                        cadena = prompt("Posicion " + i + " Introduce una cadena de 5 letras");
+                    }
+                    cadenas.push(cadena);
+                }
+
+                // Ordenacion 
+                const cadenasOrdenado = cadenas.toSorted();
+
+                // Salida del  Array
+                document.write("Array: " + cadenas.toString() + "<br>");
+                document.write("Array ordenado: " +  cadenasOrdenado.toString() +  "<br>");
+                
+            }
+        </script>
+        <button onclick="cadenasDeCinco()">Ejecutar</button>
+      
+    </div>
+    <div id="ejercicio10">
+        <p class="enunciado">Mete 4 cadenas que contengan la silaba'ro' (si no tiene pidela 3 veces)</p>
+        <p class="enunciado">Ordenalas de la Z a la A y muestra el array original y el ordenado</p>
+        <script>
+            function buscandoSilabas() {
+                // Rellenar array
+                const cadenas= [];
+                            
+                for (let i=0;i<4;i++){
+
+                    let cadena = "";
+                    let contador = 3;
+                    
+                    while (contador>0 && cadenas.length <= 4) { // si no hay 4 palabras en el array y tiene intentos de introducir la siguiente
+
+                        cadena = prompt("Palabra " + i + " Intentos: " + contador + " Introduce una cadena con la silaba 'ro' ");
+                    
+                        // Si cadena incluye 'ro' se reinicia contador e incluye en el array
+                        if ( cadena.search("ro") >= 0 ) {
+                            cadenas.push(cadena);
+                            contador = 3; 
+                            break; 
+                        } else { // si no se baja un intento
+                            contador--;
+                        }
+
+                        if (contador==0) { // si se acabaron los intentos se incluye la palabra que sea y continua con la siguiente
+                            cadenas.push(cadena);
+                        }
+                    }
+                }
+
+                // Ordenacion 
+                const cadenasOrdenado = cadenas.toSorted().reverse();
+
+                // Salida del  Array
+                document.write("Array: " + cadenas.toString() + "<br>");
+                document.write("Array ordenado descendente: " +  cadenasOrdenado.toString() +  "<br>");
+                
+            }
+        </script>
+        <button onclick="buscandoSilabas()">Ejecutar</button>
+      
+    </div>
+    <div id="ejercicio11">
+        <p class="enunciado">Crea un array de 4 numeros entre el 10 y el 25 (vuelvelos a pedir si no estan en rango)</p>
+        <p class="enunciado">Ordenalas de menos a mayor y muestra el array original y el ordenado </p>
+        <script>
+            function cuatroNumeros() {
+                // Rellenar array
+                const cuatroNumeros = [];
+                let numero;
+
+                for (let i=0;i<4;i++){
+                              numero = -1;
+                    while (numero <10 || numero>25) { // si no hay 4 palabras en el array y tiene intentos de introducir la siguiente
+                        numero = Number (prompt("Numero entre 10 y 25") );
+                    }
+                    cuatroNumeros.push(numero);
+                }
+
+                // Ordenacion 
+                const cuatroNumerosOrdenado = cuatroNumeros.toSorted(function(a, b){return a - b});
+
+                // Salida del  Array
+                document.write("Array: " + cuatroNumeros.toString() + "<br>");
+                document.write("Array ordenado: " +  cuatroNumerosOrdenado.toString() +  "<br>");
+                
+            }
+        </script>
+        <button onclick="cuatroNumeros()">Ejecutar</button>
+      
+    </div>
+    
+</body>
+</html>

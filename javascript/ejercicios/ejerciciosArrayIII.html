@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Arrays III</title>
+    <link rel="stylesheet" href="../css/ejercicios.css">
+
+</head>
+<body>
+
+    <div class="ejercicio1">
+        <p class="enunciado">Mete 5 números por consola.Guárdalos en un array.</p>
+        <p class="enunciado">Pon 4 botones.<br>
+            El primero hallará el máximo del array con sort<br>
+            El segundo hallará el máximo del array con Math...<br>
+            El tercero hallará el mínimo del array con sort<br>
+            El cuarto hallará el mínimo del array con Math...</p>
+        <p class="enunciado">Muestra el resultado por pantalla.<br>
+            En el primer caso muestra el resultado en verde.<br>
+            El segundo en rojo<br>
+            el tercero en azul<br>
+            el cuatro en amarillo</p>
+        </p>
+        <button onclick="calcularMaximoMinimo()">Ejecutar</button>
+        <div id="resultadoEjer1">
+          
+        </div>
+    <script>
+        // Globales 
+        const numeros = [];
+        let maximo;
+        let minimo;
+        let resultado  = document.getElementById('resultadoEjer1');
+         
+        function calcularMaximoMinimo(){ // Pone los botones para calcular maximo/minimo, rellena el array y muestra el resultado
+
+            // Incluir botonera
+            resultado.innerHTML = ""; // limpiar
+            resultado.innerHTML += `<div class="centrar" id="contenedorBotones">`;
+            document.getElementById('contenedorBotones').innerHTML += `<button id="boton1" onclick="maximoSort()">Maximo Sort</button>`;
+            document.getElementById('contenedorBotones').innerHTML += `<button id="boton2" onclick="maximoMath()">Maximo Math</button>`;
+            document.getElementById('contenedorBotones').innerHTML += `<button id="boton3" onclick="minimoSort()">Minimo Sort</button>`;
+            document.getElementById('contenedorBotones').innerHTML += `<button id="boton4" onclick="minimoMath()">Minimo Math</button>`;
+            resultado.innerHTML += `</div>`;
+            
+            // Rellenar array 
+            for (let i=0;i<5;i++) {
+                numeros[i] = Number( prompt("Posicion " + (i+1) + ":Introduce un numero") );
+            }
+
+            // Mostrar array 
+            resultado.innerHTML += `<br><p class="resaltar">${numeros.toString()}</p>`;
+        }
+        // Funciones Maximo y minimo
+        function maximoSort() { // Maximo Sort
+            const auxiliar = numeros.sort(function(a,b){return a -b});
+            maximo = auxiliar[auxiliar.length-1];
+            resultado.innerHTML += `<p style='color:green' class="resaltar">Máximo con sort: ${maximo}</p>`;
+        }
+        function maximoMath() { // Maximo Math
+            maximo = Math.max.apply(null, numeros);
+            resultado.innerHTML += `<p style='color:red' class="resaltar">Máximo con math: ${maximo}</p>`;
+        }
+        function minimoSort() { // Minimo Sort
+            const auxiliar = numeros.sort(function(a,b){return a -b});
+            minimo = auxiliar[0];
+            resultado.innerHTML += `<p style='color:blue' class="resaltar">Mínimo con sort: ${minimo}</p>`;
+        }
+        function minimoMath() { // Minimo Math
+            minimo = Math.min.apply(null, numeros);
+            resultado.innerHTML += `<p style='color:yellow' class="resaltar">Mínimo con math: ${minimo}</p>`;
+        }
+        </script>
+    </div>
+
+
+    <div class="ejercicio2">
+        <p class="enunciado">Crea un array de 5 objetos. Cada objeto tiene 3 propiedades: nombre, edad, altura</p>
+        <p class="enunciado">En un div mostrarás tanto los objetos ordenado por edad de menor a mayor</p>
+        <p class="enunciado">y luego ordenador por altura de mayor a menor </p>
+        <button onclick="ordenaObjetos()">Ejecutar</button>
+        <div id="resultadoEjer2" class="centrar-vertical"></div>
+        <script>
+            function ordenaObjetos(){
+
+                // Array de objetos
+                const objetos = [
+                    {nombre:"Pablo", edad: 39, altura: 173},
+                    {nombre:"Carla", edad: 32, altura: 150},
+                    {nombre:"Berto", edad: 39, altura: 176},
+                    {nombre:"Merchi", edad: 62, altura: 154},
+                    {nombre:"Francisco", edad: 40, altura: 168}
+                ]
+             
+          
+                // div resultado
+                let resultado2 = document.getElementById('resultadoEjer2');
+                document.getElementById('resultadoEjer2').textContent = "";
+                resultado2.innerHTML += `<p>Array de objetos: ${mostrarObjetos(objetos)} </p><br>`;
+                
+                // Ordenar por edad
+                const objetosEdad = objetos.sort(function(a,b){ return a.edad - b.edad });
+                resultado2.innerHTML += `<p>Orden por edad ascendente: ${mostrarObjetos(objetosEdad)} </p><br>`;
+
+                // Ordenar por altura
+                const objetosAltura = objetos.sort(function(a,b){ return b.altura - a.altura });
+                resultado2.innerHTML += `<p>Array por altura descendente: ${mostrarObjetos(objetosAltura)} </p>`;
+            }
+            function mostrarObjetos(objetos) { // Devuelve el array de objetos en una tabla
+                let cadena = "<table>";
+                for (let i=0;i<objetos.length;i++) {
+                    cadena += "<tr> <th>Nombre:</th><td>" + objetos[i].nombre + "</td><th> Edad:</th><td>" + objetos[i].edad + "</td><th>Altura:</th><td>" + objetos[i].altura + "</td></tr>";
+                }
+                cadena += "</table>";
+                return cadena;
+            }
+        </script>
+    
+</body>
+</html>

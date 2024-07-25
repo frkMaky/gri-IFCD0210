@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Objetos JavaScript</h1>
+
+    <section>
+        <h2>Objetos, propiedades y métodos de la vida real</h2>
+        <p>En la vida real, un coche es un objeto .</p>
+        <p>Un automóvil tiene propiedades como peso y color, y métodos como arrancar y detener:</p>
+        <p>Todos los coches tienen las mismas propiedades , pero los valores de las propiedades difieren de un
+            coche a otro.</p>
+        <p>Todos los coches tienen los mismos métodos , pero los métodos se realizan en momentos diferentes</p>
+    </section>
+
+    <section>
+        <h2>Objetos JavaScript</h2>
+        <p>Ya has aprendido que las variables de JavaScript son contenedores de valores de datos.</p>
+        <p>Este código asigna un valor simple (Fiat) a una variable denominada auto:</p>
+        <pre>
+            let car = "Fiat";
+        </pre>
+        <p>Los objetos también son variables. Pero los objetos pueden contener muchos valores.</p>
+        <p>Este código asigna muchos valores (Fiat, 500, blanco) a una variable denominada coche:</p>
+        <pre>
+            const car = {type:"Fiat", model:"500", color:"white"};
+        </pre>
+        <p>Los valores se escriben como pares nombre:valor (nombre y valor separados por dos puntos).</p>
+        <p>Es una práctica común declarar objetos con la palabra clave const .</p>
+    </section>
+
+    <section>
+        <h2>Definición de objeto</h2>
+        <p>Defines (y creas) un objeto JavaScript con un objeto literal:</p>
+        <pre>
+            const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+        </pre>
+        <p>Los espacios y los saltos de línea no son importantes. Una definición de objeto puede abarcar varias
+            líneas:</p>
+        <pre>
+            const person = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 50,
+                eyeColor: "blue"
+            };
+        </pre>
+    </section>
+
+    <section>
+        <h2>Propiedades del objeto</h2>
+        <p>Los pares nombre:valores en objetos JavaScript se denominan propiedades :</p>
+        <table>
+            <tr> <th>Propiedad </th> <th>El valor de la propiedad </th> </tr>
+            <tr> <td>nombre de pila</td> <td>John</td></tr>
+            <tr> <td>apellido</td> <td>Gama</td></tr>
+            <tr> <td>edad</td> <td>50</td></tr>
+            <tr> <td>color de los ojos</td> <td>azul</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Accediendo a las propiedades del objeto</h2>
+        <p>Puede acceder a las propiedades del objeto de dos maneras:</p>
+        <pre>
+            nombreDelObjeto.nombreDeLaPropiedad
+            o
+            nombreDelObjeto["nombreDeLaPropiedad"]
+        </pre>
+
+        <pre>
+            person.lastName;
+            person["lastName"];
+        </pre>
+
+        <p>Los objetos JavaScript son contenedores de valores con nombre llamados propiedades.</p>
+    </section>
+
+    <section>
+        <h2>Métodos de objetos</h2>
+        <p>Los objetos también pueden tener métodos .</p>
+        <p>Los métodos son acciones que se pueden realizar sobre objetos.</p>
+        <p>Los métodos se almacenan en propiedades como definiciones de funciones .</p>
+        <table>
+            <tr> <th>Propiedad </th> <th>El valor de la propiedad </th> </tr>
+            <tr> <td>firstName</td> <td>John</td></tr>
+            <tr> <td>lastName</td> <td>Gama</td></tr>
+            <tr> <td>age</td> <td>50</td></tr>
+            <tr> <td>eyeColor</td> <td>azul</td></tr>
+            <tr> <td>fullName</td> <td>function() {return this.firstName + " " + this.lastName; }</td></tr>
+        </table>
+        <p><em>Un método es una función almacenada como una propiedad.</em></p>
+        <pre>
+            const person = {
+                firstName: "John",
+                lastName : "Doe",
+                id : 5566,
+                fullName : function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+        </pre>
+        <p>En el ejemplo anterior, this se refiere al objeto person :</p>
+        <p>this.firstName significa la propiedad firstName de person .</p>
+        <p>this.lastName significa la propiedad lastName de person.</p>
+    </section>
+
+    <section>
+        <h2>Qué es this?</h2>
+        <p>En JavaScript, la palabra clave this se refiere a un objeto .</p>
+        <p>Qué objeto depende de cómo this se invoca (usado o llamado).</p>
+        <p>La palabra clave this se refiere a diferentes objetos dependiendo de cómo se utilice:</p>
+        <pre>
+            En un método de objeto, this se refiere al objeto .
+            Solo, this se refiere al objeto global .
+            En una función, this se refiere al objeto global .
+            En una función, en modo estricto, this es undefined.
+            En un evento, this se refiere al elemento que recibió el evento.
+            Métodos como call(), apply()y bind()pueden hacer referencia this a cualquier
+            objeto .
+        </pre>
+        <p><strong>Nota</strong> this no es una variable. Es una palabra clave. No se puede cambiar el valor de this.</p>
+    </section>
+
+    <section>
+        <h2>La palabra clave this</h2>
+        <p>En una definición de función, this se refiere al "propietario" de la función.</p>
+        <p>En el ejemplo anterior, this es el objeto person "dueño" de la función fullName.</p>
+        <p>En otras palabras, this.firstName significa la propiedad firstName de este objeto .</p>
+    </section>
+
+    <section>
+        <h2>Accediendo a métodos de objetos</h2>
+        <p>Se accede a un método de objeto con la siguiente sintaxis:</p>
+        <pre>
+            nombreDelObjeto.nombreDelMétodo()
+        </pre>
+        <p>Si accede a un método sin los paréntesis (), devolverá la definición de la función :</p>
+        <pre>
+            name = person.fullName;
+        </pre>
+    </section>
+
+    <section>
+        <h2>¡No declare cadenas, números y valores booleanos como objetos!</h2>
+        <p>Cuando una variable JavaScript se declara con la palabra clave " new", la variable se crea como un objeto:</p>
+        <pre>
+            x = new String(); // Declares x as a String object
+            y = new Number(); // Declares y as a Number object
+            z = new Boolean(); // Declares z as a Boolean object
+        </pre>
+        <p>Evite objetos String, Number, y Boolean. Complican su código y ralentizan la velocidad de ejecución.</p>
+        <p>Aprenderá más sobre los objetos más adelante</p>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Alert "John" extrayendo información del objeto person.</p>
+        <pre>
+            const person = {
+                nombre: "Juan",
+                apellido: "Doe"
+            };
+            alert();
+        </pre>
+    </section>
+</body>
+</html>

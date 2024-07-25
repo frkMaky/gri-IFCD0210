@@ -1,0 +1,14 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class CalculadoraTest {
+
+	@Test
+	void testSuuma() {
+		Calculadora calcu = new Calculadora(20,5);
+		assertEquals(25, calcu.suma() ) ;
+	}
+}
+
+

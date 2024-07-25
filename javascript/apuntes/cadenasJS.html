@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadenas de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Cadenas de JavaScript</h1>
+    <p>Las cadenas son para almacenar texto.</p>
+    <p>Las cadenas están escritas entre comillas.</p>
+    <section>
+        <h2>Usando comillas</h2>
+        <p>Una cadena de JavaScript tiene cero o más caracteres escritos entre comillas.</p>
+        <pre>
+            let text = "John Doe";
+        </pre>
+        <p>Puede utilizar comillas simples o dobles:</p>
+        <pre>
+            let carName1 = "Volvo XC60"; // Double quotes
+            let carName2 = 'Volvo XC60'; // Single quotes
+        </pre>
+        <p><strong>Nota</strong> Las cadenas creadas con comillas simples o dobles funcionan igual.</p>
+        <p>No hay diferencia entre los dos.</p>
+    </section>
+
+    <section>
+        <h2>Comillas dentro de comillas</h2>
+        <p>Puedes usar comillas dentro de una cadena, siempre y cuando no coincidan con las comillas que rodean la cadena:</p>
+        <pre>
+            let answer1 = "It's alright";
+            let answer2 = "He is called 'Johnny'";
+            let answer3 = 'He is called "Johnny"';
+        </pre>
+    </section>
+
+    <section>
+        <h2>Cadenas de plantilla</h2>
+        <p>Las plantillas se introdujeron con ES6 (JavaScript 2016).</p>
+        <p>Las plantillas son cadenas entre comillas invertidas (`This is a template string` ).</p>
+        <p>Las plantillas permiten comillas simples y dobles dentro de una cadena:</p>
+        <pre>
+            let text = `He's often called "Johnny"`;
+        </pre>
+        <p><strong>Nota</strong> Las plantillas no son compatibles con Internet Explorer.</p>
+    </section>
+
+    <section>
+        <h2>Longitud de la cadena</h2>
+        <p>Para encontrar la longitud de una cadena, use la propiedad incorporada length:</p>
+        <pre>
+            let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let length = text.length;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Escapar caracteres</h2>
+        <p>Debido a que las cadenas deben escribirse entre comillas, JavaScript malinterpretará esta cadena:</p>
+        <pre>
+            let text = "We are the so-called "Vikings" from the north.";
+        </pre>
+        <p>Para resolver este problema, puede utilizar un carácter de escape de barra invertida .</p>
+        <p>El carácter de escape de barra invertida ( \) convierte los caracteres especiales en caracteres de cadena:</p>
+        <table>
+            <tr><th>Codigo</th><th>Resultado</th><th>Descripción</th></tr>
+            <tr><td>\'</td><td>'</td><td>Comilla simple</td></tr>
+            <tr><td>\"</td><td>"</td><td>Comilla doble</td></tr>
+            <tr><td>\\</td><td>\</td><td>Barra invertida</td></tr>
+        </table>
+        <pre>
+            \" inserta una comilla doble en una cadena:
+            
+            let text = "We are the so-called \"Vikings\" from the north.";
+        </pre>
+        <pre>
+            \' inserta una comilla simple en una cadena:
+            
+            let text= 'It\'s alright.';
+        </pre>
+        <pre>
+            \\ inserta una barra invertida en una cadena:
+            
+            let text = "The character \\ is called backslash.";
+        </pre>
+        <p>Otras seis secuencias de escape son válidas en JavaScript:</p>
+        <table>
+            <tr><th>Codigo</th><th>Resultado</th></tr>
+            <tr><td>\b</td><td>Backspace</td></tr>
+            <tr><td>\f</td><td>Form Feed</td></tr>
+            <tr><td>\n</td><td>New Line</td></tr>
+            <tr><td>\r</td><td>Carriage Return</td></tr>
+            <tr><td>\t</td><td>Horizontal Tabulator</td></tr>
+            <tr><td>\v</td><td>Vertical Tabulator</td></tr>
+        </table>
+        <p><strong>Nota</strong>Los 6 caracteres de escape anteriores fueron diseñados originalmente para controlar máquinas de escribir,
+            teletipos y máquinas de fax. No tienen ningún sentido en HTML.</p>
+    </section>
+    <section>
+        <h2>Rompiendo líneas largas</h2>
+        <p>Para facilitar la lectura, a los programadores les gusta evitar líneas de código largas.</p>
+        <p>Una forma segura de dividir una declaración es después de un operador:</p>
+        <pre>
+            document.getElementById("demo").innerHTML =
+            "Hello Dolly!";
+        </pre>
+        <p>Una forma segura de dividir una cadena es mediante la suma de cadenas:</p>
+        <pre>
+            document.getElementById("demo").innerHTML = "Hello " +
+            "Dolly!";
+        </pre>
+    </section>
+    <section>
+        <h2>Cadenas de plantilla</h2>
+        <p>Las plantillas se introdujeron con ES6 (JavaScript 2016).</p>
+        <p>Las plantillas son cadenas entre comillas invertidas ("Esta es una cadena de plantilla").</p>
+        <p>Las plantillas permiten cadenas multilínea:</p>
+        <pre>
+            let text =
+            `The quick
+            brown fox
+            jumps over
+            the lazy dog`;
+        </pre>
+        <p><strong>Nota </strong> Las plantillas no son compatibles con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>Cadenas de JavaScript como objetos</h2>
+        <p>Normalmente, las cadenas de JavaScript son valores primitivos, creados a partir de literales:</p>
+        <pre>
+            let x = "John";
+        </pre>
+        <p>Pero las cadenas también se pueden definir como objetos con la palabra clave new:</p>
+        <pre>
+            let y = new String("John");
+        </pre>
+        <pre>
+            let x = "John";
+            let y = new String("John");
+        </pre>
+        <p>No cree objetos Strings.</p>
+        <p>La palabra clave new complica el código y ralentiza la velocidad de ejecución.</p>
+        <p>Los objetos String pueden producir resultados inesperados:</p>
+        <p>Cuando se utiliza el operador ==, x e y son iguales :</p>
+        <pre>
+            let x = "John";
+            let y = new String("John");
+        </pre>
+        <p>Cuando se utiliza el operador ===, x e y no son iguales :</p>
+        <pre>
+            let x = "John";
+            let y = new String("John");
+        </pre>
+        <p>Note la diferencia entre (x==y)y (x===y).</p>
+        <p>(x == y)¿verdadero o falso?</p>
+        <pre>
+            let x = new String("John");
+            let y = new String("John");
+        </pre>
+        <p>(x === y)¿verdadero o falso?</p>
+        <pre>
+            let x = new String("John");
+            let y = new String("John");
+        </pre>
+        <p>La comparación de dos objetos JavaScript siempre devuelve false .</p>
+    </section>
+
+</body>
+</html>

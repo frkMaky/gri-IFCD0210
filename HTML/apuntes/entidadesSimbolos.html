@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entidades en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Entidades en HTML</h1>
+    <section>
+        <h2>Entidades de caracteres HTML</h2>
+        <p>Algunos caracteres están reservados en HTML.</p>
+        <p>Si utiliza los signos menor que (&lt;) o mayor que (&gt;) en su texto HTML, el navegador puede mezclarlos con etiquetas.</p>
+        <p>Se pueden utilizar nombres de entidades o números de entidades para mostrar caracteres HTML reservados.</p>
+        <p>Los nombres de las entidades se ven así:</p>
+        <pre> &entity_name; </pre>
+        <p>Los números de entidad se ven así:</p>
+        <pre>&#entity_number;</pre>
+        <p>Los nombres de las entidades son más fáciles de recordar que los números de las entidades.</p>
+    </section>
+
+    <section>
+        <h2>Espacio irrompible</h2>
+        <p>Una entidad HTML comúnmente utilizada es el espacio sin separación:</p>
+        <p>Un espacio que no se separa es un espacio que no se dividirá en una nueva línea.</p>
+        <p>Dos palabras separadas por un espacio que no se rompa se mantendrán juntas (no se dividirán en una
+            nueva línea). Esto es útil cuando romper las palabras puede resultar perjudicial.</p>
+        <p>Ejemplos:</p>
+        <ul>
+            <li>§ 10</li>
+            <li>10 kilómetros por hora</li>
+            <li>10 p.m.</li>
+        </ul>
+        <p>Otro uso común del espacio sin separación es evitar que los navegadores trunquen espacios en las páginas HTML.</p>
+        <p>Si escribe 10 espacios en su texto, el navegador eliminará 9 de ellos. Para agregar espacios reales a su
+            texto, puede utilizar la función entidad de carácter.</p>
+        <p>El guión sin separación ( ‐ ) se utiliza para definir un carácter de guión (‐) que no se divide en una nueva línea.</p>
+    </section>
+
+    <section>
+        <h2>Algunas entidades de caracteres HTML útiles</h2>
+        <table>
+            <tr>
+                <th>Result</th> <th>Description</th> <th>Name</th> <th>Number</th>
+            </tr>
+            <tr> <td></td> <td>non-breaking space</td> <td>& nbsp;</td> <td> &# 160;</td> </tr>
+            <tr> <td>&lt;</td> <td>less than</td> <td>& lt;</td> <td> &# 60;</td> </tr>
+            <tr> <td>&gt;</td> <td>greater than</td> <td>& gt;</td> <td> &# 62;</td> </tr>
+            <tr> <td>&amp;</td> <td>ampersand</td> <td>& amp;</td> <td> &# 38;</td> </tr>
+            <tr> <td>&quot;</td> <td>double quotation mark</td> <td>& quot;</td> <td> &# 34;</td> </tr>
+            <tr> <td>&apos;</td> <td>single quotation mark</td> <td>& apos;</td> <td> &# 39;</td> </tr>
+            <tr> <td>&cent;</td> <td>cent</td> <td>& cent;</td> <td> &# 162;</td> </tr>
+            <tr> <td>&pound;</td> <td>pound</td> <td>& pound;</td> <td> &# 163;</td> </tr>
+            <tr> <td>&yen;</td> <td>yen</td> <td>& yen;</td> <td> &# 165;</td> </tr>
+            <tr> <td>&euro;</td> <td>euro</td> <td>& euro;</td> <td> &# 8364;</td> </tr>
+            <tr> <td>&copy;</td> <td>copyright</td> <td>& copy;</td> <td> &# 169;</td> </tr>
+            <tr> <td>&trade;</td> <td>trademark</td> <td>& trade;</td> <td> &# 174;</td> </tr>
+        </table>
+        <p><span class="negrita">Nota: </span>Los nombres de las entidades distinguen entre mayúsculas y minúsculas.</p>
+    </section>
+
+    <section>
+        <h2>Combinando</h2>
+        <p>Algunas marcas diacríticas, como las graves ( ̀ ) y las agudas ( ́ ), se llaman acentos.</p>
+        <p>Las marcas diacríticas se pueden utilizar en combinación con caracteres alfanuméricos para producir un
+            carácter que no está presente en el conjunto de caracteres (codificación) utilizado en la página.</p>
+        <p>Aquí hay unos ejemplos:</p>
+        <table>
+            <tr> <th>Mark</th> <th>Character</th> <th>Construct</th> <th>Result</th> </tr>
+            <tr> <td>&#768;</td> <td>a</td> <td>a &#768;</td> <td>a&#768;</td></tr>
+            <tr> <td>&#769;</td> <td>a</td> <td>a &#769;</td> <td>a&#768;</td></tr>
+            <tr> <td>&#770;;</td> <td>a</td> <td>a &#770;</td> <td>a&#770;;</td></tr>
+            <tr> <td>&#771;</td> <td>a</td> <td>a &#771;</td> <td>a&#771;</td></tr>
+            <tr> <td>&#768;</td> <td>O</td> <td>O &#768;</td> <td>O&#768;</td></tr>
+            <tr> <td>&#769;</td> <td>O</td> <td>O &#769;</td> <td>O&#769;</td></tr>
+            <tr> <td>&#770;</td> <td>O</td> <td>O &#770;</td> <td>O&#770;</td></tr>
+            <tr> <td>&#771;</td> <td>O</td> <td>O &#771;</td> <td>O&#771;</td></tr>
+
+        </table>
+    </section>
+
+    <section>
+        <h1>Símbolos HTML</h1>
+        <p class="tabular"><q>Los símbolos o letras que no están presentes en su teclado se pueden agregar a HTML mediante entidades.</q></p>
+    </section>
+
+    <section>
+        <h2>Entidades de símbolos HTML</h2>
+        <p>Las entidades HTML se describieron en el capítulo anterior.</p>
+        <p>Muchos símbolos matemáticos, técnicos y monetarios no están presentes en un teclado normal.</p>
+        <p>Para agregar dichos símbolos a una página HTML, puede usar el nombre de la entidad o el número de la
+            entidad (una referencia decimal o hexadecimal) para el símbolo:</p>
+        <pre>
+            Muestra el signo del euro:
+
+            &lt;p&gt;I will display &amp;euro;&lt;/p&gt;
+            &lt;p&gt;I will display &amp;#8364;&lt;/p&gt;
+            &lt;p&gt;I will display &amp;#x20AC;&lt;/p&gt;
+        </pre>
+        <pre>
+            Se mostrará como:
+
+            Mostraré €
+            Mostraré €
+            Mostraré €
+        </pre>
+    </section>
+
+    <section>
+        <h2>Algunos símbolos matemáticos soportados por HTML</h2>
+        <table>
+            <tr> <th>Char</th> <th> Number</th> <th> Entity </th> <th>Description</th></tr>
+            <tr> <td>&#8704;</td><td>&# 8704;</td> <td>& forall;</td><td> For all</td></tr>
+            <tr> <td>&#8706;</td><td>&# 8706;</td> <td>& part;</td><td>Partial differential</td></tr>
+            <tr> <td>&#8707;</td><td>&# 8707;</td> <td>& exist;</td><td>There exists</td></tr>
+            <tr> <td>&#8709;</td><td>&# 8709;</td> <td>& empty;</td><td>Empty sets</td></tr>
+            <tr> <td>&#8711;</td><td>&# 8711;</td> <td>& nabla;</td><td>Nabla</td></tr>
+            <tr> <td>&#8712;</td><td>&# 8712;</td> <td>& isin;</td><td>Element of</td></tr>
+            <tr> <td>&#8713;</td><td>&# 8713;</td> <td>& notin;</td><td>Not an element of</td></tr>
+            <tr> <td>&#8715;</td><td>&# 8715;</td> <td>& ni;</td><td>Contains as member</td></tr>
+            <tr> <td>&#8719;</td><td>&# 8719;</td> <td>& prod;</td><td>N-ary product</td></tr>
+            <tr> <td>&#8721;</td><td>&# 8721;</td> <td>& sum;</td><td>N-ary summation</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Algunas letras griegas soportadas por HTML</h2>
+        <table>
+            <tr> <th>Char</th> <th> Number</th> <th> Entity </th> <th>Description</th></tr>
+            <tr> <td>&#913;</td><td>&# 913;</td> <td>& Alpha;</td><td>GREEK ALPHA</td></tr>
+            <tr> <td>&#914;</td><td>&# 914;</td> <td>& Beta;</td><td>GREEK BETA</td></tr>
+            <tr> <td>&#915;</td><td>&# 915;</td> <td>& Ganma;</td><td>GREEK GANMA</td></tr>
+            <tr> <td>&#916;</td><td>&# 916;</td> <td>& Delta;</td><td>GREEK DELTA</td></tr>
+            <tr> <td>&#917;</td><td>&# 917;</td> <td>& Epsilon;</td><td>GREEK EPSILON</td></tr>
+            <tr> <td>&#918;</td><td>&# 918;</td> <td>& Zeta;</td><td>GREEK ZETA</td></tr> 
+        </table>
+    </section>
+
+    <section>
+        <h2>Algunas otras entidades soportadas por HTML</h2>
+        <table>
+            <tr> <th>Char</th> <th> Number</th> <th> Entity </th> <th>Description</th></tr>
+            <tr> <td>&#169;</td><td>&# 169;</td> <td>& copy;</td><td>COPYRIGHT</td></tr>
+            <tr> <td>&#174;</td><td>&# 174;</td> <td>& reg;</td><td>REGISTERED</td></tr>
+            <tr> <td>&#8364;</td><td>&# 8364;</td> <td>& euro;</td><td>EURO SIGN</td></tr>
+            <tr> <td>&#8482;</td><td>&# 8482;</td> <td>& trade;</td><td>TRADEMARK</td></tr>
+            <tr> <td>&#8592;</td><td>&# 8592;</td> <td>& larr;</td><td>LEFT ARROW</td></tr>
+            <tr> <td>&#8593;</td><td>&# 8593;</td> <td>& uarr;</td><td>UP ARROW</td></tr>
+            <tr> <td>&#8594;</td><td>&# 8594;</td> <td>& rarr;</td><td>RIGHT ARROW</td></tr>
+            <tr> <td>&#8595;</td><td>&# 8595;</td> <td>& darr;</td><td>DOWN ARROW</td></tr>
+            <tr> <td>&#9824;</td><td>&# 9824;</td> <td>& spades;</td><td>SPADE</td></tr>
+            <tr> <td>&#9827;</td><td>&# 9827;</td> <td>& clubs;</td><td>CLUB</td></tr>
+            <tr> <td>&#9829;</td><td>&# 9829;</td> <td>& hearts;</td><td>HEART</td></tr>
+            <tr> <td>&#9830;</td><td>&# 9830;</td> <td>& diams;</td><td>DIAMOND</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Usando emojis en HTML</h2>
+        <p>Los emojis son caracteres del conjunto de caracteres UTF-8:</p>
+        <table>
+            <tr> <th>Emoji</th> <th>Valor</th></tr>
+            <tr> <td>&#128507;</td> <td>&# 128507;</td></tr>
+            <tr> <td>&#128508;</td> <td>&# 128508;</td></tr>
+            <tr> <td>&#128509;</td> <td>&# 128509;</td></tr>
+            <tr> <td>&#128510;</td> <td>&# 128510;</td></tr>
+            <tr> <td>&#128511;</td> <td>&# 128511;</td></tr>
+            <tr> <td>&#128512;</td> <td>&# 128512;</td></tr>
+            <tr> <td>&#128513;</td> <td>&# 128513;</td></tr>
+            <tr> <td>&#128514;</td> <td>&# 128514;</td></tr>
+            <tr> <td>&#128515;</td> <td>&# 128515;</td></tr>
+            <tr> <td>&#128516;</td> <td>&# 128516;</td></tr>
+            <tr> <td>&#128517;</td> <td>&# 128517;</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>¿Qué son los emojis?</h2>
+        <p>Los emojis parecen imágenes o íconos, pero no lo son.</p>
+        <p>Son letras (caracteres) del juego de caracteres UTF-8 (Unicode).</p>
+        <p>UTF-8 cubre casi todos los caracteres y símbolos del mundo.</p>
+    </section>
+    
+    <section>
+        <h2>El atributo del juego de caracteres HTML</h2>
+        <p>Para mostrar una página HTML correctamente, un navegador web debe conocer el juego de caracteres utilizado en la página.</p>
+        <p>Esto se especifica en la etiqueta &lt;meta&gt;</p>
+        <pre>
+            &lt;meta charset="UTF-8"%gt;
+        </pre>
+        <p>Si no se especifica, UTF-8 es el juego de caracteres predeterminado en HTML.</p>
+    </section>
+
+    <section>
+        <h2>Caracteres UTF-8</h2>
+        <p>Muchos caracteres UTF-8 no se pueden escribir en un teclado, pero siempre se pueden mostrar usando
+            números (llamados números de entidad):</p>
+        <ul>
+            <li>A es 65</li>
+            <li>B es 66</li>
+            <li>C es 67</li>
+        </ul>
+
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;body&gt;
+            &lt;p&gt;I will display A B C&lt;/p&gt;
+            &lt;p&gt;I will display &#65; &#66; &#67;&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+
+        <h3>Ejemplo explicado</h3>
+        <p>El elemento &lt;meta charset="UTF-8"&gt; define el juego de caracteres.</p>
+        <p>Los caracteres A, B y C se muestran junto a los números 65, 66 y 67.</p>
+        <p>Para que el navegador comprenda que está mostrando un carácter, debe comenzar el número de entidad con y terminar con ; (punto y coma).</p>
+    </section>
+
+    <section>
+        <h2>Personajes emojis</h2>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+              &lt;meta charset="UTF-8"&gt;
+
+            &lt;body&gt;
+                &lt;h1&gt;My First Emoji&lt;/h1&gt;
+                &lt;p&gt;&#128512;&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <p>Dado que los emojis son caracteres, se pueden copiar, mostrar y cambiar de tamaño como cualquier otro carácter en HTML.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Sized Emojis&lt;/h1&gt;
+                &lt;p style="font-size:48px"&gt;
+                    &#128512; &#128516; &#128525; &#128151;
+                &lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos en bloque y en línea en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Elementos en bloque y en línea en HTML</h1>
+    <p class="tabular"><q>Cada elemento HTML tiene un valor de visualización predeterminado, según el tipo de elemento que sea.</q></p>
+    <p class="tabular"><q>Los dos valores de visualización más comunes son bloque y en línea.</q></p>
+    <section>
+        <h2>Elementos a nivel de bloque</h2>
+        <p>Un elemento a nivel de bloque siempre comienza en una nueva línea y los navegadores agregan
+            automáticamente algo de espacio (un margen) antes y después del elemento.</p>
+        <p>Un elemento a nivel de bloque siempre ocupa todo el ancho disponible (se extiende hacia la izquierda y
+            hacia la derecha tanto como puede).</p>
+        <p>Dos elementos de bloque comúnmente utilizados son: &lt;p&gt; y &lt;div&gt;.</p>
+        <p>El elemento &lt;p&gt; define un párrafo en un documento HTML.</p>
+        <p>El elemento &lt;div&gt; define una división o una sección en un documento HTML.</p>
+        <p>Estos son los elementos a nivel de bloque en HTML:</p>
+        <table>
+            <tr> <td>&lt;address&gt;</td> <td>&lt;article&gt;</td> <td>&lt;aside&gt;</td> <td>&lt;blockquote&gt;</td> </tr>
+            <tr> <td>&lt;canvas&gt;</td> <td>&lt;dd&gt;</td> <td>&lt;div&gt;</td> <td>&lt;dl&gt;</td> </tr>
+            <tr> <td>&lt;dt&gt;</td> <td>&lt;fieldset&gt;</td> <td>&lt;h1&gt; - &lt;h6&gt;</td> <td>&lt;header&gt;</td> </tr>
+            <tr> <td>&lt;hr&gt;</td> <td>&lt;li&gt;</td> <td>&lt;main&gt;</td> <td>&lt;nav&gt;</td> </tr>
+            <tr> <td>&lt;noscript&gt;</td> <td>&lt;ol&gt;</td> <td>&lt;p&gt;</td> <td>&lt;pre&gt;</td> </tr>
+            <tr> <td>&lt;section&gt;</td> <td>&lt;table&gt;</td> <td>&lt;tfoot&gt;</td> <td>&lt;ul&gt;</td> </tr>
+            <tr> <td>&lt;video&gt;</td> </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Elementos en línea</h2>
+        <p>Un elemento en línea no comienza en una nueva línea. Un elemento en línea solo ocupa el ancho necesario.</p>
+        <p>Este es un elemento &lt;span&gt; dentro de un párrafo.</p>
+        <pre> 
+            &lt;span&gt;Hello World&lt;/span&gt;
+        </pre>
+        <p>Aquí están los elementos en línea en HTML:</p>
+        <table>
+            <tr> <td>&lt;a&gt;</td> <td>&lt;abbr&gt;</td> <td>&lt;acronym&gt;</td> <td>&lt;b&gt;</td></tr>
+            <tr> <td>&lt;bdo&gt;</td> <td>&lt;big&gt;</td> <td>&lt;br&gt;</td> <td>&lt;button&gt;</td></tr>
+            <tr> <td>&lt;cite&gt;</td> <td>&lt;code&gt;</td> <td>&lt;dfn&gt;</td> <td>&lt;em&gt;</td></tr>
+            <tr> <td>&lt;i&gt;</td> <td>&lt;img&gt;</td> <td>&lt;input&gt;</td> <td>&lt;kbd&gt;</td></tr>
+            <tr> <td>&lt;label&gt;</td> <td>&lt;map&gt;</td> <td>&lt;object&gt;</td> <td>&lt;output&gt;</td></tr>
+            <tr> <td>&lt;q&gt;</td> <td>&lt;samp&gt;</td> <td>&lt;script&gt;</td> <td>&lt;select&gt;</td></tr>
+            <tr> <td>&lt;small&gt;</td> <td>&lt;span&gt;</td> <td>&lt;strong&gt;</td> <td>&lt;sub&gt;</td></tr>
+            <tr> <td>&lt;sup&gt;</td> <td>&lt;textarea&gt;</td> <td>&lt;time&gt;</td> <td>&lt;tt&gt;</td></tr>
+            <tr> <td>&lt;var&gt;</td> </tr> 
+        </table>
+    </section>
+
+    <section>
+        <h2>El elemento &lt;div&gt;</h2>
+        <p>El elemento &lt;div&gt; se utiliza a menudo como contenedor para otros elementos HTML.</p>
+        <p>El elemento &lt;div&gt; no tiene atributos obligatorios, pero style, class e id son comunes.</p>
+        <p>Cuando se usa junto con CSS, el elemento &lt;div&gt; se puede usar para diseñar bloques de contenido:</p>
+        <pre>
+            &lt;div style="background-color:black;color:white;padding:20px;"&gt;
+                &lt;h2&gt;London&lt;/h2&gt;
+                &lt;p&gt;London is the capital city of England. It is the most populous city in the United Kingdom, with a
+                metropolitan area of over 13 million inhabitants.&lt;/p&gt;
+            &lt;/div&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El elemento &lt;span&gt;</h2>
+        <p>El elemento &lt;span&gt; es un contenedor en línea que se utiliza para marcar una parte de un texto o una parte de un documento.</p>
+        <p>El elemento &lt;span&gt; no tiene atributos obligatorios, pero style,class e id son comunes.</p>
+        <p>Cuando se usa junto con CSS, el elemento &lt;span&gt; se puede usar para diseñar partes del texto:</p>
+        <pre>
+            &lt;p&gt;My mother has &lt;span style="color:blue;font-weight:bold;"&gt;blue&lt;/span&gt; eyes and my father
+                has &lt;span style="color:darkolivegreen;font-weight:bold;"&gt;dark green&lt;/span&gt; eyes.&lt;/p&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>Un elemento a nivel de bloque siempre comienza en una nueva línea y ocupa todo el ancho disponible</li>
+            <li>Un elemento en línea no comienza en una nueva línea y solo ocupa el ancho necesario</li>
+            <li>El elemento &lt;div&gt; es a nivel de bloque y a menudo se usa como contenedor para otros elementos HTML.</li>
+            <li>El elemento &lt;span&gt; es un contenedor en línea que se utiliza para marcar una parte de un texto o una parte de un documento.</li>
+        </ul>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Nombra un elemento de bloque HTML.</p>
+    </section>
+
+    <section>
+        <h2>Etiquetas en HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;div&gt;</td> <td>Define una sección en un documento (en bloque)</td> </tr>
+            <tr> <td>&lt;span&gt;</td> <td>Defines a section in a document (en línea)</td> </tr>
+        </table>
+    </section>
+
+</body>
+</html>

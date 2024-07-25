@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Tablas 32</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: #578062;
+        }
+        table {
+            margin-bottom: 100px;
+        }
+        table,th,td {
+            border:1px solid black;
+            padding: 5px;
+            text-align: center;
+            background-color: white;
+        }
+        td {font-weight: bold;}
+        th {background-color: #b8f2ee;}
+        #evaluacion {margin-top: 100px;width: 80%;}
+        .aprobados, .verde {background-color: green;color: white;}
+        .suspendidos, .rojo {background-color: red;color: floralwhite;}
+        .vino {background-color: #5e2129;color: white;}
+        .rosa {background-color: palevioletred;}
+        .gold {background-color: gold;}
+</style>
+</head>
+<body>
+    <table id="evaluacion">
+        <tr>
+            <td rowspan="2"></td>
+            <th colspan="2">1ª Eval</th>
+            <th colspan="2">2ª Eval</th>
+            <th colspan="2">1ª Eval</th>
+        </tr>
+        
+        <tr>
+            <td class="aprobados">Aprobados</td>
+            <td class="suspendidos">Suspendidos</td>
+            <td class="aprobados">Aprobados</td>
+            <td class="suspendidos">Suspendidos</td>
+            <td class="aprobados">Aprobados</td>
+            <td class="suspendidos">Suspendidos</td>
+        </tr>
+
+        <tr>
+            <th>Informática</th>
+            <td>20</td>
+            <td>2</td>
+            <td>19</td>
+            <td>3</td>
+            <td>22</td>
+            <td>0</td>
+        </tr>
+        
+        <tr>
+            <th>Matemáticas</th>
+            <td>10</td>
+            <td>12</td>
+            <td>15</td>
+            <td>7</td>
+            <td>12</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    
+    <table>
+        <tr>
+            <th>Horas</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>   
+        </tr>
+        <tr>
+            <th>8:00 - 9:00</th>
+            <td rowspan="2" class="rojo">Matemáticas</td>
+            <td class="vino">Lengua</td>
+            <td>Música</td>
+            <td></td>
+            <td rowspan="2" class="rojo">Matemáticas</td>
+        </tr>
+        <tr>
+            <th>9:00 - 10:00</th>
+            <td>Inglés</td>
+            <td>Inglés</td>
+            <td class="rosa">E. Física</td>
+        </tr>
+        <tr>
+            <th>10:00 - 10:30</th>
+            <td colspan="5" class="verde">Recreo</td>
+        </tr>
+        <tr>
+            <th>10:30 - 11:30</th>
+            <td class="rosa">E. Física</td>
+            <td>Valenciano</td>
+            <td class="vino" rowspan="2">Lengua</td>
+            <td class="gold">Informática</td>
+            <td>Inglés</td>
+        </tr>
+        <tr>
+            <th>12:30 - 13:30</th>
+            <td>Música</td>
+            <td class="rosa">E. Física</td>
+            <td rowspan="2" class="rojo">Matemáticas</td>
+            <td class="gold">Informática</td>
+        </tr>
+        <tr>
+            <th>13:30 - 14:30</th>
+            <td></td>
+            <td class="gold">Informática</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

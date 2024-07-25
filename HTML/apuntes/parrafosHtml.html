@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Párrafos HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Párrafos HTML</h1>
+    <p class="tabular"><q>Un párrafo siempre comienza en una nueva línea y suele ser un bloque de texto.</q></p>
+    <section>
+        <h2>Párrafos HTML</h2>
+        <p>El elemento de HTML &lt;p&gt; define un párrafo.</p>
+        <p>Un párrafo siempre comienza en una nueva línea y los navegadores agregan automáticamente un espacio
+            en blanco (un margen) antes y después de un párrafo.</p>
+        <pre>
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;p&gt;This is another paragraph.&lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Cómo se muestra el HTML</h2>
+        <p>No puede estar seguro de cómo se mostrará el HTML.</p>
+        <p>Las pantallas grandes o pequeñas y las ventanas redimensionadas crearán resultados diferentes.</p>
+        <p>Con HTML, no puede cambiar la visualización agregando espacios o líneas adicionales en su código
+            HTML.</p>
+        <p>El navegador eliminará automáticamente los espacios y líneas adicionales cuando se muestre la página:</p>
+        <pre>
+            &lt;p&gt;
+            This paragraph
+            contains a lot of lines
+            in the source code,
+            but the browser
+            ignores it.
+            &lt;/p&gt;
+
+            &lt;p&gt;
+            This paragraph
+            contains a lot       of spaces
+            in the source code,
+            but the browser
+            ignores it.
+            &lt;/p&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Rayas horizontales en HTML</h2>
+        <p>La etiqueta &lt;hr&gt; define una ruptura temática en una página HTML y suele mostrarse como una raya
+            horizontal.</p>
+        <p>El elemento &lt;hr&gt; se utiliza para separar contenido (o definir un cambio) en una página HTML:</p>
+        <pre>
+            &lt;1&gt;This is heading 1&lt;/h1&gt;
+            &lt;p&gt;This is some text.&lt;/p&gt;
+            &lt;hr&gt;
+            &lt;h2&gt;This is heading 2&lt;/h2&gt;
+            &lt;p&gt;This is some other text.&lt;/p&gt;
+            &lt;hr&gt;
+        </pre>
+        <p>La etiqueta &lt;hr&gt; es una etiqueta vacía, lo que significa que no tiene etiqueta de fin.</p>
+    </section>
+
+    <section>
+        <h2>Saltos de línea HTML</h2>
+        <p>El elemento de HTML &lt;br&gt; define un salto de línea.</p>
+        <p>Use &lt;br&gt; si desea un salto de línea (una nueva línea) sin comenzar un nuevo párrafo:</p>
+        <pre>
+            &lt;p&gt;This is&lt;br&gt;a paragraph&lt;br&gt;with line breaks.&lt;/p&gt;
+        </pre>
+        <p>La etiqueta &lt;br&gt; es una etiqueta vacía, lo que significa que no tiene etiqueta final.</p>
+    </section>
+
+    <section>
+        <h2>El problema del poema</h2>
+        <p>Este poema se mostrará en una sola línea:</p>
+        <pre>
+            &lt;p&gt;
+                My Bonnie lies over the ocean.
+                My Bonnie lies over the sea.
+                My Bonnie lies over the ocean.
+                Oh, bring back my Bonnie to me.
+            &lt;/p&gt;
+        </pre>
+        <h2>Solución: el elemento HTML &lt;pre&gt;</h2>
+        <p>El elemento HTML &lt;pre&gt; define texto preformateado.</p>
+        <p>El texto dentro de un elemento &lt;pre&gt; se muestra en una fuente de ancho fijo (normalmente Courier) y
+            conserva tanto los espacios como los saltos de línea:</p>
+        <pre>
+            &lt;pre&gt;
+                My Bonnie lies over the ocean.
+                My Bonnie lies over the sea.
+                My Bonnie lies over the ocean.
+                Oh, bring back my Bonnie to me.
+            &lt;/pre&gt;
+        </pre>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio:</h2>
+        <p>Utilice la etiqueta HTML correcta para agregar un párrafo con el texto "¡Hola mundo!".</p>
+        <pre>
+            &lt;html&gt;
+            &lt;body&gt;
+
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Referencia de etiquetas HTML</h2>
+        <table>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Descripción</th>
+            </tr>
+            <tr> <td>&lt;p&gt;</td> <td>Define un párrafo</td> </tr>
+            <tr> <td>&lt;hr&gt;</td> <td>Define un cambio temático en el contenido</td> </tr>
+            <tr> <td>&lt;br&gt;</td> <td>Inserta un salto de línea</td> </tr>
+            <tr> <td>&lt;pre&gt;</td> <td>Define texto preformateado</td> </tr>
+        </table>
+    </section>
+
+</body>
+</html>

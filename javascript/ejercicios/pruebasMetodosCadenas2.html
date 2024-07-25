@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas métodos cadenas 2</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Bubbler+One&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica+SC&family=Monoton&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pruebas métodos cadenas 2</h1>    
+
+    <div id="ejercicio1">
+        <!-- Teniendo la frase La casa de samuel esta en salamanca dime si esta Sa u en que posisicion y muestra la posicion -->
+        <p class="enunciado">Teniendo la frase <em>"La casa de Samuel esta en Salamanca"</em> dime si esta Sa u en que posisicion y muestra la posicion</p>
+        <script>
+            let frase = "La casa de Samuel está en Salamanca";
+            let result = frase.includes("Sa");
+            document.write("Se ha encontrado:<strong>" + result + "</strong> Posicion:<strong>" + frase.indexOf("Sa") +  "</strong>");
+        </script>
+    </div>
+
+    <div id="ejercicio1">
+        <!-- dime si comienza por "a " -->
+        <p class="enunciado">dime si comienza por <em>"a "</em></p>
+        <script>
+            document.write("La frase comienza por 'a ' : " + frase.startsWith('a '));
+        </script>
+    </div>
+   
+    <div id="ejercicio1">
+        <p class="enunciado">Prueba endWith : Compruebe si los 11 primeros caracteres de una cadena terminan en "mundo":</p>
+        <script>
+                let text = "Hello world, welcome to the universe.";
+                text.endsWith("world", 11);
+                document.write(text.endsWith("world", 11)   );
+        </script>
+    </div>
+
+
+</body>
+</html>

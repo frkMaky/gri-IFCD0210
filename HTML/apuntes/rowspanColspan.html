@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colspan y Rowspan en tablas en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Colspan y Rowspan en tablas en HTML</h1>
+    <p class="tabular"><q>Las tablas HTML pueden tener celdas que abarcan varias filas y/o columnas.</q></p>
+    <section>
+        <h2>Tablas en HTML - colspan</h2>
+        <p>Para hacer que una celda abarque varias columnas, utilice el atributo colspan</p>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th colspan="2"&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Age&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;43&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Eve&lt;/td&gt;
+                    &lt;td&gt;Jackson&lt;/td&gt;
+                    &lt;td&gt;57&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+        <p>Nota: El valor del atributo colspan representa el número de columnas que se abarcarán.</p>
+    </section>
+
+    <section>
+        <h2>Tablas en HTML - rowspan</h2>
+        <p>Para hacer que una celda abarque varias filas, utilice el atributo rowspan</p>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                        
+                    &lt;th rowspan="2"&gt;Phone&lt;/th&gt;
+                    &lt;td&gt;555-1234&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;555-8745&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+        <p>Nota: El valor del atributo rowspan representa el número de filas que se abarcarán.</p>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice el atributo HTML correcto para hacer que el primer elemento th abarque dos columnas.</p>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Nombre&lt;/th&gt;
+                    &lt;th&gt;Edad&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Jill&lt;/td&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;50&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Eva&lt;/td&gt;
+                    &lt;td&gt;Jackson&lt;/td&gt;
+                    &lt;td&gt;94&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+    </section>
+    
+</body>
+</html>

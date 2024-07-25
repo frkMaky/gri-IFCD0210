@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Lista de libros XML
+Crea un documento XML que represente una lista de libros. Cada libro debe tener los siguientes atributos: título, 
+autor y año de publicación. Incluye al menos tres libros en la lista. -->
+<libros>
+    <libro titulo="El Señor de los Anillos" autor="JR Tolkien" anho="1984" />
+    <libro titulo="1984" autor="George Orwell" anho="1949" />
+    <libro titulo="Yo, Robot" autor="Isaaac Asimov" anho="1950" />
+</libros>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de estilo HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Guía de estilo HTML</h1>
+    <p class="tabular"><q>Un código HTML coherente, limpio y ordenado facilita que otros lean y comprendan su código.</q></p>
+    <p class="tabular"><q>A continuación se ofrecen algunas pautas y consejos para crear un buen código HTML.</q></p>
+    <section>
+        <h2>Declarar siempre el tipo de documento</h2>
+        <p>Declare siempre el tipo de documento como la primera línea de su documento.</p>
+        <p>El tipo de documento correcto para HTML es:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Utilice nombres de elementos en minúsculas</h2>
+        <p>HTML permite mezclar letras mayúsculas y minúsculas en los nombres de los elementos.</p>
+        <p>Sin embargo, recomendamos utilizar nombres de elementos en minúsculas porque:</p>
+        <ul>
+            <li>Mezclar nombres en mayúsculas y minúsculas queda mal</li>
+            <li>Los desarrolladores normalmente usan nombres en minúsculas</li>
+            <li>Las minúsculas se ven más limpias</li>
+            <li>Las minúsculas son más fáciles de escribir.</li>
+        </ul>
+        <p>Bien:</p>
+        <pre>
+            &lt;body&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+        </pre>
+        <p>Mal:</p>
+        <pre>
+            &lt;BODY&gt;
+                &lt;P&gt;This is a paragraph.&lt;/P&gt;
+            &lt;/BODY&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Cerrar todos los elementos HTML</h2>
+        <p>En HTML, no es necesario cerrar todos los elementos.</p>
+        <p>Sin embargo, recomendamos encarecidamente cerrar todos los elementos HTML que sean posibles, como este:</p>
+        <p>Bien:</p>
+        <pre>
+            &lt;section&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/section&gt;
+        </pre>
+        <p>Mal:</p>
+        <pre>
+            &lt;section&gt;
+                &lt;p&gt;This is a paragraph.
+                &lt;p&gt;This is a paragraph.
+            &lt;/section&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Utilice nombres de atributos en minúsculas</h2>
+        <p>HTML permite mezclar letras mayúsculas y minúsculas en los nombres de los atributos.</p>
+        <p>Sin embargo, recomendamos utilizar nombres de atributos en minúsculas porque:</p>
+        <ul>
+            <li>Mezclar nombres en mayúsculas y minúsculas queda mal</li>
+            <li>Los desarrolladores normalmente usan nombres en minúsculas</li>
+            <li>Las minúsculas se ven más limpias</li>
+            <li>Las minúsculas son más fáciles de escribir.</li>
+        </ul>
+        <p>Bien:</p>
+        <pre>
+            &lt;a href="https://www.w3schools.com/html/"&gt;Visit our HTML tutorial&lt;/a&gt;
+        </pre>
+        <p>Mal:</p>
+        <pre>
+            &lt;a HREF="https://www.w3schools.com/html/"&gt;Visit our HTML tutorial&lt;/a&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Citar siempre valores de atributos</h2>
+        <p>HTML permite valores de atributos sin comillas.</p>
+        <p>Sin embargo, recomendamos citar los valores de los atributos porque:</p>
+        <ul>
+            <li>Los desarrolladores normalmente citan valores de atributos</li>
+            <li>Los valores citados son más fáciles de leer.</li>
+            <li>DEBES usar comillas si el valor contiene espacios</li>
+        </ul>
+        <p>Bien:</p>
+        <pre>
+            &lt;table class="striped"&gt;
+        </pre>
+        <p>Mal:</p>
+        <pre>
+            &lt;table class=striped&gt;
+        </pre>
+        <p>Muy mal:</p>
+        <pre>
+            Esto no funcionará porque el valor contiene espacios:
+            &lt;able class=table striped&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Especifique siempre alt, ancho y alto para las imágenes</h2>
+        <p>Especifique siempre el atributo alt de las imágenes. Este atributo es importante si la imagen por algún motivo no se puede mostrar.</p>
+        <p>Además, defina siempre el width y heightde las imágenes. Esto reduce el parpadeo, porque el navegador puede reservar espacio para la
+             imagen antes de cargarla.</p>
+        <p>Bien:</p>
+        <pre>
+            &lt;img src="html5.gif" alt="HTML5" style="width:128px;height:128px"&gt;
+        </pre>
+        <p>Mal:</p>
+        <pre>
+            &lt;img src="html5.gif"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Espacios y signos iguales</h2>
+        <p>HTML permite espacios alrededor de los signos iguales. Pero sin espacio es más fácil de leer y agrupa mejor las entidades.</p>
+        <p>Bien:</p>
+        <pre>
+            &lt;link rel="stylesheet" href="styles.css"&gt;
+        </pre>
+        <p>Mal:</p>
+        <pre>
+            &lt;link rel = "stylesheet" href = "styles.css"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Evite líneas de código largas</h2>
+        <p>Cuando se utiliza un editor HTML, NO es conveniente desplazarse hacia la derecha y hacia la izquierda para leer el código HTML.</p>
+        <p>Intente evitar líneas de código demasiado largas.</p>
+    </section>
+
+    <section>
+        <h2>Líneas en blanco y sangría</h2>
+        <p>No agregue líneas en blanco, espacios o sangrías sin un motivo.</p>
+        <p>Para facilitar la lectura, agregue líneas en blanco para separar bloques de código grandes o lógicos.</p>
+        <p>Para facilitar la lectura, agregue dos espacios de sangría. No utilice la tecla de tabulación.</p>
+        <p>Bien:</p>
+        <pre>
+            &lt;body&gt;
+                &lt;h1&gt;Famous Cities&lt;/h1&gt;
+                &lt;h2&gt;Tokyo&lt;/h2&gt;
+                &lt;p&gt;Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.&lt;/p&gt;
+                &lt;h2&gt;London&lt;/h2&gt;
+                &lt;p&gt;London is the capital city of England. It is the most populous city in the United Kingdom.&lt;/p&gt;
+                &lt;h2&gt;Paris&lt;/h2&gt;
+                &lt;p&gt;Paris is the capital of France. The Paris area is one of the largest population centers in Europe.&lt;/p&gt;
+        </body>
+        </pre>
+        <p>Mal:</p>
+        <pre>
+            &lt;body&gt;
+            &lt;h1&gt;Famous Cities&lt;/h1&gt;
+            &lt;h2&gt;Tokyo&lt;/h2&gt;&lt;p&gt;Tokyo is the capital of Japan, the center of the Greater Tokyo Area, and the most
+            populous metropolitan area in the world.&lt;/p&gt;
+            &lt;h2&gt;London&lt;/h2&gt;&lt;p&gt;London is the capital city of England. It is the most populous city in the United
+            Kingdom.&lt;/p&gt;
+            &lt;h2&gt;Paris&lt;/h2&gt;&lt;p&gt;Paris is the capital of France. The Paris area is one of the largest population centers in
+            Europe.&lt;/p&gt;
+            &lt;/body&gt;
+        </pre>
+        <p>Buen ejemplo de tabla:</p>
+        <pre>
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Description&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;A&lt;/td&gt;
+                    &lt;td&gt;Description of A&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;B&lt;/td&gt;
+                    &lt;td&gt;Description of B&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        </pre>
+        <p>Buen ejemplo de lista:</p>
+        <pre>
+            &lt;ul&gt;
+                &lt;li&gt;London&lt;/li&gt;
+                &lt;li&gt;Paris&lt;/li&gt;
+                &lt;li&gt;Tokyo&lt;/li&gt;
+            &lt;/ul&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Nunca te saltes el elemento &lt;title&gt;</h2>
+        <p>El elemento &lt;title&gt; es obligatorio en HTML.</p>
+        <p>¡El contenido del título de una página es muy importante para la optimización de motores de búsqueda
+            (SEO)! Los algoritmos de los motores de búsqueda utilizan el título de la página para decidir el orden al
+            enumerar las páginas en los resultados de búsqueda.</p>
+        <p>El elemento &lt;title&gt;:</p>
+        <ul>
+            <li>define un título en la barra de herramientas del navegador</li>
+            <li>proporciona un título para la página cuando se agrega a favoritos</li>
+            <li>muestra un título para la página en los resultados del motor de búsqueda</li>
+        </ul>
+        <p>Por lo tanto, intenta que el título sea lo más preciso y significativo posible:</p>
+        <pre>
+            &lt;title&gt;HTML Style Guide and Coding Conventions&lt;/title&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>¿Omitiendo &lt;html&gt; y &lt;body&gt;?</h2>
+        <p>Una página HTML se validará sin las etiquetas &lt;html&gt; y &lt;body&gt;:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;head&gt;
+            &lt;title&gt;Page Title&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;h1&gt;This is a heading&lt;/h1&gt;
+            &lt;p&gt;This is a paragraph.&lt;/p&gt;
+        </pre>
+        <p>Sin embargo, recomendamos encarecidamente agregar siempre las etiquetas &lt;html&gt; y &lt;body&gt;.</p>
+    </section>
+
+    <section>
+        <h2>¿Omitiendo &lt;head&gt;?</h2>
+        <p>La etiqueta &lt;head&gt; HTML también se puede omitir.</p>
+        <p>Los navegadores agregarán todos los elementos antes de &lt;body&gt; a un elemento &lt;head&gt; predeterminado.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;title&gt;Page Title&lt;/title&gt;
+            &lt;body&gt;
+                &lt;h1&gt;This is a heading&lt;/h1&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <p>Sin embargo, recomendamos utilizar la etiqueta &lt;head&gt;.</p>
+    </section>
+
+    <section>
+        <h2>¿Cerrar elementos HTML vacíos?</h2>
+        <p>En HTML, es opcional cerrar elementos vacíos.</p>
+        <p>Permitido:</p>
+        <pre>
+            &lt;meta charset="utf-8"&gt;
+        </pre>
+        <p>También permitido:</p>
+        <pre>
+            &lt;meta charset="utf-8" /&gt;
+        </pre>
+        <p>Si espera que el software XML/XHTML acceda a su página, mantenga la barra diagonal de cierre (/), porque es obligatoria en XML y XHTML.</p>
+    </section>
+
+    <section>
+        <h2>Agregue el atributo de idioma</h2>
+        <p>Siempre debes incluir el atributo lang dentro de la etiqueta &lt;html&gt;, para declarar el idioma de la página Web. 
+            Esto está destinado a ayudar a los motores de búsqueda y navegadores.</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en-us"&gt;
+            &lt;head&gt;
+                &lt;title&gt;Page Title&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;This is a heading&lt;/h1&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Metadatos</h2>
+        <p>Para garantizar una interpretación adecuada y una indexación correcta en los motores de búsqueda, tanto
+            el idioma como la codificación de caracteres deben definirse lo antes posible en un documento HTML:
+            &lt;meta charset="charsetadecuado"&gt;</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang="en-us"&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+                &lt;title&gt;Page Title&lt;/title&gt;
+            &lt;/head&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Configuración de la ventana gráfica</h2>
+        <p>La ventana gráfica es el área visible para el usuario de una página web. Varía según el dispositivo: será
+            más pequeño en un teléfono móvil que en la pantalla de una computadora.</p>
+        <p>Debes incluir el siguiente elemento &lt;meta&gt; en todas tus páginas web:</p>
+        <pre>
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        </pre>
+        <p>Esto le da al navegador instrucciones sobre cómo controlar las dimensiones y la escala de la página.</p>
+        <p>La parte width=device-width establece el ancho de la página para seguir el ancho de la pantalla
+            del dispositivo (que variará según el dispositivo).</p>
+        <p>La parte initial-scale=1.0 establece el nivel de zoom inicial cuando el navegador carga la página
+            por primera vez.</p>
+    </section>
+
+    <section>
+        <h2>Comentarios HTML</h2>
+        <p>Los comentarios breves deben escribirse en una línea, así:</p>
+        <pre class="verde">
+            &lt;!-- This is a comment --&gt;
+        </pre>
+        <p>Los comentarios que abarquen más de una línea deben escribirse así:</p>
+        <pre class="verde">
+            &lt;!--
+                This is a long comment example. This is a long comment example.
+                This is a long comment example. This is a long comment example.
+            --&gt;
+        </pre>
+        <p>Los comentarios largos son más fáciles de observar si tienen una sangría de dos espacios.</p>
+    </section>
+
+    <section>
+        <h2>Usar hojas de estilo</h2>
+        <p>Utilice una sintaxis simple para vincular a hojas de estilo (el atributo type no es necesario):</p>
+        <pre>
+            &lt;link rel="stylesheet" href="styles.css"&gt;
+        </pre>
+        <p>Las reglas CSS cortas se pueden escribir comprimidas, así:</p>
+        <pre>
+            p.intro {font-family:Verdana;font-size:16em;}
+        </pre>
+        <p>Las reglas CSS largas deben escribirse en varias líneas:</p>
+        <pre>
+            body {
+                background-color: lightgrey;
+                font-family: "Arial Black", Helvetica, sans-serif;
+                font-size: 16em;
+                color: black;
+            }
+        </pre>
+        <ul>
+            <li>Coloque el soporte de apertura en la misma línea que el selector.</li>
+            <li>Utilice un espacio antes del corchete de apertura.</li>
+            <li>Utilice dos espacios de sangría.</li>
+            <li>Utilice punto y coma después de cada par propiedad-valor, incluido el último</li>
+            <li>Utilice sólo comillas alrededor de los valores si el valor contiene espacios</li>
+            <li>Coloque el corchete de cierre en una nueva línea, sin espacios iniciales</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Cargando JavaScript en HTML</h2>
+        <p>Utilice una sintaxis simple para cargar scripts externos (el atributo type no es necesario):</p>
+        <pre>
+            &lt;script src="myscript.js"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Accediendo a elementos HTML con JavaScript</h2>
+        <p>El uso de código HTML "desordenado" puede provocar errores de JavaScript.</p>
+        <p>Estas dos declaraciones de JavaScript producirán resultados diferentes:</p>
+        <pre>
+            getElementById("Demo").innerHTML = "Hello";
+            getElementById("demo").innerHTML = "Hello";
+        </pre>
+    </section>
+
+    <section>
+        <h2>Utilice nombres de archivos en minúsculas</h2>
+        <p>Algunos servidores web (Apache, Unix) distinguen entre mayúsculas y minúsculas en los nombres de
+            archivos: no se puede acceder a "london.jpg" como "London.jpg".</p>
+        <p>Otros servidores web (Microsoft, IIS) no distinguen entre mayúsculas y minúsculas: se puede acceder a
+            "london.jpg" como "London.jpg".</p>
+        <p>Si utiliza una combinación de mayúsculas y minúsculas, debe tener esto en cuenta.</p>
+        <p>Si pasa de un servidor que no distingue entre mayúsculas y minúsculas a otro que sí lo hace, ¡incluso los
+            errores más pequeños dañarán su web!</p>
+        <p>Para evitar estos problemas, utilice siempre nombres de archivos en minúsculas.</p>
+    </section>
+
+    <section>
+        <h2>Extensiones de archivo</h2>
+        <p>Los archivos HTML deben tener una extensión <strong>.html</strong> ( se permite <strong>.htm</strong> ).</p>
+        <p>Los archivos CSS deben tener una extensión <strong>.css</strong> .</p>
+        <p>Los archivos JavaScript deben tener una extensión <strong>.js</strong> .</p>
+    </section>
+
+    <section>
+        <h2>¿Diferencias entre .htm y .html?</h2>
+        <p>¡No hay diferencia entre las extensiones de archivo .htm y .html!</p>
+        <p>Ambos serán tratados como HTML por cualquier navegador y servidor web.</p>
+    </section>
+
+    <section>
+        <h2>Nombres de archivos predeterminados</h2>
+        <p>Cuando una URL no especifica un nombre de archivo al final (como "https://www.w3schools.com/"), el
+            servidor simplemente agrega un nombre de archivo predeterminado, como "index.html", "index.htm", "
+            default.html" o "default.htm".</p>
+        <p>Si su servidor está configurado sólo con "index.html" como nombre de archivo predeterminado, su
+            archivo debe llamarse "index.html" y no "default.html".</p>
+        <p>Sin embargo, los servidores se pueden configurar con más de un nombre de archivo
+            predeterminado; normalmente puedes configurar tantos nombres de archivos predeterminados como
+            quieras.</p>
+    </section>
+</body>
+</html>

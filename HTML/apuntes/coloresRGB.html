@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores en HTML RGB y RGBA</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Colores en HTML RGB y RGBA</h1>
+    <p class="tabular"><q>Un valor de color RGB representa fuentes de luz ROJA (red), VERDE (green) y AZUL (blue).<br>
+        Un valor de color RGBA es una extensión de RGB con un canal Alfa (opacidad).</q></p>
+    <section>
+        <h2>Valores de color RGB</h2>
+        <p>En HTML, un color se puede especificar como un valor RGB mediante esta fórmula: <span class="negrita">rgb ( rojo, verde, azul)</span></p>
+        <p>Cada parámetro (rojo, verde y azul) define la intensidad del color con un valor entre 0 y 255.</p>
+        <p>¡Esto significa que hay 256 x 256 x 256 = 16777216 colores posibles!</p>
+        <p>Por ejemplo, rgb(255, 0, 0) se muestra en rojo, porque el rojo está configurado en su valor más alto (255)
+            y los otros dos (verde y azul) están configurados en 0.</p>
+        <p>Otro ejemplo, rgb(0, 255, 0) se muestra en verde, porque el verde está configurado en su valor más alto
+            (255) y los otros dos (rojo y azul) están configurados en 0.</p>
+        <p>Para mostrar negro, establezca todos los parámetros de color en 0, así: rgb(0, 0, 0).</p>
+        <p>Para mostrar blanco, configure todos los parámetros de color en 255, así: rgb(255, 255, 255).</p>
+        <table>
+            <tr> 
+                <td style="background-color: rgb(255,0,0);">rgb(255,0,0)</td> 
+                <td style="background-color: rgb(0,0,255);">rgb(0,0,255)</td> 
+            </tr>
+            <tr> 
+                <td style="background-color: rgb(60,179,113);">rgb(60,179,113)</td> 
+                <td style="background-color: rgb(238,130,238);">rgb(238,130,238)</td> 
+            </tr>
+            <tr> 
+                <td style="background-color: rgb(255,165,0);">rgb(255,165,0)</td> 
+                <td style="background-color: rgb(106,90,205);">rgb(106,90,205)</td> 
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Sombras de gris</h2>
+        <p>Los tonos de gris suelen definirse utilizando valores iguales para los tres parámetros:</p>
+    </section>
+    <section>
+        <h2>Valores de color RGBA</h2>
+        <p>Los valores de color RGBA son una extensión de los valores de color RGB con un canal Alfa, que
+            especifica la opacidad de un color.</p>
+        <p>Un valor de color RGBA se especifica con:</p>
+         <table>
+            <tr> 
+                <td style="background-color: rgb(60,60,60);">rgb(60,60,60)</td> 
+                <td style="background-color: rgb(100,100,100);">rgb(100,100,100)</td> 
+            </tr>
+            <tr> 
+                <td style="background-color: rgb(140,140,140);">rgb(140,140,140)</td> 
+                <td style="background-color: rgb(180,180,180);">rgb(180,180,180)</td> 
+            </tr>
+            <tr> 
+                <td style="background-color: rgb(200,200,200);">rgb(200,200,200)</td> 
+                <td style="background-color: rgb(240,240,240);">rgb(240,240,240)</td> 
+            </tr>
+        </table>
+        <p><em>parámetro alfa es un número entre 0,0 (completamente transparente) y 1,0 (nada transparente):</em></p>
+        <table>
+            <tr> 
+                <td style="background-color: rgba(255,99,71,0);">rgba(255,99,71,0)</td> 
+                <td style="background-color: rgba(255,99,71,0.2);">rgba(255,99,71,0.2)</td> 
+            </tr>
+            <tr> 
+                <td style="background-color: rgba(255,99,71,0.4);">rgba(255,99,71,0.4)</td> 
+                <td style="background-color: rgba(255,99,71,0.6);">rgba(255,99,71,0.6)</td> 
+            </tr>
+            <tr> 
+                <td style="background-color: rgba(255,99,71,0.8);">rgba(255,99,71,0.8)</td> 
+                <td style="background-color: rgba(255,99,71,1);">rgba(255,99,71,1)</td> 
+            </tr>
+        </table>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Inserte los valores de color RGB correctos para que el color de fondo sea completamente azul.</p>
+        <pre>
+            &lt;p style="background-color:rgb(, , )"&gt;Esto es un párrafo.&lt;/p&gt;
+        </pre>
+    </section>
+</body>
+</html>

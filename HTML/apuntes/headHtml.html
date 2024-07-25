@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML: el elemento head</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>HTML: el elemento head</h1>
+    <p class="tabular"><q>El elemento &lt;head&gt; de HTML es un contenedor para los siguientes elementos: &lt;title&gt;, &lt;style&gt;, &lt;meta&gt;, &lt;link&gt;, &lt;script&gt; y &lt;base&gt;.</q></p>
+    <section>
+        <h2>El elemento HTML &lt;head&gt;</h2>
+        <p>El elemento &lt;head&gt; es un contenedor de metadatos (datos sobre datos) y se coloca entre la etiqueta &lt;html&gt; y la etiqueta &lt;body&gt;.</p>
+        <p>Los metadatos HTML son datos sobre el documento HTML. Los metadatos no se muestran.</p>
+        <p>Los metadatos suelen definir el título del documento, el juego de caracteres, los estilos, los scripts y otra metainformación.</p>
+    </section>
+
+    <section>
+        <h2>El elemento &lt;title&gt; de HTML</h2>
+        <p>El elemento &lt;title&gt; define el título del documento. El título debe ser solo texto y se muestra en la barra de título del navegador o en la pestaña de la página.</p>
+        <p>¡ El elemento &lt;title&gt; es obligatorio en documentos HTML!</p>
+        <p>¡El contenido del título de una página es muy importante para la optimización de motores de búsqueda
+            (SEO)! Los algoritmos de los motores de búsqueda utilizan el título de la página para decidir el orden al
+            enumerar las páginas en los resultados de búsqueda.</p>
+        <p>El elemento &lt;title&gt;:</p>
+        <ul>
+            <li>define un título en la barra de herramientas del navegador</li>
+            <li>proporciona un título para la página cuando se agrega a favoritos</li>
+            <li>muestra un título para la página en los resultados del motor de búsqueda</li>
+        </ul>
+        <p>Por lo tanto, ¡intenta que el título sea lo más preciso y significativo posible!</p>
+    </section>
+    
+    <section>
+        <h2>El elemento &lt;style&gt; de HTML</h2>
+        <p>El elemento &lt;style&gt; se utiliza para definir información de estilo para una única página HTML:</p>
+        <pre>
+            &lt;style&gt;
+                body {background-color: powderblue;}
+                h1 {color: red;}
+                p {color: blue;}
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El elemento HTML &lt;link&gt;</h2>
+        <p>El elemento &lt;link&gt; define la relación entre el documento actual y un recurso externo.</p>
+        <p>La etiqueta &lt;link&gt; se utiliza con mayor frecuencia para vincular a hojas de estilo externas:</p>
+        <pre>
+            &lt;link rel="stylesheet" href="mystyle.css"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El elemento &lt;meta&gt; de HTML</h2>
+        <p>El elemento &lt;meta&gt; se utiliza normalmente para especificar el juego de caracteres, la descripción de la
+            página, las palabras clave, el autor del documento y la configuración de la ventana gráfica.</p>
+        <p>Los metadatos no se mostrarán en la página, pero los utilizarán los navegadores (cómo mostrar el
+            contenido o recargar la página), los motores de búsqueda (palabras clave) y otros servicios web.</p>
+        <table>
+            <tr>
+                <td class="sinbordes">Defina el juego de caracteres utilizado:</td>
+                <th>&lt;meta charset="UTF-8"&gt;</th>
+            </tr>
+            <tr>
+                <td class="sinbordes">Definir palabras clave para motores de búsqueda:</td>
+                <th>&lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;</th>
+            </tr>
+            <tr>
+                <td class="sinbordes">Defina una descripción de su página web:</td>
+                <th>&lt;meta name="description" content="Free Web tutorials"&gt;</th>
+            </tr>
+            <tr>
+                <td class="sinbordes">Definir el autor de una página:</td>
+                <th>&lt;meta name="author" content="John Doe"&gt;</th>
+            </tr>
+            <tr>
+                <td class="sinbordes">Actualizar el documento cada 30 segundos:</td>
+                <th>&lt;meta http-equiv="refresh" content="30"&gt;</th>
+            </tr>
+            <tr>
+                <td class="sinbordes">Configurar la ventana gráfica para que su sitio web se vea bien en todos los dispositivos:</td>
+                <th>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</th>
+            </tr>
+        </table>
+        <p>Ejemplo de <meta>etiquetas:</p>
+        <pre>
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="description" content="Free Web tutorials"&gt;
+            &lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;
+            &lt;meta name="author" content="John Doe"&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Configuración de la ventana gráfica (viewport)</h2>
+        <p>El viewport es el área visible para el usuario de una página web. Varía según el dispositivo: será más
+            pequeño en un teléfono móvil que en la pantalla de un ordenador.</p>
+        <p>Debes incluir el siguiente elemento &lt;meta&gt; en todas tus páginas web:</p>
+        <pre>
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        </pre>
+        <p>Esto le da al navegador instrucciones sobre cómo controlar las dimensiones y la escala de la página.</p>
+        <p>La parte width=device-width establece el ancho de la página para seguir el ancho de la pantalla del
+            dispositivo (que variará según el dispositivo).</p>
+        <p>La parte initial-scale=1.0 establece el nivel de zoom inicial cuando el navegador carga la página
+            por primera vez.</p>
+    </section>
+
+    <section>
+        <h2>El elemento &lt;script&gt; de HTML</h2>
+        <p>El elemento &lt;script&gt; se utiliza para definir JavaScripts del lado del cliente.</p>
+        <p>El siguiente JavaScript escribe "¡Hola JavaScript!" en un elemento HTML con id="demo":</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Page Title&lt;/title&gt;
+            &lt;script&gt;
+                function myFunction() {
+                    document.getElementById("demo").innerHTML = "Hello JavaScript!";
+                }
+            &lt;/script&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;My Web Page&lt;/h1&gt;
+                &lt;p id="demo"&gt;A Paragraph&lt;/p&gt;
+                &lt;button type="button" onclick="myFunction()"&gt;Try it&lt;/button&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El elemento HTML &lt;base&gt;</h2>
+        <p>El elemento &lt;base&gt; especifica la URL base y/o el destino de todas las URL relativas de una página.</p>
+        <p>La etiqueta &lt;base&gt;  debe tener presente un atributo href o target, o ambos.</p>
+        <p>¡Solo puede haber un único elemento &lt;base&gt; en un documento!</p>
+        <p><em>Especifique una URL predeterminada y un destino predeterminado para todos los enlaces de una página:</em></p>
+        <pre>
+            &lt;head&gt;
+                &lt;base href="https://www.w3schools.com/" target="_blank"&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;img src="images/stickman.gif" width="24" height="39" alt="Stickman"&gt;
+                &lt;a href="tags/tag_base.asp"&gt;HTML base Tag&lt;/a&gt;
+            &lt;/body&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Resumen del capítulo</h2>
+        <ul>
+            <li>El elemento &lt;head&gt; es un contenedor de metadatos (datos sobre datos)</li>
+            <li>El elemento &lt;head&gt; se coloca entre la etiqueta &lt;html&gt; y la etiqueta de &lt;body&gt;.</li>
+            <li>El elemento &lt;title&gt; es obligatorio y define el título del documento.</li>
+            <li>El elemento &lt;style&gt; se utiliza para definir información de estilo para un solo documento.</li>
+            <li>La etiqueta &lt;link&gt; se utiliza con mayor frecuencia para vincular a hojas de estilo externas.</li>
+            <li>El elemento &lt;meta&gt; se utiliza normalmente para especificar el juego de caracteres, la descripción
+                de la página, las palabras clave, el autor del documento y la configuración de la ventana gráfica.</li>
+            <li>El elemento &lt;script&gt; se utiliza para definir JavaScripts del lado del cliente.</li>
+            <li>El elemento &lt;base&gt; especifica la URL base y/o el destino de todas las URL relativas de una página.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h2>Elementos de encabezado HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th></tr>
+            <tr> <td>&lt;head&gt;</td> <td>Define información acerca del documento</td> </tr>
+            <tr> <td>&lt;title&gt;</td> <td>Define el título de un documento</td> </tr>
+            <tr> <td>&lt;base&gt;</td> <td>Define una dirección por defecto o un destino para todos los links en una página</td> </tr>
+            <tr> <td>&lt;link&gt;</td> <td>Define la relación entre un documento y un recurso externo</td> </tr>
+            <tr> <td>&lt;meta&gt;</td> <td>Define metadatos acerca de un documento HTML</td> </tr>
+            <tr> <td>&lt;script&gt;</td> <td>Define un script del lado cliente</td> </tr>
+            <tr> <td>&lt;style&gt;</td> <td>Define información de estilo para un documento</td> </tr>   
+        </table>
+    </section>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Examen </title>
+    <!-- Pide dúas cadeas mediante prompt e una letra. Tes que contar
+    e mostrar o número de veces que está esa letra nas dúas cadeas e logo dicir cal
+    das dúas cadeas é a que ten o maior número de veces esa letra
+    -->
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1.6rem;
+        }
+        mark {
+            padding:.2rem .5rem;
+            border-radius: 50%;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <p>Pide dúas cadeas mediante prompt e una letra. Tes que contar
+        e mostrar o número de veces que está esa letra nas dúas cadeas e logo dicir cal
+        das dúas cadeas é a que ten o maior número de veces esa letra
+    </p>
+    <button onclick="contarCadenas()">Ejecutar</button>
+    <div id="resultadoCadenas"></div>
+
+    <script>
+        function contarCadenas() {
+            const cadena1 = prompt('Introduce la primera cadena');
+            const cadena2 = prompt('Introduce la segunda cadena');
+            const letra = prompt('Introduce la letra a buscar');
+
+
+            const resultados = []; // guarda el nº de letras de cada cadena y cual tiene mas
+            resultados.push( contarLetras(cadena1, letra) ); 
+            resultados.push( contarLetras(cadena2, letra) );
+
+            if (resultados[0] > resultados [1]) {
+                resultados[2] = "La <mark>primera cadena</mark> contiene mayor numero de veces la letra buscada";
+            } else if (resultados[0] < resultados [1]) {
+                resultados[2] = "La <mark>segunda cadena</mark> contiene mayor numero de veces la letra buscada ";      
+            } else {
+                resultados[2] = "<mark>Ambas cadenas</mark> contienen el mismo numero de veces la letra buscada";      
+            }
+
+            // Resultados en pantalla
+            let resultadoCadenas = document.querySelector('#resultadoCadenas');
+            resultadoCadenas.innerHTML += `<p>La cadena <strong>${cadena1}</strong> contiene la letra <mark>${letra}</mark>:<strong> ${resultados[0]}</strong> veces </p>`;
+            resultadoCadenas.innerHTML += `<p>La cadena <strong>${cadena2}</strong> contiene la letra <mark>${letra}</mark>:<strong> ${resultados[1]}</strong> veces </p>`;
+            resultadoCadenas.innerHTML += `<p> ${resultados[2]} </p>`;;
+        }
+
+        function contarLetras(cadena, letra) { // devuelve el numero de veces que aparece la letra en la cadena
+            let contador = 0;
+            for (let i=0;i<cadena.length;i++) {
+                if (letra == cadena[i]) {
+                    contador++;
+                }
+            }
+            return contador;
+        }
+    </script>
+</body>
+</html>

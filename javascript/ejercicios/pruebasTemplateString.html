@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas Template Strings</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Bubbler+One&family=Dancing+Script:wght@400..700&family=IM+Fell+Double+Pica+SC&family=Monoton&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pruebas Template Strings</h1>    
+
+    <div id="ejercicio1">
+         <p class="enunciado">Pantalon 40€ con una rebaja del 25% , calcula y muestra con template Strings, resultado con una sola cifra decimal</p>
+        <script>
+            let pantalon = 40;
+            let result = pantalon * 0.75; // 75% precio - 25 % de rebajas
+            document.write(`El precio del pantalón es <strong>${pantalon}€</strong> y con la rebaja del 25% se queda en un total de:<strong> ${result.toFixed(1)}€. <strong>`);
+        </script>
+    </div>
+
+    <div id="ejercicio2">
+        <p class="enunciado">Template Strings en HTML</p>
+        <script>
+            let header = "Template Strings";
+            let tags = ["template strings", "javascript", "es6"];
+            let html = `<h2>${header}</h2><ul>`;
+            for (const x of tags) {
+                html += `<li>${x}</li>`;
+            }
+            html += `</ul>`;
+            document.write(html);
+        </script>
+   </div>
+
+
+
+</body>
+</html>

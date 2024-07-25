@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <!-- Calculadora basica de 2 numero /7,5)  y mostrar por pantalla -->
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #363636;
+            background-color: #f8f8f8;
+            font-family: "Anek Telugu", sans-serif;
+        }
+
+        h1 {
+            text-align: center; 
+            color: #dc2f2f;
+            margin-top: 50px;
+        }
+
+        div {
+            border:3px solid #ff894c; 
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            width: 80%;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        .enunciado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function sumar(num1,num2) {
+            return num1+num2;
+        }
+
+        function restar(num1,num2) {
+            return num1-num2;
+        }
+
+        function multiplicar(num1,num2) {
+            return num1*num2;
+        }
+
+        function dividir(num1,num2) {
+            if (num2 != 0) {
+                return num1/num2;
+            }else{
+                return "no se puede dividir por 0";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <div>
+        <p class="enunciado">Operaciones aritmeticas básicas con los numero 7 y 5 </p>
+        <p>La suma es : <strong><script>document.write(sumar(7,5))</script></strong></p>
+        <p>La resta es : <strong><script>document.write(restar(7,5))</script></strong></p>
+        <p>El producto es : <strong><script>document.write(multiplicar(7,5))</script></strong></p>
+        <p>El cociente es : <strong><script>document.write(dividir(7,5))</script></strong></p>
+    </div>
+</body>
+</html>

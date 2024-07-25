@@ -1,0 +1,64 @@
+@use 'sass:math';
+
+$n:9; /* number of images*/
+
+.gallery  {
+  --s: 280px; /* control the size */
+  --d: 15s; /* animation duration */
+  
+  display: grid;
+  width: var(--s);
+  aspect-ratio: 1;
+  overflow: hidden;
+  padding: calc(var(--s)/20);
+  border-radius: 50%;
+  position: relative;
+  clip-path: circle(49.5%); /* to avoid a few glitch caused by overflow: hidden */
+}
+.gallery::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: inherit;
+  border-radius: inherit;
+  background: repeating-conic-gradient(#789048 0 30deg,#DFBA69 0 60deg);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transform-origin: 50% (50%/math.sin(180deg/$n) + 50%);
+}
+.gallery::after,
+.gallery > img {
+  animation: m var(--d) infinite cubic-bezier(.5,-0.2,.5,1.2);
+}
+@for $i from 2 to ($n + 1) {
+  .gallery > img:nth-child(#{$i}) {
+    animation-delay: calc(#{(1 - $i)/$n}*var(--d));
+  }
+}
+
+@keyframes m {
+  0%,3%    {transform: rotate(0)}
+  @for $i from 1 to $n {
+    #{($i/$n)*100 - 2}%,#{($i/$n)*100 + 3}% {transform: rotate(#{($i/$n)*-360}deg)}  
+  }
+  98%,100% {transform: rotate(-360deg)}
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #C2CBCE;
+}

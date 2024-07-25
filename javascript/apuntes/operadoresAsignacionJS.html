@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación en JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Asignación en JavaScript</h1>
+    <section>
+        <h2>Operadores de asignación de JavaScript</h2>
+        <p>Los operadores de asignación asignan valores a variables de JavaScript.</p>
+        <table>
+            <tr> <th>Operador</th> <th>Ejemplo</th> <th>Mismo que</th></tr>
+            <tr>    <td>=</td>  <td>x = y</td>   <td>x = y</td>   </tr>
+            <tr>    <td>+=</td>  <td>x += y</td>   <td>x = x + y</td>   </tr>
+            <tr>    <td>-=</td>  <td>x -= y</td>   <td>x = x - y</td>   </tr>
+            <tr>    <td>*=</td>  <td>x *= y</td>   <td>x = x * y</td>   </tr>
+            <tr>    <td>/=</td>  <td>x /= y</td>   <td>x = x / y</td>   </tr>
+            <tr>    <td>%=</td>  <td>x %= y</td>   <td>x = x % y</td>   </tr>
+            <tr>    <td>**=</td>  <td>x**-= y</td>   <td>x = x ** y</td>   </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Operadores de asignación de desplazamiento</h2>
+        <table>
+            <tr> <th>Operador</th> <th>Ejemplo</th> <th>Mismo que</th></tr>
+            <tr>    <td>&lt;&lt;=</td>  <td>x &lt;&lt;= y</td>   <td>x = x &lt;&lt; y</td>   </tr>
+            <tr>    <td>&gt;&gt;=</td>  <td>x &gt;&gt;= y</td>   <td>x = x &gt;&gt; y</td>   </tr>
+            <tr>    <td>&gt;&gt;&gt;=</td>  <td>x &gt;&gt;&gt;= y</td>   <td>x = x &gt;&gt;&gt; y</td>   </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Operadores de asignación a nivel de bit</h2>
+        <table>
+            <tr> <th>Operador</th> <th>Ejemplo</th> <th>Mismo que</th></tr>
+            <tr>    <td>&=</td>  <td>x &= y</td>   <td>x = x & y</td>   </tr>
+            <tr>    <td>^=</td>  <td>x ^= y</td>   <td>x = x ^ y</td>   </tr>
+            <tr>    <td>|=</td>  <td>x |= y</td>   <td>x = x | y</td>   </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Operadores de asignación a nivel de bit</h2>
+        <table>
+            <tr> <th>Operador</th> <th>Ejemplo</th> <th>Mismo que</th></tr>
+            <tr>    <td>&&=</td>  <td>x &&= y</td>   <td>x = x && (x = y)</td>   </tr>
+            <tr>    <td>||=</td>  <td>x ||= y</td>   <td>x = x || (x = y)</td>   </tr>
+            <tr>    <td>??=</td>  <td>x ??= y</td>   <td>x = x ?? (x = y)</td>   </tr>
+        </table>
+        <p><strong>Nota</strong>Los operadores de asignación lógica son ES2020 .</p>
+    </section>
+
+    <section>
+        <h2>El operador =</h2>
+        <p>El operador de asignación simple asigna un valor a una variable.</p>
+        <pre>
+            let x = 10;
+            let x = 10 + y;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador +=</h2>
+        <p>El operador de asignación de suma agrega un valor a una variable.</p>
+        <pre>
+            let x = 10;
+            x += 5;
+            let text = "Hello"; text += " World";
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador -=</h2>
+        <p>El operador de asignación de resta resta un valor de una variable.</p>
+        <pre>
+            let x = 10;
+            x -= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador *=</h2>
+        <p>El operador de asignación de multiplicación multiplica una variable.</p>
+        <pre>
+            let x = 10;
+            x *= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador **=</h2>
+        <p>El operador de asignación de exponenciación eleva una variable a la potencia del operando.</p>
+        <pre>
+            let x = 10;
+            x **= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador /=</h2>
+        <p>El operador de asignación de división divide una variable.</p>
+        <pre>
+            let x = 10;
+            x /= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador %=</h2>
+        <p>El operador de asignación de resto asigna un resto a una variable.</p>
+        <pre>
+            let x = 10;
+            x %= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador &lt;&lt;=</h2>
+        <p>El operador de asignación de desplazamiento a la izquierda desplaza una variable hacia la izquierda.</p>
+        <pre>
+            let x = -100;
+            x &lt;&lt;= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador &gt;&gt;=</h2>
+        <p>El operador de asignación de desplazamiento a la derecha desplaza una variable a la derecha (con signo).</p>
+        <pre>
+            let x = -100;
+            x &gt;&gt;= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador &gt;&gt;&gt;=</h2>
+        <p>El operador de asignación de desplazamiento a la derecha sin signo desplaza una variable a la derecha (sin signo).</p>
+        <pre>
+            let x = -100;
+            x &gt;&gt;&gt;= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador &=</h2>
+        <p>El operador de asignación AND bit a bit realiza una operación AND bit a bit en dos operandos y asigna el resultado a la variable.</p>
+        <pre>
+            let x = 10;
+            x &= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador |=</h2>
+        <p>El operador de asignación OR bit a bit realiza una operación OR bit a bit en dos operandos y asigna el resultado a la variable.</p>
+        <pre>
+            let x = 10;
+            x |= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador ^=</h2>
+        <p>El operador de asignación XOR bit a bit realiza una operación XOR bit a bit en dos operandos y asigna el resultado a la variable.</p>
+        <pre>
+            let x = 10;
+            x ^= 5;
+        </pre>
+    </section>
+
+    <section>
+        <h2>El operador &&=</h2>
+        <p>El operador de asignación lógico AND se utiliza entre dos valores.</p>
+        <p>Si el primer valor es verdadero, se asigna el segundo valor.</p>
+        <pre>
+            let x = 10;
+            x &&= 5;
+        </pre>
+        <p><em>El operador &&= es una característica de ES2020 .</em></p>
+    </section>
+
+    <section>
+        <h2>El operador ||=</h2>
+        <p>El operador de asignación lógica OR se utiliza entre dos valores.</p>
+        <p>Si el primer valor es falso, se asigna el segundo valor.</p>
+        <pre>
+            let x = 10;
+            x ||= 5;
+        </pre>
+        <p><em>El ||=operador es una característica de ES2020 .</em></p>
+    </section>
+
+    <section>
+        <h2>El operador ??=</h2>
+        <p>El operador de asignación coalescente nulo se utiliza entre dos valores.</p>
+        <p>Si el primer valor no está definido o es nulo, se asigna el segundo valor.</p>
+        <pre>
+            let x;
+            x ??= 5;
+        </pre>
+        <p><em>El ??=operador es una característica de ES2020 .</em></p>
+    </section>
+
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Utilice el operador de asignación correcto que dará como resultado x siendo 15(igual que x = x + y).</p>
+        <pre>
+            x = 10;
+            y = 5;
+            Xy;
+        </pre>
+    </section>
+</body>
+</html>

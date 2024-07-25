@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
+
+:root {
+
+    --principal:#B2B377;
+    --secundario:#D2D180;
+    --grisViolera:#E5E483;
+    --morado:#35374B;
+    --blanco:#fff;
+    --negro: #000;
+    --rojo: #FF204E;
+
+    --fuentePrincipal: 'Montserrat', sans-serif;
+    --img: url('../img/salon1.jpg'); /** slider **/
+}
+
+/** Globales ******************************/
+html {
+    font-size: 62.5%; /** 1rem = 10px */
+    box-sizing: border-box;
+}
+*,*::before,::after {
+    box-sizing: inherit;
+}
+body{
+    font-family: var(--fuentePrincipal);
+    background:linear-gradient( #35374B 65%,#E493B3) ;
+}
+h1,h2, h3 {
+    padding: 1rem;
+    text-align: center;
+}
+h1 {font-size: 4rem;}
+h2 {font-size: 3.6rem;}
+h3 {font-size: 2rem;}
+
+p{
+    font-family: var(--fuentePrincipal);
+    color: var(--negro);
+    background-color: var(--blanco);
+    padding: 1rem;
+}
+img {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: var(--negro);
+}
+/** Header ******************************/
+.header{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0 0 0 / 40%);
+    backdrop-filter: blur(10px);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.header__info, .header__navegacion {
+    width: 80%;
+    /*max-width: 140rem;*/
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: transparent;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header__enlace-logo {
+    
+    margin-left: 5rem;
+    max-width: 20rem; 
+}
+.header__enlace-logo picture {
+    margin-left: 3rem;
+    max-width: 20rem;
+    justify-self: flex-start;
+}
+
+.header__texto ,.footer__texto  {
+    font-family: "Dancing Script", cursive;
+    font-size: 7rem;
+    color: var(--blanco);
+}
+p.header__texto{
+    font-size: 4rem;
+    font-weight: bold;
+    background-color: transparent;
+}
+.header__contacto, .footer__contacto{
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 4rem;
+    font-weight: bold;
+    background-color: transparent;
+    
+}
+.header__contacto { color: var(--blanco);}
+.footer__contacto { color: var(--negro);}
+.header__navegacion a {
+    color: var(--blanco);
+    font-size: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    border-color: rgba(255, 255, 255, 0.2);
+    margin-right: .5rem;
+    padding: .5rem 2rem;
+}
+.header__navegacion a img{
+    width: 2rem;
+    margin-right: 1rem;
+}
+@media (max-width:1100px) {
+    .header__navegacion nav{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+.header__navegacion a:hover {
+    cursor: pointer;
+    color: var(--grisViolera);
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+.header__navegacion a:active {
+    color: var(--principal);
+}
+/* idiomas en vertical y casi juntos ******************************/
+.header .idiomas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header .idiomas a{
+    font-size: 1.6rem;
+    margin: .5rem 0;
+}
+
+/** MAIN ******************************/
+main {
+    background-color: rgb(0 0 0 / 30%);
+    backdrop-filter: blur(10px);
+    padding:2rem 0 5rem;
+}
+/** Multimedia ******************************/
+.multimedia {
+    width: 95%;
+    max-width: 140rem;
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 1rem;
+}
+.multimedia audio {
+    width: 100%;
+}
+/** Informacion *****************************/
+.informacion{
+    max-width: 95%;
+    margin: 0 auto;
+}
+.informacion h2, .informacion p{
+    background-color: transparent;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+}
+.informacion h2 {
+    font-size: 3rem;
+}
+.informacion p {
+    text-align: justify;
+    margin: 0 auto;
+    max-width: 60%;
+    font-size: 2.4rem;
+
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+}
+.informacion p:first-of-type:first-letter {
+    margin-left: 2rem;
+}
+
+/** Footer ************************************************/
+.footer{
+    color: var(--negro);
+    display: block;
+    margin: 4rem auto;
+    display: flex;
+    min-height: 15vw;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+h1.footer__texto{
+    order: 1;
+}
+p.footer__texto:last-of-type{
+    order: 2;
+}
+.footer__enlace-logo {
+    margin-left: 3rem;
+    max-width: 20rem; 
+}
+.footer__enlace-logo picture {
+    margin-left: 3rem;
+    max-width: 20rem;
+    justify-self: flex-start;
+}
+.footer__texto, 
+.footer__texto a {
+    color: var(--negro);
+    background-color: transparent;
+    font-size: 6rem;
+}
+.footer__texto a:hover {
+    cursor: pointer;
+    color: var(--secundario);
+}
+p.footer__texto {
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+} 
+.footer__texto--firma{
+    color: var(--negro);
+    font-family: Arial, Helvetica, sans-serif;
+}
+/** Contacto ************************************************/
+.contacto {
+    width: 95%;
+    max-width: 140rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(0 0 0 / 20%);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+@media(max-width: 768px) {
+    .contacto{
+        flex-direction: column;
+    }
+}
+.contacto__logo {
+    max-width: 30rem; 
+    width: 100%;
+}
+.contacto__info {
+    color: var(--blanco);
+    margin-left: 5rem;
+    letter-spacing: 5px;
+    line-height: 1.5;
+    flex: 1 0 calc(80% -1rem);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+#googleMaps{
+    color: var(--blanco);
+}
+.contacto .contenedor {
+    width: 95%;
+    max-width: 140rem;
+    height: 30vw;
+    margin: 0 auto;
+}
+iframe {
+    width: 80%;
+    margin: 2rem auto;
+}
+.galeria h2, h2 {
+    color: var(--blanco);
+}
+/*** Formulario de contacto **/
+.formularioContacto{
+    width: 75%;
+    margin: 0 auto;
+}
+.formularioContacto fieldset {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: var(--blanco);
+    font-size: 2.4rem;
+    border-radius: 1rem;
+}
+.formularioContacto legend{
+    padding: 1rem;
+}
+.formularioContacto input,.formularioContacto label{
+    border: none;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    color: var(--negro);
+}
+.formularioContacto label {
+    color: var(--blanco);
+}
+.formularioContacto textarea {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 90%;
+    min-height: 20rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    color: var(--negro);
+}
+.formularioContacto input[type="submit"],
+.formularioContacto input[type="button"] {
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+}
+.formularioContacto input[type="submit"]:hover,
+.formularioContacto input[type="button"]:hover {
+    background-color: #20ff3e;
+    color: var(--negro);
+    font-weight: bold;
+}
+
+.formularioContacto input[type="submit"]:active,
+.formularioContacto input[type="button"]:active{
+    background-color: #20f8ff;
+        font-weight: bold;
+}
+
+/** Tienda */
+
+/** Grid *******************/
+.contenedor h1 {
+    color: var(--blanco);
+    background-color: transparent;
+}
+.grid{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+@media(min-width: 768px) {       
+    .grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+/** Producto *******************/
+.producto {
+    background-color: transparent;
+    padding: 1rem;
+    border: 1px solid var(--blanco);
+    border-radius: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.producto__contenido{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.producto__imagen{
+    width: 100%;
+    object-fit: contain;
+    background-color: var(--blanco);
+    max-height: 40rem; 
+    margin: 0 auto;
+    justify-self:  center;   
+}
+.producto__venta{
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+.producto__nombre, .producto__descripcion {
+    background-color: transparent;
+    font-size: 4rem;
+    color: var(--blanco);
+    
+}
+.producto__precio {
+    background-color: transparent;
+    font-size: 2.8rem;
+    color: var(--blanco);
+}
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+/** Graficos *******************/
+.grafico {
+    min-height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column: 1 / 3;
+}
+.grafico--camisas {
+    grid-row: 2 / 3;
+    background-image: url('../img/salon1.jpg');
+}
+.grafico--node{
+    grid-row: 8 / 9;
+    background-image: url('../img/salon2.png');
+}
+@media(min-width: 768px) {
+    .grafico--node{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }   
+}
+/** Pagina Producto *******************/
+@media(min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;   
+    }   
+}
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.formulario__campo {
+    margin: 0 auto;
+    width: 90%;
+    border: .1rem solid var(--blanco) ;
+    background-color: transparent;
+    border-radius: 1rem;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+} 
+.formulario__submit {
+    border: none;
+    background-color: var(--secundario);
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1/3;
+}
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}

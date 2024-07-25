@@ -1,0 +1,9 @@
+
+public class EjercicioBreak {
+
+	public static void main(String[] args) {
+		// Escribe los numeros desde el mil en adelante asta encontrar el 1100 en cuyo caso paras de escribir números    
+
+	}
+
+}

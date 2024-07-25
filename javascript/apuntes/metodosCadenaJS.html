@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de cadena de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Métodos de cadena de JavaScript</h1>
+    <h2 class="tabular">Métodos básicos de cadenas</h2>
+    <p class="tabular">Las cadenas de Javascript son primitivas e inmutables: todos los métodos de cadena producen una nueva
+        cadena sin alterar la cadena original.</p>
+    <section>
+        <h2>Longitud de la cadena de JavaScript</h2>
+        <p>La propiedad length devuelve la longitud de una cadena:</p>
+        <pre>
+            let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let length = text.length;
+        </pre>
+    </section>
+    <section>
+        <h2>Extracción de caracteres de cadena</h2>
+        <p>Hay 4 métodos para extraer caracteres de cadena:</p>
+        <ul>
+            <li>El método at(posición)</li>
+            <li>El método charAt(posición)</li>
+            <li>El método charCodeAt(posición)</li>
+            <li>Usando el acceso a la propiedad [] como en arrays</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Cadena JavaScript charAt()</h2>
+        <p>El método charAt() devuelve el carácter en un índice (posición) especificado en una cadena:</p>
+        <pre>
+            let text = "HELLO WORLD";
+            let char = text.charAt(0);
+        </pre>
+    </section>
+    <section>
+        <h2>Cadena de JavaScript charCodeAt()</h2>
+        <p>El método charCodeAt() devuelve el código del carácter en un índice especificado en una cadena:</p>
+        <p>El método devuelve un código UTF-16 (un número entero entre 0 y 65535).</p>
+        <pre>
+            let text = "HELLO WORLD";
+            let char = text.charCodeAt(0);
+            Devuelve 72
+        </pre>
+    </section>
+    <section>
+        <h2>Cadena de JavaScript at()</h2>
+        <p>ES2022 introdujo el método de cadena at():</p>
+        <pre>
+            Obtenga la tercera letra del nombre:
+            const name = "W3Schools";
+            let letter = name.at(2);
+            
+            Obtenga la tercera letra del nombre:
+            const name = "W3Schools";
+            let letter = name[2];
+        </pre>
+        <p>El método at()devuelve el carácter en un índice (posición) especificado en una cadena.</p>
+        <p>El método at() es compatible con todos los navegadores modernos desde marzo de 2022:</p>
+        <p><strong>Nota </strong> El método at()es una nueva adición a JavaScript.</p>
+        <p>Permite el uso de índices negativos mientras que charAt() no lo hace.</p>
+        <p>Ahora puedes usar myString.at(-2) en lugar de charAt(myString.length-2).</p>
+    </section>
+
+    <section>
+        <h2>Soporte del navegador</h2>
+        <p>At() es una característica de ES2022.</p>
+        <p>JavaScript 2022 (ES2022) es compatible con todos los navegadores modernos desde marzo de 2023:</p>
+        <table>
+            <tr>
+                <td>Chrome 94</td>
+                <td>Edge 94</td>
+                <td>Firefox 93 </td>
+                <td>Safari 16.4</td>
+                <td>Opera 79</td>
+            </tr>
+            <tr>
+                <td>Sep 2021 </td>
+                <td>Sep 2021 </td>
+                <td>Oct 2021 </td>
+                <td>Mar 2023 </td>
+                <td>Oct 2021</td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Acceso a la propiedad [ ]</h2>
+        <pre>
+            let text = "HELLO WORLD";
+            let char = text[0];
+        </pre>
+        <p><strong>Nota </strong> El acceso a la propiedad puede ser un poco <strong>impredecible:</strong></p>
+        <ul>
+            <li>Hace que las cadenas parezcan arrays (pero no lo son)</li>
+            <li>Si no se encuentra ningún carácter, [] devuelve undefined, mientras que charAt() devuelve una cadena vacía.</li>
+            <li>Es de sólo lectura. str[0] = "A" no da error (¡pero no funciona!)</li>
+        </ul>
+        <pre>
+            let text = "HELLO WORLD";
+            text[0] = "A"; // Gives no error, but does not work
+        </pre>
+    </section>
+    <section>
+        <h2>Extracción de partes de cadenas</h2>
+        <p>Hay 3 métodos para extraer una parte de una cadena:</p>
+        <ul>
+            <li>slice(comienzo,fin)</li>
+            <li>substring(comienzo,fin)</li>
+            <li>substr(comienzo,fin)</li>
+        </ul>
+    </section>
+    <section>
+        <h2>JavaScript cadenas slice()</h2>
+        <p>Slice() extrae una parte de una cadena y devuelve la parte extraída en una nueva cadena.</p>
+        <p>El método toma 2 parámetros: posición inicial y posición final (final no incluido).</p>
+        <pre>
+            Corta una porción de una cadena desde la posición 7 a la posición 13:
+            let text = "Apple, Banana, Kiwi";
+            let part = text.slice(7, 13);
+        </pre>
+        <p><strong>Nota</strong> JavaScript cuenta las posiciones desde cero.</p>
+        <p>La primera posición es 0.</p>
+        <p>La segunda posición es 1.</p>
+        <pre>
+            Si omite el segundo parámetro, el método cortará el resto de la cadena:
+            let text = "Apple, Banana, Kiwi";
+            let part = text.slice(7);
+        </pre>
+        <pre>
+            Si un parámetro es negativo, la posición se cuenta desde el final de la cadena:
+            let text = "Apple, Banana, Kiwi";
+            let part = text.slice(-12);
+        </pre>
+        <pre>
+            Este ejemplo corta una porción de una cadena desde la posición -12 a la posición -6:
+            let text = "Apple, Banana, Kiwi";
+            let part = text.slice(-12, -6);
+        </pre>
+    </section>
+    <section>
+        <h2>substring()</h2>
+        <p>substring() es parecido a slice().</p>
+        <p>La diferencia es que los valores iniciales y finales menores que 0 se tratan como 0 en substring().</p>
+        <pre>
+            let str = "Apple, Banana, Kiwi";
+            let part = str.substring(7, 13);
+        </pre>
+        <p>Si omite el segundo parámetro, substring() cortará el resto de la cadena.</p>
+    </section>
+    <section>
+        <h2>substr()</h2>
+        <p>Substr() es parecido a slice().</p>
+        <p>La diferencia es que el segundo parámetro especifica la longitud de la parte extraída.</p>
+        <pre>
+            let str = "Apple, Banana, Kiwi";
+            let part = str.substr(7, 6);
+        </pre>
+        <p>Si omite el segundo parámetro, substr() se cortará el resto de la cadena.</p>
+        <pre>
+            let str = "Apple, Banana, Kiwi";
+            let part = str.substr(7);
+        </pre>
+        <p>Si el primer parámetro es negativo, la posición cuenta desde el final de la cadena.</p>
+        <pre>
+            let str = "Apple, Banana, Kiwi";
+            let part = str.substr(-4);
+        </pre>
+    </section>
+    <section>
+        <h2>Conversión a mayúsculas y minúsculas</h2>
+        <p>Una cadena se convierte a mayúsculas con toUpperCase():</p>
+        <p>Una cadena se convierte a minúsculas con toLowerCase():</p>
+    </section>
+    <section>
+        <h2>toUpperCase()</h2>
+        <pre>
+            let text1 = "Hello World!";
+            let text2 = text1.toUpperCase();
+        </pre>
+    </section>
+    <section>
+        <h2>toLowerCase()</h2>
+        <pre>
+            let text1 = "Hello World!"; // String
+            let text2 = text1.toLowerCase(); // text2 is text1 converted to lower
+        </pre>
+    </section>
+    <section>
+        <h2>concat()</h2>
+        <p>concat()une dos o más cadenas:</p>
+        <pre>
+            let text1 = "Hello";
+            let text2 = "World";
+            let text3 = text1.concat(" ", text2);
+        </pre>
+        <p>El método concat() se puede utilizar en lugar del operador más. Estas dos líneas hacen lo mismo:</p>
+        <pre>
+            text = "Hello" + " " + "World!";
+            text = "Hello".concat(" ", "World!");
+        </pre>
+        <p><strong>Nota </strong> Todos los métodos de cadena devuelven una nueva cadena. No modifican la cadena original.</p>
+        <p>Las cadenas son inmutables: las cadenas no se pueden cambiar, solo reemplazar.</p>
+    </section>
+    <section>
+        <h2>trim()</h2>
+        <p>El método trim() elimina los espacios en blanco de ambos lados de una cadena:</p>
+        <pre>
+            let text1 = " Hello World! ";
+            let text2 = text1.trim();
+        </pre>
+    </section>
+    <section>
+        <h2>trimStart()</h2>
+        <p>ECMAScript 2019 agregó el método String trimStart()a JavaScript.</p>
+        <p>El método trimStart() funciona como trim(), pero elimina los espacios en blanco solo desde el
+            inicio de una cadena.</p>
+        <pre>
+            let text1 = " Hello World! ";
+            let text2 = text1.trimStart();
+        </pre>
+        <p>trimStart()es compatible con todos los navegadores modernos desde enero de 2020.</p>
+    </section>
+    <section>
+        <h2>trimEnd()</h2>
+        <p>ECMAScript 2019 agregó el método de cadena trimEnd()a JavaScript.</p>
+        <p>El método trimEnd() funciona como trim(), pero elimina los espacios en blanco solo del final de
+            una cadena.</p>
+        <pre>
+            let text1 = " Hello World! ";
+            let text2 = text1.trimEnd();
+        </pre>
+        <p>trimEnd() es compatible con todos los navegadores modernos desde enero de 2020.</p>
+    </section>
+    <section>
+        <h2>Relleno de cadenas de JavaScript</h2>
+        <p>ECMAScript 2017 agregó dos nuevos métodos de cadena a JavaScript: padStart() y padEnd()
+            para admitir el relleno al principio y al final de una cadena.</p>
+    </section>
+    <section>
+        <h2>padStart()</h2>
+        <p>El método padStart() rellena una cadena desde el principio.</p>
+        <p>Rellena una cadena con otra cadena (varias veces) hasta que alcanza una longitud determinada.</p>
+        <pre>
+            Rellene una cadena con "0" hasta que alcance la longitud 4:
+            let text = "5";
+            let padded = text.padStart(4,"0");
+        </pre>
+        <pre>
+            Rellena una cadena con "x" hasta que alcance la longitud 4:
+            let text = "5";
+            let padded = text.padStart(4,"x");
+        </pre>
+        <p><strong>Nota </strong> El método padStart()es un método de cadena.</p>
+        <p>Para rellenar un número, primero convierta el número en una cadena.</p>
+        <p>Vea el ejemplo a continuación.</p>
+        <pre>
+            let numb = 5;
+            let text = numb.toString();
+            let padded = text.padStart(4,"0");
+        </pre>
+        <h3>Soporte del navegador</h3>
+        <p>padStart()es una característica de ECMAScript 2017 .</p>
+        <p>ES2017 es compatible con todos los navegadores modernos desde septiembre de 2017</p>
+    </section>
+    <section>
+        <h2>padEnd()</h2>
+        <p>El método padEnd() rellena una cadena desde el final.</p>
+        <p>Rellena una cadena con otra cadena (varias veces) hasta que alcanza una longitud determinada.</p>
+        <pre>
+            let text = "5";
+            let padded = text.padEnd(4,"0");
+
+            let text = "5";
+            let padded = text.padEnd(4,"x");
+        </pre>
+        <p><strong>Nota </strong> El método padEnd()es un método de cadena.</p>
+        <p>Para rellenar un número, primero convierta el número en una cadena.</p>
+        <p>Vea el ejemplo a continuación.</p>
+        <pre>
+            let numb = 5;
+            let text = numb.toString();
+            let padded = text.padEnd(4,"0");
+        </pre>
+        <h3>Soporte del navegador</h3>
+        <p>padEnd()es una característica de ECMAScript 2017 .</p>
+        <p>ES2017 es compatible con todos los navegadores modernos desde septiembre de 2017. padEnd()no es
+            compatible con Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>repeat()</h2>
+        <p>El método repeat() devuelve una cadena con un número de copias de una cadena.</p>
+        <p>El método repeat() devuelve una nueva cadena.</p>
+        <p>El método repeat() no cambia la cadena original.</p>
+        <pre>
+            Crear copias de un texto:
+
+            let text = "Hello world!";
+            let result = text.repeat(2);
+            
+            let text = "Hello world!";
+            let result = text.repeat(4);
+        </pre>
+        <h3>Sintaxis</h3>
+        <p>string.repeat(contador)</p>
+        <h3>Parámetros</h3>
+        <table>
+            <tr> <td>Parámetro </td> <td>Descripción </td></tr>
+            <tr> <td>contador </td> <td>Requerido El número de copias que queremos </td></tr>
+        </table>
+        <h3>Valor de retorno</h3>
+        <table>
+            <tr> <td>Tipo </td> <td>Descripción </td></tr>
+            <tr> <td>cadena </td> <td>Una nueva cadena que contiene las copias. </td></tr>
+        </table>
+        <h3>Soporte del navegador</h3>
+        <p>repeat()es una característica de ES6 (JavaScript 2015).</p>
+        <p>ES6 es totalmente compatible con todos los navegadores modernos desde junio de 2017. repeat()no es
+            compatible con Internet Explorer.</p>
+
+    </section>
+
+    <section>
+        <h2>replace()</h2>
+        <p>El método replace() reemplaza un valor especificado con otro valor en una cadena:</p>
+        <pre>
+            let text = "Please visit Microsoft!";
+            let newText = text.replace("Microsoft", "W3Schools");
+        </pre>
+        <p><strong>Nota </strong> El método replace() no cambia la cadena en la que se invoca.</p>
+        <p>El método replace() devuelve una nueva cadena.</p>
+        <p>El método replace() reemplaza solo la primera coincidencia.</p>
+        <p>Si desea reemplazar todas las coincidencias, utilice una expresión regular con el indicador /g
+            configurado. Vea los ejemplos a continuación.</p>
+        <p>De forma predeterminada, el método replace() reemplaza solo la primera coincidencia:</p>
+        <pre>
+            let text = "Please visit Microsoft and Microsoft!";
+            let newText = text.replace("Microsoft", "W3Schools");
+        </pre>
+        <p>De forma predeterminada, el método replace() distingue entre mayúsculas y minúsculas. Escribir
+            MICROSOFT (con mayúsculas) no funcionará:</p>
+        <pre>
+            let text = "Please visit Microsoft!";
+            let newText = text.replace("MICROSOFT", "W3Schools");
+        </pre>
+        <p>Para reemplazar las mayúsculas y minúsculas, use una expresión regular con una bandera /i
+            (insensitive):</p>
+        <pre>
+            let text = "Please visit Microsoft!";
+            let newText = text.replace(/MICROSOFT/i, "W3Schools");
+        </pre>
+        <p><strong>Nota </strong> Las expresiones regulares se escriben sin comillas.</p>
+        <p>Para reemplazar todas las coincidencias, utilice una expresión regular con una bandera /g (coincidencia global):</p>
+        <pre>
+            let text = "Please visit Microsoft and Microsoft!";
+            let newText = text.replace(/Microsoft/g, "W3Schools");
+        </pre>
+        <p><strong>Nota </strong> Aprenderá mucho más sobre las expresiones regulares</p>
+    </section>
+    <section>
+        <h2>replaceAll()</h2>
+        <p>En 2021, JavaScript introdujo el método de cadena replaceAll():</p>
+        <pre>
+            text = text.replaceAll("Cats","Dogs");
+            text = text.replaceAll("cats","dogs");
+        </pre>
+        <p>El método replaceAll() le permite especificar una expresión regular en lugar de una cadena para
+            reemplazar.</p>
+        <p>Si el parámetro es una expresión regular, se debe establecer el indicador global (g); de lo contrario, se
+            genera un TypeError.</p>
+        <pre>
+            text = text.replaceAll(/Cats/g,"Dogs");
+            text = text.replaceAll(/cats/g,"dogs");
+        </pre>
+        <p><strong>Nota </strong> replaceAll()es una característica de ES2021 .</p>
+        <p>ReplaceAll() no funciona en Internet Explorer.</p>
+    </section>
+    <section>
+        <h2>Convertir una cadena en un array</h2>
+        <p>Si desea trabajar con una cadena como un array, puede convertirla en un array</p>
+        <h3>split()</h3>
+        <p>Una cadena se puede convertir en un array con el método split():</p>
+        <pre>
+            text.split(",") // Split on commas
+            text.split(" ") // Split on spaces
+            text.split("|") // Split on pipe
+        </pre>
+        <p>Si se omite el separador, la matriz devuelta contendrá la cadena completa en el índice [0].</p>
+        <p>Si el separador es "", la matriz devuelta será una matriz de caracteres individuales:</p>
+        <pre>
+            text.split("")
+        </pre>
+    </section>
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Convierta el texto en MAYÚSCULAS:</p>
+        <pre>
+            let txt = "¡Hola mundo!";
+            txt = txt.;
+        </pre>
+    </section>
+
+</body>
+</html>

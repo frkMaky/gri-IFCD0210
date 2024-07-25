@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio en HTML</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Audio en HTML</h1>
+    <p class="tabular"><q>El elemento &lt;audio&gt; en HTML se utiliza para reproducir un archivo de audio en una página web.</q></p>
+    
+    <section>
+        <h2>El elemento &lt;audio&gt: en HTML</h2>
+        <p>Para reproducir un archivo de audio en HTML, use el elemento &lt;audio&gt;</p>
+        <pre>
+            &lt;audio controls&gt;
+                &lt;source src="horse.ogg" type="audio/ogg"&gt;
+                &lt;source src="horse.mp3" type="audio/mpeg"&gt;
+                Su navegador no soporta el elemento audio
+            &lt;/audio&gt;
+        </pre>
+    </section>
+    
+    <section>
+        <h2>Audio HTML: cómo funciona</h2>
+        <p>El atributo controls agrega controles de audio, como reproducción, pausa y volumen.</p>
+        <p>El elemento &lt;source&gt; le permite especificar archivos de audio alternativos entre los que el navegador
+            puede elegir. El navegador utilizará el primer formato reconocido.</p>
+        <p>El texto entre las etiquetas &lt;audio&gt; y &lt;/audio&gt; solo se mostrará en navegadores que no admitan el elemento &lt;audio&gt;.</p>
+    </section>
+
+    <section>
+        <h2>Reproducción automática de HTML</h2>
+        <p>Para iniciar un archivo de audio automáticamente, use el atributo autoplay:</p>
+        <pre>
+            &lt;audio controls autoplay&gt;
+                &lt;source src="horse.ogg" type="audio/ogg"&gt;
+                &lt;source src="horse.mp3" type="audio/mpeg"&gt;
+                Su navegador no soporta el elemento audio
+            &lt;/audio&gt;
+        </pre>
+        <p><span class="negrita">Nota:</span> los navegadores Chromium no permiten la reproducción automática en la mayoría de los casos. Sin
+            embargo, siempre se permite la reproducción automática silenciada.</p>
+        <p>Agregue muted después de autoplay para permitir que su archivo de audio comience a reproducirse
+            automáticamente (pero silenciado):</p>
+        <pre>
+            &lt;audio controls autoplay&gt;
+                &lt;source src="horse.ogg" type="audio/ogg"&gt;
+                &lt;source src="horse.mp3" type="audio/mpeg"&gt;
+                Su navegador no soporta el elemento audio
+            &lt;/audio&gt;
+        </pre>
+        <p>Agregue muted después de autoplay para permitir que su archivo de audio comience a reproducirse
+            automáticamente (pero silenciado):</p>
+        <pre>
+            &lt;audio controls autoplay muted&gt;
+                &lt;source src="horse.ogg" type="audio/ogg"&gt;
+                &lt;source src="horse.mp3" type="audio/mpeg"&gt;
+                Su navegador no soporta el elemento audio
+            &lt;/audio&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Soporte del navegador</h2>
+        <p>Los números de la tabla especifican la primera versión del navegador que admite totalmente el elemento &lt;audio&gt;.</p>
+        <table>
+            <tr> <th></th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Safari</th> <th>Opera</th> </tr>
+            <tr> <td>&lt;audio&gt;</td> <td>4.0</td> <td>9.0</td> <td>3.5</td> <td>4.0</td> <td>10.5</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Formatos de audio en HTML</h2>
+        <p>Hay tres formatos de audio compatibles: MP3, WAV y OGG. El soporte del navegador para los diferentes formatos es:</p>
+        <table>
+            <tr> <th>Navegador</th> <th>MP3</th> <th>WAV</th> <th>OGG</th> </tr>
+            <tr> <td>Edge/IE</td> <td>SI</td> <td>SI</td> <td>SI</td></tr>
+            <tr> <td>Chrome</td> <td>SI</td> <td>SI</td> <td>SI</td></tr>
+            <tr> <td>Firefox</td> <td>SI</td> <td>SI</td> <td>SI</td></tr>
+            <tr> <td>Safari</td> <td>SI</td> <td>SI</td> <td>NO</td></tr>
+            <tr> <td>Opera</td> <td>SI</td> <td>SI</td> <td>SI</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Audio HTML: tipos de archivos media</h2>
+        <table>
+            <tr> <th>Formato de archivo</th> <th>Tipos</th> </tr>
+            <tr> <td>MP3</td> <td>audio/mpeg</td></tr>
+            <tr> <td>OGG</td> <td>audio/ogg</td></tr>
+            <tr> <td>WAV</td> <td>audio/wav</td></tr>  
+        </table>
+    </section>
+
+    <section>
+        <h2>Audio HTML: métodos, propiedades y eventos</h2>
+        <p>El DOM HTML define métodos, propiedades y eventos para el elemento &lt;audio&gt;.</p>
+        <p>Esto le permite cargar, reproducir y pausar audios, así como establecer la duración y el volumen.</p>
+        <p>También hay eventos DOM que pueden notificarte cuando un audio comienza a reproducirse, se pausa, etc.</p>
+    </section>
+
+    <section>
+        <h2>Etiquetas de audio en HTML</h2>
+        <table>
+            <tr> <th>Etiqueta</th> <th>Descripción</th> </tr>
+            <tr> <td>&lt;audio&gt;</td> <td>Define el contenido de un sonido</td> </tr>
+            <tr> <td>&lt;source&gt;</td> <td>Define múltiples recursos media para elementos media, tales como &lt;video&gt; y &lt;audio&gt;</td></tr>
+        </table>
+    </section>
+</body>
+</html>

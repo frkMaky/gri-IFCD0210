@@ -1,0 +1,3 @@
+https://www.arquitecturajava.com/java-localdate-y-el-manejo-de-fecha/
+
+ver manejo de fechas con localdate

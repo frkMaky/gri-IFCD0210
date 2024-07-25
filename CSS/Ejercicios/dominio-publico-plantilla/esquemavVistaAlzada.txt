@@ -1,0 +1,118 @@
+
+HEADER
+
+<header>
+    <p class="copy">&copy;</p> 
+    <h1>tEXTO DEL HEADER</h1>
+    <img> <!-- IMGEN INCLUIDA --> 
+
+
+    PRIMER PARRAFO
+    <p classs="punteado"> texto del parrafo </p>
+
+</header>
+
+
+2021
+
+<section>
+    <p>
+        <img class="izquierda"> <!-- imagen de la izquiera-->
+        TEXTO DEL P 
+        <img class="derecha"> <!-- imagen de la derecha-->
+    </p>
+
+    <p> Segundo parrafo solo texto </p>
+
+</section>
+
+2022
+
+
+<section>
+    <p>
+        TEXTO DEL P 
+        <img class="derecha"> <!-- imagen de la derecha-->
+    </p>
+</section>
+
+RESTO DE AÑOS 
+
+<section>
+    <h2></h2>
+    <p>
+        TEXTO DEL P 
+    </p>
+</section>
+
+FOOTER 
+
+<FOOTER>
+    <img> <!--imagen del avion CONSEGUIR -->
+
+</FOOTER>
+
+<!-- CSS -->
+<style>
+body {
+    background-color: gold; /** colorzilla para ajustar color */
+    background-position-x: 3%; /** Distancia de la barra al margen */
+    /** BARRA DORADA LATERAL */
+    background-image: url(''); /** Conseguir imagen o solucionar de otro modo PRUEBAS */
+    background-repeat: repeat-y; /** Igual que el blackberry */
+}
+
+header{
+    width: 100%; /** Ajustar */
+    text-align: center;
+}
+
+header p.copy {
+    font-weight: bold;
+    font-size: 60px; /** ajustar */
+}
+
+header h1 {
+    font-size:60px;
+    /* text-shadow: ; */ /** AJUSTAR OBTENIENDO EL TEXT SHADOW DE UNA WEB */
+    font-weight: bold;
+    padding-bottom: 30px; /** Separacion a la parte baja del header */
+}
+header img {
+    width: 20%; /** ajustar */
+}
+header p.punteado {
+    border: 2px dotted gold; /** ajustar color y grosor */
+    text-align: justify;
+}
+
+section {
+    width:100%; /** ajutar si es preciso */
+    /** Border laterales; sacar el color con el colorzilla */
+    border-right:5px solid gold;    
+    border-right:5px solid gold; 
+}
+
+
+p {
+    text-align: justify;
+    /** Tamaño y tipo de fuente AJUSTAR EN PRUEBAS */
+    font-size: 24px; 
+    font-family:sans-serif; /** AJUSTAR SI ES PRECISO */
+    margin-bottom: 20px; /** Ajustar, separacion entre parrafos */
+}
+img {
+    border: 1px solid gold; /** colorzilla para ajustar color */
+    /* AJUSTAR EN PRUEBAS */
+    padding:5px; /** separacion entre el borde y la imagen */
+    width: 100px;
+    height:100px;
+}
+/** FLOTAR IMAGENER A LOS LADOS DE LOS PARRAFOS */
+img.izquierda { float:left; }
+img.derecha { float:right;}
+
+footer img {
+    float: right;
+}
+</style>

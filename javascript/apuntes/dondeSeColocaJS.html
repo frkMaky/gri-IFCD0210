@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript en dónde se coloca</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>JavaScript en dónde se coloca</h1>
+    
+    <section>
+        <h2>La etiqueta &lt;script&gt;</h2>
+        <p>En HTML, el código JavaScript se inserta entre las etiquetas &lt;script&gt; y &lt;/script&gt;.</p>
+        <pre>
+            &lt;script&gt;
+                document.getElementById("demo").innerHTML = "My First JavaScript";
+            &lt;/script&gt;
+        </pre>
+        <p>Los ejemplos antiguos de JavaScript pueden usar un atributo type: &lt;script type="text/javascript"&gt;.</p>
+        <p>El atributo de tipo no es obligatorio. JavaScript es el lenguaje de secuencias de comandos predeterminado en HTML.</p>
+    </section>
+
+    <section>
+        <h2>Funciones y eventos de JavaScript</h2>
+        <p>Una function en JavaScript es un bloque de código JavaScript que se puede ejecutar cuando se le solicita.</p>
+        <p>Por ejemplo, se puede llamar a una función cuando ocurre un evento , como cuando el usuario hace clic en un botón.</p>
+        <p>Aprenderá mucho más sobre funciones y eventos en capítulos posteriores.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript en &lt;head&gt; o &lt;body&gt;</h2>
+        <p>Puede colocar cualquier cantidad de scripts en un documento HTML.</p>
+        <p>Los scripts se pueden colocar en la sección &lt;body&gt;, o en la &lt;head&gt; de una página HTML, o en ambas.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript en &lt;head&gt; </h2>
+        <p>En este ejemplo, una function de Javascript se coloca en la sección &lt;head&gt; de una página HTML.</p>
+        <p>La función se invoca (llama) cuando se hace clic en un botón:</p>
+        <a href="../ejercicios/ejemploJS.html" target="_blank">Ejemplo Javascript</a>
+    </section>
+
+    <section>
+        <h2>JavaScript en &lt;body&gt; </h2>
+        <p>En este ejemplo, una función de JavaScript se coloca en la sección &lt;body&gt; de una página HTML.</p>
+        <p>La función se invoca (llama) cuando se hace clic en un botón:</p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+            &lt;h2&gt;Demo JavaScript in Body&lt;/h2&gt;
+            &lt;p id="demo"&gt;A Paragraph&lt;/p&gt;
+            &lt;button type="button" onclick="myFunction()"&gt;Try it&lt;/button&gt;
+            &lt;script&gt;
+                function myFunction() {
+                    document.getElementById("demo").innerHTML = "Paragraph changed.";
+                }
+            &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+        <p>Colocar scripts en la parte inferior del elemento &lt;body&gt; mejora la velocidad de visualización, porque la interpretación de scripts ralentiza la visualización.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript externo</h2>
+        <p>Los scripts también se pueden colocar en archivos externos:</p>
+        <h3>Archivo externo: myScript.js</h3>
+        <pre>
+            function myFunction() {
+                document.getElementById("demo").innerHTML = "Paragraph changed.";
+            }
+        </pre>
+        <p>Los scripts externos son prácticos cuando se utiliza el mismo código en muchas páginas web diferentes.</p>
+        <p>Los archivos JavaScript tienen la extensión de archivo .js .</p>
+        <p>Para utilizar un script externo, coloque el nombre del archivo del script en el atributo src (fuente) de una etiqueta &lt;script&gt;:</p>
+        <pre>
+            &lt;script src="myScript.js"&gt;&lt;/script&gt;
+        </pre>
+        <p>Puede colocar una referencia de script externa en &lt;head&gt; o &lt;body&gt;.</p>
+        <p>El script se comportará como si estuviera ubicado exactamente dondese encuentra la etiqueta &lt;script&gt;. </p>
+        <p>Los scripts externos no pueden contener etiquetas &lt;script&gt;.</p>
+    </section>
+
+    <section>
+        <h2>Ventajas de JavaScript externo</h2>
+        <p>Colocar scripts en archivos externos tiene algunas ventajas:</p>
+        <ul>
+            <li>Separa HTML y código.</li>
+            <li>Hace que HTML y JavaScript sean más fáciles de leer y mantener.</li>
+            <li>Los archivos JavaScript almacenados en caché pueden acelerar la carga de la página</li>
+        </ul>
+        <p>Para agregar varios archivos de script a una página, utilice varias etiquetas de script:</p>
+        <pre>
+            &lt;script src="myScript1.js"&gt;&lt;/script&gt;
+            &lt;script src="myScript2.js"&gt;&lt;/script&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Referencias externas</h2>
+        <p>Se puede hacer referencia a un script externo de 3 maneras diferentes:</p>
+        <ul>
+            <li>Con una URL completa (una dirección web completa)</li>
+            <li>Con una ruta de archivo (como /js/)</li>
+            <li>sin ningún camino</li>
+        </ul>
+        <p>Este ejemplo utiliza una URL completa para vincular a myScript.js:</p>
+        <pre>
+            &lt;script src="https://www.w3schools.com/js/myScript.js"&gt;&lt;/script&gt;
+        </pre>
+        <p>Este ejemplo utiliza una ruta de archivo para vincular a myScript.js:</p>
+        <pre>
+            &lt;script src="/js/myScript.js"&gt;&lt;/script&gt;
+        </pre>
+        <p>Este ejemplo no utiliza ninguna ruta para vincular a myScript.js:</p>
+        <pre>
+            &lt;script src="myScript.js"&gt;&lt;/script&gt;
+        </pre>
+
+    </section>
+</body>
+</html>

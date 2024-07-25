@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CSS:</title>
+    <style>
+        body { margin-left: 100px;}
+        p.pregunta { color: black; }
+        p.respuesta { color: blue; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <h1>Test CSS</h1>
+    <ol>
+        <li>
+            <p class="pregunta"> Escribe el selector CSS que seleccionaría una tabla que tenga como id=”nuevo”:</p>
+            <p class="respuesta">table#nuevo</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría todos aquellos enlaces contenidos en un párrafo con id=”nuevo” cuando pasemos el ratón por encima de ellos.</p>
+            <p class="respuesta">p#nuevo a:hover</p>
+        </li>
+        <li>
+            <p class="pregunta"> Escribe el selector CSS que seleccionaría todos los párrafos contenidos en una tabla:</p>
+            <p class="respuesta">table p</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría una tabla con id=nuevo que esté dentro de un contenedor:</p>
+            <p class="respuesta">div table#nuevo</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría todos los enlaces y todos los párrafos:</p>
+            <p class="respuesta">a, p </p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría todos los objetos que empleen la clase nuevo:</p>
+            <p class="respuesta">.nuevo</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría todos los enlaces contenidos dentro de un párrafo que se encuentre además dentro de un contenedor. </p>
+            <p class="respuesta">div p a</p>
+        </li>
+        <li>
+            <p class="pregunta">Queremos realizar un documento web donde la fuente base de toda la página sea: de color negro, de tipo Arial, con un tamaño de 0.9 veces la letra por defecto del navegador y un espaciado entre líneas de 1.4. ¿Cuál sería la regla CSS que consigue esto?</p>
+            <p class="respuesta">
+                body { color:#000; font:.9em/1.4 Arial;} <br/>
+                body { font:.9em/1.4 Arial; color: #000;} <br/>
+                body { font:0.9em/1.4 Arial, Helvetica, sans-serif; color:#000;}<br/>
+                body { font:0.9em/1.4 Arial, sans-serif; color:#000;}<br/>
+            </p>
+        </li>
+        <li>
+            <p class="pregunta"> Escribe el selector CSS que seleccionaría todos los elementos de una lista ordenada con id nueva</p>
+            <p class="respuesta">ol li#nueva</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría todos los elementos h1 y párrafos que sean hermanos:</p>
+            <p class="respuesta">h1 ~ h1, p ~ p</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría todos los encabezados de tamaño 4 en un documento:</p>
+            <p class="respuesta">h4</p>
+        </li>
+        <li>
+            <p class="pregunta"> Escribe el selector CSS que seleccionaría todos los objetos con id=nuevo y que estén contenidos en una tabla:</p>
+            <p class="respuesta">table *#nuevo </p>
+        </li>
+        <li>
+            <p class="pregunta">Con qué atributo le indicamos a una etiqueta html, que emplee una determinada clase CSS?</p>
+            <p class="respuesta">&lt;elemento class=”clase determinada”&gt;</p>
+        </li>
+        <li>
+            <p class="pregunta"> Escribe el selector CSS que seleccionaría todos los objetos contenidos dentro de un formulario:</p>
+            <p class="respuesta">form *</p>
+        </li>
+        <li>
+            <p class="pregunta"> Escribe el selector CSS que seleccionaría un párrafo que emplee la clase nuevo y que esté contenido en otro párrafo con id=viejo:</p>
+            <p class="respuesta">p#viejo p.nuevo</p>
+        </li>
+        <li>
+            <p class="pregunta"> ¿Cuál de las siguientes reglas de estilo eliminan el marcador de los elementos de una lista?</p>
+            <p class="respuesta">ul,ol {list-style-type:none}</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría aquellos párrafos que sean hijos directos de un contenedor:</p>
+            <p class="respuesta">div > p</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría todos los enlaces visitados en un documento:</p>
+            <p class="respuesta">a:visited</p>
+        </li>
+        <li>
+            <p class="pregunta"> Escribe el selector CSS que seleccionaría aquellos campos de tipo input cuando pongamos el foco en ese campo:</p>
+            <p class="respuesta">input:focus</p>
+        </li>
+        <li>
+            <p class="pregunta">Escribe el selector CSS que seleccionaría los párrafos que empleen la clase sonido:</p>
+            <p class="respuesta">p.sonido</p>
+        </li>
+        <li>
+            <p class="pregunta"> Escribe el selector CSS que seleccionaría todas las imágenes y todos los enlaces que estén dentro de una lista: </p>
+            <p class="respuesta">ul img, ul a, ol img, ol a</p>
+        </li>
+        <li>
+            <p class="pregunta">Para dar una medida en píxeles emplearemos como unidad:</p>
+            <p class="respuesta">px</p>
+        </li>
+        <li>
+            <p class="pregunta">. Escribe el selector CSS que seleccionaría aquellos hiperenlaces hijos directos de un párrafo y que estén contenidos en un contenedor que emplee la clase nueva:</p>
+            <p class="respuesta">div.nueva p > a</p>
+        </li>
+        <li>
+            <p class="pregunta">¿Cuál de los siguientes es el selector CSS que selecciona a todos los objetos con class=”nuevo” que estén contenidos en una tabla?</p>
+            <p class="respuesta">table *.nuevo</p>
+        </li>
+        <li>
+            <p class="pregunta">. Escribe el selector CSS que seleccionaría todos los formularios de un documento:</p>
+            <p class="respuesta">form</p>
+        </li>
+        <li>
+            <p class="pregunta">¿En qué orden se dan las medidas de los márgenes en CSS?</p>
+            <p class="respuesta">top right bottom left</p>
+        </li>
+        <li>
+            <p class="pregunta">Para limpiar el float empleamos la propiedad CSS:</p>
+            <p class="respuesta">float:clear;</p>
+        </li>
+    </ol>
+    
+</body>
+</html>

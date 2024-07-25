@@ -1,0 +1,164 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Márgenes en CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Márgenes en CSS</h1>
+    <p class="tabular"><q>Los márgenes se utilizan para crear espacio alrededor de los elementos, fuera de los bordes definidos.</q></p>
+
+    <section>
+        <h2>Márgenes en CSS</h2>
+        <p>Las propiedades margin de CSS se utilizan para crear espacio alrededor de los elementos, fuera de los bordes definidos.</p>
+        <p>Con CSS, tienes control total sobre los márgenes. Hay propiedades para establecer el margen para cada lado de un elemento (superior, derecho, inferior e izquierdo).</p>
+    </section>
+
+    <section>
+        <h2>Margen - Lados individuales</h2>
+        <p>CSS tiene propiedades para especificar el margen de cada lado de un elemento:</p>
+        <ul>
+            <li>margin-top</li>
+            <li>margin-right</li>
+            <li>margin-bottom</li>
+            <li>margin-left</li>
+        </ul>
+        <p>Todas las propiedades de margen pueden tener los siguientes valores:</p>
+        <ul>
+            <li>auto - el navegador calcula el margen</li>
+            <li>longitud : especifica un margen en px, pt, cm, etc.</li>
+            <li>% : especifica un margen en % del ancho del elemento contenedor</li>
+            <li>heredar: especifica que el margen debe heredarse del elemento principal</li>
+        </ul>
+        <p>Consejo: Se permiten valores negativos.</p>
+        <pre>
+            Establezca márgenes diferentes para los cuatro lados de un elemento <p>:
+            
+            p {
+                margin-top: 100px;
+                margin-bottom: 100px;
+                margin-right: 150px;
+                margin-left: 80px;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Margen - Propiedad abreviada</h2>
+        <p>Para acortar el código, es posible especificar todas las propiedades de margen en una sola propiedad.</p>
+        <p>La propiedad margin es una propiedad abreviada para las siguientes propiedades de margen individuales:</p>
+        <ul>
+            <li>margin-top</li>
+            <li>margin-right</li>
+            <li>margin-bottom</li>
+            <li>margin-left</li>
+        </ul>
+        <p>Pues así es como funciona:</p>
+        <p>Si la propiedad margin tiene cuatro valores:</p>
+        <ul>
+            <li>margen: 25 px 50 px 75 px 100 px;</li>
+            <li>el margen superior es de 25px</li>
+            <li>el margen derecho es 50px</li>
+            <li>el margen inferior es 75px</li>
+            <li>el margen izquierdo es 100px</li>
+        </ul>
+        <pre>
+            Utilice la propiedad abreviada de margen con cuatro valores:
+                
+            p {
+                margin: 25px 50px 75px 100px;
+            }
+            
+            Si la propiedad margin tiene tres valores:
+                 margen: 25 px 50 px 75 px;
+                 el margen superior es de 25px
+                 los márgenes derecho e izquierdo son 50px
+                 el margen inferior es 75px
+        </pre>
+
+        <pre>
+            Utilice la propiedad abreviada de margen con tres valores:
+
+            p {
+                margin: 25px 50px 75px;
+            }
+    
+            Si la propiedad margin tiene dos valores:
+                 margen: 25px 50px;
+                 Los márgenes superior e inferior son de 25 píxeles.
+                 los márgenes derecho e izquierdo son 50px
+        </pre>
+
+        <pre>
+            Utilice la propiedad abreviada de margen con dos valores:
+
+            p {
+                margin: 25px 50px;
+            }
+    
+            Si la propiedad margin tiene un valor:
+                 margen: 25 píxeles;
+                 los cuatro márgenes son de 25px
+        </pre>
+
+        <pre>
+            Utilice la propiedad abreviada de margen con un valor:
+
+            p {
+                margin: 25px;
+            }
+        </pre>
+
+    </section>
+
+    <section>
+        <h2>El valor automático</h2>
+        <p>Puede configurar la propiedad de margen auto para centrar horizontalmente el elemento dentro de su contenedor.</p>
+        <p>Luego, el elemento ocupará el ancho especificado y el espacio restante se dividirá en partes iguales entre los márgenes izquierdo y derecho.</p>
+        <pre>
+            Usar margen: automático:
+
+            div {
+                width: 300px;
+                margin: auto;
+                border: 1px solid red;
+            }
+        </pre>
+    </section>
+    
+    <section>
+        <h2>El valor heredado</h2>
+
+        <p>Este ejemplo permite que el margen izquierdo del elemento <p class="ex1"> se herede del elemento principal (&lt;div&gt;):</p>
+
+        <pre>
+            Uso del valor heredado:
+            div {
+                border: 1px solid red;
+                margin-left: 100px;
+            }
+            p.ex1 {
+                margin-left: inherit;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>Todas las propiedades de margen en CSS</h2>
+        <table>
+            <tr> <th>Propiedad</th> <th>Descripción</th></tr>
+            <tr> <td>margin</td> <td>La propiedad abreviada para establecer todas las propiedades de márgenes en una declaración</td></tr>
+            <tr> <td>margin-bottom</td> <td>Establece el margen de abajo de un elemento</td></tr>
+            <tr> <td>margin-left</td> <td>Establece el margen de la izquierda de un elemento</td></tr>
+            <tr> <td>margin-right</td> <td>Establece el margen de la derecha de un elemento</td></tr>
+            <tr> <td>margin-top</td> <td>Establece el margen de arriba de un elemento</td></tr>
+        </table>
+    </section>
+</body>
+</html>

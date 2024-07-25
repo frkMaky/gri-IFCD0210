@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuleta XML</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Noto Sans", sans-serif;
+            line-height: 30px;
+            margin: 50px 100px;
+            background-color: ghostwhite;
+        }
+        h1{
+            color:crimson;
+            text-align: center;
+            margin-bottom: 20px;
+        }  
+        h2{
+            color:crimson;
+            margin-left: 100px;
+            margin-bottom: 10px;
+        }
+        p{
+            text-align: justify;
+            margin-left: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul{
+            text-align: left;
+            margin-left: 50px;
+        }
+        .centrar {
+            display: flex;
+            text-align: center; 
+            justify-content: center;
+            align-items: center;
+        }
+        .tabular{
+            margin-left: 150px;
+            margin-top: 30px;
+        }
+        table, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .verde{
+            color: green;
+            font-weight: bold;
+        }
+        footer{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chuleta XML</h1>
+    <h2>¿Qué es XML?</h2> 
+    <ul>
+        <li><strong>XML</strong> (e<b>X</b>tended <b>M</b>arkup <b>L</b>anguage)</li>
+        <li>Desarrollado por <b>W3C</b> (World Wide Web Consortium)</li> 
+        <li>Basado en <b>SGML</b> (Standard Generalized Markup Language)</li>
+        <li>Utilizado para el almacenamientoe intercambio de datos estructurados entre distintas plataformas</li>
+        <li>ES un metalenguaje empleado para definir otros lenguajes (dialectos XML): GML, MathML, RSS, SVG, XHTML, etc.</li>
+    </ul>
+    
+    <h2>Elementos</h2> 
+    <ul>
+        <li>Un documento XML está formado por texto plano (sin formato) y contiene marcas (etiquetas) definidas por el desarrollador</li>
+        <li>Sintaxis: <strong>&lt;etiqueta&gt; - valor - &lt;/etiqueta&gt;</strong></li>
+        <li>Elementos vacíos: <strong>&lt;etiqueta &gt; - &lt;/etiqueta&gt; o &lt;etiqueta/&gt;</strong></li>
+        <li>Un elemento (padre) puede contener a otros elementos (hijos)</li>
+        <li>Todo documento XML tiene que tener un único elemento raíz (padre) del que descienden todos los demás <br/>
+            <div class="tabular"><img src="images/ejemploxml.PNG" alt="cuadro XML" /></div>
+        </li>
+        <li>La estructura de cualquier documento XML se puede representar como un árbol invertido de elementos</li>
+        <li>Los elementos son los que dan estructura semántica al documento</li>
+        <li>Un elemento puede contener contenido mixto, es decir, texto y otros elementos</li>
+    </ul>
+
+    <h2>Normas de sintaxis básicas</h2>
+    <ul>
+        <li>Todos los nombres de elementos son <em>case sensitive</em>, es decir, sensible a letras  minúsculas y mayúsculas</li>
+        <li>Pueden contener letras minúsculas, letras mayúsculas, números, puntos ".", guiones medios "-", y guiones bajos "_"</li>
+        <li>Asimismo, pueden contener el caracter dos puntos ":". Pero, su uso se reserva para definir espacios de nombres</li>
+        <li>El primer caracter tiene que ser una letra o un guión bajo "_" </li>
+        <li>Detrás del nombre de una etiqueta se permite escribir un espacioen blanco o un salto de línea</li>
+        <li>No puede haber un salto de línea  o un espacio en blanco antes del nombre de una etiqueta</li>
+        <li>Las letras no inglesas (á, Á, ñ, Ñ, ...) están permitidas. Pero, al igual que el carácter <em>guión medio "-"</em> y el
+            <em>punto "."</em>, se recomienda no utilizarlos para reducir posibles imcompatibilidades o errores en programas que no
+                los interpreten bien.</li> 
+    </ul>
+
+    <h2>Atributos</h2>
+    <ul>
+        <li>Un atributo sirve para proporcionarinformación extra sobre el elemento que lo contiene</li>
+        <li>Los nombres de los atributos deben cumplir las mismas normas de sintaxis que los nombres de los elementos</li>
+        <li>Todos los atributos de un elemento tienen que ser únicos</li>
+        <li>Los atributos contenidos en un elemento, deben separarse con espacios en blanco, no siendo significativo su orden</li>
+    </ul>
+
+    <h2>Declaración XML</h2>
+    <ul>
+        <li>Sintaxís: <strong>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes" ?&gt;</strong></li>
+        <li>La declaración XML no es una instrucción de procesamiento (o proceso)</li>
+        <li>Escribir la declaración XML es opcional. Pero, si se escribe, el atributo <strong>version</strong> es obligatorio indicarlo.
+            Sin embargo, los atributos <strong>encoding</strong> y <strong>standalone</strong> son opcionales y, por defecto, sus 
+        valores son <strong>"UTF-8"</strong> y <strong>"no"</strong>, respectivamente</li>
+        <li><strong>standalone="yes"</strong> indica que el documentoes independiente de otros</li>
+        <li>Cuando se escribe el atributo <strong>encoding</strong>, siempre deberá aparecer despues de <strong>version</strong>. Y, respecto
+        al atributo <strong>standalone</strong>, siempre que escriba, deberá ser en último lugar.</li>
+        <li>Si se incluye la declaración XML, tiene que apareceren la primera línea del documento, y el caracter "&lt;" debe se el 
+            primero de dicha línea, es decir, antes no  pueden aparecer espacios en blanco
+        </li>
+    </ul>
+
+    <h2>Instrucciones de procesamiento</h2>
+    <ul>
+        <li>Una instruccion de procesamiento sirve para indicar cierta información al programa que procese dicho documento</li>
+        <li>Ejemplo: <strong>&lt;?xml-stylesheet type="text/css" href="estilo-animales.css"?&gt;</strong></li>
+        <li>En un documento XML, no es obligatorio que aparezcan instrucciones de procesamiento</li>
+    </ul>
+    
+    <h2>Referencias a entidades</h2>
+    <div class="tabular">
+        <table>
+            <tr>
+                <td><strong>&lt;</strong> menor que</td>
+                <td><b>lt</b> less than</td>
+                <td> &amp;lt;</td>
+            </tr>
+            
+            <tr>
+                <td><strong>&gt;</strong> mayor que</td>
+                <td><b>gt</b> greater than</td>
+                <td> &amp;gt;</td>
+            </tr>
+            
+            <tr>
+                <td><strong>"</strong> comilla doble</td>
+                <td><b>quot</b> quotation mark</td>
+                <td> &amp;quot;</td>
+            </tr>
+            
+            <tr>
+                <td><strong>'</strong> comilla simple</td>
+                <td><b>apos</b> apostrophe</td>
+                <td> &amp;apos;</td>
+            </tr>
+            
+            <tr>
+                <td><strong>&</strong> ampersand</td>
+                <td><b>amp</b> ampersand</td>
+                <td> &amp;amp;</td>
+            </tr>
+        </table>
+    </div>
+    <ul>
+        <li>El caracter menor que "&lt;" es problemático porque indica el comienzo de una etiqueta</li>
+        <li>El caracter ampersand "&amp;" es problematico, ya que, se utiliza para indicar el comienzo de una referencia a entidad</li>
+        <li>Uso de la comilla doble (") y de la comilla simple (')en atributos:<br/>
+            <strong>&lt;dato caracter=" comilla doble (&amp;quot;)" /&gt; &lt;dato caracter=' comilla simple (&amp;apos;)'/&gt;</strong>
+        </li>
+        <li>Los valores de atributos escritos entre comillas dobles(") si pueden contener al caracter comilla simple (') ya la inversa <br/>
+            <strong>&lt;dato caracter="comilla simple(')" / &gt; &lt;dato caracter='comilla doble("")'' / &gt;</strong>
+        </li>
+    </ul>
+
+    <h2>Referencia de caracteres</h2>
+    <ul>
+        <li>Se pueden escribir referencias de caracteres Unicodde con los símbolos <strong>&amp;#</strong>, seguidos del valor decimal o 
+        hexadecimal del carácter Unicode que se quiera representar y, finalmente, añadiendo el carácter punto y coma ";"</li>
+        <li>Ejemplo: El símbolo del Euro (€) puede escribirse <strong>&amp;#8364;</strong> o <strong>&amp;#x20AC</strong></li>
+    </ul>
+
+    <h2>Comentarios</h2><br/>
+    <span class="verde tabular">&lt;!-- esto es un comentario escrito en un documento XML --&gt;</span>
+    <ul>
+        <li>No se pueden escribir comentarios dentro de las etiquetas: <strong>&lt; mujer &lt;!-- elemento vacío --&gt; /&gt;</strong></li>
+        <li>En los comentarios no está permitido usar dos guiones seguidos.No es posible anidar comentarios en un documento XML <br>
+            <strong>&lt;!-- Dos guiones seguidos -- en un comentario da error --&gt;</strong>
+        </li>
+    </ul>
+
+    <h2>Secciones CDATA</h2>
+    <ul>
+        <li>Un documento XML puede contener secciones CDATA para escribir texto que no se desea que sea analizado</li>
+        <li>Una sección CDATA se escribe comenzando con la cadena <strong>"&lt;![CDATA]["</strong> y termina con los 
+        caracteres <strong>"]]&gt;"</strong></li>
+        <li>Dentro de una sección CDATAno se puede escribir la cadena <strong>"]]&gt;"</strong>. Por tanto, no se puden anidar secciones CDATA</li>
+        <li>No está permitido escribir espaciosen blanco o saltos de línea en las cadenas de inicio "<strong>&lt;![CDATA]</strong>" o fin 
+        <strong>"]]&gt;"</strong></li>
+    </ul>
+
+
+    <h2>Espacios de nombres</h2>
+    <ul>
+        <li>Sintaxis para definir un espacio de nombres: <strong>xmlns:prefijo="URI"</strong></li>
+        <li>Los URI especificados en un documento XML no tienen porqué contener nada, su función es ser únicos. Ejemplos:
+            <strong>//www.abrirllave.com/ejemplo1 http://www.w3.org/1999/xhtml/</strong></li>
+        <li>Los espacios de nombres pueden definirse en el elemento raíz o, directamente, en los elementos que los vayan a utilizar.</li>
+        <li>En un documento XML es posible definir todos los espacios de nombres que se necesiten, pudiéndose mezclar –si fuese
+            necesario– los elementos de dichos espacios de nombres.</li>
+        <li>Se puede definir un espacio de nombres por defecto mediante la siguiente sintaxis:<strong> xmlns="URI" </strong></li>
+        <li>En un documento XML, para indicar que determinados elementos –o todos– no pertenecen a ningún espacio de nombres,
+            se escribe el atributo <strong>xmlns</strong> vacío, es decir,<strong>xmlns=""</strong> .</li>
+    </ul>
+
+    <h2>Espacios en blanco</h2>
+    <ul>
+        <li>Los espacios en blanco, las tabulaciones y los retornos de carro pueden ser tratados de un modo especial.</li>
+        <li>Los elementos pueden contener el atributo predefinido <strong>xml:space</strong>  con el valor <strong>"preserve"</strong>  para indicar que los
+        espacios que aparecen en el contenido (texto) de dicho elemento, y sus sucesores, deben ser preservados.</li>
+        <li>Los únicos valores que admite el atributo <strong>xml:space</strong> son <strong>"preserve"</strong>  y <strong> "default"</strong> , siendo este último su valor por
+        defecto cuando no se escribe dicho atributo.</li>
+        <li><strong>"default"</strong> indica que la aplicación que haga uso del documento XML se encarga de decidir cómo tratar los espacios en
+        blanco. Ahora bien, aún con <strong>"preserve"</strong>, hay que tener en cuenta que no todos los programas reconocen este atributo</li>
+    </ul>
+
+    <h2>Documentos XML bien formados y válidos</h2>
+    <ul>
+        <li>Un documento XML está bien formado cuando no tiene errores de sintaxis.</li>
+        <li>Un documento XML es válido cuando, además de no tener errores de sintaxis, no incumple ninguna de las normas
+    establecidas en su estructura (DTD, XML Schema, RELAX NG...).</li>
+    </ul>
+
+    <footer></footer>
+</body>
+</html>

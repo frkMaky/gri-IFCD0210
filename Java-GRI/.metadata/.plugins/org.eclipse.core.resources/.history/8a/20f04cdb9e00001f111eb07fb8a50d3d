@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class EjercicioArraysComandos {
+
+	public static void main(String[] args) {
+		/** 
+		 * Crea un array de 4 posiciones, coge sus valores por consola:
+		 * A Introduce valroes por consola
+		 * B suma a cada item del array 10
+		 * C resta a cada item del array 2 unidades
+		 * D muestra los valores del array
+		 * Q Salir
+		 * */
+
+		Scanner entrada = new Scanner (System.in);
+		char opcion;
+		int[] miArray = new int[4];
+		
+		System.out.println("--------------");
+		System.out.println("Menu:");
+		System.out.println("A: Introduce Valores ");
+		System.out.println("B: Suma 10 a cada item");
+		System.out.println("C: Resta 2 a cada item");
+		System.out.println("D: Muestra el array");
+		System.out.println("Q: Salir");
+		opcion = entrada.nextLine().toUpperCase().charAt(0);
+		
+		switch (opcion) {
+		case 'A': {
+			for (int i=0;i<miArray.length;i++) {
+				System.out.print("Introduce el elemento numero " + i + ": ");
+				miArray[i] = entrada.nextInt();
+			}
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + opcion);
+		}
+		
+	}
+
+}

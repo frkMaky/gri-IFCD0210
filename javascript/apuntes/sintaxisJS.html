@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintaxis de JavaScript</title>
+    <link rel="stylesheet" href="../css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Sintaxis de JavaScript</h1>
+    <p>La sintaxis de JavaScript es el conjunto de reglas sobre cómo se construyen los programas de JavaScript:</p>
+    <pre>
+        // How to create variables:
+        var x;
+        let y;
+
+        // How to use variables:
+        x = 5;
+        y = 6;
+        let z = x + y;
+    </pre>
+
+    <section>
+        <h2>Valores de JavaScript</h2>
+        <p>La sintaxis de JavaScript define dos tipos de valores:</p>
+        <ul>
+            <li>Valores fijos</li>
+            <li>Valores variables</li>
+        </ul>
+        <p>Los valores fijos se llaman literales .</p>
+        <p>Los valores de las variables se denominan Variables .</p>
+    </section>
+
+    <section>
+        <h2>Literales de JavaScript</h2>
+        <p>Las dos reglas de sintaxis más importantes para valores fijos son:</p>
+        <ul>
+            <li>
+                <p>Los números se escriben con o sin decimales:</p>
+                <pre>
+                    10.50
+                    1001
+                </pre>
+            </li>
+            <li>
+                <p>Las cadenas son texto, escrito entre comillas dobles o simples:</p>
+                <pre>
+                    "John Doe"
+                    'John Doe'
+                </pre>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Variables de JavaScript</h2>
+        <p>En un lenguaje de programación,<strong>las variables</strong>  se utilizan para <strong>almacenar</strong> valores de datos.</p>
+        <p>JavaScript utiliza las palabras clave var, let y const para declarar <strong>variables</strong>  .</p>
+        <p>Se utiliza un <strong>signo igual para asignar</strong>  valores a las variables.</p>
+        <p>En este ejemplo, x se define como una variable. Entonces, a x se le asigna (dado) el valor 6:</p>
+        <pre>
+            let x;
+            x = 6;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Operadores de JavaScript</h2>
+        <p>JavaScript utiliza <strong>operadores aritméticos ( + - * /) </strong> para calcular valores:</p>
+        <pre>
+            (5 + 6) * 10
+        </pre>
+        <p>JavaScript utiliza un <strong>operador de asignación ( =)</strong>  para asignar valores a variables:</p>
+        <pre>
+            let x, y;
+            x = 5;
+            y = 6;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Expresiones JavaScript</h2>
+        <p>Una expresión es una combinación de valores, variables y operadores, que calcula un valor.</p>
+        <p>El cálculo se llama evaluación.</p>
+        <p>Por ejemplo, 5 * 10 se evalúa como 50:</p>
+        <pre>
+            5 * 10
+        </pre>
+        <p>Las expresiones también pueden contener valores variables:</p>
+        <pre>
+            x * 10
+        </pre>
+        <p>Los valores pueden ser de varios tipos, como números y cadenas.</p>
+        <p>Por ejemplo, "John" + " " + "Doe", se evalúa como "John Doe":</p>
+        <pre>
+            "John" + " " + "Doe"
+        </pre>
+    </section>
+
+    <section>
+        <h2>Palabras clave de JavaScript</h2>
+        <p><strong>Las palabras clave</strong>  de JavaScript se utilizan para identificar las acciones que se realizarán.</p>
+        <p>La palabra clave let le dice al navegador que cree variables:</p>
+        <pre>
+            let x, y;
+            x = 5 + 6;
+            y = x * 10;
+        </pre>
+        <p>La palabra clave var también le dice al navegador que cree variables:</p>
+        <pre>
+            var x, y;
+            x = 5 + 6;
+            y = x * 10;
+        </pre>
+        <p>En estos ejemplos, usar var o let producirá el mismo resultado.</p>
+    </section>
+
+    <section>
+        <h2>Comentarios de JavaScript</h2>
+        <p>No todas las declaraciones de JavaScript se "ejecutan".</p>
+        <p>El código después de barras dobles //o entre /*y */se trata como un <strong>comentario .</strong></p>
+        <p>Los comentarios se ignoran y no se ejecutarán:</p>
+        <pre>
+            let x = 5; // I will be executed
+            // x = 6; I will NOT be executed
+        </pre>
+    </section>
+
+    <section>
+        <h2>Identificadores/nombres de JavaScript</h2>
+        <p>Los identificadores son nombres de JavaScript.</p>
+        <p>Los identificadores se utilizan para nombrar variables, palabras clave y funciones.</p>
+        <p>Las reglas para los nombres válidos son las mismas en la mayoría de los lenguajes de programación.</p>
+        <p>Un nombre JavaScript debe comenzar con:</p>
+        <ul>
+            <li>Una letra (AZ o az)</li>
+            <li>Un signo de dólar ($)</li>
+            <li>O un guión bajo (_)</li>
+        </ul>
+        <p>Los caracteres siguientes pueden ser letras, dígitos, guiones bajos o signos de dólar.</p>
+        <h3>Nota</h3>
+        <p>No se permiten números como primer carácter en los nombres.</p>
+        <p>De esta forma, JavaScript puede distinguir fácilmente los identificadores de los números.</p>
+    </section>
+
+    <section>
+        <h2>JavaScript distingue entre mayúsculas y minúsculas</h2>
+        <p>Todos los identificadores de JavaScript distinguen entre <strong>mayúsculas y minúsculas</strong>  .</p>
+        <p>Las variables <em>lastName</em> y <em>lastname</em>, son dos variables diferentes:</p>
+        <pre>
+            let lastname, lastName;
+            lastName = "Doe";
+            lastname = "Peterson";
+        </pre>
+        <p>JavaScript no interpreta LET o Let como la palabra clave let .</p>
+    </section>
+
+    <section>
+        <h2>JavaScript y Camel Case</h2>
+        <p>Históricamente, los programadores han utilizado diferentes formas de unir varias palabras en un nombre de variable:</p>
+        <h3>Guiones:</h3>
+        <pre>
+            master-card
+        </pre>
+        <p>Los guiones no están permitidos en JavaScript. Están reservados para restas.</p>
+        <h3>Guión bajo:</h3>
+        <pre>
+            master_card, inter_city.
+        </pre>
+        <h3>Upper Camel Case:</h3>
+        <pre>
+            MasterCard
+        </pre>
+        <h3>Lower Camel Case:</h3>
+        <p><em>Los programadores de JavaScript tienden a utilizar Camel Case que comienzan con una letra minúscula:</em></p>
+        <pre>
+            masterCard
+        </pre>
+    </section>
+
+    <section>
+        <h2>Juego de caracteres en JavaScript</h2>
+        <p>JavaScript utiliza el juego de caracteres <strong>Unicode .</strong></p>
+        <p>Unicode cubre (casi) todos los caracteres, puntuaciones y símbolos del mundo.</p>
+        <p>Unicode se puede implementar mediante diferentes conjuntos de caracteres. Las codificaciones más utilizadas son UTF-8 y UTF-16.</p>
+    </section>
+</body>
+</html>

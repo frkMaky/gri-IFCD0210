@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores de CSS</title>
+    <link rel="stylesheet" href="css/documentos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Selectores de CSS</h1>
+    <p class="tabular">Un selector de CSS selecciona los elementos HTML a los que desea aplicar estilo.</p>
+    
+    <section>
+        <h2>Selectores CSS</h2>
+        <p>Los selectores CSS se utilizan para "buscar" (o seleccionar) los elementos HTML a los que desea aplicar estilo.</p>
+        <p>Podemos dividir los selectores CSS en cinco categorías:</p>
+        <ul>
+            <li>Selectores simples (seleccione elementos según el nombre, identificación, clase)</li>
+            <li>selectores combinadores (selecciona elementos en función de una relación específica entre ellos) (LOS VEREMOS MÁS ADELANTE)</li>
+            <li>selectores de pseudoclase (seleccionan elementos según un determinado estado) (LOS VEREMOS MÁS ADELANTE)</li>
+            <li>selectores de pseudoelementos (seleccionan y aplican estilo a una parte de un elemento) (LOS VEREMOS MÁS ADELANTE)</li>
+            <li>selectores de atributos (seleccione elementos según un atributo o valor de atributo) (LOS VEREMOS MÁS ADELANTE)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>El selector de elementos CSS</h2>
+        <p>El selector de elementos selecciona elementos HTML según el nombre del elemento.</p>
+        <pre>
+            Aquí, todos los elementos <p> de la página estarán alineados al centro, con un color de texto rojo:
+                
+            p {
+                text-align: center;
+                color: red;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>El selector id en CSS</h2>
+        <p>El selector id utiliza el atributo id de un elemento HTML para seleccionar un elemento específico.</p>
+        <p>La identificación de un elemento es única dentro de una página, por lo que el selector id se usa para seleccionar un elemento único.</p>
+        <p>Para seleccionar un elemento con un id específico, escriba un carácter almohadilla (#), seguido del id del elemento.</p>
+        <pre>
+            La siguiente regla CSS se aplicará al elemento HTML con id="para1":
+
+            #para1 {
+                text-align: center;
+                color: red;
+            }
+        </pre>        
+        <p><strong>>Nota:</strong>  ¡Un nombre de id no puede comenzar con un número!</p>
+    </section>
+
+    <section>
+        <h2>El selector de clase CSS</h2>
+        <p>El selector de clase selecciona elementos HTML con un atributo de clase específico.</p>
+        <p>Para seleccionar elementos con una clase específica, escriba un carácter de punto (.), seguido del nombre de la clase.</p>
+        <p>En este ejemplo, todos los elementos HTML con class="center" serán rojos y estarán alineados en el centro:</p>
+        <pre>  
+            .center {
+                text-align: center;
+                color: red;
+            }
+        </pre>    
+        <p>También puede especificar que una clase solo deba afectar a elementos HTML específicos.</p>   
+        
+        <p> En este ejemplo, solo los elementos &lt;p&gt; con class="center" serán rojos y estarán alineados al centro:</p>
+        <pre>
+            p.center {
+                text-align: center;
+                color: red;
+            }            
+        </pre>
+        <p>Los elementos HTML también pueden hacer referencia a más de una clase. </p>
+    
+        <p> En este ejemplo, el estilo del elemento &lt;p&gt; se ajustará a class="center" y class="large":</p>
+        <pre>
+            &lt;p class="center large"&gt;This paragraph refers to two classes.&lt;/p&gt;          
+        </pre>
+        <p><strong>Nota: </strong>¡ El nombre de una class no puede comenzar con un número!</p>
+    </section>
+
+    <section>
+        <h2>El selector universal de CSS</h2>
+        <p>El selector universal (*) selecciona todos los elementos HTML de la página.</p>
+        <p>La siguiente regla CSS afectará a todos los elementos HTML de la página:</p>
+        <pre>
+            * {
+                text-align: center;
+                color: blue;
+            }
+        </pre>
+    </section>
+
+    <section>
+        <h2>El selector de agrupación CSS</h2>
+        <p>El selector de agrupación selecciona todos los elementos HTML con las mismas definiciones de estilo.</p>
+        <p>Mire el siguiente código CSS (los elementos h1, h2 y p tienen las mismas definiciones de estilo):</p>
+        <pre>
+            h1 {
+                text-align: center;
+                color: red;
+            }
+            h2 {
+                text-align: center;
+                color: red;
+            }
+            p {
+                text-align: center;
+                color: red;
+            }
+        </pre>
+        <p>Será mejor agrupar los selectores para minimizar el código.</p>
+        <p>Para agrupar selectores, separe cada selector con una coma.</p>
+        <p>En este ejemplo hemos agrupado los selectores del código anterior:</p>
+        <pre>
+            h1, h2, p {
+                text-align: center;
+                color: red;
+            }
+        </pre>
+    </section>
+    
+    <section class="ejercicio">
+        <h2>Ejercicio</h2>
+        <p>Establezca el color del texto de todos los elementos &lt;p&gt; en rojo.</p>
+        <pre>
+            &lt;style&gt;
+                {
+                    red;
+                }
+            &lt;/style&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h2>Todos los selectores simples de CSS</h2>
+        <table>
+            <tr>
+                <th>Selector</th>
+                <th>Ejemplo</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>#id</td>
+                <td>#firstname</td>
+                <td>Selecciona el elemento con id="firstname"</td>
+            </tr>
+            <tr>
+                <td>.clase</td>
+                <td>.intro</td>
+                <td>Selecciona todos los elementos con class="intro"</td>
+            </tr>
+            <tr>
+                <td>elemento.clase</td>
+                <td>p.intro</td>
+                <td>Selecciona solo los elementos &lt;p&gt; con class="intro"</td>
+            </tr>
+            <tr>
+                <td>* </td>
+                <td>* </td>
+                <td>Selecciona todos los elementos</td>
+            </tr>
+            <tr>
+                <td>elemento</td>
+                <td>p</td>
+                <td> Selecciona todos los elementos &lt;p&gt;</td>
+            </tr>
+            <tr>
+                <td>elemento,elemento,.. </td>
+                <td>div, p</td>
+                <td>Selecciona todos los elementos &lt;div&gt; y todos los elementos &lt;p&gt;</td>
+            </tr>
+        </table>
+    </section>
+
+</body>
+</html>
